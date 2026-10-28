@@ -49,7 +49,7 @@ Rich Tooltip provides structured, contextual guidance with an optional title, st
 
 ## Design tokens used
 
-`--color-surfaces-container-blur-high`, `--font-family`, `--type-size-subtitle`, `--font-weight-medium`, `--color-text-icon-primary`, `--type-size-subject`, `--font-weight-regular`, `--type-size-body`, `--space-500`, `--space-300`, `--space-200`, `--space-100`, `--radius-400`, `--elevation-5`, `--stroke-200`, `--color-primary-primary`, `--space-025`
+`--color-surfaces-container-blur-high`, `--font-family`, `--type-size-subtitle`, `--font-weight-medium`, `--color-text-icon-primary`, `--type-size-body`, `--font-weight-regular`, `--space-500`, `--space-300`, `--space-200`, `--space-100`, `--radius-400`, `--elevation-5`, `--stroke-200`, `--color-primary-primary`, `--space-025`
 
 ## Accessibility
 

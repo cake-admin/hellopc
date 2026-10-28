@@ -5,22 +5,22 @@
 import { DateInput } from '@cake-admin/cakeand';
 ```
 
-Date Input collects a typed MM/DD/YY date and exposes a calendar action that opens the browser’s native date picker. It composes Input Label with Helper String; use mode="range" to collect a start and end date with one shared helper. Use Time Input when the value also needs a time of day.
+Date Input collects a typed MM/DD/YY date and opens the cake& Calendar from a trailing Icon Button. The typed segment hugs its value the same way Time Input does — clicking it focuses for entry, it does not open the calendar. It composes Input Label with Helper String. Use Date Range Picker (or mode="range") for a start/end interval in one combined field. Use Time Input when the value also needs a time of day.
 
 ## Props
 
 | Prop | Type | Default | Notes |
 | --- | --- | --- | --- |
-| `mode` | `'single' \| 'range'` | `'single'` | Renders one date field or the Figma start/end range pair. |
-| `label` | `string` | `'Select date'` | Label for the single date field. |
-| `startLabel` | `string` | `'Start date'` | Label for the range start field. |
-| `endLabel` | `string` | `'End date'` | Label for the range end field. |
-| `showLabelInfo` | `boolean` | `false` | Shows the InputLabel info icon(s). |
-| `required` | `boolean` | `false` | Marks every native date input required. |
-| `helperText` | `React.ReactNode` | — | Helper content below the field(s), replacing the Figma default guidance. |
-| `showHelper` | `boolean` | `true` | Hides the shared HelperString. |
-| `status` | `DateStatus` | `'default'` | Validation state for all rendered fields. |
-| `disabled` | `boolean` | `false` | Disables date typing and the native calendar action. |
+| `mode` | `'single' \| 'range'` | `'single'` | Renders one date field or the Figma combined range field. |
+| `label` | `string` | `'Select date' (single) / 'Select date range' (range)` | Visible label. Range mode uses one label for the combined control. |
+| `startLabel` | `string` | `'Start date'` | Accessible name for the range start segment. |
+| `endLabel` | `string` | `'End date'` | Accessible name for the range end segment. |
+| `showLabelInfo` | `boolean` | `false` | Shows the InputLabel info icon. |
+| `required` | `boolean` | `false` | Marks every date input required. |
+| `helperText` | `React.ReactNode` | — | Helper content below the field, replacing the Figma default guidance. |
+| `showHelper` | `boolean` | `true` | Hides the HelperString. |
+| `status` | `DateStatus` | `'default'` | Validation state for the field. |
+| `disabled` | `boolean` | `false` | Disables date typing and the calendar action. |
 | `value` | `string` | — | Controlled MM/DD/YY value for mode="single". |
 | `defaultValue` | `string` | — | Uncontrolled MM/DD/YY value for mode="single". |
 | `onValueChange` | `(value: string) => void` | — | Fires with the formatted MM/DD/YY single-date value. |
@@ -35,19 +35,19 @@ Date Input collects a typed MM/DD/YY date and exposes a calendar action that ope
 <DateInput />
 <DateInput label="Appointment date" required showLabelInfo />
 <DateInput defaultValue="09/30/26" />
-<DateInput mode="range" startLabel="Start date" endLabel="End date" />
+<DateInput mode="range" />
 <DateInput status="error" helperText="Choose a valid date" />
 <DateInput mode="range" disabled />
 ```
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-text-icon-secondary`, `--stroke-200`, `--radius-1000`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--space-050`, `--space-100`, `--space-200`, `--space-800`, `--radius-200`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--font-weight-bold`, `--color-text-icon-primary`, `--space-050`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--space-200`, `--radius-200`
 
 ## Accessibility
 
-- Each visible label is a real <label htmlFor> that focuses its text input. Supply an aria-label for a labelless single field.
-- The calendar is a labelled icon-only button that invokes the browser’s native picker; it has a tokenized keyboard focus ring.
+- The visible label is a real <label htmlFor> that focuses the (start) text input. Supply an aria-label for a labelless single field. startLabel / endLabel name the two range segments for assistive tech.
+- The calendar control is a real IconButton (aria-haspopup="dialog") that opens a role="dialog" Calendar. Clicking a typed segment focuses it for entry and does not open the panel.
 - Error state applies aria-invalid and Helper String is wired through aria-describedby; disabled state blocks typing and calendar actions.
 - Parent forms should validate calendar ordering for ranges and any product rules such as minimum/maximum dates.
 
@@ -56,13 +56,14 @@ Date Input collects a typed MM/DD/YY date and exposes a calendar action that ope
 | Do | Don't |
 | --- | --- |
 | Use the MM/DD/YY display contract consistently within a product flow. | Mix regional date formats in adjacent controls. |
-| Use range mode when one helper and validation rule cover both dates. | Build a date range from unrelated single controls. |
+| Use range mode (or Date Range Picker) when one helper covers both dates. | Build a date range from two unrelated single controls. |
 | Validate date availability and ordering in the parent form. | Treat formatting as proof the date is allowed. |
-| Let users type or choose from their platform picker. | Add a custom calendar panel without an approved calendar design. |
+| Let users type or choose from the cake& Calendar. | Reintroduce a native <input type="date"> picker beside this field. |
 
 ---
 
+- Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Related: HelperString, InputLabel.
+- Related: Button, IconButton, Calendar, HelperString, InputLabel.
 - Source: `src/cakeand/components/DateInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-date-input--docs>

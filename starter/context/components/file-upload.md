@@ -42,7 +42,7 @@ File Upload is an image-upload dropzone with a primary browse action. It compose
 
 ## Design tokens used
 
-`--color-stroke-border`, `--stroke-100`, `--radius-300`, `--color-tonal-tonal-overlay`, `--stroke-200`, `--color-text-icon-on-tonal`, `--color-tonal-tonal`, `--radius-200`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-primary-primary`, `--color-primary-primary-overlay`, `--radius-1000`, `--color-warning-warn-overlay`, `--color-warning-warn`, `--space-100`, `--space-300`, `--space-800`
+`--color-stroke-border`, `--stroke-100`, `--radius-300`, `--color-tonal-tonal-lightest`, `--color-tonal-tonal-overlay`, `--stroke-200`, `--color-text-icon-on-tonal`, `--color-tonal-tonal`, `--radius-200`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-primary-primary`, `--color-primary-primary-overlay`, `--radius-1000`, `--color-warning-warn-overlay`, `--color-warning-warn`, `--space-100`, `--space-300`, `--space-800`
 
 ## Accessibility
 

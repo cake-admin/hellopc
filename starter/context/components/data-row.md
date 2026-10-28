@@ -15,7 +15,7 @@ A single record in a table body (Figma DataRow, node 171:9843). It lays out a fi
 | `stripe` | `Stripe` | `'default'` | Zebra banding (Figma state=default stripe / inverse stripe). Alternate it per row (index % 2) for striped tables. |
 | `selected` | `boolean` | `false` | Selected row (Figma state=selected): a tonal highlight with the leading checkbox checked. Pair with onSelectedChange. |
 | `disabled` | `boolean` | `false` | Dims the row and blocks interaction, including the checkbox (Figma state=disabled). |
-| `interactive` | `boolean` | `false` | Gives the whole row a hover lift + pointer (Figma state=hover). Use for rows that navigate or open a detail on click; pair with onClick. |
+| `interactive` | `boolean` | `false` | Adds a pointer cursor for rows that navigate or open a detail on click. Pair with onClick. Hover lift (Figma state=hover) is applied to every non-disabled, non-selected row regardless of this flag. |
 | `selectable` | `boolean` | `true` | Render the leading selection checkbox. Set false for a read-only table; the rail column stays so rows still align with the header. |
 | `onSelectedChange` | `(selected: boolean) => void` | — | Fired when the leading checkbox toggles. |
 | `checkboxLabel` | `string` | `'Select row'` | Accessible name for the row's selection checkbox. |
@@ -67,7 +67,7 @@ import { DataRow, DataCell } from '@/cakeand/components/Table';
 | --- | --- |
 | Alternate stripe per row for readable banding | Randomly mix stripes — the pattern should track row parity |
 | Reuse Chip / Badge inside cells | Re-draw pills or status dots by hand in a cell |
-| Use interactive only when the whole row navigates | Make a row interactive when its cells already own the clicks |
+| Set interactive when the whole row navigates on click | Rely on interactive for hover — hover lift is the default |
 | Give the checkbox a meaningful checkboxLabel | Leave it as "Select row" when a name column exists ("Select Ada Lovelace") |
 | Keep the same column count as the Header Row | Let body columns drift out of alignment with the header |
 
