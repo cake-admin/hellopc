@@ -1,5 +1,5 @@
 /**
- * Color Token System for Cake Design System
+ * Color Token System for hello pc
  * Maps semantic color tokens to actual color values for light.a and dark.a themes
  * 
  * This system centralizes color management and makes it easy to:

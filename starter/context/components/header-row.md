@@ -18,8 +18,8 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 ## Usage
 
 ```tsx
-import { HeaderRow, HeaderCell } from '@/cakeand/components/Table';
-import { IconButton } from '@/cakeand/components/Button';
+import { HeaderRow, HeaderCell } from '@/hellopc/components/Table';
+import { IconButton } from '@/hellopc/components/Button';
 
 <HeaderRow>
   <HeaderCell>Name</HeaderCell>
@@ -68,5 +68,5 @@ import { IconButton } from '@/cakeand/components/Button';
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, Table.
-- Source: `src/cakeand/components/Table/`
+- Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-header-row--docs>

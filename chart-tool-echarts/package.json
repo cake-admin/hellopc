@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Cake& data visualization playground — token-driven Apache ECharts charts with Figma SVG handoff",
+  "description": "hello pc data visualization playground — token-driven Apache ECharts charts with Figma SVG handoff",
   "comment": "Scripts invoke tools via `node <bin>` instead of bare `vite`/`tsc` so they work even though this repo's path contains '&' (which breaks the npm/.bin cmd shims on Windows). In a normal path, `npx vite` etc. also work.",
   "scripts": {
     "dev": "node node_modules/vite/bin/vite.js",

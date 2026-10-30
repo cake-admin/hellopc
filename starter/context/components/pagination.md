@@ -25,7 +25,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLElement>, 'onChange'>` props.
 ## Usage
 
 ```tsx
-import { Pagination } from '@/cakeand/components/Pagination';
+import { Pagination } from '@/hellopc/components/Pagination';
 
 // simple — every page shown
 <Pagination count={5} defaultPage={1} onPageChange={setPage} />
@@ -63,5 +63,5 @@ import { Pagination } from '@/cakeand/components/Pagination';
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, Scrollbar, NumberDropdown.
-- Source: `src/cakeand/components/Pagination/`
+- Source: `src/hellopc/components/Pagination/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-pagination-pagination--docs>

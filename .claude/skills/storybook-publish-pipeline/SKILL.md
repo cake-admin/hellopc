@@ -1,14 +1,14 @@
 ---
 name: storybook-publish-pipeline
 description: >
-  How cake& Storybook and the npm package reach production after component
-  work. Use when editing src/cakeand/components/, *.stories.tsx, Storybook
-  config, or when asked how to publish cake&, ship a version, update
+  How hello pc Storybook and the npm package reach production after component
+  work. Use when editing src/hellopc/components/, *.stories.tsx, Storybook
+  config, or when asked how to publish hello pc, ship a version, update
   cake.lenovo.com/storybook, or run the Publish design system package workflow.
   Pages deploys on every main merge; npm does not.
 ---
 
-# cake& Storybook + package publish pipeline
+# hello pc Storybook + package publish pipeline
 
 Component work is not done when the local Storybook looks right. This skill
 is the release path: what updates automatically, what must be triggered by
@@ -22,7 +22,7 @@ That job builds the CRA site **and** Storybook, then publishes:
 - Site → `https://cake.lenovo.com/`
 - Storybook → `https://cake.lenovo.com/storybook/`
 
-Every `src/cakeand/` change that lands on `main` is live on Storybook after
+Every `src/hellopc/` change that lands on `main` is live on Storybook after
 that deploy. There is no separate “publish Storybook” step.
 
 ## What does **not** update automatically (npm)
@@ -51,13 +51,13 @@ fix must not mint a version.
      `starter/context/` (never hand-edit that folder)
 
 If tags such as `v4.2.2` already exist, `1.0.0` will fail the guard. Either
-publish the next 4.x, or treat “Cake& 1.0” as marketing copy while npm stays
+publish the next 4.x, or treat “hello pc 1.0” as marketing copy while npm stays
 on the 4.x line — do not delete and reuse a tag.
 
 ## Before you open the PR
 
 Follow **storybook-component-docs** for anything under
-`src/cakeand/components/`. Additional pipeline rules:
+`src/hellopc/components/`. Additional pipeline rules:
 
 - A **new component folder** must be added to `CATEGORIES` in
   `scripts/build-agent-context.mjs`. A folder missing from that map is a
@@ -76,16 +76,16 @@ Follow **storybook-component-docs** for anything under
 ## Consumer docs (designers downloading the kit)
 
 If the **install path** changes (degit, giget, Release `.tgz` URL, peer
-deps, `CakeProvider`, `cake:update`), update these three surfaces in the
+deps, `CakeProvider`, `hellopc:update`), update these three surfaces in the
 same PR. They are written for designers who may be new to development —
 numbered steps, plain language, what each command does.
 
-1. **Storybook** — [Introduction.mdx](../../../src/cakeand/foundations/Introduction.mdx)
+1. **Storybook** — [Introduction.mdx](../../../src/hellopc/foundations/Introduction.mdx)
    (contextual: Storybook vs Devkit, package layout) and
-   [GettingStarted.mdx](../../../src/cakeand/foundations/GettingStarted.mdx)
+   [GettingStarted.mdx](../../../src/hellopc/foundations/GettingStarted.mdx)
    (full designer walkthrough, including terminal basics and Ctrl+C).
-   Getting Started is a top-level docs page, not under Cake& Maintenance.
-2. **Site** — the Cake& Devkit card on
+   Getting Started is a top-level docs page, not under hello pc Maintenance.
+2. **Site** — the hello pc Devkit card on
    [Resources.js](../../../src/pages/Resources.js). CTA stays
    `STORYBOOK_PATH?path=/docs/introduction--docs` (instructions, not a raw
    GitHub clone). Keep `MEDIA_GRADIENTS.devkit` in sync with Figma
@@ -108,7 +108,7 @@ does **not** until **Publish design system package** runs.
 
 ## CI on the PR
 
-PRs that touch `src/cakeand/**` or `.storybook/**` run
+PRs that touch `src/hellopc/**` or `.storybook/**` run
 `.github/workflows/storybook.yml`:
 
 1. `npm run build-storybook` — the docs site that Pages will nest
@@ -122,7 +122,7 @@ next version cannot publish. Fix those on the PR; do not merge around them.
 
 - Wait for **Deploy to GitHub Pages** to go green, then confirm
   `https://cake.lenovo.com/storybook/` shows the change (Introduction **Use
-  cake&** and the Resources Devkit card if you changed either).
+  hello pc** and the Resources Devkit card if you changed either).
 - If this change should be installable (`npm install` the Release tarball),
   run **Publish design system package** as above. Storybook being live is
   not the same as a new package version.

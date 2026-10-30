@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { fontStack } from '../../styles/globalStyles';
 import { getSearchResults } from '../../data/routes';
+import { withBrand } from '../BrandName';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -210,8 +211,8 @@ const SearchModal = ({ isOpen, onClose, initialQuery = '' }) => {
                       role="button"
                       aria-label={`Go to ${item.title}`}
                     >
-                      <ResultTitle>{item.title}</ResultTitle>
-                      <ResultPath>{item.description}</ResultPath>
+                      <ResultTitle>{withBrand(item.title)}</ResultTitle>
+                      <ResultPath>{withBrand(item.description)}</ResultPath>
                     </ResultItem>
                   ))}
                 </ResultSection>

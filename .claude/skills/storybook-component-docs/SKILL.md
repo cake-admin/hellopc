@@ -1,20 +1,20 @@
 ---
 name: storybook-component-docs
 description: >
-  Author or review a cake& design-system component and its Storybook docs page.
+  Author or review a hello pc design-system component and its Storybook docs page.
   Use whenever creating, modifying, or reviewing anything under
-  src/cakeand/components/ (component .tsx or .stories.tsx), or when asked to
+  src/hellopc/components/ (component .tsx or .stories.tsx), or when asked to
   "document a component", "add a component to Storybook", or "write stories".
   Encodes the reference-library docs template: where prose lives, the exact
   docs-page section order, story taxonomy, props-table rules, and verification.
 ---
 
-# cake& Storybook component documentation
+# hello pc Storybook component documentation
 
-Every cake& component ships a **reference-library-quality docs page** assembled
+Every hello pc component ships a **reference-library-quality docs page** assembled
 by Storybook autodocs from exactly two files. This skill defines what those
 files must contain so every component's docs page looks and reads the same.
-`src/cakeand/components/Button/` is the canonical exemplar — when in doubt,
+`src/hellopc/components/Button/` is the canonical exemplar — when in doubt,
 match it.
 
 ## Architecture (do not deviate)
@@ -37,7 +37,7 @@ match it.
 ## File layout
 
 ```
-src/cakeand/components/<Component>/
+src/hellopc/components/<Component>/
   <Component>.tsx          # implementation (styled-components + tokens)
   <Component>.stories.tsx  # stories + ALL docs prose (CSF 3)
   index.ts                 # barrel: named export + prop types
@@ -48,13 +48,13 @@ src/cakeand/components/<Component>/
 1. **Radix first.** Interactive behavior wraps a Radix primitive from the
    unified `radix-ui` package (`import { Switch as RadixSwitch } from
    'radix-ui'`). Radix owns behavior/a11y (roles, keyboard, `data-state`);
-   cake& owns visuals. Simple native elements (e.g. `<button>`) need no
+   hello pc owns visuals. Simple native elements (e.g. `<button>`) need no
    primitive. Do NOT add Radix `Slot` / `asChild` polymorphism — it was
    deliberately removed from this design system; components render real
    elements.
 2. **Tokens only — as CSS custom properties.** Every color/space/radius/type
    value is a `var()` reference to the generated token layer
-   (`src/cakeand/tokens/cake-vars.css`, built by `npm run build:cakeand-vars`,
+   (`src/hellopc/tokens/hellopc-vars.css`, built by `npm run build:hellopc-vars`,
    mode-scoped by `[data-theme]`), consumed inside styled-components:
    - colors: `var(--color-<group>-<token>)` (e.g. `var(--color-primary-primary-hover)`) —
      names mirror the Figma variables 1:1
@@ -107,7 +107,7 @@ the global TOC picks them up):
    variant/state; when to use a *different* component instead
    ("use Checkbox for form-submission gating").
 2. **Theming note** (1 paragraph, always include): every value resolves from
-   cake& tokens via `props.theme`; the **Theme** toolbar toggle re-themes the
+   hello pc tokens via `props.theme`; the **Theme** toolbar toggle re-themes the
    page live; nothing is hardcoded.
 3. **Rendering/behavior notes**: what element renders; controlled vs
    uncontrolled; explicit non-goals (e.g. "icon-only buttons are the separate
@@ -214,12 +214,12 @@ Eyeball checklist on `Components/<Component>/Docs`:
 
 ## Exemplars
 
-- `src/cakeand/components/Button/Button.stories.tsx` — variant component
+- `src/hellopc/components/Button/Button.stories.tsx` — variant component
   (Variant · intent token table, AllVariants matrix, ClicksFire test).
-- `src/cakeand/components/Switch/Switch.stories.tsx` — stateful/form
+- `src/hellopc/components/Switch/Switch.stories.tsx` — stateful/form
   component (Part | Tokens table, controlled/uncontrolled prose, labelless
   `aria-label` requirement, TogglesFire test).
-- `src/cakeand/foundations/StoryAuthoring.mdx` — the human-facing guide that
+- `src/hellopc/foundations/StoryAuthoring.mdx` — the human-facing guide that
   mirrors this skill (keep the two in sync when the template changes).
 
 ## Skeleton for a new component's stories file
@@ -240,7 +240,7 @@ const meta = {
         component: `
 <Intro: what it is, when to use it, when to use something else.>
 
-Every color, radius, spacing, and type value resolves from cake& theme tokens
+Every color, radius, spacing, and type value resolves from hello pc theme tokens
 via \`props.theme\` — the **Theme** toolbar toggle re-themes every example on
 this page live.
 

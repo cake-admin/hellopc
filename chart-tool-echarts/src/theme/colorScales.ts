@@ -150,7 +150,7 @@ export function buildColorSystem(
   const categoricalMix = (b: BaseKey, count: number): string[] =>
     interleave(ramp(base[b], count, mode, true));
 
-  /** Fixed multi-hue categorical palette (the cake& "hero" tones), cycled to the
+  /** Fixed multi-hue categorical palette (the hello pc "hero" tones), cycled to the
    *  needed count. These pass contrast on both surfaces, so they're identical in
    *  light and dark — selecting a base does not change them. */
   const fixed = categoricalPalette.length > 0 ? categoricalPalette : null;

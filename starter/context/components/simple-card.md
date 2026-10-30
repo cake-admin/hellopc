@@ -22,9 +22,9 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>` props.
 ## Usage
 
 ```tsx
-import { Card, SimpleCard } from '@/cakeand/components/Card';
-import { Button } from '@/cakeand/components/Button';
-import { IconButton } from '@/cakeand/components/Button';
+import { Card, SimpleCard } from '@/hellopc/components/Card';
+import { Button } from '@/hellopc/components/Button';
+import { IconButton } from '@/hellopc/components/Button';
 
 <Card>
   <SimpleCard
@@ -59,5 +59,5 @@ import { IconButton } from '@/cakeand/components/Button';
 
 - Presentational; wraps no Radix primitive.
 - Related: Button, IconButton, Card.
-- Source: `src/cakeand/components/Card/`
+- Source: `src/hellopc/components/Card/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-card-simple-card--docs>

@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { CakeProvider } from '../cakeand/theme/CakeProvider';
+import { CakeProvider } from '../hellopc/theme/HellopcProvider';
 
 /** UI keys ↔ CakeProvider ThemeMode */
 export const THEME_OPTIONS = [

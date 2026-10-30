@@ -93,7 +93,7 @@ export const PANELS = [
     title: 'Buttons',
     storybook: storybookDocs('components-button-button--docs'),
     paragraphs: [
-      'Buttons are how people take action in cake& — pill-shaped, clear, and ranked by how much attention the action deserves. Use one strong fill button for the main thing to do; outline, tonal, and ghost step down for supporting or quieter actions.',
+      'Buttons are how people take action in hello pc — pill-shaped, clear, and ranked by how much attention the action deserves. Use one strong fill button for the main thing to do; outline, tonal, and ghost step down for supporting or quieter actions.',
       'Pair primary (indigo) or secondary (ink) intent with a size that fits the density of the screen. Browse the live examples below, then open Storybook for the full props, states, and accessibility notes.',
     ],
     Preview: ButtonPreview,
@@ -143,7 +143,7 @@ export const PANELS = [
     title: 'Date & time inputs',
     storybook: storybookDocs('components-date-input--docs'),
     paragraphs: [
-      'Date and time inputs capture calendar and clock values with cake& field chrome — labels, helpers, and validation that match other inputs.',
+      'Date and time inputs capture calendar and clock values with hello pc field chrome — labels, helpers, and validation that match other inputs.',
       'Use them for appointments, filters, and scheduling. Prefer the dedicated Date and Time components over plain text fields so formatting and keyboard behavior stay consistent.',
     ],
     Preview: DateTimeInputsPreview,
@@ -242,7 +242,7 @@ export const PANELS = [
     id: 'data-visualization',
     title: 'Data Visualization',
     paragraphs: [
-      'Charts and data viz live outside the core cake& component package. The Cake& data visualization playground generates themed ECharts code and Figma-ready SVGs so charts stay on-brand.',
+      'Charts and data viz live outside the core hello pc component package. The hello pc data visualization playground generates themed ECharts code and Figma-ready SVGs so charts stay on-brand.',
       'Use the playground steps below for design, engineering, and presentations, then match Color theme choices to the chart type — the same names as the playground dropdown.',
     ],
     ctas: [

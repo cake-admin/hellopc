@@ -55,5 +55,5 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button.
-- Source: `src/cakeand/components/Button/`
+- Source: `src/hellopc/components/Button/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-button-icon-button--docs>

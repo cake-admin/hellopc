@@ -1,5 +1,5 @@
 /**
- * Shared parser for the docs prose that every cake& component carries in its
+ * Shared parser for the docs prose that every hello pc component carries in its
  * story's `parameters.docs.description.component`.
  *
  * That prose is the same text Storybook renders, and it follows a fixed section

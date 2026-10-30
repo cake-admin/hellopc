@@ -19,7 +19,7 @@ export default function App() {
     <CakeProvider mode={mode}>
       <main
         style={{
-          // Every value comes from a cake& token. Never hardcode a color,
+          // Every value comes from a hello pc token. Never hardcode a color,
           // spacing, radius, or type size — see AGENTS.md.
           minHeight: '100vh',
           padding: 'var(--space-500)',
@@ -31,10 +31,26 @@ export default function App() {
       >
         <Card>
           <HeroCard
-            leadingText="cake& prototype"
+            leadingText={
+              <>
+                <span style={{ fontWeight: 700 }}>
+                  hello <span style={{ color: 'var(--color-primary-primary)' }}>pc</span>
+                </span>{' '}
+                prototype
+              </>
+            }
             title="You're wired up."
-            body="Edit src/App.tsx to start building. The components, tokens, theming and fonts all come from the cake& package — nothing here is hand-rolled."
-            secondaryBody="Ask your coding agent to build something. It reads context/cake-components.md to learn what exists."
+            body={
+              <>
+                Edit src/App.tsx to start building. The components, tokens, theming and fonts all
+                come from the{' '}
+                <span style={{ fontWeight: 700 }}>
+                  hello <span style={{ color: 'var(--color-primary-primary)' }}>pc</span>
+                </span>{' '}
+                package — nothing here is hand-rolled.
+              </>
+            }
+            secondaryBody="Ask your coding agent to build something. It reads context/hellopc-components.md to learn what exists."
             actions={
               <Button
                 size="lg"

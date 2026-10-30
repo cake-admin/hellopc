@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { Button } from '../cakeand/components/Button';
-import { Card } from '../cakeand/components/Card';
+import { Button } from '../hellopc/components/Button';
+import { Card } from '../hellopc/components/Card';
 import { STORYBOOK_PATH } from '../data/nav';
 import { pageGutterX } from '../styles/pageChrome';
+import { BrandName, withBrand, BRAND_PC_LIGHT, BRAND_PC_DARK } from '../components/BrandName';
 
 import heroBg from '../assets/home/hero-bg.png';
 import cakeSlice from '../assets/home/cake-slice.png';
-import iconCake from '../assets/home/icon-cake.svg';
+import iconHellopc from '../assets/home/icon-hellopc.svg';
 import iconOpenInNew from '../assets/home/icon-open-in-new.svg';
 import winCanvasLight from '../assets/home/win-canvas-light.png';
 import winCanvasDark from '../assets/home/win-canvas-dark.png';
@@ -67,6 +68,13 @@ const Layer = styled.div`
 `;
 
 const Hero = styled.section`
+  /* White type on the blue wallpaper → light indigo. HCT uses black type. */
+  --brand-pc: ${BRAND_PC_LIGHT};
+
+  html[data-theme='win hct'] & {
+    --brand-pc: ${BRAND_PC_DARK};
+  }
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,13 +98,12 @@ const HeroCopy = styled.h1`
   letter-spacing: 0.2px;
   color: var(--home-on-media);
 
-  strong {
+  .brand-word {
     font-weight: var(--font-weight-bold);
   }
 
   .amp {
-    color: var(--color-tonal-tonal);
-    font-weight: var(--font-weight-bold);
+    color: var(--brand-pc, ${BRAND_PC_LIGHT});
   }
 `;
 
@@ -120,23 +127,30 @@ const Cursor = styled.span`
   }
 `;
 
-/** Full sentence, broken after “age” and “for”. cake& stays glued. */
+/** Full sentence, broken after “age” and “design”. “pc” takes the on-media indigo. */
 const HERO_LINES = [
   [
-    { text: 'cake', bold: true, glue: true },
-    { text: '&', amp: true },
+    { text: 'hello', bold: true },
+    { text: 'pc', amp: true },
     { text: 'is' },
     { text: 'the' },
     { text: 'new' },
     { text: 'age' },
   ],
-  [{ text: 'of' }, { text: 'PC' }, { text: 'software' }, { text: 'design' }, { text: 'for' }],
-  [{ text: 'Lenovo' }, { text: '&' }, { text: 'Motorola.' }],
+  [
+    { text: 'of' },
+    { text: 'PC' },
+    { text: '&' },
+    { text: 'web' },
+    { text: 'software' },
+    { text: 'design' },
+  ],
+  [{ text: 'for' }, { text: 'Lenovo' }, { text: '&' }, { text: 'Motorola.' }],
 ];
 
 const HERO_FLAT = HERO_LINES.flat();
 const HERO_ARIA =
-  'cake& is the new age of PC software design for Lenovo & Motorola.';
+  'hello pc is the new age of PC & web software design for Lenovo & Motorola.';
 const WORD_MS = 90;
 
 const HeroTypewriter = () => {
@@ -179,10 +193,10 @@ const HeroTypewriter = () => {
             return (
               <React.Fragment key={`${lineIdx}-${tokenIdx}`}>
                 {spaceBefore ? ' ' : null}
-                {token.bold ? (
-                  <strong>{token.text}</strong>
-                ) : token.amp ? (
-                  <span className="amp">{token.text}</span>
+                {token.bold || token.amp ? (
+                  <span className={token.amp ? 'brand-word amp' : 'brand-word'}>
+                    {token.text}
+                  </span>
                 ) : (
                   token.text
                 )}
@@ -415,6 +429,11 @@ const outlineLinkStyles = `
   font-family: var(--font-family);
   font-size: var(--type-size-body);
   font-weight: var(--font-weight-bold);
+  --brand-pc: ${BRAND_PC_LIGHT};
+
+  html[data-theme='win hct'] & {
+    --brand-pc: ${BRAND_PC_DARK};
+  }
   letter-spacing: 0.1px;
   white-space: nowrap;
   box-sizing: border-box;
@@ -467,8 +486,13 @@ const FEATURES = [
   {
     title: 'Modern',
     subtitle: "Built for what's next.",
-    body:
-      'Born from the unification of Lenovo and Motorola design, Cake& combines a trusted PC foundation with the modern Ampersand design language. One system, one vision, ready for the future.',
+    body: (
+      <>
+        Born from the unification of Lenovo and Motorola design, <BrandName />{' '}
+        combines a trusted PC foundation with the modern <strong>hello</strong> design
+        language. One system, one vision, ready for the future.
+      </>
+    ),
   },
   {
     title: 'Accessible',
@@ -480,26 +504,26 @@ const FEATURES = [
     title: 'One Lenovo',
     subtitle: 'Designed as one.',
     body:
-      'Cake& brings Lenovo and Motorola together under a single design language, creating a more connected experience for designers, developers, and users across the ecosystem.',
+      'hello pc brings Lenovo and Motorola together under a single design language, creating a more connected experience for designers, developers, and users across the ecosystem.',
   },
   {
     title: 'AI-ready',
     subtitle: 'Ready for AI workflows.',
     body:
-      'Built for modern design and development, Cake& gives AI the structure it needs to generate cleaner prototypes, stronger code, and faster results from day one.',
+      'Built for modern design and development, hello pc gives AI the structure it needs to generate cleaner prototypes, stronger code, and faster results from day one.',
   },
 ];
 
 const QUICK_LINKS = [
-  { label: 'Cake& foundations', href: '/foundations' },
-  { label: 'Cake& Storybook', href: STORYBOOK_PATH, external: true },
+  { label: 'hello pc foundations', href: '/foundations' },
+  { label: 'hello pc Storybook', href: STORYBOOK_PATH, external: true },
   {
-    label: 'Cake& Figma library',
+    label: 'hello pc Figma library',
     href: 'https://www.figma.com/community/file/1667712364680681509/lenovo-cake-1-0',
     external: true,
   },
-  { label: 'Cake& data visualization playground', href: 'https://cake.lenovo.com/datavis/', external: true },
-  { label: 'Cake& blog', href: '/resources/whats-new' },
+  { label: 'hello pc data visualization playground', href: 'https://cake.lenovo.com/datavis/', external: true },
+  { label: 'hello pc blog', href: '/resources/whats-new' },
 ];
 
 const goWhatsNew = () => {
@@ -518,21 +542,23 @@ const HomePage = () => (
       </Hero>
 
       <Why>
-        <SectionTitle>Why build with Cake?</SectionTitle>
+        <SectionTitle>
+          Why build with <BrandName />?
+        </SectionTitle>
         <CardGrid>
           {FEATURES.map((f) => (
             <Card key={f.title} elevation="low">
               <FeatureInner>
                 <FeatureTitle>{f.title}</FeatureTitle>
                 <FeatureSubtitle>{f.subtitle}</FeatureSubtitle>
-                <FeatureBody>{f.body}</FeatureBody>
+                <FeatureBody>{withBrand(f.body)}</FeatureBody>
               </FeatureInner>
             </Card>
           ))}
         </CardGrid>
       </Why>
 
-      <Showcase aria-label="Cake& in light and dark modes">
+      <Showcase aria-label="hello pc in light and dark modes">
         <ShowcaseFrame>
           <img src={winCanvasLight} alt="Lenovo Application in light mode — About screen" />
         </ShowcaseFrame>
@@ -546,9 +572,11 @@ const HomePage = () => (
           <QuickTitle>Quicklinks</QuickTitle>
 
           <ToastBar>
-            <ToastIcon src={iconCake} alt="" />
+            <ToastIcon src={iconHellopc} alt="" />
             <ToastCopy>
-              <p className="meta">See what&apos;s new with Cake&amp;</p>
+              <p className="meta">
+                See what&apos;s new with <BrandName />
+              </p>
               <p className="title">New AI guidelines added</p>
             </ToastCopy>
             <ToastActions>
@@ -570,12 +598,12 @@ const HomePage = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {link.label}
+                  <span>{withBrand(link.label)}</span>
                   <ExtIcon aria-hidden />
                 </OutlineAnchor>
               ) : (
                 <OutlineRouterLink key={link.label} to={link.href}>
-                  {link.label}
+                  <span>{withBrand(link.label)}</span>
                   <ExtIcon aria-hidden />
                 </OutlineRouterLink>
               ),

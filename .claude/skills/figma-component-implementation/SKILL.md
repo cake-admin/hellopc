@@ -1,7 +1,7 @@
 ---
 name: figma-component-implementation
 description: >
-  Implement a cake& design-system component from its Figma spec into Storybook
+  Implement a hello pc design-system component from its Figma spec into Storybook
   — the full devkit workflow: per-component Figma audit via the Figma MCP,
   token extraction + verification, Radix-wrapped implementation styled with
   CSS custom properties, stories/docs, play tests + a11y, and verification.
@@ -11,7 +11,7 @@ description: >
   skill (MCP mechanics).
 ---
 
-# cake& component implementation from Figma
+# hello pc component implementation from Figma
 
 The end-to-end recipe for turning a Figma component into a shipped, documented
 Storybook component. Work through the phases **in order** — the audit phase is
@@ -57,7 +57,7 @@ first). Produce the audit before writing any file:
 - **Accessibility expectations** — role, keyboard, required labels.
 - **Radix mapping** — which primitive owns behavior (see table below).
 - **Reuse map** — before proposing any new markup, scan the design for parts
-  that are **already-built cake& Elements or Components**, and list them.
+  that are **already-built hello pc Elements or Components**, and list them.
   Figma composite/nested components almost always contain existing pieces:
   a field's label row is `Elements/InputLabel`, its assistive line is
   `Elements/HelperString`, an inline action is `Button`/`IconButton`, a rule
@@ -80,7 +80,7 @@ first). Produce the audit before writing any file:
   Verify by rendering the variant with `get_screenshot` (small
   `maxDimension`), downloading the PNG, and **pixel-sampling** it
   (PowerShell: `System.Drawing.Bitmap.GetPixel`).
-- **Verify every extracted hex against `src/cakeand/tokens/tokens.json`**
+- **Verify every extracted hex against `src/hellopc/tokens/tokens.json`**
   with a small node script before trusting a token mapping. A color that
   matches no token is a finding to raise, not a value to hardcode.
 - **Figma stroke alignment doesn't survive the CSS conversion** — when a
@@ -109,11 +109,11 @@ Inspect the existing package structure and list the exact files to create or
 update. Conventions:
 
 - Component family folders: related components share one folder and one
-  Storybook sidebar folder (`src/cakeand/components/Button/` holds
+  Storybook sidebar folder (`src/hellopc/components/Button/` holds
   `Button.tsx` + `IconButton.tsx`; titles `Components/Button/Button` and
   `Components/Button/Icon Button`).
 - Reusable form elements (pieces composed by field components — e.g.
-  InputLabel, HelperString) live in `src/cakeand/components/Elements/` and
+  InputLabel, HelperString) live in `src/hellopc/components/Elements/` and
   title under the top-level `Elements/` sidebar section (sorted before
   Components in `.storybook/preview.tsx`).
 - Every folder has an `index.ts` barrel exporting components + prop types.
@@ -125,15 +125,15 @@ update. Conventions:
    `var(--color-<group>-<token>)`, `var(--space-025…-1000)`,
    `var(--radius-50…-1000)`, `var(--stroke-100…-600)`, `var(--type-*)`,
    `var(--elevation-*)` — consumed inside styled-components. The variables are
-   generated from `tokens.json` by `npm run build:cakeand-vars` →
-   `src/cakeand/tokens/cake-vars.css` (imported by `CakeThemeProvider`; modes
+   generated from `tokens.json` by `npm run build:hellopc-vars` →
+   `src/hellopc/tokens/hellopc-vars.css` (imported by `CakeThemeProvider`; modes
    scoped by `[data-theme]`). Var names mirror Figma 1:1:
    `&color/primary/primaryHover` ⇄ `--color-primary-primary-hover`,
    `Spacing/Small/space-100` ⇄ `--space-100`, `Border/Radius/radius-1000` ⇄
    `--radius-1000` (999px pill), `Border/Stroke/stroke-300` ⇄ `--stroke-300`.
    Sources: colors from `& theme.a/*.tokens.json`, spacing/radius/stroke from
    `& spacing/Value.tokens.json`. After token changes run
-   `npm run build:cakeand-tokens` then `npm run build:cakeand-vars`.
+   `npm run build:hellopc-tokens` then `npm run build:hellopc-vars`.
 2. **No hardcoded** colors, spacing, radius, stroke/border widths,
    typography, shadows, or icon sizes. The only allowed raw px are geometry
    intrinsic to the component's spec (e.g. Switch's 38×24 track, IconButton's
@@ -151,14 +151,14 @@ update. Conventions:
 4. **Figma variants map to typed React props** with rich JSDoc + `@default`
    (react-docgen feeds the docs props table).
 5. **Icons**: `lucide-react` is the **interim** icon package — a dedicated
-   cake& icon set is coming. Icons must inherit color via `currentColor` and
+   hello pc icon set is coming. Icons must inherit color via `currentColor` and
    size via the component's icon slot (never per-icon color/size props), so
    the future swap is a drop-in.
 6. **Fonts**: Rookery New only, via `fonts.css` + the typography tokens
    (`--type-size-*`, `--font-weight-*` or the theme presets). Never raw
    font-family/size literals.
 7. **Compose from what's already built — never rebuild it.** If the Reuse map
-   (Phase B) found an existing cake& Element or Component that covers a part
+   (Phase B) found an existing hello pc Element or Component that covers a part
    of the design, **import and render it**; do not re-create its markup,
    styles, or a11y. This is mandatory, not optional:
    - Fields compose the form Elements — `TextInput` renders `InputLabel`

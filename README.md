@@ -1,9 +1,9 @@
-# cake&
+# hello pc
 
 Lenovo's design system: React components, design tokens, and three themes
 (Light A, Dark A, Windows HCT). Every interactive component wraps a
 [Radix](https://www.radix-ui.com/primitives) primitive, so behaviour and
-accessibility come from Radix and cake& owns the visuals. Every value resolves
+accessibility come from Radix and hello pc owns the visuals. Every value resolves
 from a design token — nothing is hardcoded.
 
 **Live site:** <https://cake.lenovo.com/>  
@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-You get a Vite + React app with cake& already wired (theme, fonts, components).
+You get a Vite + React app with hello pc already wired (theme, fonts, components).
 **No GitHub token and no `.npmrc`.** If the first command fails, see
 [Getting Started](https://cake.lenovo.com/storybook/?path=/docs/getting-started--docs)
 for backups (`giget`, or copy the `starter/` folder from a clone).
@@ -54,7 +54,7 @@ You are not forking this whole repository.
 
 </details>
 
-### Adding cake& to an existing app
+### Adding hello pc to an existing app
 
 If a developer already has a React project, install the **release file**
 (`.tgz`) from [v4.2.4](https://github.com/cake-admin/cakev2/releases#release-v4.2.4)
@@ -67,7 +67,7 @@ npm install react react-dom styled-components radix-ui lucide-react
 
 Then wrap the app **once** in
 `CakeProvider`. The starter already has the three easy-to-miss pieces
-(`styled-components` dedupe, the cake& CSS import, and `data-theme` on
+(`styled-components` dedupe, the hello pc CSS import, and `data-theme` on
 `<html>`). Copy those from `starter/` or follow
 [Getting Started](https://cake.lenovo.com/storybook/?path=/docs/getting-started--docs).
 
@@ -87,24 +87,24 @@ up in this install **only after someone publishes a package version**.
 ### Prototyping with AI agents
 
 [`cake-admin/ai-lab`](https://github.com/cake-admin/ai-lab) is a Lenovo-internal
-workspace (Cursor / Claude Code skills plus cake&). Clone it and ask for a
-prototype; it installs cake& for you. Access is restricted — ask the cake&
+workspace (Cursor / Claude Code skills plus hello pc). Clone it and ask for a
+prototype; it installs hello pc for you. Access is restricted — ask the hello pc
 team.
 
 ---
 
 ## Updating
 
-A new cake& version does **not** appear in your prototype by itself. Each
+A new hello pc version does **not** appear in your prototype by itself. Each
 project pins one exact version:
 
 | Your project | What to run |
 |---|---|
-| Started from the starter | `npm run cake:update` |
+| Started from the starter | `npm run hellopc:update` |
 | A prototype inside ai-lab | `node scripts/install-cake.mjs prototypes/<name>` |
 | Your own app | `npm install` with the newer release's `.tgz` URL |
 
-`npm outdated` will not notice a new cake& — this package is not installed from
+`npm outdated` will not notice a new hello pc — this package is not installed from
 the public npm registry. Start from the current kit,
 [v4.2.4](https://github.com/cake-admin/cakev2/releases#release-v4.2.4), or run
 the update command now and then.
@@ -118,16 +118,16 @@ installs would eventually fail with a hard-to-debug integrity error.
 
 | Path | What |
 |------|------|
-| `src/cakeand/` | The design system — the only thing that ships in the package |
-| `src/cakeand/foundations/` | Storybook docs (Introduction, Foundations, Cake& Maintenance) |
+| `src/hellopc/` | The design system — the only thing that ships in the package |
+| `src/hellopc/foundations/` | Storybook docs (Introduction, Foundations, hello pc Maintenance) |
 | `src/pages/` | Marketing site (Home, Resources, foundations/components demos) |
 | `starter/` | The template designers scaffold from |
 | `scripts/` | Token generation, package build, agent-context generation |
-| `chart-tool-echarts/` | Cake& data visualization playground (Vite app at `/datavis`) |
-| `.storybook/` | Storybook config for the cake& component library |
+| `chart-tool-echarts/` | hello pc data visualization playground (Vite app at `/datavis`) |
+| `.storybook/` | Storybook config for the hello pc component library |
 
 Building components and publishing versions is the design-system team's
-workflow, documented in Storybook under **Cake& Maintenance** — *Building a
+workflow, documented in Storybook under **hello pc Maintenance** — *Building a
 Component* and *Shipping a Component*. Agent conventions live in
 [AGENTS.md](AGENTS.md).
 
@@ -172,6 +172,6 @@ npm run nest:datavis
 ## License
 
 Internal Lenovo design system. The published package declares `UNLICENSED`.
-Rookery New is an open-source but **protected** font — it ships with cake& for
+Rookery New is an open-source but **protected** font — it ships with hello pc for
 Lenovo use and is not licensed for unrestricted redistribution outside that
 context.

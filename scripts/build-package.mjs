@@ -42,7 +42,7 @@ const run = (args, label) => {
 };
 
 // 1. Tokens first — the CSS custom properties everything reads.
-run([path.join(root, 'scripts', 'build-cakeand-css-vars.mjs')], 'building token CSS vars');
+run([path.join(root, 'scripts', 'build-hellopc-css-vars.mjs')], 'building token CSS vars');
 
 // 2. Library build.
 run(
@@ -54,7 +54,7 @@ run(
 //     react-scripts pins the root install to TypeScript 4.x (which cannot even
 //     parse this repo's "moduleResolution": "bundler" tsconfig), so upgrading it
 //     would put the cake.lenovo.com site build at risk. tsc exits non-zero on the
-//     handful of pre-existing type errors elsewhere in src/cakeand, but those do
+//     handful of pre-existing type errors elsewhere in src/hellopc, but those do
 //     not block declaration emit — so this step warns instead of failing, and we
 //     assert on the emitted entry point below.
 process.stdout.write('\n▸ emitting type declarations (isolated TypeScript 5)\n');
@@ -100,7 +100,7 @@ if (cssEmitted) {
 //    Stories stay outside Vite's entry so consumers cannot accidentally import
 //    Storybook into their app. Context markdown is the same generator the
 //    starter uses (stamped to this package version).
-const componentsRoot = path.join(root, 'src', 'cakeand', 'components');
+const componentsRoot = path.join(root, 'src', 'hellopc', 'components');
 const storiesOut = path.join(outDir, 'stories');
 
 const copyStories = (dir, rel = '') => {
@@ -165,7 +165,7 @@ if (!rootPkg.license) {
 const pkg = {
   name: PACKAGE_NAME,
   version,
-  description: 'cake& design system — React components, tokens, and theming.',
+  description: 'hello pc design system — React components, tokens, and theming.',
   homepage: rootPkg.homepage,
   license: rootPkg.license ?? 'UNLICENSED',
   private: false,

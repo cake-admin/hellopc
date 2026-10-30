@@ -1,9 +1,9 @@
-# Cake& data visualization playground
+# hello pc data visualization playground
 
 An internal web app for designers to pick and customize charts, preview them
 live, and hand them off to **Figma as clean, editable SVG**. Built on
 [Apache ECharts](https://echarts.apache.org/) and **100% token-driven** — every
-color traces to a cake& design token, and light/dark both come from the same
+color traces to a hello pc design token, and light/dark both come from the same
 token export.
 
 **Live:** https://cake.lenovo.com/datavis (deployed from `main` by the Pages
@@ -39,7 +39,7 @@ system's Figma DTCG exports at the repo root — it is **never hand-edited**:
   structural tokens (surfaces, text, axis/grid, tooltip, semantic roles).
 - `../& color hero/color.tokens.json` (named tones like `indigo/60`,
   mode-independent) → the fixed palettes:
-  - **categorical** — 12 cake& hero tones, identical in light & dark (both pass contrast)
+  - **categorical** — 12 hello pc hero tones, identical in light & dark (both pass contrast)
   - **sequential** — indigo single-hue ramp (80→30)
   - **semantic scale** — red→green (bad→good)
   - **diverging** — jade↔violet, two-ended

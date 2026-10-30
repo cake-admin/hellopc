@@ -22,7 +22,7 @@ Also accepts all `React.ComponentPropsWithoutRef<typeof RadixTabs.Trigger>` prop
 ```tsx
 import {
   HorizontalTabs, HorizontalTabsList, HorizontalTabsContent, HorizontalTabItem,
-} from '@/cakeand/components/HorizontalTabs';
+} from '@/hellopc/components/HorizontalTabs';
 
 <HorizontalTabs defaultValue="home">
   <HorizontalTabsList aria-label="Sections">
@@ -60,5 +60,5 @@ import {
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: HorizontalTabs.
-- Source: `src/cakeand/components/HorizontalTabs/`
+- Source: `src/hellopc/components/HorizontalTabs/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-horizontal-tabs-horizontal-tab-item--docs>

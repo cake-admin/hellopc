@@ -1,5 +1,5 @@
 {
-  "name": "cake-prototype",
+  "name": "hellopc-prototype",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "cake:update": "node scripts/update-cake.mjs"
+    "hellopc:update": "node scripts/update-hellopc.mjs"
   },
   "dependencies": {
     "@cake-admin/cakeand": "https://github.com/cake-admin/cakev2/releases/download/v4.2.4/cake-admin-cakeand-4.2.4.tgz",

@@ -61,5 +61,5 @@ A single-select control set — the user picks exactly one option from a short, 
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Checkbox, Switch.
-- Source: `src/cakeand/components/Radio/`
+- Source: `src/hellopc/components/Radio/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-radio--docs>

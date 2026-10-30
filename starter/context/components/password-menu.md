@@ -60,5 +60,5 @@ Password Menu is static password-strength and policy feedback for an owning pass
 
 - Presentational; wraps no Radix primitive.
 - Related: Dropdown, HelperString, InputLabel.
-- Source: `src/cakeand/components/Elements/`
+- Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-password-menu--docs>

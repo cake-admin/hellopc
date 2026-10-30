@@ -23,7 +23,7 @@ import { HCT, HCT_CATEGORICAL, HCT_SEQUENTIAL } from './hctTheme';
  *   surfaces         ← surfaceCanvas/Card
  *   focus ring       ← referenceFocus       (Button)
  *
- * `hct` overlays cake& Windows High-Contrast (`win hct`) surfaces + series
+ * `hct` overlays hello pc Windows High-Contrast (`win hct`) surfaces + series
  * colors — chart tokens.json has no HCT channel of its own.
  */
 export function buildChartTheme(tokens: RawTokens, mode: Mode): ChartTheme {
@@ -62,7 +62,7 @@ export function buildChartTheme(tokens: RawTokens, mode: Mode): ChartTheme {
     // Crisp data-viz entrance: strong ease-out curve (Emil Kowalski's recommended
     // cubic-bezier(0.23,1,0.32,1)), short duration, small stagger.
     motion: { duration: 0.4, easing: [0.23, 1, 0.32, 1], stagger: 0.05 },
-    // Categorical = the fixed cake& "hero" palette (identical in light & dark);
+    // Categorical = the fixed hello pc "hero" palette (identical in light & dark);
     // primary/secondary single-token modes still derive from the base tokens.
     color: buildColorSystem(
       t('referencePrimary'),
@@ -78,7 +78,7 @@ export function buildChartTheme(tokens: RawTokens, mode: Mode): ChartTheme {
   };
 }
 
-/** High-contrast chart theme from cake& `win hct` token values. */
+/** High-contrast chart theme from hello pc `win hct` token values. */
 function buildHctChartTheme(): ChartTheme {
   return {
     mode: 'hct',

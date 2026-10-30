@@ -1,8 +1,8 @@
 import { create } from 'storybook/theming/create';
 
 /**
- * Storybook manager themes mapped 1:1 to cake& light.a / dark.a / win hct.
- * Kept as plain hex (Storybook theming has no access to cake-vars.css).
+ * Storybook manager themes mapped 1:1 to hello pc light.a / dark.a / win hct.
+ * Kept as plain hex (Storybook theming has no access to hellopc-vars.css).
  */
 
 export type CakeManagerThemeKey = 'light' | 'dark' | 'hct';
@@ -13,7 +13,7 @@ const FONT_CODE =
   'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
 
 const BRAND = {
-  brandTitle: 'cake<span class="cake-brand-amp">&amp;</span>',
+  brandTitle: 'hello <span class="cake-brand-amp">pc</span>',
   brandUrl: 'https://cake.lenovo.com',
   brandTarget: '_self' as const,
 };

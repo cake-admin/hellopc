@@ -49,5 +49,5 @@ Also accepts all `Omit<React.ComponentPropsWithoutRef<typeof RadixSeparator.Root
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Card.
-- Source: `src/cakeand/components/Elements/`
+- Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-divider--docs>

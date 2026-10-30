@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useState } from 'react';
 import styled from 'styled-components';
+import { withBrand } from '../../components/BrandName';
 import { Toast as RadixToast } from 'radix-ui';
 import {
   ArrowRight,
@@ -8,55 +9,55 @@ import {
   Settings,
   ShoppingBag,
 } from 'lucide-react';
-import { Accordion, AccordionItem } from '../../cakeand/components/Accordion';
-import { Avatar } from '../../cakeand/components/Avatar';
-import { Badge } from '../../cakeand/components/Badge';
-import { Breadcrumb } from '../../cakeand/components/Breadcrumb';
-import { Button } from '../../cakeand/components/Button';
-import { Card, SimpleCard } from '../../cakeand/components/Card';
-import { Checkbox } from '../../cakeand/components/Checkbox';
-import { Chip } from '../../cakeand/components/Chip';
-import { ContentSwitcher } from '../../cakeand/components/ContentSwitcher';
-import { Counter } from '../../cakeand/components/Counter';
-import { DateInput } from '../../cakeand/components/DateInput';
-import { Dropdown } from '../../cakeand/components/Dropdown';
-import { Scrollbar } from '../../cakeand/components/Elements';
-import { FileUpload } from '../../cakeand/components/FileUpload';
+import { Accordion, AccordionItem } from '../../hellopc/components/Accordion';
+import { Avatar } from '../../hellopc/components/Avatar';
+import { Badge } from '../../hellopc/components/Badge';
+import { Breadcrumb } from '../../hellopc/components/Breadcrumb';
+import { Button } from '../../hellopc/components/Button';
+import { Card, SimpleCard } from '../../hellopc/components/Card';
+import { Checkbox } from '../../hellopc/components/Checkbox';
+import { Chip } from '../../hellopc/components/Chip';
+import { ContentSwitcher } from '../../hellopc/components/ContentSwitcher';
+import { Counter } from '../../hellopc/components/Counter';
+import { DateInput } from '../../hellopc/components/DateInput';
+import { Dropdown } from '../../hellopc/components/Dropdown';
+import { Scrollbar } from '../../hellopc/components/Elements';
+import { FileUpload } from '../../hellopc/components/FileUpload';
 import {
   HorizontalTabs,
   HorizontalTabsContent,
   HorizontalTabsList,
-} from '../../cakeand/components/HorizontalTabs';
-import { HorizontalTabItem } from '../../cakeand/components/HorizontalTabs/HorizontalTabItem';
-import { MenuContainer, MenuItem } from '../../cakeand/components/Menu';
-import { Modal, ModalContent, ModalFooter } from '../../cakeand/components/Modal';
-import { Notification } from '../../cakeand/components/Notification';
-import { NotificationPanel } from '../../cakeand/components/NotificationPanel';
-import { NumberInput } from '../../cakeand/components/NumberInput';
-import { Pagination } from '../../cakeand/components/Pagination';
-import { PasswordInput } from '../../cakeand/components/PasswordInput';
-import { ProgressBar, Spinner } from '../../cakeand/components/Progress Indicators';
-import { Radio, RadioGroup } from '../../cakeand/components/Radio';
+} from '../../hellopc/components/HorizontalTabs';
+import { HorizontalTabItem } from '../../hellopc/components/HorizontalTabs/HorizontalTabItem';
+import { MenuContainer, MenuItem } from '../../hellopc/components/Menu';
+import { Modal, ModalContent, ModalFooter } from '../../hellopc/components/Modal';
+import { Notification } from '../../hellopc/components/Notification';
+import { NotificationPanel } from '../../hellopc/components/NotificationPanel';
+import { NumberInput } from '../../hellopc/components/NumberInput';
+import { Pagination } from '../../hellopc/components/Pagination';
+import { PasswordInput } from '../../hellopc/components/PasswordInput';
+import { ProgressBar, Spinner } from '../../hellopc/components/Progress Indicators';
+import { Radio, RadioGroup } from '../../hellopc/components/Radio';
 import {
   Sidebar,
   SidebarContent,
   SidebarItem,
   SidebarList,
-} from '../../cakeand/components/Sidebar';
-import { RangeSlider, Slider } from '../../cakeand/components/Slider';
-import { Stepper } from '../../cakeand/components/Stepper';
-import { Switch } from '../../cakeand/components/Switch';
+} from '../../hellopc/components/Sidebar';
+import { RangeSlider, Slider } from '../../hellopc/components/Slider';
+import { Stepper } from '../../hellopc/components/Stepper';
+import { Switch } from '../../hellopc/components/Switch';
 import {
   DataCell,
   DataRow,
   HeaderCell,
   HeaderRow,
   Table,
-} from '../../cakeand/components/Table';
-import { TextInput } from '../../cakeand/components/TextInput';
-import { TimeInput } from '../../cakeand/components/TimeInput';
-import { Toast } from '../../cakeand/components/Toast';
-import { RichTooltip, SimpleTooltip } from '../../cakeand/components/Tooltip';
+} from '../../hellopc/components/Table';
+import { TextInput } from '../../hellopc/components/TextInput';
+import { TimeInput } from '../../hellopc/components/TimeInput';
+import { Toast } from '../../hellopc/components/Toast';
+import { RichTooltip, SimpleTooltip } from '../../hellopc/components/Tooltip';
 import {
   GroupBlock,
   GroupLabel,
@@ -355,9 +356,9 @@ export const FileUploaderPreview = () => (
     <GroupBlock>
       <GroupLabel>Document tile</GroupLabel>
       <PreviewNote>
-        A dedicated document tile is not in the cake&amp; package yet. Use File
-        upload for image dropzones, or compose a Card for file summaries until
-        that pattern ships.
+        {withBrand(
+          'A dedicated document tile is not in the hello pc package yet. Use File upload for image dropzones, or compose a Card for file summaries until that pattern ships.',
+        )}
       </PreviewNote>
     </GroupBlock>
   </PreviewPanel>
@@ -498,7 +499,9 @@ export const ModalsSkrimPreview = () => {
           }
         >
           <ModalContent
-            description="The overlay uses the cake& scrim token with blur so the page stays visible but out of focus."
+            description={withBrand(
+              'The overlay uses the hello pc scrim token with blur so the page stays visible but out of focus.',
+            )}
             descriptionAsDialogDescription={false}
           />
         </Modal>
@@ -562,10 +565,11 @@ export const AccordionsPreview = () => (
   <PreviewPanel>
     <PreviewStack $maxWidth="36rem">
       <Accordion type="single" collapsible defaultValue="a">
-        <AccordionItem value="a" title="What is cake&?">
+        <AccordionItem value="a" title={withBrand('What is hello pc?')}>
           <PreviewNote>
-            cake& is Lenovo&apos;s design system — tokens, components, and
-            guidance for consistent product UI.
+            {withBrand(
+              "hello pc is Lenovo's design system — tokens, components, and guidance for consistent product UI.",
+            )}
           </PreviewNote>
         </AccordionItem>
         <AccordionItem value="b" title="When should I use an accordion?">
@@ -762,7 +766,7 @@ const DATAVIZ_WORKFLOWS = [
   {
     title: 'Developers',
     body:
-      'Copy a themed ECharts option (and reusable theme object) from the playground so production charts match cake& tokens without hand-picking hex values.',
+      'Copy a themed ECharts option (and reusable theme object) from the playground so production charts match hello pc tokens without hand-picking hex values.',
   },
   {
     title: 'Presentations & deliverables',
@@ -780,7 +784,7 @@ const DATAVIZ_WORKFLOWS = [
 const DATAVIZ_COLOR_THEMES = [
   {
     label: 'Categorical',
-    hint: 'Distinct cake& tones — identical in light and dark.',
+    hint: 'Distinct hello pc tones — identical in light and dark.',
     recommended:
       'Bar / Column, Line, Area, Pie / Donut, Scatter, Jitter / Strip, Radar, Treemap, Funnel, Radial bar',
     notRecommended:
@@ -830,8 +834,9 @@ export const DataVizPreview = () => (
   <>
     <PreviewPanel>
       <PreviewNote>
-        Data visualization is not a cake&amp; React component. Use the Cake&amp;
-        data visualization playground for themed ECharts and Figma-ready SVGs.
+        {withBrand(
+          'Data visualization is not a hello pc React component. Use the hello pc data visualization playground for themed ECharts and Figma-ready SVGs.',
+        )}
       </PreviewNote>
     </PreviewPanel>
 
@@ -840,7 +845,7 @@ export const DataVizPreview = () => (
       <DocCardGrid>
         {DATAVIZ_WORKFLOWS.map((workflow) => (
           <DocCard key={workflow.title} title={workflow.title}>
-            <DocCardBody>{workflow.body}</DocCardBody>
+            <DocCardBody>{withBrand(workflow.body)}</DocCardBody>
           </DocCard>
         ))}
       </DocCardGrid>
@@ -865,7 +870,7 @@ export const DataVizPreview = () => (
             <GroupBlock>
               <GroupLabel>{theme.label}</GroupLabel>
               <ThemeBlurb>
-                <ThemeHint>{theme.hint}</ThemeHint>
+                <ThemeHint>{withBrand(theme.hint)}</ThemeHint>
                 <ThemeMetaLine>
                   <ThemeMetaStrong>Recommended — </ThemeMetaStrong>
                   {theme.recommended}

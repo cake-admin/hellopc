@@ -73,5 +73,5 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLElement>, 'title'>` props.
 
 - Presentational; wraps no Radix primitive.
 - Related: Button, IconButton, ModalIcon, Toast.
-- Source: `src/cakeand/components/Notification/`
+- Source: `src/hellopc/components/Notification/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-notification--docs>

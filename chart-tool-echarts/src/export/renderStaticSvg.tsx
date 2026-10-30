@@ -102,7 +102,7 @@ export function renderChartSvg(args: ExportArgs): string {
   chart.dispose();
 
   const title = args.title ?? def.label;
-  const desc = args.description ?? `${def.label} — exported from Cake& data visualization playground (ECharts · ${args.mode} mode)`;
+  const desc = args.description ?? `${def.label} — exported from hello pc data visualization playground (ECharts · ${args.mode} mode)`;
   svg = svg.replace(
     /<svg([^>]*)>/,
     (_m, attrs) => `<svg${attrs}><title>${escapeXml(title)}</title><desc>${escapeXml(desc)}</desc>`,

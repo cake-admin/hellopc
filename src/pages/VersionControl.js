@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ArrowLeft } from 'lucide-react';
-import { Card } from '../cakeand/components/Card';
-import { Badge } from '../cakeand/components/Badge';
+import { Card } from '../hellopc/components/Card';
+import { Badge } from '../hellopc/components/Badge';
 import { pageGutterX } from '../styles/pageChrome';
 import { StickyWallpaper } from './HomePage';
+import { withBrand } from '../components/BrandName';
 import heroBg from '../assets/home/hero-bg.png';
 
 const ROOKERY = "'Rookery New', Rookery, var(--font-family)";
@@ -279,19 +280,19 @@ const StrategyGrid = styled.div`
   gap: var(--space-400);
 `;
 
-/** Matches WhatsNew Cake& 1.0.0 / major Aug 13 entry. */
+/** Matches WhatsNew hello pc 1.0.0 / major Aug 13 entry. */
 const CURRENT_RELEASE = {
   version: '1.0.0',
   date: 'August 13, 2026',
-  title: 'Cake& 1.0.0',
+  title: 'hello pc 1.0.0',
   body: [
-    "We're excited to introduce Cake& 1.0.0.",
-    "This release marks the beginning of a new chapter for Lenovo design. Built together by Lenovo and Motorola, Cake& unifies our design languages into a single PC software system that's modern, accessible, and ready for the future.",
+    "We're excited to introduce hello pc 1.0.0.",
+    "This release marks the beginning of a new chapter for Lenovo design. Built together by Lenovo and Motorola, hello pc unifies our design languages into a single PC software system that's modern, accessible, and ready for the future.",
     'Our goal is simple: help teams design, build, and ship with greater consistency and confidence. This release includes our new Figma library, React component library, Storybook documentation, design foundations, and developer resources—all working from the same source of truth.',
-    "This is just the beginning. We'll continue evolving Cake& alongside our products and the teams who build them.",
+    "This is just the beginning. We'll continue evolving hello pc alongside our products and the teams who build them.",
   ],
   changes: [
-    { type: 'Added', text: 'Public Cake& Figma community library' },
+    { type: 'Added', text: 'Public hello pc Figma community library' },
     { type: 'Added', text: 'React component library on Radix with Storybook docs' },
     { type: 'Added', text: 'Design foundations — color, type, spacing, elevation, surfaces' },
     { type: 'Added', text: 'AI styling guidance for overview, gradient, and logo & icon' },
@@ -301,11 +302,11 @@ const CURRENT_RELEASE = {
 
 const PRIOR_RELEASES = [
   {
-    version: 'Cake Web V2',
+    version: 'hello pc Web V2',
     date: 'October 8, 2025',
     description: 'Modern responsive design system built with React',
     changes: [
-      { type: 'Added', text: 'Cake Web V2 site and documentation' },
+      { type: 'Added', text: 'hello pc Web V2 site and documentation' },
       { type: 'Added', text: 'WCAG 2.2 AA accessibility baseline' },
       { type: 'Added', text: 'Standardized design tokens and enhanced components' },
     ],
@@ -341,23 +342,24 @@ const VersionControl = () => (
 
         <Intro>
           <IntroText>
-            Track the evolution of Cake&amp; through version history and changelog
-            entries. We follow semantic versioning so teams know what changed and
-            how to adopt it.
+            {withBrand(
+              'Track the evolution of hello pc through version history and changelog entries. We follow semantic versioning so teams know what changed and how to adopt it.',
+            )}
           </IntroText>
         </Intro>
 
         <Section>
           <SectionTitle>Current version</SectionTitle>
           <SectionCopy>
-            We&apos;re currently on Cake&amp; {CURRENT_RELEASE.version}, our first
-            major unified release across Figma, React, Storybook, and foundations.
+            {withBrand(
+              `We're currently on hello pc ${CURRENT_RELEASE.version}, our first major unified release across Figma, React, Storybook, and foundations.`,
+            )}
           </SectionCopy>
 
           <Card elevation="low">
             <CardInner>
               <TitleBlock>
-                <CardTitle>{CURRENT_RELEASE.title}</CardTitle>
+                <CardTitle>{withBrand(CURRENT_RELEASE.title)}</CardTitle>
                 <BadgeRow>
                   <Badge color="secondary" tone="subtle" dot={false}>
                     {CURRENT_RELEASE.date}
@@ -372,7 +374,7 @@ const VersionControl = () => (
               </TitleBlock>
               <CardBody>
                 {CURRENT_RELEASE.body.map((para) => (
-                  <p key={para.slice(0, 40)}>{para}</p>
+                  <p key={para.slice(0, 40)}>{withBrand(para)}</p>
                 ))}
               </CardBody>
             </CardInner>
@@ -382,8 +384,9 @@ const VersionControl = () => (
         <Section>
           <SectionTitle>Changelog</SectionTitle>
           <SectionCopy>
-            A history of releases, improvements, and new features across Cake&amp;
-            and earlier Cake Web milestones.
+            {withBrand(
+              'A history of releases, improvements, and new features across hello pc and earlier hello pc Web milestones.',
+            )}
           </SectionCopy>
 
           <VersionTimeline>
@@ -406,7 +409,7 @@ const VersionControl = () => (
               <ChangeList>
                 {CURRENT_RELEASE.changes.map((change) => (
                   <li key={change.text}>
-                    <strong>{change.type}:</strong> {change.text}
+                    <strong>{change.type}:</strong> {withBrand(change.text)}
                   </li>
                 ))}
               </ChangeList>
@@ -415,14 +418,14 @@ const VersionControl = () => (
             {PRIOR_RELEASES.map((release) => (
               <VersionEntry key={release.version}>
                 <VersionHeader>
-                  <VersionNumber>v{release.version}</VersionNumber>
+                  <VersionNumber>v{withBrand(release.version)}</VersionNumber>
                   <VersionDate>{release.date}</VersionDate>
-                  <IntroText>{release.description}</IntroText>
+                  <IntroText>{withBrand(release.description)}</IntroText>
                 </VersionHeader>
                 <ChangeList>
                   {release.changes.map((change) => (
                     <li key={change.text}>
-                      <strong>{change.type}:</strong> {change.text}
+                      <strong>{change.type}:</strong> {withBrand(change.text)}
                     </li>
                   ))}
                 </ChangeList>

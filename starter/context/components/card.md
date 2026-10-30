@@ -19,7 +19,7 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 ## Usage
 
 ```tsx
-import { Card } from '@/cakeand/components/Card';
+import { Card } from '@/hellopc/components/Card';
 
 // content brings its own padding
 <Card>
@@ -60,5 +60,5 @@ import { Card } from '@/cakeand/components/Card';
 
 - Presentational; wraps no Radix primitive.
 - Related: Badge, Modal.
-- Source: `src/cakeand/components/Card/`
+- Source: `src/hellopc/components/Card/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-card-card--docs>

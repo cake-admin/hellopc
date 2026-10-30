@@ -3,7 +3,7 @@ import { z } from 'zod';
 /**
  * Theme modes the chart system supports.
  * - `light` / `dark` map to token JSON `lightA` / `darkA`
- * - `hct` is Windows High-Contrast (cake& `win hct`) — structural tokens fall
+ * - `hct` is Windows High-Contrast (hello pc `win hct`) — structural tokens fall
  *   back to darkA, then `buildChartTheme` overlays HCT surfaces + series colors
  */
 export type Mode = 'light' | 'dark' | 'hct';

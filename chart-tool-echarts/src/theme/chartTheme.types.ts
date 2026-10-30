@@ -5,7 +5,7 @@ export type BaseKey = 'primary' | 'secondary';
 
 /**
  * Color theme for a chart:
- *  - `categorical` — fixed multi-hue cake& palette
+ *  - `categorical` — fixed multi-hue hello pc palette
  *  - `sequential` / `semantic` / `diverging` — value ramps
  *  - `primary` — one solid primary-family token (see `token`)
  *  - `secondary` — wireframe: multiple secondary greys (+ patterns after 6)

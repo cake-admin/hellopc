@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import TopNav from './components/TopNav';
+import { BrandName, BRAND_PC_LIGHT } from './components/BrandName';
 import SectionSubNav from './components/SectionSubNav';
 import LenovoLogo from './components/LenovoLogo';
 import { SiteThemeProvider } from './theme/SiteThemeProvider';
@@ -30,6 +31,7 @@ const GlobalScroll = createGlobalStyle`
     max-width: 100%;
     overflow-x: clip;
   }
+
 `;
 
 const Shell = styled.div`
@@ -71,6 +73,7 @@ const Footer = styled.footer`
   box-sizing: border-box;
   background: #000000;
   color: #ffffff;
+  --brand-pc: ${BRAND_PC_LIGHT};
   text-align: center;
   font-size: var(--type-size-caption);
   font-family: var(--font-family);
@@ -112,6 +115,10 @@ const AppShell = () => {
             element={<Navigate to="/resources" replace />}
           />
           <Route
+            path="/get-started/about"
+            element={<Navigate to="/resources" replace />}
+          />
+          <Route
             path="/get-started/figma-libraries"
             element={<Navigate to="/resources" replace />}
           />
@@ -142,7 +149,9 @@ const AppShell = () => {
           />
         </Routes>
       </Main>
-      <Footer>© 2026 Cake&amp; Design System. All rights reserved.</Footer>
+      <Footer>
+        <span>© 2026 <BrandName /> design system. All rights reserved.</span>
+      </Footer>
     </Shell>
   );
 };

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Renders a cake&-consuming app in a real browser and asserts the package
+ * Renders a hello pc-consuming app in a real browser and asserts the package
  * actually works — not merely that it compiled.
  *
  *   node scripts/render-check.mjs http://localhost:5173
@@ -74,7 +74,7 @@ if (button) {
   const transparent = ['rgba(0, 0, 0, 0)', 'transparent', ''];
   check('button has a real background', !transparent.includes(button.background), button.background);
   check('button has a non-zero radius', button.radius !== '0px', button.radius);
-  check('button inherits the cake& font stack', /Rookery/i.test(button.font), button.font);
+  check('button inherits the hello pc font stack', /Rookery/i.test(button.font), button.font);
 }
 
 // 3. The Rookery woff2 resolved. Guards the `exports` map and the font pipeline:

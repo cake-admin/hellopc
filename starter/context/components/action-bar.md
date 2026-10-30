@@ -24,9 +24,9 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'>` props.
 ## Usage
 
 ```tsx
-import { ActionBar } from '@/cakeand/components/Table';
-import { IconButton, Button } from '@/cakeand/components/Button';
-import { TextInput } from '@/cakeand/components/TextInput';
+import { ActionBar } from '@/hellopc/components/Table';
+import { IconButton, Button } from '@/hellopc/components/Button';
+import { TextInput } from '@/hellopc/components/TextInput';
 
 // idle: refresh + a collapsed search button
 <ActionBar
@@ -78,5 +78,5 @@ import { TextInput } from '@/cakeand/components/TextInput';
 
 - Presentational; wraps no Radix primitive.
 - Related: Button, IconButton, Checkbox, Pagination, Table, TextInput.
-- Source: `src/cakeand/components/Table/`
+- Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-action-bar--docs>

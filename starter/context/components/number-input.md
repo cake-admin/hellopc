@@ -68,5 +68,5 @@ Also accepts all `Omit<
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, TextInput.
-- Source: `src/cakeand/components/NumberInput/`
+- Source: `src/hellopc/components/NumberInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-number-input--docs>

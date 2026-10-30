@@ -77,4 +77,4 @@ if (next !== src) {
   process.stdout.write('starter/README.md — install URL updated\n');
 }
 
-process.stdout.write(`\n✓ Starter now targets cake& ${version}\n`);
+process.stdout.write(`\n✓ Starter now targets hello pc ${version}\n`);

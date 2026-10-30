@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { AudioLines, ExternalLink, Github, Package } from 'lucide-react';
-import { Card } from '../cakeand/components/Card';
-import { Button } from '../cakeand/components/Button';
-import { Badge } from '../cakeand/components/Badge';
+import { Card } from '../hellopc/components/Card';
+import { Button } from '../hellopc/components/Button';
+import { Badge } from '../hellopc/components/Badge';
 import { STORYBOOK_PATH } from '../data/nav';
 import { pageGutterX } from '../styles/pageChrome';
 import { StickyWallpaper } from './HomePage';
+import { BrandName, withBrand } from '../components/BrandName';
 
 import heroBg from '../assets/home/hero-bg.png';
 import figmaTile from '../assets/resources/figma-tile.png';
@@ -272,10 +273,10 @@ const AccessNote = styled.p`
 const RESOURCES = [
   {
     id: 'figma',
-    title: 'Cake& Figma file',
+    title: 'hello pc Figma file',
     subtitle: 'The single source of truth for designers.',
     body:
-      'Browse every Cake& component, pattern, and style in our public community library, always up to date with the latest releases.',
+      'Browse every hello pc component, pattern, and style in our public community library, always up to date with the latest releases.',
     action: 'Open in Figma',
     href: 'https://www.figma.com/community/file/1667712364680681509/lenovo-cake-1-0',
     icon: figmaTile,
@@ -283,7 +284,7 @@ const RESOURCES = [
   },
   {
     id: 'storybook',
-    title: 'Cake& Storybook',
+    title: 'hello pc Storybook',
     subtitle: 'The single source of truth for developers.',
     body:
       'Explore interactive React components built on Radix, complete with documentation, states, and implementation guidance.',
@@ -294,17 +295,17 @@ const RESOURCES = [
   },
   {
     id: 'devkit',
-    title: 'Cake& Devkit',
+    title: 'hello pc Devkit',
     subtitle: 'The fastest way to start building.',
     body:
-      'Download the Cake& starter kit to begin prototyping immediately. Includes components, tokens, and step-by-step setup so you can get a local preview running in minutes — even if you are new to development.',
+      'Download the hello pc starter kit to begin prototyping immediately. Includes components, tokens, and step-by-step setup so you can get a local preview running in minutes — even if you are new to development.',
     action: 'Get started',
     href: `${STORYBOOK_PATH}?path=/docs/introduction--docs`,
     iconKind: 'package',
   },
   {
     id: 'dataviz',
-    title: 'Cake& data visualization playground',
+    title: 'hello pc data visualization playground',
     subtitle: 'Build charts in minutes.',
     body:
       'Copy editable SVG charts into Figma or generate themed ECharts code for production-ready data visualizations.',
@@ -315,12 +316,12 @@ const RESOURCES = [
   },
   {
     id: 'ai-labs',
-    title: 'Cake& AI Labs',
-    subtitle: 'Prototype with Cake& AI workflows.',
+    title: 'hello pc AI Labs',
+    subtitle: 'Prototype with hello pc AI workflows.',
     body:
-      'Access our AI-powered starter project with Cake-specific design skills, Storybook context, and custom rules for faster prototyping and higher-quality output.',
+      'Access our AI-powered starter project with hello pc design skills, Storybook context, and custom rules for faster prototyping and higher-quality output.',
     accessNote:
-      'Available to Lenovo employees. Contact the Cake& team to request access.',
+      'Available to Lenovo employees. Contact the hello pc team to request access.',
     action: 'View on GitHub',
     href: 'https://github.com/cake-admin/ai-lab',
     iconKind: 'github',
@@ -328,11 +329,11 @@ const RESOURCES = [
   },
   {
     id: 'sound',
-    title: 'Cake & Sound',
+    title: 'hello pc Sound',
     subtitle: 'A library of sound and audio design.',
     body:
       'Guidelines, assets, and documentation for creating consistent sound and audio experiences across Lenovo software.',
-    action: 'Open Cake& Sound',
+    action: 'Open hello pc Sound',
     href: '/sound',
     iconKind: 'waveform',
     internal: true,
@@ -400,12 +401,12 @@ const ResourceCard = ({ resource }) => {
                 Restricted access
               </Badge>
             ) : null}
-            <CardTitle>{resource.title}</CardTitle>
+            <CardTitle>{withBrand(resource.title)}</CardTitle>
           </TitleStack>
-          <CardSubtitle>{resource.subtitle}</CardSubtitle>
-          <CardBody>{resource.body}</CardBody>
+          <CardSubtitle>{withBrand(resource.subtitle)}</CardSubtitle>
+          <CardBody>{withBrand(resource.body)}</CardBody>
           {resource.accessNote ? (
-            <AccessNote>{resource.accessNote}</AccessNote>
+            <AccessNote>{withBrand(resource.accessNote)}</AccessNote>
           ) : null}
         </TextBlock>
         <CardActions>
@@ -418,7 +419,7 @@ const ResourceCard = ({ resource }) => {
             }
             onClick={handleAction}
           >
-            {resource.action}
+            {withBrand(resource.action)}
           </Button>
         </CardActions>
       </Body>
@@ -441,11 +442,8 @@ const Resources = () => (
         <Intro>
           <IntroBlock>
             <IntroText>
-              Cake&amp; is One Lenovo&apos;s unified design system that helps teams
-              build consistent, high-quality experiences across all Lenovo digital
-              products. It provides a comprehensive set of tools, components, and
-              guidelines to create cohesive, user-centered experiences efficiently
-              while maintaining Lenovo&apos;s brand identity and quality standards.
+              <BrandName /> is the new age of PC &amp; web software design for
+              Lenovo &amp; Motorola.
             </IntroText>
           </IntroBlock>
         </Intro>

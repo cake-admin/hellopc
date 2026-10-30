@@ -55,5 +55,5 @@ Also accepts all `Omit<
 ---
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Source: `src/cakeand/components/Progress Indicators/`
+- Source: `src/hellopc/components/Progress Indicators/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-progress-indicators-spinner--docs>

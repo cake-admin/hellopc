@@ -1,0 +1,183 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import {
+  TYPOGRAPHY_ROLES,
+  TYPOGRAPHY_SIZE_PX,
+  typographyPresets,
+  font,
+} from '../tokens/typography';
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+hello pc uses **Rookery New** in three weights — **Regular** (400), **Medium** (500),
+and **Bold** (700). Every style is a token named `{weight}.{sizePx}.{role}`
+(matching Figma), so a role like `title` exists in all three weights.
+
+<p style={{ fontFamily: font.family, fontSize: 14, opacity: 0.7, marginTop: 8 }}>
+  Font stack: <code>{font.family}</code>
+</p>
+
+export const MUTED = 'var(--color-text-icon-secondary)';
+export const LINE = '1px solid var(--color-stroke-border)';
+
+export const SAMPLE_MED = 'Smarter technology for all, built for people and the planet.';
+export const SAMPLE_SHORT = 'Smarter technology for all';
+export const SAMPLE_DATA = '42,000';
+
+export const previewForRole = (role) => {
+  if (role === 'data') return SAMPLE_DATA;
+  if (['caption', 'helper', 'body'].includes(role)) return SAMPLE_MED;
+  return SAMPLE_SHORT;
+};
+
+## Type scale
+
+The scale from smallest to largest, shown in Regular. Each role keeps the same
+size and line-height across all three weights.
+
+export const ScaleRow = ({ role }) => {
+  const t = typographyPresets.regular[role];
+  return (
+    <div
+      style={{
+        display: 'flex',
+        gap: 32,
+        alignItems: 'baseline',
+        padding: '18px 0',
+        borderTop: LINE,
+      }}
+    >
+      <div style={{ width: 132, flexShrink: 0 }}>
+        <div style={{ fontFamily: font.family, fontWeight: 600, fontSize: 14 }}>{role}</div>
+        <div style={{ fontFamily: font.family, fontSize: 12, color: MUTED, marginTop: 2 }}>
+          {TYPOGRAPHY_SIZE_PX[role]}px · {font.size[role]}
+        </div>
+        <div style={{ fontFamily: font.family, fontSize: 12, color: MUTED }}>
+          line-height {t.lineHeight}
+        </div>
+      </div>
+      <div
+        style={{
+          flex: 1,
+          minWidth: 0,
+          fontFamily: t.fontFamily,
+          fontSize: t.fontSize,
+          fontWeight: t.fontWeight,
+          lineHeight: t.lineHeight,
+        }}
+      >
+        {previewForRole(role)}
+      </div>
+    </div>
+  );
+};
+
+<div style={{ marginTop: 16 }}>
+  {TYPOGRAPHY_ROLES.map((role) => (
+    <ScaleRow key={role} role={role} />
+  ))}
+</div>
+
+## Weights
+
+The same line at `subtitle` (18px) in each weight, so you can compare them
+directly. Every role in the scale above is available in all three.
+
+export const WeightRow = ({ weight, label }) => {
+  const t = typographyPresets[weight].subtitle;
+  return (
+    <div
+      style={{ display: 'flex', gap: 32, alignItems: 'baseline', padding: '14px 0', borderTop: LINE }}
+    >
+      <div style={{ width: 132, flexShrink: 0 }}>
+        <div style={{ fontFamily: font.family, fontWeight: 600, fontSize: 14 }}>{label}</div>
+        <div style={{ fontFamily: font.family, fontSize: 12, color: MUTED, marginTop: 2 }}>
+          {weight} · {font.weight[weight]}
+        </div>
+      </div>
+      <div
+        style={{
+          fontFamily: t.fontFamily,
+          fontSize: t.fontSize,
+          fontWeight: t.fontWeight,
+          lineHeight: t.lineHeight,
+        }}
+      >
+        {SAMPLE_SHORT}
+      </div>
+    </div>
+  );
+};
+
+<div style={{ marginTop: 16 }}>
+  <WeightRow weight="regular" label="Regular" />
+  <WeightRow weight="medium" label="Medium" />
+  <WeightRow weight="bold" label="Bold" />
+</div>
+
+## Token reference
+
+Every role, with its pixel and rem size. Combine with a weight to get the full
+token id — e.g. `bold.20.title`.
+
+<table
+  style={{
+    borderCollapse: 'collapse',
+    width: '100%',
+    maxWidth: 520,
+    fontFamily: font.family,
+    fontSize: 14,
+    marginTop: 16,
+  }}
+>
+  <thead>
+    <tr style={{ textAlign: 'left', fontSize: 12, color: MUTED }}>
+      <th style={{ padding: '8px 12px 8px 0' }}>Role</th>
+      <th style={{ padding: '8px 12px' }}>Size</th>
+      <th style={{ padding: '8px 12px' }}>rem</th>
+      <th style={{ padding: '8px 0 8px 12px' }}>Weights</th>
+    </tr>
+  </thead>
+  <tbody>
+    {TYPOGRAPHY_ROLES.map((role) => (
+      <tr key={role} style={{ borderTop: LINE }}>
+        <td style={{ padding: '8px 12px 8px 0' }}>
+          <code>{role}</code>
+        </td>
+        <td style={{ padding: '8px 12px' }}>{TYPOGRAPHY_SIZE_PX[role]}px</td>
+        <td style={{ padding: '8px 12px', color: MUTED }}>{font.size[role]}</td>
+        <td style={{ padding: '8px 0 8px 12px', color: MUTED }}>regular · medium · bold</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+## Usage in components
+
+Use preset tokens from the theme — never hardcode sizes or weights:
+
+```tsx
+const Title = styled.h2`
+  font-family: ${(p) => p.theme.typography.medium.title.fontFamily};
+  font-size: ${(p) => p.theme.typography.medium.title.fontSize};
+  font-weight: ${(p) => p.theme.typography.medium.title.fontWeight};
+  line-height: ${(p) => p.theme.typography.medium.title.lineHeight};
+`;
+```
+
+Or spread the preset:
+
+```tsx
+const PageHeading = styled.h1`
+  ${(p) => {
+    const t = p.theme.typography.bold.page;
+    return `
+      font-family: ${t.fontFamily};
+      font-size: ${t.fontSize};
+      font-weight: ${t.fontWeight};
+      line-height: ${t.lineHeight};
+    `;
+  }}
+`;
+```

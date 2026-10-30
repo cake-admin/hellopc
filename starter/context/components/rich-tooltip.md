@@ -72,5 +72,5 @@ Rich Tooltip provides structured, contextual guidance with an optional title, st
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, Modal.
-- Source: `src/cakeand/components/Tooltip/`
+- Source: `src/hellopc/components/Tooltip/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-tooltip-rich--docs>

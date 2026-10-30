@@ -1,4 +1,4 @@
-# Agent instructions — cake& design system
+# Agent instructions — hello pc design system
 
 ## Implementing a component from Figma
 
@@ -12,11 +12,11 @@ naming translation, tests policy, verification, and optional Code Connect.
 ## Component + Storybook documentation work
 
 Before creating, modifying, or reviewing anything under
-`src/cakeand/components/` (components or stories), read and follow
+`src/hellopc/components/` (components or stories), read and follow
 **[.claude/skills/storybook-component-docs/SKILL.md](.claude/skills/storybook-component-docs/SKILL.md)**.
 It defines the mandatory docs-page template (section order, story taxonomy,
 props-table rules, hard constraints, verification steps). Canonical exemplar:
-`src/cakeand/components/Button/`.
+`src/hellopc/components/Button/`.
 
 ## Publishing Storybook and the npm package
 
@@ -27,9 +27,9 @@ package does **not** publish on merge — run **Publish design system package**
 (dry-run first; never reuse a tag).
 
 If the designer install path changes (degit, Release tarball, peers,
-`cake:update`), keep three consumer surfaces in the same PR, in layman's
+`hellopc:update`), keep three consumer surfaces in the same PR, in layman's
 step-by-step language: Storybook Introduction + Getting Started, the
-Resources **Cake& Devkit** card, and README **Use it**. Current kit:
+Resources **hello pc Devkit** card, and README **Use it**. Current kit:
 https://github.com/cake-admin/cakev2/releases#release-v4.2.4. Details in that
 skill.
 
@@ -88,6 +88,6 @@ Do not link to those URLs until that step exists.
   Windows. Invoke tool binaries via `node node_modules/<pkg>/<bin>.js` or the
   package scripts (which already do this). Storybook: `npm run storybook`
   (dev, port 6006) / `npm run build-storybook`.
-- The `chart-tool-echarts/` folder is a separate Vite app (the Cake& data
+- The `chart-tool-echarts/` folder is a separate Vite app (the hello pc data
   visualization playground deployed at cake.lenovo.com/datavis) with its own
   docs and scripts — its token pipeline and tests live inside that folder.

@@ -1,12 +1,12 @@
 ---
-description: cake& component + Storybook docs template — mandatory when creating, modifying, or reviewing components or stories
+description: hello pc component + Storybook docs template — mandatory when creating, modifying, or reviewing components or stories
 globs:
-  - "src/cakeand/components/**"
+  - "src/hellopc/components/**"
 alwaysApply: false
 ---
 
 Before creating, modifying, or reviewing any component or stories file under
-`src/cakeand/components/`, read and follow the full skill at
+`src/hellopc/components/`, read and follow the full skill at
 [.claude/skills/storybook-component-docs/SKILL.md](../../.claude/skills/storybook-component-docs/SKILL.md).
 
 It defines the mandatory rules: CSS custom-property tokens only
@@ -16,4 +16,4 @@ used · Accessibility · Do/Don't), the canonical story order ending in an
 AllVariants matrix, argTypes rules (`control: false`, never
 `table.disable` except `ref`), `['!autodocs']` on pure interaction tests,
 and the verification steps. Canonical exemplar:
-`src/cakeand/components/Button/`.
+`src/hellopc/components/Button/`.

@@ -53,5 +53,5 @@ Also accepts all `React.HTMLAttributes<HTMLSpanElement>` props.
 
 - Presentational; wraps no Radix primitive.
 - Related: Button, Chip.
-- Source: `src/cakeand/components/Badge/`
+- Source: `src/hellopc/components/Badge/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-badge--docs>

@@ -1,7 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 /**
- * Storybook configuration for the Cake Design System.
+ * Storybook configuration for the hello pc.
  *
  * Builder: Vite (independent of the app's Create React App build). This keeps
  * dev/HMR fast while the design-system components (styled-components, MUI icons,
@@ -9,10 +9,10 @@ import type { StorybookConfig } from '@storybook/react-vite';
  */
 const config: StorybookConfig = {
   stories: [
-    // cake& only — the new design system. Foundations/guides first, then components.
-    '../src/cakeand/foundations/**/*.mdx',
-    '../src/cakeand/**/*.mdx',
-    '../src/cakeand/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // hello pc only — the new design system. Foundations/guides first, then components.
+    '../src/hellopc/foundations/**/*.mdx',
+    '../src/hellopc/**/*.mdx',
+    '../src/hellopc/**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
 
   addons: [
@@ -104,7 +104,7 @@ const config: StorybookConfig = {
         'process.env.PUBLIC_URL': JSON.stringify(''),
       },
       // Windows often locks binary assets under src/assets; Vite's native
-      // watcher then crashes with EBUSY. cake& Storybook does not HMR those
+      // watcher then crashes with EBUSY. hello pc Storybook does not HMR those
       // files, so skip them (and fall back to polling for everything else).
       server: {
         watch: {

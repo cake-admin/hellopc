@@ -3,31 +3,32 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Toast as RadixToast } from 'radix-ui';
 import { CheckCircle2, ExternalLink, XCircle } from 'lucide-react';
-import { Button } from '../../cakeand/components/Button';
-import { Card } from '../../cakeand/components/Card';
-import { Toast } from '../../cakeand/components/Toast';
+import { Button } from '../../hellopc/components/Button';
+import { Card } from '../../hellopc/components/Card';
+import { Toast } from '../../hellopc/components/Toast';
 import {
   VerticalTabs,
   VerticalTabsList,
   VerticalTabsContent,
-} from '../../cakeand/components/VerticalTabs/VerticalTabs';
-import { VerticalTabItem } from '../../cakeand/components/VerticalTabs/VerticalTabItem';
+} from '../../hellopc/components/VerticalTabs/VerticalTabs';
+import { VerticalTabItem } from '../../hellopc/components/VerticalTabs/VerticalTabItem';
 import {
   VerticalTabsSectionHeader,
   VerticalTabsDivider,
-} from '../../cakeand/components/VerticalTabs/VerticalTabsSection';
+} from '../../hellopc/components/VerticalTabs/VerticalTabsSection';
 import { STORYBOOK_PATH } from '../../data/nav';
+import { withBrand } from '../../components/BrandName';
 import { pageGutterX, stickyDocsRail } from '../../styles/pageChrome';
 import { StickyWallpaper } from '../HomePage';
-import tokens from '../../cakeand/tokens/tokens.json';
+import tokens from '../../hellopc/tokens/tokens.json';
 import {
   TYPOGRAPHY_ROLES,
   TYPOGRAPHY_SIZE_PX,
   typographyPresets,
-} from '../../cakeand/tokens/typography';
+} from '../../hellopc/tokens/typography';
 import heroBg from '../../assets/home/hero-bg.png';
-import wallpaperLight from '../../cakeand/foundations/assets/wallpaper-light.jpg';
-import wallpaperDark from '../../cakeand/foundations/assets/wallpaper-dark.jpg';
+import wallpaperLight from '../../hellopc/foundations/assets/wallpaper-light.jpg';
+import wallpaperDark from '../../hellopc/foundations/assets/wallpaper-dark.jpg';
 import { AiOverviewContent } from './ai/AiOverviewPage';
 import { AiGradientContent } from './ai/AiGradientPage';
 import AiLogoIconContent from './ai/AiLogoIconPage';
@@ -37,7 +38,7 @@ const storybookDocs = (slug) => `${STORYBOOK_PATH}?path=/docs/${slug}`;
 const ROOKERY = `'Rookery New', Rookery, var(--font-family)`;
 
 /**
- * Match `scripts/build-cakeand-css-vars.mjs` exactly.
+ * Match `scripts/build-hellopc-css-vars.mjs` exactly.
  * CamelCase → kebab (`primaryHover` → `primary-hover`); underscores stay
  * (`1_Data` → `1_data`), so data palette vars resolve as `--color-data-1_data`.
  */
@@ -1035,7 +1036,7 @@ const SectionIntro = ({ title, paragraphs, storybook }) => (
     <SectionTitle>{title}</SectionTitle>
     <SectionCopy>
       {paragraphs.map((text) => (
-        <Para key={text.slice(0, 48)}>{text}</Para>
+        <Para key={text.slice(0, 48)}>{withBrand(text)}</Para>
       ))}
     </SectionCopy>
     {storybook ? (
@@ -1110,7 +1111,7 @@ const FoundationsPage = () => {
                 title="Color"
                 storybook={SECTIONS[0].storybook}
                 paragraphs={[
-                  'Color is how cake& feels at a glance — calm surfaces, clear hierarchy, and accents that guide attention. Instead of picking hex values by hand, every color has a job: backgrounds, text, borders, success, warnings, and more.',
+                  'Color is how hello pc feels at a glance — calm surfaces, clear hierarchy, and accents that guide attention. Instead of picking hex values by hand, every color has a job: backgrounds, text, borders, success, warnings, and more.',
                   'Those roles stay consistent across Light, Dark, and High Contrast, so a screen designed in one mode still reads correctly in another. Browse the swatches below in the current theme, then open Storybook when you need the full reference.',
                 ]}
               />
@@ -1122,7 +1123,7 @@ const FoundationsPage = () => {
                 title="Typography"
                 storybook={SECTIONS[1].storybook}
                 paragraphs={[
-                  'cake& uses Rookery New in Regular, Medium, and Bold. Every style is a role on a shared scale — caption through hero, plus a large data figure — so hierarchy stays consistent across screens.',
+                  'hello pc uses Rookery New in Regular, Medium, and Bold. Every style is a role on a shared scale — caption through hero, plus a large data figure — so hierarchy stays consistent across screens.',
                   'Sizes and line-heights are the same in every weight. Use the scale below to pick a role, then open Storybook for the full token names and usage notes.',
                 ]}
               />
@@ -1158,7 +1159,7 @@ const FoundationsPage = () => {
                 title="Special surfaces"
                 storybook={SECTIONS[4].storybook}
                 paragraphs={[
-                  'Two surfaces in cake& are translucent: they let content through, blurred. Each is a recipe of fill, backdrop blur, and elevation — all three parts have to travel together or the effect breaks.',
+                  'Two surfaces in hello pc are translucent: they let content through, blurred. Each is a recipe of fill, backdrop blur, and elevation — all three parts have to travel together or the effect breaks.',
                   'Container blur is for temporary floating UI (toasts, notification panels). Container blur high is reserved for the Windows OS shell of the app, with a thick translucent rim.',
                 ]}
               />

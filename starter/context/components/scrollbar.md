@@ -22,7 +22,7 @@ Also accepts all `Omit<React.ComponentPropsWithoutRef<typeof RadixScrollArea.Roo
 ## Usage
 
 ```tsx
-import { Scrollbar } from '@/cakeand/components/Elements';
+import { Scrollbar } from '@/hellopc/components/Elements';
 
 <Scrollbar maxHeight={240}>
   <LongList />
@@ -35,7 +35,7 @@ import { Scrollbar } from '@/cakeand/components/Elements';
 ```
 
 ```tsx
-import { nativeScrollbarStyles } from '@/cakeand/components/Elements';
+import { nativeScrollbarStyles } from '@/hellopc/components/Elements';
 
 const Viewport = styled(Select.Viewport)`
   \${nativeScrollbarStyles}
@@ -65,5 +65,5 @@ const Viewport = styled(Select.Viewport)`
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Dropdown, Modal.
-- Source: `src/cakeand/components/Elements/`
+- Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-scrollbar--docs>

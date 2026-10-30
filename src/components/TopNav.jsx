@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { AudioLines, List, Menu as MenuIcon, X } from 'lucide-react';
-import { Dropdown } from '../cakeand/components/Dropdown';
+import { Dropdown } from '../hellopc/components/Dropdown';
 import { useSiteTheme, THEME_OPTIONS } from '../theme/SiteThemeProvider';
 import { NAV_SECTIONS, getActiveSection, isBlogPath } from '../data/nav';
 import { pageGutterX } from '../styles/pageChrome';
@@ -57,13 +57,11 @@ const BarSpacer = styled.div`
 `;
 
 const Brand = styled(Link)`
-  display: inline-flex;
-  align-items: baseline;
+  display: inline;
   text-decoration: none;
   font-family: 'Rookery New', Rookery, var(--font-family);
   font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.16px;
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-icon-primary);
   justify-self: start;
   line-height: 1;
@@ -75,7 +73,8 @@ const Brand = styled(Link)`
 `;
 
 const Amp = styled.span`
-  color: var(--color-primary-primary);
+  margin-left: 0.12em;
+  color: var(--brand-pc, #394edb);
 `;
 
 const Center = styled.nav`
@@ -369,12 +368,12 @@ const TopNav = ({ forceNoActive = false, siteOrigin } = {}) => {
     <>
       <Bar ref={barRef}>
         {origin ? (
-          <Brand as="a" href={siteHref('/')} aria-label="cake& home">
-            cake<Amp>&amp;</Amp>
+          <Brand as="a" href={siteHref('/')} aria-label="hello pc home">
+            hello<Amp>pc</Amp>
           </Brand>
         ) : (
-          <Brand to="/" aria-label="cake& home">
-            cake<Amp>&amp;</Amp>
+          <Brand to="/" aria-label="hello pc home">
+            hello<Amp>pc</Amp>
           </Brand>
         )}
 

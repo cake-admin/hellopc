@@ -1,6 +1,6 @@
 # @cake-admin/cakeand
 
-The cake& design system — React components, design tokens, and theming.
+The hello pc design system — React components, design tokens, and theming.
 
 Published from [`cake-admin/cakev2`](https://github.com/cake-admin/cakev2).
 Component documentation lives in the Storybook at
@@ -79,7 +79,7 @@ export default function App() {
       <Card>
         <HeroCard
           title="Hello"
-          body="Composed from cake& components."
+          body="Composed from hello pc components."
           actions={<Button size="lg">Get started</Button>}
         />
       </Card>
@@ -129,7 +129,7 @@ in your HTML shell to avoid the flash.
   TimeInput, Checkbox, Radio, Switch, Slider, Dropdown, FileUpload
 
 Interactive components wrap Radix primitives, so behaviour and accessibility
-(roles, keyboard, focus management) come from Radix; cake& owns the visuals.
+(roles, keyboard, focus management) come from Radix; hello pc owns the visuals.
 Every value resolves from design tokens — nothing is hardcoded.
 
 ### Package layout
@@ -142,7 +142,7 @@ After install, `node_modules/@cake-admin/cakeand/` contains:
 | `cakeand.css` | Tokens, fonts, baseline (imported by the entry) |
 | `types/components`, `types/tokens`, `types/theme` | TypeScript declarations |
 | `stories/` | Storybook `*.stories.tsx` sources (e.g. `Button/Button.stories.tsx`) — for agents and reference; **do not import into app code** |
-| `context/` | Generated markdown agents should read (`cake-components.md`, `components/*.md`, tokens) |
+| `context/` | Generated markdown agents should read (`hellopc-components.md`, `components/*.md`, tokens) |
 
 `stories/` and `context/` are documentation for coding agents. They are not part
 of the runtime API.

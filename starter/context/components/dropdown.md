@@ -60,5 +60,5 @@ A single-select field, composed from the reusable form elements: Input Label abo
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Source: `src/cakeand/components/Dropdown/`
+- Source: `src/hellopc/components/Dropdown/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-dropdown--docs>

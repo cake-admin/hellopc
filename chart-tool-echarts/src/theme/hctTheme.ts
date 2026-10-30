@@ -1,5 +1,5 @@
 /**
- * Windows High-Contrast (`win hct`) chart theme values, mirrored from cake&
+ * Windows High-Contrast (`win hct`) chart theme values, mirrored from hello pc
  * `tokens.json` → `theme['win hct']`. Chart tokens.json only ships lightA/darkA;
  * HCT is applied as an overlay when the site theme dropdown selects HCT.
  *

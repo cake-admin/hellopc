@@ -1,4 +1,4 @@
-/* Typeface: Rookery New arrives via cake& `fonts.css` (SiteThemeProvider →
+/* Typeface: Rookery New arrives via hello pc `fonts.css` (SiteThemeProvider →
    CakeProvider). Chart chrome just references the family name. */
 :root {
   --font: 'Rookery New', 'Rookery', 'Noto Sans', system-ui, -apple-system, sans-serif;
@@ -117,6 +117,13 @@ body {
   position: relative;
 }
 
+.brand-name {
+  font-weight: 700;
+}
+.brand-pc {
+  color: var(--brand-pc, #394edb);
+}
+
 /* Floating brand over the stage — frosted-glass container (echoes the design
    system's rich-tooltip background blur). */
 .app__brand-float {
@@ -127,6 +134,7 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 9px 15px;
+  font-family: 'Rookery New', Rookery, var(--font-family, sans-serif);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.01em;

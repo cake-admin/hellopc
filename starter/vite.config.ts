@@ -6,7 +6,7 @@ export default defineConfig({
 
   resolve: {
     // styled-components MUST resolve to a single instance. Two copies in one app
-    // means two stylesheets and two theme contexts, and every cake& component
+    // means two stylesheets and two theme contexts, and every hello pc component
     // silently loses its theme — no error, it just renders unstyled. react and
     // react-dom are here for the same class of failure (duplicate hook
     // dispatchers). This matters as soon as you add a dependency that brings its

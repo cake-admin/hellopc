@@ -26,7 +26,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'onSelect'>` props.
 ## Usage
 
 ```tsx
-import { DataRow, DataCell } from '@/cakeand/components/Table';
+import { DataRow, DataCell } from '@/hellopc/components/Table';
 
 // a basic row
 <DataRow onSelectedChange={setSelected}>
@@ -75,5 +75,5 @@ import { DataRow, DataCell } from '@/cakeand/components/Table';
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Badge, Checkbox, Chip, Table.
-- Source: `src/cakeand/components/Table/`
+- Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-data-row--docs>

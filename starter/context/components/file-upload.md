@@ -64,5 +64,5 @@ File Upload is an image-upload dropzone with a primary browse action. It compose
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, HelperString.
-- Source: `src/cakeand/components/FileUpload/`
+- Source: `src/hellopc/components/FileUpload/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-file-upload--docs>

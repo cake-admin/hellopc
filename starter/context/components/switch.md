@@ -54,5 +54,5 @@ A binary on/off control built on the Radix Switch primitive and styled with cake
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Checkbox.
-- Source: `src/cakeand/components/Switch/`
+- Source: `src/hellopc/components/Switch/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-switch--docs>

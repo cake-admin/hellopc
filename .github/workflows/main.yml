@@ -137,8 +137,8 @@ jobs:
           # an unshipped one at all.
           previous=$(git tag -l 'v*' | sed 's/^v//' | sort -V | tail -n1)
           if [ -n "$previous" ]; then
-            changes=$(git log --oneline "v$previous..HEAD" -- src/cakeand/ | sed 's/^/- /')
-            [ -z "$changes" ] && changes="- No changes under src/cakeand since v$previous."
+            changes=$(git log --oneline "v$previous..HEAD" -- src/hellopc/ | sed 's/^/- /')
+            [ -z "$changes" ] && changes="- No changes under src/hellopc since v$previous."
             changelog=$(printf '## Changes since v%s\n\n%s\n' "$previous" "$changes")
           else
             changelog="## First tagged release"
@@ -159,7 +159,7 @@ jobs:
 
           Peer dependencies: \`react\` \`react-dom\` \`styled-components\` \`radix-ui\` \`lucide-react\`
 
-          New to cake&? Start from the template instead — it wires all of this up:
+          New to hello pc? Start from the template instead — it wires all of this up:
 
           \`\`\`bash
           npx degit cake-admin/cakev2/starter my-prototype
@@ -173,7 +173,7 @@ jobs:
           $changelog
           EOF
           gh release create "v${{ inputs.version }}" "${{ steps.pack.outputs.file }}" \
-            --title "cake& ${{ inputs.version }}" --notes-file notes.md
+            --title "hello pc ${{ inputs.version }}" --notes-file notes.md
 
       - name: Publish to GitHub Packages
         # Accept both the boolean and the string form: workflow_dispatch inputs

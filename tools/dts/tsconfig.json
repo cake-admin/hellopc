@@ -17,6 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["./shims.d.ts", "../../src/cakeand/**/*.ts", "../../src/cakeand/**/*.tsx"],
-  "exclude": ["../../src/cakeand/**/*.stories.tsx", "../../src/cakeand/**/*.mdx"]
+  "include": ["./shims.d.ts", "../../src/hellopc/**/*.ts", "../../src/hellopc/**/*.tsx"],
+  "exclude": ["../../src/hellopc/**/*.stories.tsx", "../../src/hellopc/**/*.mdx"]
 }

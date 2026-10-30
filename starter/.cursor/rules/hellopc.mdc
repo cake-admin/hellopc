@@ -1,10 +1,10 @@
 ---
-description: cake& design system — how to build UI in this prototype
+description: hello pc design system — how to build UI in this prototype
 alwaysApply: true
 ---
 
 Read [AGENTS.md](../../AGENTS.md) before writing any UI, and
-`context/cake-components.md` before using any cake& component.
+`context/hellopc-components.md` before using any hello pc component.
 
 Never hardcode a color, spacing, radius, or type size — use the `var(--…)`
-tokens listed in `context/cake-tokens.md`. Never add a second UI library.
+tokens listed in `context/hellopc-tokens.md`. Never add a second UI library.

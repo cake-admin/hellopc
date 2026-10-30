@@ -25,7 +25,7 @@ Also accepts all `React.ComponentPropsWithoutRef<typeof RadixTabs.Trigger>` prop
 ```tsx
 import {
   Sidebar, SidebarList, SidebarContent, SidebarItem, SidebarSubItem,
-} from '@/cakeand/components/Sidebar';
+} from '@/hellopc/components/Sidebar';
 
 <Sidebar defaultValue="home">
   <SidebarList aria-label="Main navigation">
@@ -68,5 +68,5 @@ import {
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Sidebar, SidebarNav, SidebarSubItem, VerticalTabItem.
-- Source: `src/cakeand/components/Sidebar/`
+- Source: `src/hellopc/components/Sidebar/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-sidebar-sidebar-item--docs>

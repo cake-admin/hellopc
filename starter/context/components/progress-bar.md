@@ -60,5 +60,5 @@ Also accepts all `Omit<React.ComponentPropsWithoutRef<typeof RadixProgress.Root>
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: HelperString, InputLabel.
-- Source: `src/cakeand/components/Progress Indicators/`
+- Source: `src/hellopc/components/Progress Indicators/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-progress-indicators-progress-bar--docs>

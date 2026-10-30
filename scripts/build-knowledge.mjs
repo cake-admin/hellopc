@@ -1,5 +1,5 @@
 /**
- * Emits cake& component knowledge as schema-conforming JSON for the AI Lab
+ * Emits hello pc component knowledge as schema-conforming JSON for the AI Lab
  * knowledge base (github.com/cake-admin/ai-lab).
  *
  *   node scripts/build-knowledge.mjs --out ../ai-lab/knowledge/components

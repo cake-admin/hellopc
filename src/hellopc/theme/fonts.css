@@ -1,0 +1,32 @@
+/* Rookery New — hello pc brand typeface.
+ *
+ * The files are referenced RELATIVELY (./fonts/…) and live inside the design
+ * system rather than in public/. That is deliberate: a bundler rewrites these
+ * URLs and emits the woff2 alongside the built CSS, so the published package is
+ * self-contained. Root-absolute URLs (/fonts/…) would resolve against the
+ * consuming app's own domain root, 404 there, and silently fall back to
+ * system-ui. public/fonts/ keeps its copies for the CRA app + Storybook
+ * staticDirs. */
+@font-face {
+  font-family: 'Rookery New';
+  src: url('./fonts/RookeryNew-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rookery New';
+  src: url('./fonts/RookeryNew-Medium.woff2') format('woff2');
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rookery New';
+  src: url('./fonts/RookeryNew-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

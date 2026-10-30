@@ -1,5 +1,5 @@
 ---
-description: cake& design-system repo conventions and agent entry points
+description: hello pc design-system repo conventions and agent entry points
 alwaysApply: true
 ---
 
@@ -11,6 +11,6 @@ Read [AGENTS.md](../../AGENTS.md) before working in this repo. Key points:
 - Agent skills live in `.claude/skills/` — they are plain markdown and are
   the source of truth for component and docs work (see the other rules in
   this folder for when each applies).
-- `chart-tool-echarts/` is a separate Vite app (the Cake& data visualization
+- `chart-tool-echarts/` is a separate Vite app (the hello pc data visualization
   playground deployed at cake.lenovo.com/datavis) with its own docs, scripts,
   and tests.

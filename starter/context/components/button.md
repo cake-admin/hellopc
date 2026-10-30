@@ -57,5 +57,5 @@ Also accepts all `React.ButtonHTMLAttributes<HTMLButtonElement>` props.
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: IconButton.
-- Source: `src/cakeand/components/Button/`
+- Source: `src/hellopc/components/Button/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-button-button--docs>

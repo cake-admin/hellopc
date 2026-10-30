@@ -10,7 +10,7 @@ A stack of collapsible sections (Figma "Accordion", node 117:6508). Use it to pr
 ## Usage
 
 ```tsx
-import { Accordion, AccordionItem } from '@/cakeand/components/Accordion';
+import { Accordion, AccordionItem } from '@/hellopc/components/Accordion';
 
 <Accordion type="single" collapsible defaultValue="a">
   <AccordionItem value="a" title="Accordion title" icon={<Tag />}>
@@ -51,5 +51,5 @@ import { Accordion, AccordionItem } from '@/cakeand/components/Accordion';
 ---
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Source: `src/cakeand/components/Accordion/`
+- Source: `src/hellopc/components/Accordion/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-accordion--docs>

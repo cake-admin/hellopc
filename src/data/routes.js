@@ -7,7 +7,7 @@ import ComponentsPage from '../pages/ComponentsPage';
 import HomePage from '../pages/HomePage';
 
 /**
- * Site routes after the cake& retheme.
+ * Site routes after the hello pc retheme.
  * Component docs live in Storybook — see `/components`.
  * AI styling and tone of voice live inside Foundations (rail tabs).
  */
@@ -16,7 +16,7 @@ export const routes = [
     path: '/',
     component: HomePage,
     title: 'Home',
-    description: 'cake& design system home',
+    description: 'hello pc design system home',
     category: 'resources',
   },
   {
@@ -44,16 +44,16 @@ export const routes = [
   {
     path: '/sound/library',
     component: SoundPage,
-    title: 'Cake& sound library',
-    description: 'Search, filter, compare, and play official Cake& sound assets',
+    title: 'hello pc sound library',
+    description: 'Search, filter, compare, and play official hello pc sound assets',
     category: 'resources',
   },
   {
     path: '/sound/prompting',
     component: SoundPage,
-    title: 'Prompt a Cake& sound',
+    title: 'Prompt a hello pc sound',
     description:
-      'Write text-to-sound prompts so generated UI cues share Cake& DNA and belong with the official library',
+      'Write text-to-sound prompts so generated UI cues share hello pc DNA and belong with the official library',
     category: 'resources',
   },
   {
@@ -95,7 +95,7 @@ export const routes = [
     path: '/components',
     component: ComponentsPage,
     title: 'Components',
-    description: 'cake& component catalog and live previews',
+    description: 'hello pc component catalog and live previews',
     category: 'components',
   },
   {

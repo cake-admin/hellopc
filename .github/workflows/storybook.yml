@@ -9,7 +9,7 @@ name: Verify Storybook
 on:
   pull_request:
     paths:
-      - 'src/cakeand/**'
+      - 'src/hellopc/**'
       - '.storybook/**'
       - 'package.json'
       - 'package-lock.json'

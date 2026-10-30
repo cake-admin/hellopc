@@ -1,0 +1,101 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="hello pc Maintenance/Building a Component" />
+
+# Building a hello pc component
+
+Every hello pc component follows the same recipe. Use `Switch` and `Button` as
+canonical references.
+
+## 1. Start from a Radix primitive
+
+Interactive components **must** wrap a
+[Radix UI](https://www.radix-ui.com/primitives) primitive from the unified
+`radix-ui` package. Radix handles behavior + accessibility; you handle visuals.
+
+```tsx
+import { Switch as RadixSwitch } from 'radix-ui';
+import styled from 'styled-components';
+
+const Track = styled(RadixSwitch.Root)`
+  background: ${(p) => p.theme.color.textIcon.placeholder};
+  &[data-state='checked'] {
+    background: ${(p) => p.theme.color.primary.primary};
+  }
+`;
+```
+
+## 2. Style with tokens only
+
+Every color, space, radius, stroke, and typography value is a CSS custom
+property from the generated token layer (`src/hellopc/tokens/hellopc-vars.css`,
+regenerate with `npm run build:hellopc-tokens` + `npm run build:hellopc-vars`)
+— `var(--color-primary-primary-hover)`, `var(--space-100)`,
+`var(--radius-1000)`, `var(--stroke-200)`, `var(--type-size-body)`,
+`var(--elevation-3)` — consumed inside styled-components. Variable names mirror
+the Figma variables 1:1
+(colors from `& theme.a`, spacing/radius/stroke from `& spacing`). Never
+hardcode hex, px spacing, border widths, or font sizes. Style Radix state via
+its data attributes (`[data-state='checked']`, `[data-disabled]`, ...).
+
+## 3. File layout
+
+```
+src/hellopc/components/<Component>/
+  <Component>.tsx          # implementation
+  <Component>.stories.tsx  # story (CSF 3)
+```
+
+- One component per folder. Typed props with JSDoc. Forward refs where relevant.
+- Named export + default export.
+
+## 4. Write the story + docs page (CSF 3)
+
+The stories file **is** the docs page — autodocs assembles it from
+`parameters.docs.description` and the stories themselves. `Button.stories.tsx`
+is the canonical example. Every component ships all of the following:
+
+**Docs-page checklist**
+
+- [ ] `parameters.docs.description.component` (markdown template literal) with,
+      in order: intro (what it is + when to use which variant) · theming note
+      (all values from hello pc tokens; the Theme toolbar re-themes the page) ·
+      rendering/behavior notes · **Usage** fenced `tsx` block of copyable
+      one-liners · `## Design tokens used` (table of token paths per
+      variant/part/state) · `## Accessibility` · `## Do / Don't` (table).
+- [ ] Every public prop visible in the props table with JSDoc + `@default` in
+      the component file. Props without a sensible control get
+      `control: false` — never `table: { disable: true }` (except `ref`).
+- [ ] `argTypes` grouped via `table.category`
+      (Content / Appearance / State / Behavior / Events).
+- [ ] Story order: `Playground` → variants/intents → sizes → content slots →
+      states (disabled, error, ...) → `AllVariants` matrix → interaction tests.
+- [ ] `Playground` is first (it becomes the docs-page canvas) and has **no**
+      `play` function.
+- [ ] Matrix/showcase stories set `parameters: { controls: { disable: true } }`.
+- [ ] Every visible story has a description — a JSDoc one-liner or
+      `parameters.docs.description.story` for longer prose (never both).
+- [ ] At least one `play` interaction test, tagged `['!autodocs']` so it runs in
+      the sidebar/test runner but doesn't clutter the docs page.
+- [ ] An `AllVariants` matrix story (variant × intent × state) — audit it under
+      both themes via the toolbar.
+- [ ] **No** theme control — the global toolbar drives light.a / dark.a through
+      `CakeThemeProvider`.
+- [ ] No icon-only `Button` examples — icon-only actions are the separate
+      `IconButton` component.
+
+## 5. Accessibility
+
+Check the **Accessibility** panel on every story and fix violations. Radix gives
+you correct roles and keyboard support for free — don't undo them (e.g. keep
+`aria-label` on labelless controls like a bare `Switch`). Then *document* the
+component's a11y behavior in its `## Accessibility` section — the docs page
+should teach it, not just pass the panel.
+
+## 6. Tokens changed?
+
+Regenerate from Figma before documenting:
+
+```bash
+npm run build:hellopc-tokens
+```

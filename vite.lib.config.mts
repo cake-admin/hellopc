@@ -10,7 +10,7 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
  * Library build for the publishable design-system package (@cake-admin/cakeand).
  *
  * This is deliberately separate from the app's Create React App build and from
- * `.storybook/main.ts` — it only compiles `src/cakeand` into a distributable,
+ * `.storybook/main.ts` — it only compiles `src/hellopc` into a distributable,
  * and never touches the site build.
  *
  * Notes:
@@ -47,7 +47,7 @@ export default defineConfig({
     // self-contained stylesheet and no assets/ directory.
     assetsInlineLimit: 0,
     lib: {
-      entry: path.resolve(dirname, 'src/cakeand/index.ts'),
+      entry: path.resolve(dirname, 'src/hellopc/index.ts'),
       formats: ['es'],
       fileName: () => 'index.js',
     },

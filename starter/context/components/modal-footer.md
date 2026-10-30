@@ -61,5 +61,5 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, Checkbox, Modal.
-- Source: `src/cakeand/components/Modal/`
+- Source: `src/hellopc/components/Modal/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-modal-modal-footer--docs>

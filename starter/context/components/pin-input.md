@@ -66,5 +66,5 @@ A masked, multi-digit PIN or one-time-code field. It composes the reusable Input
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, HelperString, InputLabel.
-- Source: `src/cakeand/components/PinInput/`
+- Source: `src/hellopc/components/PinInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-pin-input--docs>

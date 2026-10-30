@@ -4,22 +4,22 @@ import { DocsContainer, type DocsContainerProps } from '@storybook/addon-docs/bl
 import { addons } from 'storybook/preview-api';
 import { GLOBALS_UPDATED } from 'storybook/internal/core-events';
 
-import { CakeProvider } from '../src/cakeand/theme/CakeProvider';
-import { themes, type ThemeMode } from '../src/cakeand/tokens/theme';
+import { CakeProvider } from '../src/hellopc/theme/HellopcProvider';
+import { themes, type ThemeMode } from '../src/hellopc/tokens/theme';
 import {
   cakeManagerThemes,
   resolveManagerThemeKey,
-} from './cake-manager-themes';
+} from './hellopc-manager-themes';
 
 // Always load tokens + fonts in the preview iframe — pure MDX docs pages do
 // not run story decorators, so CakeProvider never mounts for Introduction /
-// Foundations / Cake& Maintenance unless we import these here.
-import '../src/cakeand/tokens/cake-vars.css';
-import '../src/cakeand/theme/fonts.css';
+// Foundations / hello pc Maintenance unless we import these here.
+import '../src/hellopc/tokens/hellopc-vars.css';
+import '../src/hellopc/theme/fonts.css';
 
 /**
  * Toolbar values are URL-safe (`light` / `dark` / `hct`). Map them onto the
- * real cake& ThemeMode strings used by tokens + `data-theme`.
+ * real hello pc ThemeMode strings used by tokens + `data-theme`.
  */
 const TOOLBAR_TO_MODE: Record<string, ThemeMode> = {
   light: 'light.a',
@@ -160,7 +160,7 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description:
-        'cake& theme mode — sets data-theme on the preview <html> and the ' +
+        'hello pc theme mode — sets data-theme on the preview <html> and the ' +
         'styled-components theme (light.a / dark.a / win hct).',
       toolbar: {
         title: 'Theme',
@@ -203,7 +203,7 @@ const preview: Preview = {
           ['Colors', 'Typography', 'Spacing', 'Elevation', 'Special Surfaces'],
           'Components',
           'Elements',
-          'Cake& Maintenance',
+          'hello pc Maintenance',
           ['Building a Component', 'Shipping a Component'],
         ],
       },

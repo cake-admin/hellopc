@@ -64,5 +64,5 @@ Time Input collects a 12-hour time through separate hours and minutes segments p
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: HelperString, InputLabel.
-- Source: `src/cakeand/components/TimeInput/`
+- Source: `src/hellopc/components/TimeInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-time-input--docs>

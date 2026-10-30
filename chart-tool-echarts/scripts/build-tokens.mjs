@@ -50,7 +50,7 @@ const tokens = {
   onPrimary: pair('text+icon', 'onPrimary'),
 };
 
-// Categorical chart palette = hand-picked cake& "hero" tones (60–80) chosen to
+// Categorical chart palette = hand-picked hello pc "hero" tones (60–80) chosen to
 // pass contrast on BOTH black and white, so the SAME values are used in light and
 // dark. Order matches the design's swatch sheet.
 const CATEGORICAL_TONES = [

@@ -22,7 +22,7 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 ```tsx
 import {
   Sidebar, SidebarList, SidebarBlock, SidebarItem, SidebarSubItem,
-} from '@/cakeand/components/Sidebar';
+} from '@/hellopc/components/Sidebar';
 
 const [open, setOpen] = useState(true);
 
@@ -70,5 +70,5 @@ const [open, setOpen] = useState(true);
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Sidebar, SidebarItem, SidebarSubItem.
-- Source: `src/cakeand/components/Sidebar/`
+- Source: `src/hellopc/components/Sidebar/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-sidebar-sidebar-block--docs>

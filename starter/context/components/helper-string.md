@@ -52,5 +52,5 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
 - Presentational; wraps no Radix primitive.
 - Related: Switch, TextInput.
-- Source: `src/cakeand/components/Elements/`
+- Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-helper-string--docs>

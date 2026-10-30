@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Move this prototype to the newest published cake& release.
+ * Move this prototype to the newest published hello pc release.
  *
- *   npm run cake:update
+ *   npm run hellopc:update
  *
  * Resolves the latest release to an IMMUTABLE, version-specific tarball URL and
  * installs that.
@@ -86,7 +86,7 @@ const main = async () => {
   // rather than escaped, and it prints a warning on every run.
   execSync(`npm install "${url.href}"`, { stdio: 'inherit' });
 
-  process.stdout.write(`\n✓ Now on cake& ${release.tag_name}\n`);
+  process.stdout.write(`\n✓ Now on hello pc ${release.tag_name}\n`);
 };
 
 try {

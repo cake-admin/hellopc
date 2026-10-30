@@ -24,8 +24,8 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>` props.
 ## Usage
 
 ```tsx
-import { Card, HeroCard } from '@/cakeand/components/Card';
-import { Button } from '@/cakeand/components/Button';
+import { Card, HeroCard } from '@/hellopc/components/Card';
+import { Button } from '@/hellopc/components/Button';
 
 // hero (left, fill button)
 <Card>
@@ -73,5 +73,5 @@ import { Button } from '@/cakeand/components/Button';
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, Card.
-- Source: `src/cakeand/components/Card/`
+- Source: `src/hellopc/components/Card/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-card-hero-card--docs>

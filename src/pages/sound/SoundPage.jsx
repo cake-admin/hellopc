@@ -3,18 +3,19 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Toast as RadixToast } from 'radix-ui';
 import { Copy as CopyIcon, ExternalLink } from 'lucide-react';
-import { Button } from '../../cakeand/components/Button';
-import { Card } from '../../cakeand/components/Card';
-import { SimpleCard } from '../../cakeand/components/Card/SimpleCard';
-import { Chip } from '../../cakeand/components/Chip/Chip';
-import { ModalIcon } from '../../cakeand/components/Modal/ModalIcon';
-import { Toast } from '../../cakeand/components/Toast';
+import { Button } from '../../hellopc/components/Button';
+import { Card } from '../../hellopc/components/Card';
+import { SimpleCard } from '../../hellopc/components/Card/SimpleCard';
+import { Chip } from '../../hellopc/components/Chip/Chip';
+import { ModalIcon } from '../../hellopc/components/Modal/ModalIcon';
+import { Toast } from '../../hellopc/components/Toast';
+import { BrandName, withBrand } from '../../components/BrandName';
 import {
   VerticalTabs,
   VerticalTabsList,
   VerticalTabsContent,
-} from '../../cakeand/components/VerticalTabs/VerticalTabs';
-import { VerticalTabItem } from '../../cakeand/components/VerticalTabs/VerticalTabItem';
+} from '../../hellopc/components/VerticalTabs/VerticalTabs';
+import { VerticalTabItem } from '../../hellopc/components/VerticalTabs/VerticalTabItem';
 import { pageGutterX, stickyDocsRail } from '../../styles/pageChrome';
 import { StickyWallpaper } from '../HomePage';
 import heroBg from '../../assets/home/hero-bg.png';
@@ -326,7 +327,7 @@ const promptIngredients = [
   ['Purpose', 'Confirm, Guide, Alert, State, or System — the job the cue has to do.'],
   [
     'Material',
-    'Name a Cake& surface: felt, ceramic, coated polymer, soft wood, paired points, filtered air, or rounded glass.',
+    'Name a hello pc surface: felt, ceramic, coated polymer, soft wood, paired points, filtered air, or rounded glass.',
   ],
   ['Character', 'Precise, Calm, Connected, Tactile, Professional — at least one, better two.'],
   [
@@ -410,7 +411,7 @@ const EditorialCard = ({ title, body, tags, actions, tone }) => (
           title
         )
       }
-      body={body}
+      body={typeof body === 'string' ? withBrand(body) : body}
       actions={
         actions ??
         (tags?.length ? (
@@ -481,7 +482,7 @@ const SoundPage = () => {
                         <Lead>
                           Sound is another layer of the interface. It carries the
                           principles, characteristics, and behaviors that make software
-                          sound unmistakably part of the Cake&amp; experience.
+                          sound unmistakably part of the <BrandName /> experience.
                         </Lead>
                         <Copy>
                           This vocabulary helps teams select and evaluate sound with the
@@ -515,7 +516,7 @@ const SoundPage = () => {
                       <SectionHeader>
                         <Subhead>Brand character</Subhead>
                         <Copy>
-                          Ampersand audio should clarify what changed, preserve focus,
+                          <strong>hello</strong> audio should clarify what changed, preserve focus,
                           and make connected systems feel coherent.
                         </Copy>
                       </SectionHeader>
@@ -579,7 +580,9 @@ const SoundPage = () => {
                 <Section>
                     <Block>
                       <SectionHeader>
-                        <SectionTitle>Cake&amp; sound library</SectionTitle>
+                        <SectionTitle>
+                          <BrandName /> sound library
+                        </SectionTitle>
                         <Copy>
                           Search the official library, filter by type, compare variants,
                           and play each asset. Waveforms are static visualizations
@@ -595,7 +598,9 @@ const SoundPage = () => {
                 <Section>
                   <Block>
                     <SectionHeader>
-                      <SectionTitle>Prompt a Cake&amp; sound</SectionTitle>
+                      <SectionTitle>
+                        Prompt a <BrandName /> sound
+                      </SectionTitle>
                       <Lead>
                         Write the prompt so a generated cue could sit next to Confirm
                         Up without sounding like a different product.
@@ -614,8 +619,8 @@ const SoundPage = () => {
                     <SectionHeader>
                       <Subhead>Prompt recipe</Subhead>
                       <Copy>
-                        Lock every ingredient to Cake&amp; DNA. Do not invent a second
-                        palette or a cinematic vocabulary.
+                        Lock every ingredient to <BrandName /> DNA. Do not invent a
+                        second palette or a cinematic vocabulary.
                       </Copy>
                     </SectionHeader>
                     <Grid $columns={4}>
@@ -664,7 +669,7 @@ const SoundPage = () => {
                       <EditorialCard
                         title="Do"
                         tone="success"
-                        body="Short, felt / ceramic / wood / glass, paired points, one-shot, work-appropriate. Generate variations and listen against the Cake& sound library."
+                        body="Short, felt / ceramic / wood / glass, paired points, one-shot, work-appropriate. Generate variations and listen against the hello pc sound library."
                       />
                       <EditorialCard
                         title="Don’t"

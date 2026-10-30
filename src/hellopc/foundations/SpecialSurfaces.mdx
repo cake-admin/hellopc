@@ -1,0 +1,212 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import wallpaperLight from './assets/wallpaper-light.jpg';
+import wallpaperDark from './assets/wallpaper-dark.jpg';
+
+<Meta title="Foundations/Special Surfaces" />
+
+# Special surfaces
+
+Two surfaces in hello pc are **translucent**: instead of a solid fill they let the
+content behind them through, blurred. They are not single tokens — each is a
+recipe of a fill, a backdrop blur, and an elevation, and all three parts have
+to be applied together or the effect breaks.
+
+Each specimen below is shown in both modes at once, over the Windows wallpaper
+the Figma spec uses — a translucent surface can only be judged against the
+content it is letting through.
+
+export const MUTED = 'var(--color-text-icon-secondary)';
+export const BORDER = 'var(--color-stroke-border)';
+export const FONT = 'var(--font-family)';
+
+export const th = {
+  padding: '8px 10px',
+  textAlign: 'left',
+  fontSize: 12,
+  color: MUTED,
+  fontWeight: 500,
+  whiteSpace: 'nowrap',
+};
+export const td = { padding: '8px 10px', borderTop: `1px solid ${BORDER}`, verticalAlign: 'top' };
+
+export const Table = ({ head, children }) => (
+  <div style={{ overflowX: 'auto' }}>
+    <table style={{ borderCollapse: 'collapse', width: '100%', marginTop: 8 }}>
+      <thead>
+        <tr>{head.map((h) => <th key={h} style={th}>{h}</th>)}</tr>
+      </thead>
+      <tbody>{children}</tbody>
+    </table>
+  </div>
+);
+
+export const MODES = [
+  { mode: 'light.a', label: 'Light A', wallpaper: wallpaperLight },
+  { mode: 'dark.a', label: 'Dark A', wallpaper: wallpaperDark },
+];
+
+export const Surface = ({ high }) => (
+  <div
+    style={{
+      boxSizing: 'border-box',
+      width: 148,
+      height: 116,
+      borderRadius: 'var(--radius-300)',
+      background: high
+        ? 'var(--color-surfaces-container-blur-high)'
+        : 'var(--color-surfaces-container-blur)',
+      border: high ? '8px solid var(--color-stroke-border-container-os)' : undefined,
+      backgroundClip: high ? 'padding-box' : undefined,
+      backdropFilter: 'blur(45px)',
+      WebkitBackdropFilter: 'blur(45px)',
+      boxShadow: high ? 'var(--elevation-5)' : 'var(--elevation-3)',
+    }}
+  />
+);
+
+export const Stage = ({ high }) => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 8 }}>
+    {MODES.map(({ mode, label, wallpaper }) => (
+      <div key={mode} style={{ flex: '1 1 240px', minWidth: 220 }}>
+        <div
+          data-theme={mode}
+          style={{
+            borderRadius: 12,
+            border: `1px solid ${BORDER}`,
+            backgroundImage: `url(${wallpaper})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            display: 'grid',
+            placeItems: 'center',
+            padding: '40px 24px',
+          }}
+        >
+          <Surface high={high} />
+        </div>
+        <div style={{ marginTop: 8, fontFamily: FONT, fontSize: 12, color: MUTED, textAlign: 'center' }}>
+          {label}
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+## `container blur`
+
+Blur and shadow for **fixed-position, temporary-state floating UI** — a surface
+that appears over whatever the user was already looking at, then goes away.
+
+<Stage />
+
+<Table head={['Part', 'Value']}>
+  <tr>
+    <td style={td}>fill</td>
+    <td style={td}><code>--color-surfaces-container-blur</code></td>
+  </tr>
+  <tr>
+    <td style={td}>backdrop blur</td>
+    <td style={td}><code>blur(45px)</code></td>
+  </tr>
+  <tr>
+    <td style={td}>shadow</td>
+    <td style={td}><code>--elevation-3</code></td>
+  </tr>
+</Table>
+
+```css
+background: var(--color-surfaces-container-blur);
+backdrop-filter: blur(45px);
+-webkit-backdrop-filter: blur(45px);
+box-shadow: var(--elevation-3);
+```
+
+Used by **Toast** (pop-out) and **Notification Panel**.
+
+## `container blur high`
+
+The highest-intensity blur, with a thick translucent rim. **Reserved for the
+Windows OS shell of the application** — it is not a general-purpose surface, and
+nothing inside the app should reach for it.
+
+<Stage high />
+
+<Table head={['Part', 'Value']}>
+  <tr>
+    <td style={td}>fill</td>
+    <td style={td}><code>--color-surfaces-container-blur-high</code></td>
+  </tr>
+  <tr>
+    <td style={td}>stroke</td>
+    <td style={td}>
+      <code>8px</code> solid <code>--color-stroke-border-container-os</code>, over the
+      backdrop rather than over the fill (<code>background-clip: padding-box</code>)
+    </td>
+  </tr>
+  <tr>
+    <td style={td}>backdrop blur</td>
+    <td style={td}><code>blur(45px)</code></td>
+  </tr>
+  <tr>
+    <td style={td}>shadow</td>
+    <td style={td}><code>--elevation-5</code></td>
+  </tr>
+</Table>
+
+```css
+background: var(--color-surfaces-container-blur-high);
+background-clip: padding-box;
+border: 8px solid var(--color-stroke-border-container-os);
+backdrop-filter: blur(45px);
+-webkit-backdrop-filter: blur(45px);
+box-shadow: var(--elevation-5);
+```
+
+`background-clip: padding-box` is required, not optional. CSS paints the
+background under the border by default, which would stack the 80% fill behind
+the 20% stroke and leave a rim that reads as solid. Clipping the fill to the
+padding box lets the stroke sit directly over the blurred backdrop, which is
+what makes the edge read as translucent glass.
+
+## Rules
+
+<Table head={['Do', "Don't"]}>
+  {[
+    ['Apply fill, blur, and elevation together', 'Take the fill without the blur — the surface just looks washed out'],
+    ['Keep the fill translucent', 'Put a backdrop blur behind an opaque fill — it costs GPU work and renders nothing'],
+    ['Reserve blur high for the OS shell', 'Reach for blur high because it looks stronger'],
+    ['Clip the fill to the padding box when a translucent stroke is involved', 'Let the fill paint under the stroke — the rim stops reading as glass'],
+    ['Check text contrast over a busy backdrop', 'Assume a blurred surface passes contrast — it depends on what is behind it'],
+  ].map(([doIt, dont]) => (
+    <tr key={doIt}>
+      <td style={{ ...td, width: '50%' }}>{doIt}</td>
+      <td style={{ ...td, width: '50%', color: MUTED }}>{dont}</td>
+    </tr>
+  ))}
+</Table>
+
+Under Windows High Contrast both fills resolve to an opaque `#202020` and the
+system strips backdrop filters, so these surfaces flatten to a solid panel by
+design. The OS stroke turns opaque white there, which is what keeps the shell
+edge visible.
+
+## Notes on the Figma source
+
+- Figma's background-blur radius is **90**; CSS `blur(45px)` is the equivalent
+  visual radius, which is why every consumer uses 45px.
+- Both effect styles bundle their drop shadow, and both land exactly on the
+  elevation scale — `container blur` carries `elevation/3`, `container blur
+  high` carries `elevation/5`. Use the elevation token rather than re-writing
+  the two shadow layers by hand.
+
+## Open questions
+
+- **Rich Tooltip uses `container blur high`** — fill, blur, and `elevation/5`
+  all match the spec exactly (it omits only the 8px OS stroke). But the spec
+  reserves this surface for the Windows OS shell, and a tooltip is not the
+  shell. Either the tooltip should drop to `container blur`, or the spec's
+  "reserved" wording needs widening.
+- **Password Menu applies `blur(45px)` over an opaque fill**
+  (`--color-surfaces-container`). A backdrop filter behind a fully opaque
+  background renders nothing, so this is either a missing
+  `--color-surfaces-container-blur` fill or a stray blur that should be
+  removed.

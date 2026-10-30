@@ -1,0 +1,258 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Button } from '../components/Button';
+import tokens from '../tokens/tokens.json';
+
+<Meta title="Foundations/Colors" />
+
+# Colors
+
+hello pc colors are semantic tokens from the Figma variable system
+(`&color.<group>.<leaf>`). They describe a role — such as a surface, border,
+or destructive action — rather than a raw color choice. That lets the same
+component adapt across Light A, Dark A, and Windows High Contrast.
+
+Use the **Theme** toolbar to inspect the active mode. The reference below
+always shows all three resolved values, while the surrounding documentation
+re-themes live with the toolbar.
+
+export const groups = [...new Set(tokens.list.map((t) => t.group))];
+
+export const groupId = (name) => `color-${name.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
+
+export const MODE_LABELS = {
+  lightA: 'Light A',
+  darkA: 'Dark A',
+  winHct: 'Win HCT',
+};
+
+export const MUTED = 'var(--color-text-icon-secondary)';
+export const BORDER = 'var(--color-stroke-border)';
+export const CONTAINER = 'var(--color-surfaces-container)';
+
+export const MODE_EXPORT_KEYS = {
+  lightA: 'light.a',
+  darkA: 'dark.a',
+  winHct: 'win hct',
+};
+
+export const toFigmaColor = (value) => {
+  if (value == null || value === '') return null;
+
+  const hex = value.match(/^#([\da-f]{6})$/i);
+  if (hex) {
+    const number = parseInt(hex[1], 16);
+    return {
+      r: ((number >> 16) & 255) / 255,
+      g: ((number >> 8) & 255) / 255,
+      b: (number & 255) / 255,
+      a: 1,
+    };
+  }
+
+  const rgba = value.match(/^rgba?\(([^)]+)\)$/i);
+  if (!rgba) throw new Error(`Unsupported color value: ${value}`);
+
+  const parts = rgba[1].split(',').map((part) => Number(part.trim()));
+  const [r, g, b, a = 1] = parts;
+  return { r: r / 255, g: g / 255, b: b / 255, a };
+};
+
+export const downloadJson = (filename, data) => {
+  const url = URL.createObjectURL(
+    new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+  );
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+
+export const exportThemes = () => {
+  const collectionId = 'VariableCollectionId:cake-color';
+  const modes = Object.entries(MODE_EXPORT_KEYS).map(([key, modeId]) => ({
+    modeId,
+    name: MODE_LABELS[key],
+  }));
+
+  const variables = tokens.list
+    .map((token, index) => {
+      const valuesByMode = Object.fromEntries(
+        Object.entries(MODE_EXPORT_KEYS)
+          .map(([key, modeId]) => {
+            const color = toFigmaColor(token[key]);
+            return color ? [modeId, color] : null;
+          })
+          .filter(Boolean)
+      );
+
+      if (Object.keys(valuesByMode).length === 0) return null;
+
+      return {
+        id: `VariableID:cake-color:${index + 1}`,
+        name: token.figmaPath.replace(/^&color\//, ''),
+        description: `hello pc semantic color: ${token.figmaPath}`,
+        resolvedType: 'COLOR',
+        variableCollectionId: collectionId,
+        valuesByMode,
+        codeSyntax: {
+          WEB: `--color-${token.groupKey.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}-${token.leafKey.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`,
+        },
+      };
+    })
+    .filter(Boolean);
+
+  const file = {
+    meta: {
+      format: 'figma-variables-export',
+      formatVersion: '1.0.0',
+      source: 'hello pc design system',
+      exportedAt: new Date().toISOString(),
+    },
+    collections: [
+      {
+        id: collectionId,
+        name: '&color',
+        modes,
+        defaultModeId: MODE_EXPORT_KEYS.lightA,
+        variableIds: variables.map((variable) => variable.id),
+      },
+    ],
+    variables,
+  };
+
+  downloadJson('cake-color-themes.json', file);
+};
+
+export const Swatch = ({ color, label }) => (
+  <span
+    aria-label={`${label}: ${color}`}
+    title={`${label}: ${color}`}
+    style={{
+      display: 'block',
+      width: '100%',
+      height: 48,
+      borderRadius: 8,
+      background: color,
+      border: `1px solid ${BORDER}`,
+      boxSizing: 'border-box',
+    }}
+  />
+);
+
+export const ModeValue = ({ mode, color }) => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'minmax(48px, 1fr)',
+      gap: 6,
+      minWidth: 0,
+    }}
+  >
+    <Swatch color={color} label={MODE_LABELS[mode]} />
+    <div style={{ color: MUTED, fontSize: 11, lineHeight: 1.3 }}>{MODE_LABELS[mode]}</div>
+    <code style={{ fontSize: 11, overflowWrap: 'anywhere' }}>{color}</code>
+  </div>
+);
+
+export const TokenCard = ({ token }) => (
+  <article
+    style={{
+      background: CONTAINER,
+      border: `1px solid ${BORDER}`,
+      borderRadius: 12,
+      padding: 16,
+      display: 'grid',
+      gap: 16,
+    }}
+  >
+    <div style={{ display: 'grid', gap: 4 }}>
+      <code style={{ fontSize: 13, fontWeight: 600, overflowWrap: 'anywhere' }}>
+        color.{token.groupKey}.{token.leafKey}
+      </code>
+      <span style={{ color: MUTED, fontSize: 12, overflowWrap: 'anywhere' }}>{token.figmaPath}</span>
+    </div>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+        gap: 10,
+      }}
+    >
+      <ModeValue mode="lightA" color={token.lightA} />
+      <ModeValue mode="darkA" color={token.darkA} />
+      <ModeValue mode="winHct" color={token.winHct} />
+    </div>
+  </article>
+);
+
+export const Group = ({ name }) => (
+  <section style={{ marginTop: 48 }}>
+    <h2 id={groupId(name)}>
+      <code>{name}</code>
+    </h2>
+    <p style={{ color: MUTED, marginTop: -8, marginBottom: 20 }}>
+      {tokens.list.filter((t) => t.group === name).length} semantic tokens
+    </p>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
+        gap: 16,
+      }}
+    >
+      {tokens.list
+        .filter((t) => t.group === name)
+        .map((t) => (
+          <TokenCard key={t.figmaPath} token={t} />
+        ))}
+    </div>
+  </section>
+);
+
+## Usage
+
+```tsx
+import styled from 'styled-components';
+
+const Card = styled.div`
+  background: var(--color-surfaces-container);
+  color: var(--color-text-icon-primary);
+  border: var(--stroke-100) solid var(--color-stroke-border);
+`;
+```
+
+## Download themes
+
+<section
+  style={{
+    background: CONTAINER,
+    border: `1px solid ${BORDER}`,
+    borderRadius: 12,
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 16,
+    padding: 20,
+  }}
+>
+  <div style={{ maxWidth: 600 }}>
+    <strong>Figma variables JSON</strong>
+    <p style={{ color: MUTED, margin: '6px 0 0' }}>
+      Export all {tokens.list.length} semantic color variables for Light A, Dark A, and Win HCT in a Figma plugin-style collection and variable format.
+    </p>
+  </div>
+  <Button onClick={exportThemes}>Download themes JSON</Button>
+</section>
+
+## Token reference
+
+<p style={{ color: MUTED, marginBottom: 24 }}>
+  Each card shows the token’s Figma path and its resolved value in every supported mode.
+</p>
+
+{groups.map((name) => <Group key={name} name={name} />)}

@@ -25,7 +25,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange' | 'defau
 ## Usage
 
 ```tsx
-import { RowsPerPage, Pagination } from '@/cakeand/components/Pagination';
+import { RowsPerPage, Pagination } from '@/hellopc/components/Pagination';
 
 <RowsPerPage
   options={[10, 25, 50, 100]}
@@ -62,5 +62,5 @@ import { RowsPerPage, Pagination } from '@/cakeand/components/Pagination';
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Scrollbar, NumberDropdown, Pagination.
-- Source: `src/cakeand/components/Pagination/`
+- Source: `src/hellopc/components/Pagination/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-pagination-rows-per-page--docs>

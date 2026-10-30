@@ -53,5 +53,5 @@ Also accepts all `Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'children'>`
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: TextInput.
-- Source: `src/cakeand/components/Elements/`
+- Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-input-label--docs>

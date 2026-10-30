@@ -8,8 +8,8 @@ import React, {
   useState,
 } from 'react';
 import styled from 'styled-components';
-import { IconButton } from '../../cakeand/components/Button/IconButton';
-import { HelperString } from '../../cakeand/components/Elements/HelperString';
+import { IconButton } from '../../hellopc/components/Button/IconButton';
+import { HelperString } from '../../hellopc/components/Elements/HelperString';
 import { getSoundUrl } from '../../data/sound-catalog';
 import SoundWaveform from './SoundWaveform';
 
@@ -105,7 +105,7 @@ const ErrorWrap = styled.div`
 
 /**
  * Exact geometry from the Figma/Moto filled play-circle asset
- * (`Cake Website` node 168:3990). `currentColor` lets cake& IconButton own
+ * (Figma node 168:3990). `currentColor` lets hello pc IconButton own
  * enabled and disabled state colors.
  */
 const PlayCircleGlyph = () => (

@@ -1,5 +1,5 @@
 {
-  "name": "cakeand-dts-tools",
+  "name": "hellopc-dts-tools",
   "version": "0.0.0",
   "private": true,
   "description": "Isolated TypeScript 5, used ONLY to emit .d.ts for the published @cake-admin/cakeand package. Kept out of the root package.json so react-scripts stays on its pinned TypeScript 4.x and the cake.lenovo.com site build is unaffected.",

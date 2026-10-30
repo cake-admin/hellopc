@@ -26,7 +26,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLElement>, 'onClick'>` props.
 ## Usage
 
 ```tsx
-import { Avatar } from '@/cakeand/components/Avatar';
+import { Avatar } from '@/hellopc/components/Avatar';
 
 // photo, falling back to initials while it loads
 <Avatar src={user.photoUrl} alt={user.name} initials="AB" />
@@ -68,5 +68,5 @@ import { Avatar } from '@/cakeand/components/Avatar';
 ---
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Source: `src/cakeand/components/Avatar/`
+- Source: `src/hellopc/components/Avatar/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-avatar--docs>

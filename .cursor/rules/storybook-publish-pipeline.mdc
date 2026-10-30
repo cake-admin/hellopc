@@ -1,14 +1,14 @@
 ---
-description: How cake& Storybook and the npm package reach production after component work
+description: How hello pc Storybook and the npm package reach production after component work
 globs:
-  - "src/cakeand/components/**"
-  - "src/cakeand/components/**/*.stories.tsx"
+  - "src/hellopc/components/**"
+  - "src/hellopc/components/**/*.stories.tsx"
   - ".storybook/**"
 alwaysApply: false
 ---
 
-When editing cake& components or Storybook config — or when asked how to
-publish cake&, ship a version, or update cake.lenovo.com/storybook — read and
+When editing hello pc components or Storybook config — or when asked how to
+publish hello pc, ship a version, or update cake.lenovo.com/storybook — read and
 follow
 [.claude/skills/storybook-publish-pipeline/SKILL.md](../../.claude/skills/storybook-publish-pipeline/SKILL.md).
 
@@ -19,6 +19,6 @@ reuse a tag, never hand-edit `starter/context/`.
 If the designer install path changes, update Introduction, Getting Started,
 the Resources Devkit card, and README **Use it** together — step-by-step,
 layman's terms. Getting Started is top-level Storybook docs (not under
-Cake& Maintenance). Consumer release links currently go to
+hello pc Maintenance). Consumer release links currently go to
 https://github.com/cake-admin/cakev2/releases#release-v4.2.4
 The published package ships `stories/` and `context/` via build-package.mjs.

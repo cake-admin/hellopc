@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { nativeScrollbarStyles } from '../cakeand/components/Elements/Scrollbar';
+import { nativeScrollbarStyles } from '../hellopc/components/Elements/Scrollbar';
 
 /**
  * Horizontal page gutter shared by TopNav and wallpaper page sections.

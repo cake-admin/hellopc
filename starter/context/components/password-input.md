@@ -65,5 +65,5 @@ Also accepts all `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'ty
 ---
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Source: `src/cakeand/components/PasswordInput/`
+- Source: `src/hellopc/components/PasswordInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-password-input--docs>

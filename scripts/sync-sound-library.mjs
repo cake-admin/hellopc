@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Vendors the official Cake& OGG library and derives duration/waveform data.
+ * Vendors the official hello pc OGG library and derives duration/waveform data.
  * Re-run `npm run sync:sounds` when the upstream repository changes.
  * The production site never fetches GitHub or decodes audio at runtime.
  *

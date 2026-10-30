@@ -59,5 +59,5 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLSpanElement>, 'children' | 'colo
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Badge, Button.
-- Source: `src/cakeand/components/Counter/`
+- Source: `src/hellopc/components/Counter/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-counter--docs>

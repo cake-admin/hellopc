@@ -53,5 +53,5 @@ Also accepts all `React.HTMLAttributes<HTMLSpanElement>` props.
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Modal, Toast.
-- Source: `src/cakeand/components/Modal/`
+- Source: `src/hellopc/components/Modal/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-modal-modal-icon--docs>

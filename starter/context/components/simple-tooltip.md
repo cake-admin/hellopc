@@ -58,5 +58,5 @@ Simple Tooltip provides a short, supplemental text description (Figma node 128:8
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
-- Source: `src/cakeand/components/Tooltip/`
+- Source: `src/hellopc/components/Tooltip/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-tooltip-simple--docs>

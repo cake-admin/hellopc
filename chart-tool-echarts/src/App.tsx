@@ -8,7 +8,7 @@ import { PreviewStage } from './preview/PreviewStage';
 import { CustomizationPanel } from './panel/CustomizationPanel';
 import './styles.css';
 
-/** Main cake& site origin — nav links leave /datavis and open the docs site. */
+/** Main hello pc site origin — nav links leave /datavis and open the docs site. */
 const SITE_ORIGIN = 'https://cake.lenovo.com';
 
 /** Map site theme dropdown → chart modes (incl. Windows High-Contrast). */
@@ -57,7 +57,11 @@ function AppShell() {
       </div>
       <div className="app" data-theme={mode} style={chromeVars}>
         <main className="app__main">
-          <span className="app__brand-float">Cake&amp; data visualization playground</span>
+          <span className="app__brand-float">
+            <span>
+              <span className="brand-name">hello <span className="brand-pc">pc</span></span> data visualization playground
+            </span>
+          </span>
           <PreviewStage />
           <CustomizationPanel />
         </main>

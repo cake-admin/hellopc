@@ -72,5 +72,5 @@ const [open, setOpen] = useState(false);
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, ModalContent, ModalFooter, ModalTitle.
-- Source: `src/cakeand/components/Modal/`
+- Source: `src/hellopc/components/Modal/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-modal-modal--docs>

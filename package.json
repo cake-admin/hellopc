@@ -1,7 +1,7 @@
 {
-  "name": "cake",
+  "name": "hellopc",
   "version": "4.0.1",
-  "description": "Cake Design System",
+  "description": "hello pc is the new age of PC & web software design for Lenovo & Motorola.",
   "homepage": "https://cake.lenovo.com",
   "main": "index.js",
   "scripts": {
@@ -15,10 +15,10 @@
     "nest:datavis": "node scripts/nest-datavis.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build:cakeand-tokens": "node scripts/build-cakeand-tokens.mjs",
+    "build:hellopc-tokens": "node scripts/build-hellopc-tokens.mjs",
     "storybook": "node node_modules/storybook/dist/bin/dispatcher.js dev -p 6006",
     "build-storybook": "node node_modules/storybook/dist/bin/dispatcher.js build",
-    "build:cakeand-vars": "node scripts/build-cakeand-css-vars.mjs",
+    "build:hellopc-vars": "node scripts/build-hellopc-css-vars.mjs",
     "build:package": "node scripts/build-package.mjs",
     "build:knowledge": "node scripts/build-knowledge.mjs",
     "build:agent-context": "node scripts/build-agent-context.mjs",

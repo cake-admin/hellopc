@@ -1,0 +1,303 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started" />
+
+# Getting Started
+
+This is the **step-by-step** walkthrough for the hello pc Devkit. For the big
+picture (Storybook vs Devkit, what’s inside the package), start on
+[Introduction](?path=/docs/introduction--docs).
+
+You do **not** need a GitHub password, a `.npmrc` file, or access to GitHub
+Packages. The starter downloads from a public
+[release file](https://github.com/cake-admin/cakev2/releases#release-v4.2.4)
+(currently **v4.2.4**).
+
+## Before you begin
+
+1. Install [Node.js](https://nodejs.org/) — pick the **LTS** version. That
+   gives you the `npm` command.
+2. Open a terminal:
+   - **Mac:** Terminal (Spotlight → “Terminal”)
+   - **Windows:** PowerShell (Start → “PowerShell”)
+
+If you installed Node while a terminal was already open, close it and open a
+new one so it can see `npm`.
+
+## Using the terminal (quick tour)
+
+You will type (or paste) short commands and press **Enter**. A blinking cursor
+means the terminal is waiting for the next command.
+
+- **Paste:** Ctrl+V on Windows, Cmd+V on Mac (some Mac terminals use
+  Ctrl+Shift+V).
+- After `npm run dev`, the terminal prints a link like
+  `http://localhost:5173` — open that in your browser. That is your prototype
+  preview.
+- **When you are done for the day:** click in the terminal window and press
+  **Ctrl+C** (same on Mac and Windows). That stops the local preview server.
+  Closing the browser tab alone does **not** stop it.
+- Closing the terminal window also stops the server, but **Ctrl+C** is the
+  clean way.
+- Next time you want the preview again: open a terminal, `cd` into your
+  project folder, and run `npm run dev` again.
+
+## Start a new prototype
+
+**1.** Copy the starter into a new folder (change `my-prototype` if you like):
+
+```bash
+npx degit cake-admin/cakev2/starter my-prototype
+```
+
+`npx` runs a helper once. `degit` copies files **without** git history, so you
+get a clean project — not a fork of the whole design system.
+
+The first time, your computer may ask “ok to proceed?” — type `y` and press
+Enter.
+
+If `degit` fails (it is older software), either of these is equivalent:
+
+```bash
+npx giget@latest gh:cake-admin/cakev2/starter my-prototype
+```
+
+```bash
+git clone --depth 1 https://github.com/cake-admin/cakev2
+cp -r cakev2/starter my-prototype
+```
+
+On Windows, copy the `starter` folder out of the clone in File Explorer if you
+prefer not to use `cp`.
+
+**2.** Move into the folder:
+
+```bash
+cd my-prototype
+```
+
+**3.** Install the pieces the project needs (this can take a minute):
+
+```bash
+npm install
+```
+
+**4.** Start the local preview:
+
+```bash
+npm run dev
+```
+
+Open the `http://localhost:5173` link your terminal prints. You should see a
+small hello pc page with a light/dark toggle.
+
+**5.** Open the `my-prototype` folder in Cursor (or another coding agent) and
+ask for what you want — for example, *“build a settings page with tabs and a
+save button, using hello pc components.”*
+
+**6.** When you finish: press **Ctrl+C** in the terminal to stop the preview.
+
+To pull a newer hello pc version later, from that same folder run
+`npm run hellopc:update`.
+
+## What is already wired up
+
+You should not have to configure these yourself:
+
+- **CakeProvider** — one wrapper that turns on hello pc colors, type, and the
+  light/dark toggle
+- **Design tokens** — the same variables as Figma, as CSS custom properties
+- **Rookery New** — the hello pc font, loaded for you
+- **Components** — import from `@cake-admin/cakeand` (one path)
+- **Agent notes** — a `context/` folder so Cursor or Claude Code uses real
+  component names instead of guessing
+- **Inside the package** — `stories/` (Storybook examples as source) and
+  `context/` markdown for agents. See
+  [Introduction](?path=/docs/introduction--docs) for the full package map.
+
+## Working with a coding agent
+
+Open `my-prototype` in Cursor and describe the screen you want. The starter
+includes `AGENTS.md` and `context/`:
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>What it is</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>context/hellopc-components.md</code>
+      </td>
+      <td>A one-line list of every component. The agent should read this first.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>context/components/&lt;name&gt;.md</code>
+      </td>
+      <td>Props and a real example for one component.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>context/hellopc-tokens.md</code>
+      </td>
+      <td>Every color/space/type token.</td>
+    </tr>
+  </tbody>
+</table>
+
+These files are generated from this Storybook. **Do not edit `context/` by
+hand** — a hello pc release regenerates it.
+
+## Adding hello pc to an app you already have
+
+Use this only if a developer already has a React app. Prefer the starter steps
+above when you can.
+
+**1.** Open the [v4.2.4 release](https://github.com/cake-admin/cakev2/releases#release-v4.2.4)
+and copy the `cake-admin-cakeand-4.2.4.tgz` URL (or use the command below).
+
+**2.** Install hello pc and the libraries it shares with the app:
+
+```bash
+npm install https://github.com/cake-admin/cakev2/releases/download/v4.2.4/cake-admin-cakeand-4.2.4.tgz
+npm install react react-dom styled-components radix-ui lucide-react
+```
+
+Those five extra packages are **peer dependencies**: they are not bundled
+inside hello pc, so the app has exactly one copy of React and
+`styled-components`. Two copies of `styled-components` means components look
+unstyled, with no clear error. In Vite, keep this in `vite.config.ts` (the
+starter already has it):
+
+```ts
+export default defineConfig({
+  resolve: { dedupe: ['styled-components', 'react', 'react-dom'] },
+});
+```
+
+**3.** Wrap the app **once**:
+
+```tsx
+import { CakeProvider, Card, HeroCard, Button } from '@cake-admin/cakeand';
+
+<CakeProvider mode="light.a">
+  <Card>
+    <HeroCard title="Hello" actions={<Button size="lg">Get started</Button>} />
+  </Card>
+</CakeProvider>;
+```
+
+Copy three things from the starter if they are not already there:
+
+1. `resolve.dedupe` in `vite.config.ts` (above)
+2. `import '@cake-admin/cakeand/cakeand.css'` at the **top** of your main
+   entry file (`src/main.tsx` in the starter)
+3. `data-theme="light.a"` on the `<html>` tag in `index.html`
+
+`CakeProvider` writes `data-theme` onto `<html>` so menus and dialogs that
+pop over the page (Modal, Dropdown, Tooltips) stay on the same theme. If you
+only wrap a `<div>`, those popovers can jump back to light.
+
+Modes: `light.a` (default), `dark.a`, `win hct`. The first paint uses whatever
+is on `<html>` in `index.html`, so keep that in sync with `mode`.
+
+## Updating hello pc
+
+From a starter project:
+
+```bash
+npm run hellopc:update
+```
+
+From an app you added hello pc to yourself, install the newer `.tgz` URL again.
+There is no `hellopc:update` script outside the starter.
+
+Each project pins **one exact version** on purpose. A link that always meant
+“latest” would look convenient, then break installs when the file on that
+URL changed.
+
+## Troubleshooting
+
+<table>
+  <thead>
+    <tr>
+      <th>What you see</th>
+      <th>What to try</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No color; tokens look empty</td>
+      <td>
+        The hello pc CSS file did not load. Check the{' '}
+        <code>cakeand.css</code> import in <code>src/main.tsx</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>Your CSS cannot override hello pc</td>
+      <td>
+        Import your stylesheet <strong>after</strong> the hello pc one.
+      </td>
+    </tr>
+    <tr>
+      <td>Components ignore the theme</td>
+      <td>
+        Two copies of <code>styled-components</code>. Run{' '}
+        <code>npm ls styled-components</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>Wrong theme for a split second on load</td>
+      <td>
+        <code>data-theme</code> in <code>index.html</code> does not match{' '}
+        <code>CakeProvider</code> <code>mode</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>Menus/dialogs are the wrong theme</td>
+      <td>
+        Do not pass <code>scope=&quot;subtree&quot;</code> if you use Modal,
+        Dropdown, or Tooltips.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>npm error EINTEGRITY</code>
+      </td>
+      <td>
+        Delete <code>package-lock.json</code> and reinstall (starter:{' '}
+        <code>npm run hellopc:update</code>).
+      </td>
+    </tr>
+    <tr>
+      <td>npm fails oddly on Windows</td>
+      <td>
+        A folder name containing <code>&amp;</code> breaks npm. Rename the
+        folder.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>npx</code> or <code>npm</code> is “not recognized”
+      </td>
+      <td>
+        Node.js is not installed, or the terminal was open before you
+        installed it. Close the terminal and open a new one.
+      </td>
+    </tr>
+    <tr>
+      <td>Preview still running after I closed the browser</td>
+      <td>
+        Click the terminal and press <strong>Ctrl+C</strong> to stop{' '}
+        <code>npm run dev</code>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Use **npm**. Other package managers can install from a URL, but this starter
+is tested with npm only.

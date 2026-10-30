@@ -97,5 +97,5 @@ import { Toast } from '<cakeand>/components/Toast';
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, Modal, ModalIcon.
-- Source: `src/cakeand/components/Toast/`
+- Source: `src/hellopc/components/Toast/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-toast--docs>

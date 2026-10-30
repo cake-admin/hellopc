@@ -8,7 +8,7 @@ import { WIREFRAME_SHADE_LIMIT } from '../../theme/chartTheme.types';
 import type { SingleToken } from '../../tokens/tokens.types';
 
 const VARIATIONS: Array<{ id: Variation; label: string; hint: string; hidden?: boolean }> = [
-  { id: 'categorical', label: 'Categorical', hint: 'Distinct cake& tones — identical in light & dark' },
+  { id: 'categorical', label: 'Categorical', hint: 'Distinct hello pc tones — identical in light & dark' },
   { id: 'sequential', label: 'Sequential', hint: 'Single-hue indigo ramp (light→dark) — heatmap, area, funnel' },
   { id: 'semantic', label: 'Semantic', hint: 'Red→green ramp (bad→good) — gauge, KPI, heatmap' },
   { id: 'diverging', label: 'Diverging', hint: 'Jade↔violet two-ended ramp — heatmap, choropleth' },
@@ -204,7 +204,17 @@ export function ColorControls() {
       </div>
       {activeVariation ? (
         <p className="field__hint" style={{ margin: '8px 0 0' }}>
-          {activeVariation.hint}
+          {activeVariation.hint.includes('hello pc') ? (
+            <>
+              {activeVariation.hint.split('hello pc')[0]}
+              <span className="brand-name">
+                hello <span className="brand-pc">pc</span>
+              </span>
+              {activeVariation.hint.split('hello pc')[1]}
+            </>
+          ) : (
+            activeVariation.hint
+          )}
         </p>
       ) : null}
 

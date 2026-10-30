@@ -46,7 +46,7 @@ function column(mode: Mode): string {
 const html = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cake& data visualization playground — static gallery</title>
+<title>hello pc data visualization playground — static gallery</title>
 <style>
   @font-face { font-family:'Rookery New'; src:url('../public/fonts/RookeryNew-Regular.woff2') format('woff2'); font-weight:400; }
   @font-face { font-family:'Rookery New'; src:url('../public/fonts/RookeryNew-Medium.woff2') format('woff2'); font-weight:500 600; }
@@ -63,7 +63,7 @@ const html = `<!DOCTYPE html>
   @media (max-width:900px){ .wrap{grid-template-columns:1fr} .col{min-height:auto} }
 </style></head>
 <body>
-  <header>Cake& data visualization playground — static export gallery (real SVG output · categorical palette)</header>
+  <header>hello pc data visualization playground — static export gallery (real SVG output · categorical palette)</header>
   <div class="wrap">${column('light')}${column('dark')}</div>
 </body></html>`;
 

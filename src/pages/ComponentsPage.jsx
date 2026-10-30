@@ -4,8 +4,8 @@ import {
   VerticalTabs,
   VerticalTabsList,
   VerticalTabsContent,
-} from '../cakeand/components/VerticalTabs/VerticalTabs';
-import { VerticalTabItem } from '../cakeand/components/VerticalTabs/VerticalTabItem';
+} from '../hellopc/components/VerticalTabs/VerticalTabs';
+import { VerticalTabItem } from '../hellopc/components/VerticalTabs/VerticalTabItem';
 import { pageGutterX, stickyDocsRail } from '../styles/pageChrome';
 import { StickyWallpaper } from './HomePage';
 import heroBg from '../assets/home/hero-bg.png';

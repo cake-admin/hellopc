@@ -24,7 +24,7 @@ Also accepts all `React.ComponentPropsWithoutRef<typeof RadixTabs.Root>` props.
 import {
   VerticalTabs, VerticalTabsList, VerticalTabsContent,
   VerticalTabItem, VerticalTabSubItem,
-} from '@/cakeand/components/VerticalTabs';
+} from '@/hellopc/components/VerticalTabs';
 
 <VerticalTabs defaultValue="general">
   <VerticalTabsList aria-label="Settings sections">
@@ -69,5 +69,5 @@ import {
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Divider, VerticalTabItem, VerticalTabSubItem.
-- Source: `src/cakeand/components/VerticalTabs/`
+- Source: `src/hellopc/components/VerticalTabs/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-vertical-tabs-vertical-tabs--docs>

@@ -23,7 +23,7 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
 ```tsx
 import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell }
-  from '@/cakeand/components/Table';
+  from '@/hellopc/components/Table';
 
 <Table
   aria-label="Team members"
@@ -72,5 +72,5 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Badge, Button, IconButton, Checkbox, Pagination, ActionBar, DataRow, HeaderRow.
-- Source: `src/cakeand/components/Table/`
+- Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-table--docs>

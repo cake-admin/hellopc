@@ -23,7 +23,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLElement>, 'children'>` props.
 ## Usage
 
 ```tsx
-import { Breadcrumb } from '@/cakeand/components/Breadcrumb';
+import { Breadcrumb } from '@/hellopc/components/Breadcrumb';
 
 // simple — the whole trail inline
 <Breadcrumb
@@ -70,5 +70,5 @@ import { Breadcrumb } from '@/cakeand/components/Breadcrumb';
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Presentational; wraps no Radix primitive.
 - Related: IconButton.
-- Source: `src/cakeand/components/Breadcrumb/`
+- Source: `src/hellopc/components/Breadcrumb/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-breadcrumb--docs>

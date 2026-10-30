@@ -54,7 +54,7 @@ jobs:
           CI: false
           STORYBOOK_BASE: /storybook/
 
-      # Cake& data visualization playground — built at base /datavis/ and
+      # hello pc data visualization playground — built at base /datavis/ and
       # nested under the main site so it goes live at cake.lenovo.com/datavis.
       - name: Install datavis playground dependencies
         working-directory: chart-tool-echarts
@@ -104,6 +104,6 @@ jobs:
             echo "- Storybook: https://cake.lenovo.com/storybook/"
             echo
             echo "The npm package is **not** published by this workflow. To ship"
-            echo "\`@cake-admin/cakeand\`, run **Publish design system package**"
+            echo "\`@cake-admin/hellopc\`, run **Publish design system package**"
             echo "(dry_run first; never reuse a tag)."
           } >> "$GITHUB_STEP_SUMMARY" 

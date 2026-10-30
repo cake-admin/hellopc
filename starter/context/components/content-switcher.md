@@ -27,7 +27,7 @@ Also accepts all `Omit<
 ## Usage
 
 ```tsx
-import { ContentSwitcher } from '@/cakeand/components/ContentSwitcher';
+import { ContentSwitcher } from '@/hellopc/components/ContentSwitcher';
 
 const [view, setView] = useState('grid');
 
@@ -81,5 +81,5 @@ const [view, setView] = useState('grid');
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, IconButton, Dropdown, Pagination.
-- Source: `src/cakeand/components/ContentSwitcher/`
+- Source: `src/hellopc/components/ContentSwitcher/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-content-switcher--docs>

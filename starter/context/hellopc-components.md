@@ -9,7 +9,7 @@ import { Button, Card, TextInput } from '@cake-admin/cakeand';
 
 There are no deep paths. `@cake-admin/cakeand/Button` does not resolve.
 
-Every visual value is a CSS custom property — see `cake-tokens.md`.
+Every visual value is a CSS custom property — see `hellopc-tokens.md`.
 Never hardcode a color, spacing, radius, or type size.
 
 Read `components/<slug>.md` before using a component for the first time.
@@ -106,7 +106,7 @@ Modal, Dropdown, SimpleTooltip, RichTooltip, Breadcrumb, NumberDropdown, Paginat
 
 1. Exactly one `<CakeProvider>`, at the app root.
 2. Never hardcode a color, spacing, radius, or type size — use tokens.
-3. Token names are exact, not guessable by analogy. Check `cake-tokens.md`.
+3. Token names are exact, not guessable by analogy. Check `hellopc-tokens.md`.
 4. `styled-components` must resolve to a single instance.
 5. Icons come from `lucide-react`.
 6. Do not add another UI library. Compose from what is here.

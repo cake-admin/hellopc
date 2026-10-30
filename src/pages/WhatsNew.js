@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Card } from '../cakeand/components/Card';
-import { Badge } from '../cakeand/components/Badge';
-import { Button } from '../cakeand/components/Button';
+import { Card } from '../hellopc/components/Card';
+import { Badge } from '../hellopc/components/Badge';
+import { Button } from '../hellopc/components/Button';
 import { pageGutterX } from '../styles/pageChrome';
 import { StickyWallpaper } from './HomePage';
+import { BrandName, withBrand } from '../components/BrandName';
 import heroBg from '../assets/home/hero-bg.png';
 
 const ROOKERY = "'Rookery New', Rookery, var(--font-family)";
@@ -217,14 +218,14 @@ const LegacyHeading = styled.h2`
 const CURRENT_POSTS = [
   {
     id: 'cakeand-1-0-0',
-    title: 'Cake& 1.0.0',
+    title: 'hello pc 1.0.0',
     date: 'August 13, 2026',
     release: 'major',
     body: [
-      "We're excited to introduce Cake& 1.0.0.",
-      "This release marks the beginning of a new chapter for Lenovo design. Built together by Lenovo and Motorola, Cake& unifies our design languages into a single PC software system that's modern, accessible, and ready for the future.",
+      "We're excited to introduce hello pc 1.0.0.",
+      "This release marks the beginning of a new chapter for Lenovo design. Built together by Lenovo and Motorola, hello pc unifies our design languages into a single PC software system that's modern, accessible, and ready for the future.",
       'Our goal is simple: help teams design, build, and ship with greater consistency and confidence. This release includes our new Figma library, React component library, Storybook documentation, design foundations, and developer resources—all working from the same source of truth.',
-      "This is just the beginning. We'll continue evolving Cake& alongside our products and the teams who build them.",
+      "This is just the beginning. We'll continue evolving hello pc alongside our products and the teams who build them.",
     ],
   },
   {
@@ -233,7 +234,7 @@ const CURRENT_POSTS = [
     date: 'May 12, 2026',
     release: 'major',
     body: [
-      "We've introduced a new AI section to the Cake design system to support a more consistent and scalable approach to AI experiences across Lenovo products. This update includes AI design principles, gradient usage guidance, and logo and icon direction that define how AI should be communicated through visual treatment, hierarchy, motion, and brand expression rather than relying on a single universal symbol.",
+      "We've introduced a new AI section to the hello pc to support a more consistent and scalable approach to AI experiences across Lenovo products. This update includes AI design principles, gradient usage guidance, and logo and icon direction that define how AI should be communicated through visual treatment, hierarchy, motion, and brand expression rather than relying on a single universal symbol.",
       'The new guidance outlines when to use AI gradients, how to apply segment-specific treatments for consumer, commercial, and internal products, and when AI logos or icons are appropriate within product experiences. These updates are intended to help teams create recognizable AI moments while avoiding icon overload and maintaining consistency across different product contexts.',
     ],
     links: [
@@ -334,7 +335,7 @@ const PostCard = ({ post, onNavigate }) => (
   <Card elevation="low">
     <CardInner>
       <TitleBlock>
-        <CardTitle>{post.title}</CardTitle>
+        <CardTitle>{withBrand(post.title)}</CardTitle>
         <BadgeRow>
           <Badge color="secondary" tone="subtle" dot={false}>
             {post.date}
@@ -346,7 +347,7 @@ const PostCard = ({ post, onNavigate }) => (
       {post.body ? (
         <CardBody>
           {post.body.map((para) => (
-            <p key={para.slice(0, 32)}>{para}</p>
+            <p key={para.slice(0, 32)}>{withBrand(para)}</p>
           ))}
         </CardBody>
       ) : null}
@@ -396,8 +397,8 @@ const WhatsNew = () => {
         <Content>
           <Intro>
             <IntroText>
-              Track the latest updates, improvements, and releases for the Cake&amp;
-              Design System.
+              Track the latest updates, improvements, and releases for the{' '}
+              <BrandName /> Design System.
             </IntroText>
             <div>
               <Button

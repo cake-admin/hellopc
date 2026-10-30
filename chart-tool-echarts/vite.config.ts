@@ -17,7 +17,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      // Reuse main-site TopNav / SiteThemeProvider / cake& without cloning.
+      // Reuse main-site TopNav / SiteThemeProvider / hello pc without cloning.
       '@site': siteSrc,
       // Pin shared libs to *this* app's node_modules. `@site` imports resolve
       // from ../src and otherwise pick up the repo-root copies — a second

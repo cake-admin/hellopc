@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ExternalLink } from 'lucide-react';
-import { Button } from '../../cakeand/components/Button';
-import { VerticalTabsSectionHeader } from '../../cakeand/components/VerticalTabs/VerticalTabsSection';
+import { Button } from '../../hellopc/components/Button';
+import { VerticalTabsSectionHeader } from '../../hellopc/components/VerticalTabs/VerticalTabsSection';
 import { STORYBOOK_PATH } from '../../data/nav';
+import { withBrand } from '../../components/BrandName';
 
 /** Story title `Components/Button/Button` → docs path */
 export const storybookDocs = (slug) => `${STORYBOOK_PATH}?path=/docs/${slug}`;
@@ -134,7 +135,7 @@ export const SectionIntro = ({ title, paragraphs, storybook, ctas }) => (
     <SectionTitle>{title}</SectionTitle>
     <SectionCopy>
       {paragraphs.map((text) => (
-        <Para key={text.slice(0, 48)}>{text}</Para>
+        <Para key={text.slice(0, 48)}>{withBrand(text)}</Para>
       ))}
     </SectionCopy>
     <CtaRow>

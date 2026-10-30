@@ -61,5 +61,5 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: Button, Checkbox.
-- Source: `src/cakeand/components/Menu/`
+- Source: `src/hellopc/components/Menu/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-menu-menu-item--docs>

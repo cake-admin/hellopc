@@ -64,5 +64,5 @@ Date Input collects a typed MM/DD/YY date and exposes a calendar action that ope
 
 - Behaviour comes from a Radix primitive; cake& owns the visuals.
 - Related: HelperString, InputLabel.
-- Source: `src/cakeand/components/DateInput/`
+- Source: `src/hellopc/components/DateInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-date-input--docs>

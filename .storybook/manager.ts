@@ -5,11 +5,11 @@ import {
   cakeManagerThemes,
   resolveManagerThemeKey,
   type CakeManagerThemeKey,
-} from './cake-manager-themes';
+} from './hellopc-manager-themes';
 
 /**
- * cake& Storybook manager chrome — fully re-themes with the preview Theme
- * toolbar (light / dark / hct), so the whole screen follows cake& tokens.
+ * hello pc Storybook manager chrome — fully re-themes with the preview Theme
+ * toolbar (light / dark / hct), so the whole screen follows hello pc tokens.
  */
 
 /** Selected / hover tokens for manager-head.html (solid fills, mode-aware). */

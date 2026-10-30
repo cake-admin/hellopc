@@ -14,7 +14,7 @@ export function paletteFor(themeLabel) {
 }
 
 /**
- * Resolve cake& CSS custom properties for chart chrome (axes, labels, grid).
+ * Resolve hello pc CSS custom properties for chart chrome (axes, labels, grid).
  * ECharts canvas cannot consume `var(--…)` directly.
  */
 export function resolveChartChrome(el = document.documentElement) {
