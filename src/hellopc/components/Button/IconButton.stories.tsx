@@ -43,7 +43,7 @@ it shows only a glyph. Icons inherit the button's state color via
 
 ## Design tokens used
 
-Custom-property names mirror the Figma variables (\`&color/tonal/tonalOverlay\`
+Custom-property names mirror the Figma variables (\`color/tonal/tonalOverlay\`
 ⇄ \`--color-tonal-tonal-overlay\`).
 
 | Variant · intent | Container | Icon | Hover / Press |

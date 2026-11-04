@@ -42,7 +42,7 @@ intentionally unsupported here — that's the separate IconButton component.
 
 ## Design tokens used
 
-Custom-property names mirror the Figma variables (\`&color/primary/primaryHover\`
+Custom-property names mirror the Figma variables (\`color/primary/primaryHover\`
 ⇄ \`--color-primary-primary-hover\`).
 
 | Variant · intent | Background | Text | Hover / Press |

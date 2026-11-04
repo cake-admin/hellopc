@@ -8,12 +8,28 @@ const here = dirname(fileURLToPath(import.meta.url)); // chart-tool/scripts
 const repoRoot = join(here, '..', '..'); // repo root (contains the "& *" folders)
 const themeDir = join(repoRoot, '& theme.a');
 
-const readColor = (file) => JSON.parse(readFileSync(join(themeDir, file), 'utf8'))['&color'];
+// Figma renamed the semantic root from "&color" to "color"; accept either.
+const readColor = (file) => {
+  const json = JSON.parse(readFileSync(join(themeDir, file), 'utf8'));
+  return json.color ?? json['&color'];
+};
 const light = readColor('Light.a.tokens.json');
 const dark = readColor('Dark.a.tokens.json');
 
-// Named categorical tones live in the mode-independent "& color hero" collection
-// (e.g. indigo/60, jade/70). Single file → the same hex is used in light & dark.
+// Some semantic tokens are exported as references ("{color.primary.primary}")
+// instead of resolved colors. Follow them within the same mode.
+function valueOf(set, group, leaf, seen = new Set()) {
+  const v = set?.[group]?.[leaf]?.$value;
+  if (typeof v !== 'string') return v;
+  const m = v.match(/^\{(?:&?color)\.([^.}]+)\.([^}]+)\}$/);
+  if (!m || seen.has(v)) return undefined;
+  seen.add(v);
+  return valueOf(set, m[1], m[2], seen);
+}
+
+// Named categorical tones live in the mode-independent "hellopc hero" collection
+// (repo folder "& color hero", e.g. indigo/60, jade/70). Single file → the same
+// hex is used in light & dark.
 const hero = JSON.parse(readFileSync(join(repoRoot, '& color hero', 'color.tokens.json'), 'utf8'));
 function heroHex(group, tone) {
   const h = hero?.[group]?.[tone]?.$value?.hex;
@@ -22,7 +38,7 @@ function heroHex(group, tone) {
 
 const warnings = [];
 function hex(set, group, leaf) {
-  const h = set?.[group]?.[leaf]?.$value?.hex;
+  const h = valueOf(set, group, leaf)?.hex;
   return typeof h === 'string' ? h.toLowerCase() : null;
 }
 function pair(group, leaf) {
@@ -32,7 +48,7 @@ function pair(group, leaf) {
   return { lightA: l ?? '#334155', darkA: d ?? '#a1a1aa' };
 }
 
-// chart token name → DTCG path (&color.<group>.<leaf>)
+// chart token name → DTCG path (color.<group>.<leaf>)
 const tokens = {
   referencePrimary: pair('primary', 'primary'),
   referenceSecondary: pair('secondary', 'secondary'),
@@ -73,7 +89,7 @@ function heroToken(group, tone) {
   const h = heroHex(group, tone);
   if (!h) warnings.push(`missing hero ${group}/${tone}`);
   return h
-    ? { id: `hero.${group}.${tone}`, label: `${group} ${tone}`, group: 'Hero', path: `&color hero/${group}/${tone}`, lightA: h, darkA: h }
+    ? { id: `hero.${group}.${tone}`, label: `${group} ${tone}`, group: 'Hero', path: `hellopc hero/${group}/${tone}`, lightA: h, darkA: h }
     : null;
 }
 const heroTokens = (tones) => tones.map(([g, t]) => heroToken(g, t)).filter(Boolean);
@@ -104,12 +120,14 @@ const semanticScaleTokens = heroTokens(SEMANTIC_SCALE_TONES);
 const semScaleHexes = hexesOf(semanticScaleTokens);
 const semanticScale = { lightA: semScaleHexes, darkA: semScaleHexes };
 
-// Diverging ramp (jade ↔ warm-neutral ↔ violet) — a neutral two-ended scale for
+// Diverging ramp (jade ↔ neutral ↔ violet) — a neutral two-ended scale for
 // heatmap / choropleth, no inherent good/bad meaning. Ordered low(0%)→high(100%).
+// The midpoint was "warm  neutral/95" until Figma removed the warm neutral scale
+// (1.0.1); "pure neutral/95" is the closest neutral replacement.
 const DIVERGING_TONES = [
   ['jade', '70'],
   ['jade', '80'],
-  ['warm  neutral', '95'],
+  ['pure neutral', '95'],
   ['violet', '70'],
   ['violet', '40'],
 ];
@@ -139,7 +157,7 @@ const SINGLE_GROUPS = [
   { group: 'Tonal', key: 'tonal' },
 ];
 function colorString(set, group, leaf) {
-  const v = set?.[group]?.[leaf]?.$value;
+  const v = valueOf(set, group, leaf);
   if (!v) return null;
   const a = typeof v.alpha === 'number' ? v.alpha : 1;
   if (a >= 0.999) return typeof v.hex === 'string' ? v.hex.toLowerCase() : null;
@@ -156,7 +174,7 @@ for (const { group, key } of SINGLE_GROUPS) {
       id: `${key}.${leaf}`,
       label: leaf,
       group,
-      path: `&color/${key}/${leaf}`,
+      path: `color/${key}/${leaf}`,
       lightA: l ?? d,
       darkA: d ?? l,
     });
