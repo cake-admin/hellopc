@@ -479,11 +479,11 @@
   --color-disabled-disabled: #a6a6a6;
   --color-elevation-drop-shadow-heavy: #202020;
   --color-elevation-drop-shadow-light: #202020;
-  --color-error-error-hover: #bf0026;
+  --color-error-error-hover: #8ee3f0;
   --color-error-error-overlay-hover: #8ee3f0;
-  --color-error-error-overlay-press: rgba(254, 83, 90, 0.3);
+  --color-error-error-overlay-press: #8ee3f0;
   --color-error-error-overlay: #8ee3f0;
-  --color-error-error-press: #92001b;
+  --color-error-error-press: #8ee3f0;
   --color-error-error: #8ee3f0;
   --color-info-info-overlay-hover: #8ee3f0;
   --color-info-info-overlay: #8ee3f0;

@@ -824,12 +824,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.7490196228027344,
-            0,
-            0.14901961386203766
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#BF0026"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:14767:4261",
@@ -837,11 +837,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:75688b4b8762b8a1c9bfce88b6e564e812ffdb62/-1:-1",
-            "targetVariableName": "red/40",
-            "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
-            "targetVariableSetName": "hellopc hero"
-          }
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "errorPress": {
@@ -849,12 +850,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.572549045085907,
-            0,
-            0.10588235408067703
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#92001B"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:14767:4262",
@@ -862,11 +863,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:9ca91068e8724b8f111ec7a00730843f3e4493a0/-1:-1",
-            "targetVariableName": "red/30",
-            "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
-            "targetVariableSetName": "hellopc hero"
-          }
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "errorOverlay": {
@@ -926,12 +928,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.9960784316062927,
-            0.32549020648002625,
-            0.3529411852359772
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
-          "alpha": 0.30000001192092896,
-          "hex": "#FE535A"
+          "alpha": 1,
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:14767:4273",
@@ -939,11 +941,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:4f5806f525f9d34812ccbe29c849f2fb4ce271cb/-1:-1",
-            "targetVariableName": "red/60 30a",
-            "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
-            "targetVariableSetName": "hellopc hero"
-          }
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
