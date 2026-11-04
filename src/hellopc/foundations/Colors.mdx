@@ -93,7 +93,7 @@ export const exportThemes = () => {
 
       return {
         id: `VariableID:cake-color:${index + 1}`,
-        name: token.figmaPath.replace(/^&color\//, ''),
+        name: token.figmaPath.replace(/^&?color\//, ''),
         description: `hello pc semantic color: ${token.figmaPath}`,
         resolvedType: 'COLOR',
         variableCollectionId: collectionId,

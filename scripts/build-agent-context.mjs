@@ -475,7 +475,7 @@ const tokensDoc = (version) => {
   out.push('color tokens resolve differently under `dark.a` and `win hct`, which is');
   out.push('exactly why you use the token instead of the value.');
   out.push('');
-  out.push('Names map 1:1 from Figma variables: `&color/primary/primaryHover` becomes');
+  out.push('Names map 1:1 from Figma variables: `color/primary/primaryHover` becomes');
   out.push('`--color-primary-primary-hover`. Names are EXACT — do not guess by analogy.');
   out.push('');
   for (const family of [...groups.keys()].sort()) {
