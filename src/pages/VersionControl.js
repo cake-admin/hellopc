@@ -285,7 +285,7 @@ const CURRENT_RELEASE = {
   version: '1.2.0',
   date: 'November 17, 2026',
   title: 'hello pc 1.2.0',
-  release: 'minor',
+  release: 'major',
   summary:
     'Code library aligned with the Figma 1.2.0 library; React package @cake-admin/cakeand 4.3.0.',
   body: [

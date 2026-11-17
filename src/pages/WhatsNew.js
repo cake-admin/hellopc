@@ -221,7 +221,7 @@ const CURRENT_POSTS = [
     id: 'hellopc-1-2-0',
     title: 'hello pc 1.2.0',
     date: 'November 17, 2026',
-    release: 'minor',
+    release: 'major',
     body: [
       'hello pc 1.2.0 brings the code library in line with the Figma 1.2.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
       'This release adds new components for AI experiences, links, and ratings, gives buttons a destructive option and an inverse style for toasts and tooltips, and refreshes toasts and breadcrumbs to match the latest designs. Storybook is already updated; install 4.3.0 to get everything in your project.',
