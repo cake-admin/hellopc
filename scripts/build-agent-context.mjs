@@ -76,7 +76,7 @@ const CATEGORIES = {
   'Progress Indicators': 'Feedback',
   Table: 'Data', Pagination: 'Data', Badge: 'Data', Counter: 'Data', Avatar: 'Data',
   Sidebar: 'Navigation', HorizontalTabs: 'Navigation', VerticalTabs: 'Navigation',
-  Breadcrumb: 'Navigation', ContentSwitcher: 'Navigation', Accordion: 'Navigation',
+  Breadcrumb: 'Navigation', Link: 'Navigation', ContentSwitcher: 'Navigation', Accordion: 'Navigation',
   Menu: 'Navigation', Stepper: 'Navigation',
   TextInput: 'Forms', PasswordInput: 'Forms', NumberInput: 'Forms', PinInput: 'Forms',
   DateInput: 'Forms', TimeInput: 'Forms', Checkbox: 'Forms', Radio: 'Forms',

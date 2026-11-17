@@ -43,6 +43,7 @@ export * from './components/DateInput';
 export * from './components/Dropdown';
 export * from './components/FileUpload';
 export * from './components/HorizontalTabs';
+export * from './components/Link';
 export * from './components/Menu';
 export * from './components/Modal';
 export * from './components/Notification';
