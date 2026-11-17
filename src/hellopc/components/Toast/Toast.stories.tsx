@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, fn, userEvent, within } from 'storybook/test';
+import { expect, fn, userEvent, waitFor, within } from 'storybook/test';
 import { Toast as RadixToast } from 'radix-ui';
 import styled from 'styled-components';
 
@@ -131,13 +131,15 @@ import { Toast } from '@cake-admin/cakeand';
 | Part | Tokens |
 | --- | --- |
 | corner radius | \`--radius-400\` (24px) |
-| pop-out surface | \`--color-surfaces-container-blur\`, 45px backdrop blur |
-| pop-out elevation | \`--elevation-3\` (Figma \`elevation/3\`) |
-| inline surface | \`--color-surfaces-on-container-high\` (no elevation) |
-| accessibility outline | \`--stroke-100\` \`--color-stroke-border-container\` border — genuinely transparent in light/dark; forced-colors (Windows High Contrast) repaints it to give the surface an edge |
-| status icon | \`--color-info-info\`, \`--color-success-success\`, \`--color-warning-warn\`, \`--color-error-error\`, \`--color-text-icon-primary\` (neutral) |
-| title | \`--type-size-subject\` (16px), \`--font-weight-medium\`, \`--color-text-icon-primary\` |
-| description / timestamp | \`--type-size-body\` (14px) / \`--type-size-caption\` (12px), \`--font-weight-regular\`, \`--color-text-icon-secondary\` |
+| surface (both variants) | \`--color-inverse-surfaces-container-blur\` — an **inverse** surface: dark in \`light.a\`, light in \`dark.a\` |
+| pop-out only | 45px backdrop blur + \`--elevation-3\` (Figma \`elevation/3\`) |
+| inline | same surface, flush — no blur, no elevation |
+| accessibility outline | \`--stroke-100\` \`--color-inverse-stroke-border-zero-win-hct\` border — transparent in light/dark, white in win hct, so the surface keeps an edge there |
+| status icon | \`--color-inverse-info-info\`, \`--color-inverse-success-success\`, \`--color-inverse-warning-warn\`, \`--color-inverse-error-error\`, \`--color-inverse-text-icon-primary\` (neutral) |
+| title | \`--type-size-subject\` (16px), \`--font-weight-medium\`, \`--color-inverse-text-icon-primary\` |
+| description | \`--type-size-body\` (14px), \`--font-weight-regular\`; \`--color-inverse-text-icon-primary\` (simple) / \`--color-inverse-text-icon-secondary\` (complex), as Figma binds them |
+| timestamp | \`--type-size-caption\` (12px), \`--color-inverse-text-icon-secondary\` |
+| actions / close | **Button** and **IconButton** with \`tone="inverse"\` (Figma \`hellopc.button.inverse\` / \`hellopc.icon.button.inverse\`) |
 | \`simple\` row padding | \`--space-500\` (24px) leading, \`--space-300\` (16px) trailing/vertical |
 | \`simple\` content gaps | \`--space-300\` (16px) icon↔text, \`--space-500\` (24px) content↔actions, \`--space-100\` (8px) actions↔close |
 | \`complex\` layout padding | \`--space-300\` (16px) on every side, \`--space-300\` (16px) between the content row and the footer |
@@ -265,7 +267,7 @@ export const Surface: Story = {
     docs: {
       description: {
         story:
-          '`pop-out` is an elevated, blurred surface for floating placement; `inline` is a flush, opaque banner with no elevation for embedding in page content.',
+          'Both variants sit on the inverse surface (`--color-inverse-surfaces-container-blur`). `pop-out` adds a 45px background blur and `--elevation-3` for floating placement; `inline` is the same surface, flush, for embedding in page content.',
       },
     },
   },
@@ -473,7 +475,8 @@ export const DismissesOnClose: Story = {
     const canvas = within(canvasElement);
     await expect(canvas.getByText('Dismiss me')).toBeInTheDocument();
     await userEvent.click(canvas.getByRole('button', { name: 'Dismiss notification' }));
-    await expect(canvas.queryByText('Dismiss me')).not.toBeInTheDocument();
+    // Radix keeps the node until the close animation ends — wait for removal.
+    await waitFor(() => expect(canvas.queryByText('Dismiss me')).not.toBeInTheDocument());
   },
 };
 

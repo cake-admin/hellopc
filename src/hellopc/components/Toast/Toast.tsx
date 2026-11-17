@@ -49,25 +49,27 @@ const Root = styled(RadixToast.Root)<{ $variant: ToastVariant; $layout: ToastLay
   overflow: hidden;
   list-style: none;
 
-  /* Figma "win.htc.border": a REAL border in --color-stroke-border-container
-     (rgba(255,255,255,0) — genuinely invisible in light/dark). Under Windows
-     High Contrast / forced-colors the system repaints borders (and strips
-     box-shadows entirely), so this is what gives the blurred/translucent
-     surface an edge in that mode. Per the Figma spec there is no visible
-     ring in normal themes. */
-  border: var(--stroke-100) solid var(--color-stroke-border-container);
+  /* Figma 1.1 toasts sit on the INVERSE surface (dark in light.a, light in
+     dark.a), and every part uses its color/inverse/* twin.
 
+     Figma "win.htc.border": a REAL border in
+     --color-inverse-stroke-border-zero-win-hct (fully transparent in
+     light/dark, white in win hct). Under Windows High Contrast /
+     forced-colors the system repaints borders (and strips box-shadows
+     entirely), so this is what gives the surface an edge in that mode. */
+  border: var(--stroke-100) solid var(--color-inverse-stroke-border-zero-win-hct);
+  background: var(--color-inverse-surfaces-container-blur);
+
+  /* Pop-out floats: background blur + elevation. Inline is the same inverse
+     surface, flush — no blur, no shadow. */
   ${(p) =>
     p.$variant === 'pop-out'
       ? css`
-          background: var(--color-surfaces-container-blur);
           backdrop-filter: blur(45px);
           -webkit-backdrop-filter: blur(45px);
           box-shadow: var(--elevation-3);
         `
-      : css`
-          background: var(--color-surfaces-on-container-high);
-        `}
+      : null}
 
   &[data-swipe='move'] {
     transform: translateX(var(--radix-toast-swipe-move-x, 0));
@@ -91,6 +93,7 @@ const Root = styled(RadixToast.Root)<{ $variant: ToastVariant; $layout: ToastLay
 `;
 
 const Row = styled.div`
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: var(--space-500);
@@ -106,10 +109,21 @@ const Content = styled.div`
   min-width: 0;
 `;
 
+/** Status glyph colors on the inverse surface (Figma color/inverse/*). */
+const INVERSE_ICON_COLOR: Record<ToastStatus, string> = {
+  info: 'var(--color-inverse-info-info)',
+  success: 'var(--color-inverse-success-success)',
+  warning: 'var(--color-inverse-warning-warn)',
+  error: 'var(--color-inverse-error-error)',
+  neutral: 'var(--color-inverse-text-icon-primary)',
+};
+
 /* Cancel ModalIcon's 4px state-layer inset — Toast's icon slot is a tight
-   24×24 (Figma 108:5974 / 109:6541), unlike Modal's 32×32 leading control. */
-const StatusIcon = styled(ModalIcon)`
+   24×24 (Figma 108:5974 / 109:6541), unlike Modal's 32×32 leading control.
+   The color override swaps ModalIcon's status color for its inverse twin. */
+const StatusIcon = styled(ModalIcon)<{ $status: ToastStatus }>`
   margin: calc(-1 * var(--space-050));
+  color: ${(p) => INVERSE_ICON_COLOR[p.$status]};
 `;
 
 const Meta = styled.div`
@@ -124,6 +138,7 @@ const Meta = styled.div`
    close) followed by a footer row (timestamp + actions), the footer indented
    to align under the text column. */
 const Layout = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -158,6 +173,7 @@ const ComplexMeta = styled.div`
 `;
 
 const Footer = styled.div`
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: var(--space-300);
@@ -169,7 +185,7 @@ const Footer = styled.div`
 
 const Metadata = styled.span`
   flex: 1 1 0%;
-  color: var(--color-text-icon-secondary);
+  color: var(--color-inverse-text-icon-secondary);
   font-family: var(--font-family);
   font-size: var(--type-size-caption);
   font-weight: var(--font-weight-regular);
@@ -187,17 +203,20 @@ const Actions = styled.div`
 const Title = styled(RadixToast.Title)`
   width: 100%;
   margin: 0;
-  color: var(--color-text-icon-primary);
+  color: var(--color-inverse-text-icon-primary);
   font-family: var(--font-family);
   font-size: var(--type-size-subject);
   font-weight: var(--font-weight-medium);
   line-height: 1.35;
 `;
 
-const Description = styled(RadixToast.Description)`
+/* Figma binds the simple toast's description to inverse text+icon/primary and
+   the complex toast's to inverse text+icon/secondary — kept as specified. */
+const Description = styled(RadixToast.Description)<{ $layout: ToastLayout }>`
   width: 100%;
   margin: 0;
-  color: var(--color-text-icon-secondary);
+  color: ${(p) =>
+    p.$layout === 'complex' ? 'var(--color-inverse-text-icon-secondary)' : 'var(--color-inverse-text-icon-primary)'};
   font-family: var(--font-family);
   font-size: var(--type-size-body);
   font-weight: var(--font-weight-regular);
@@ -259,7 +278,8 @@ export interface ToastProps
   icon?: React.ReactNode | null;
   /**
    * Replacement for the default action-button group. When supplied, the
-   * default action label/handler props below are ignored.
+   * default action label/handler props below are ignored. The toast is an
+   * inverse surface, so give your buttons `tone="inverse"`.
    */
   actions?: React.ReactNode;
   /** Visible label for the default low-emphasis secondary action. */
@@ -354,6 +374,7 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
             size="sm"
             intent="secondary"
             variant="ghost"
+            tone="inverse"
             onClick={onSecondaryAction}
             disabled={secondaryActionDisabled}
           >
@@ -361,7 +382,7 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
           </Button>
         ) : null}
         {primaryActionLabel ? (
-          <Button size="sm" onClick={onPrimaryAction} disabled={primaryActionDisabled}>
+          <Button size="sm" tone="inverse" onClick={onPrimaryAction} disabled={primaryActionDisabled}>
             {primaryActionLabel}
           </Button>
         ) : null}
@@ -369,7 +390,7 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
     );
 
     const resolvedIcon =
-      icon === null ? null : icon ?? <StatusIcon type={STATUS_ICON[status]} decorative />;
+      icon === null ? null : icon ?? <StatusIcon type={STATUS_ICON[status]} $status={status} decorative />;
 
     const closeButton = onDismiss ? (
       <IconButton
@@ -378,6 +399,7 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
         size="sm"
         intent="secondary"
         variant="ghost"
+        tone="inverse"
         onClick={onDismiss}
       />
     ) : null;
@@ -402,7 +424,7 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
                 {title || description ? (
                   <ComplexMeta>
                     {title ? <Title>{title}</Title> : null}
-                    {description ? <Description>{description}</Description> : null}
+                    {description ? <Description $layout={layout}>{description}</Description> : null}
                   </ComplexMeta>
                 ) : null}
               </IconAndText>
@@ -422,7 +444,7 @@ export const Toast = React.forwardRef<HTMLLIElement, ToastProps>(
               {title || description ? (
                 <Meta>
                   {title ? <Title>{title}</Title> : null}
-                  {description ? <Description>{description}</Description> : null}
+                  {description ? <Description $layout={layout}>{description}</Description> : null}
                 </Meta>
               ) : null}
             </Content>
