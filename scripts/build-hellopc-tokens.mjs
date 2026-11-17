@@ -68,22 +68,48 @@ const colorString = (value) => {
 
 const isMeta = (k) => k.startsWith('$');
 
+// Groups can nest more than one level (Figma 1.1: color/inverse/surfaces/…,
+// color/ai/consumer/…). A token's "leaf" is its path below the top-level group,
+// joined with "/" — e.g. group "ai", leaf "consumer/primary start". camel()
+// folds the "/" away, so the CSS var stays 1:1 with the Figma path:
+// color/ai/consumer/primary start ⇄ --color-ai-consumer-primary-start.
+const leafPaths = (node, prefix = []) => {
+  const out = [];
+  for (const k of Object.keys(node).filter((key) => !isMeta(key))) {
+    const child = node[k];
+    if (child && child.$type) out.push([...prefix, k].join('/'));
+    else if (child && typeof child === 'object') out.push(...leafPaths(child, [...prefix, k]));
+  }
+  return out;
+};
+
+const tokenAt = (set, group, leaf) =>
+  leaf.split('/').reduce((node, part) => node?.[part], set[group]);
+
+// Aliases arrive as "{color.<group>.<leaf>}" where a nested leaf is dotted
+// ("{color.inverse.surfaces.container high}"). Names may themselves contain
+// no "." in practice, but try the literal key first, then the dotted walk.
+const aliasTarget = (set, path) => {
+  const [group, ...rest] = path.split('.');
+  return set[group]?.[rest.join('.')] ?? tokenAt(set, group, rest.join('/'));
+};
+
 // Some tokens are exported as DTCG references to another token in the same
 // mode, e.g. "{color.primary.primary}", instead of a resolved color. Follow the
 // reference (and chains of them) within the same set.
 const resolve = (set, value, mode, seen = new Set()) => {
   if (typeof value !== 'string') return value;
-  const m = value.match(/^\{(?:&?color)\.([^.}]+)\.([^}]+)\}$/);
+  const m = value.match(/^\{(?:&?color)\.([^}]+)\}$/);
   if (!m) throw new Error(`[build:hellopc-tokens] ${mode}: unsupported value ${value}`);
   if (seen.has(value)) throw new Error(`[build:hellopc-tokens] ${mode}: alias cycle at ${value}`);
   seen.add(value);
-  const target = set[m[1]]?.[m[2]];
+  const target = aliasTarget(set, m[1]);
   if (!target) throw new Error(`[build:hellopc-tokens] ${mode}: ${value} points to a missing token`);
   return resolve(set, target.$value, mode, seen);
 };
 
 const tokenCss = (set, group, leaf, mode) => {
-  const token = set[group]?.[leaf];
+  const token = tokenAt(set, group, leaf);
   if (!token) return null;
   return colorString(resolve(set, token.$value, mode));
 };
@@ -93,7 +119,7 @@ const buildMode = (set, mode) => {
   for (const group of Object.keys(set).filter((k) => !isMeta(k))) {
     const gKey = camel(group);
     out[gKey] = out[gKey] || {};
-    for (const leaf of Object.keys(set[group]).filter((k) => !isMeta(k))) {
+    for (const leaf of leafPaths(set[group])) {
       const key = camel(leaf);
       if (key in out[gKey]) {
         throw new Error(`[build:hellopc-tokens] ${mode}: "${group}/${leaf}" collides with another token as "${gKey}.${key}"`);
@@ -109,7 +135,7 @@ const buildMode = (set, mode) => {
 const buildList = () => {
   const list = [];
   for (const group of Object.keys(light).filter((k) => !isMeta(k))) {
-    for (const leaf of Object.keys(light[group]).filter((k) => !isMeta(k))) {
+    for (const leaf of leafPaths(light[group])) {
       list.push({
         group,
         groupKey: camel(group),

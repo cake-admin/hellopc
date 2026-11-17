@@ -21,13 +21,34 @@ if (!value) {
 
 const kebab = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 
+/** win hct override for the AI group. Figma's win hct mode still carries the
+ *  brand AI gradients (same values as light.a), which breaks the rule that every
+ *  high-contrast color is a Windows system color. Until design maps color/ai/*
+ *  to system colors in Figma, each AI var points at a system-backed token,
+ *  chosen by its suffix. An AI token no rule covers fails the build, so a new
+ *  Figma token can't let a brand color through unnoticed. */
+const WIN_HCT_AI = [
+  [/-(primary|fill)-(start|end)$|-flat$/, 'var(--color-primary-primary)'],
+  [/-on-fill$/, 'var(--color-text-icon-inverse)'],
+  [/-surface-(start|end)$/, 'var(--color-primary-primary-overlay)'],
+  [/^canvas-base$|-?canvas-(start|end)$/, 'var(--color-surfaces-canvas)'],
+  [/^chip-thread$/, 'var(--color-surfaces-container)'],
+  [/^chip-thread-border$/, 'var(--color-stroke-border)'],
+];
+const winHctAi = (name) => {
+  const rule = WIN_HCT_AI.find(([re]) => re.test(name));
+  if (!rule) throw new Error(`[cake-vars] win hct: no system-color rule for --color-ai-${name} (add one to WIN_HCT_AI).`);
+  return rule[1];
+};
+
 /** One mode's color groups → sorted `--color-<group>-<token>: value;` lines. */
 function colorLines(mode) {
   const lines = [];
   for (const [group, tokens] of Object.entries(theme[mode])) {
     for (const [name, value] of Object.entries(tokens)) {
       if (typeof value !== 'string') continue;
-      lines.push(`  --color-${kebab(group)}-${kebab(name)}: ${value};`);
+      const out = mode === 'win hct' && group === 'ai' ? winHctAi(kebab(name)) : value;
+      lines.push(`  --color-${kebab(group)}-${kebab(name)}: ${out};`);
     }
   }
   return lines.sort();
