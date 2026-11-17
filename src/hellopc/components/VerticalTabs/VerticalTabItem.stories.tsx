@@ -66,7 +66,7 @@ import {
 | --- | --- |
 | row | 32px tall, \`--radius-150\` (8px); inset \`--space-300\` leading / \`--space-100\` trailing / \`--space-050\` block |
 | label | \`--type-size-body\` (14px), 0.1px tracking; \`--font-weight-medium\` unselected, \`--font-weight-bold\` selected |
-| label color | \`--color-text-icon-primary\`; selected \`--color-primary-primary\`; disabled \`--color-disabled-disabled-inverse\` |
+| label color | \`--color-text-icon-primary\`; selected \`--color-primary-primary\`; disabled \`--color-text-icon-disabled\`; unselected hover/press \`--color-text-icon-on-tonal-secondary\` |
 | selected fill | \`--color-tonal-tonal-overlay\` → hover \`--color-tonal-tonal-overlay-hover\` → press \`--color-tonal-tonal-overlay-press\` |
 | unselected fill | transparent → hover \`--color-tonal-tonal-secondary-overlay-hover\` → press \`--color-tonal-tonal-secondary-overlay-press\` |
 | indicator | 4×16px, \`--color-primary-primary\`, \`--radius-1000\` |
