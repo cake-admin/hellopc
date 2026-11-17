@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components';
 export type IconButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 export type IconButtonIntent = 'primary' | 'secondary';
 export type IconButtonVariant = 'fill' | 'outline' | 'tonal' | 'ghost';
+export type IconButtonTone = 'default' | 'inverse';
 
 export interface IconButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
@@ -39,6 +40,14 @@ export interface IconButtonProps
    * @default 'fill'
    */
   variant?: IconButtonVariant;
+  /**
+   * `inverse` is for icon buttons on inverse surfaces — toast and tooltip close
+   * (Figma `hellopc.icon.button.inverse`): glyph, hover, press, focus ring and
+   * disabled all swap to their `--color-inverse-*` twins. Figma defines it for
+   * `secondary` · `ghost` only; other combinations keep their default colors.
+   * @default 'default'
+   */
+  tone?: IconButtonTone;
 }
 
 /** Container diameter → icon slot px (from the Figma set: 24→16, else 24). */
@@ -128,10 +137,28 @@ const disabledStyles = (variant: IconButtonVariant) => css`
   }
 `;
 
+/** tone=inverse, secondary · ghost (Figma hellopc.icon.button.inverse, node
+ *  17793:6942). Glyph is inverse text+icon/primary (WindowText in win hct). */
+const inverseStyles = (intent: IconButtonIntent, variant: IconButtonVariant) =>
+  intent === 'secondary' && variant === 'ghost'
+    ? css`
+        background: transparent;
+        color: var(--color-inverse-text-icon-primary);
+        &:hover:not(:disabled),
+        &:focus-visible { background: var(--color-inverse-secondary-secondary-overlay); }
+        &:active:not(:disabled) { background: var(--color-inverse-secondary-secondary-overlay-hover); }
+        &:disabled {
+          background: transparent;
+          color: var(--color-inverse-text-icon-disabled);
+        }
+      `
+    : null;
+
 const StyledIconButton = styled.button<{
   $size: IconButtonSize;
   $intent: IconButtonIntent;
   $variant: IconButtonVariant;
+  $tone: IconButtonTone;
 }>`
   position: relative;
   display: inline-flex;
@@ -148,6 +175,7 @@ const StyledIconButton = styled.button<{
 
   ${(p) => colorStyles(p.$intent, p.$variant)}
   ${(p) => disabledStyles(p.$variant)}
+  ${(p) => (p.$tone === 'inverse' ? inverseStyles(p.$intent, p.$variant) : null)}
 
   &:focus {
     outline: none;
@@ -156,7 +184,8 @@ const StyledIconButton = styled.button<{
     content: '';
     position: absolute;
     inset: -2px;
-    border: var(--stroke-300) solid var(--color-primary-primary);
+    border: var(--stroke-300) solid
+      ${(p) => (p.$tone === 'inverse' ? 'var(--color-inverse-primary-primary)' : 'var(--color-primary-primary)')};
     border-radius: var(--radius-1000);
     pointer-events: none;
   }
@@ -189,11 +218,28 @@ const IconSlot = styled.span<{ $size: IconButtonSize }>`
  */
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
-    { label, icon, size = 'md', intent = 'primary', variant = 'fill', type = 'button', ...props },
+    {
+      label,
+      icon,
+      size = 'md',
+      intent = 'primary',
+      variant = 'fill',
+      tone = 'default',
+      type = 'button',
+      ...props
+    },
     ref,
   ) => {
     return (
-      <StyledIconButton ref={ref} type={type} $size={size} $intent={intent} $variant={variant} {...props}>
+      <StyledIconButton
+        ref={ref}
+        type={type}
+        $size={size}
+        $intent={intent}
+        $variant={variant}
+        $tone={tone}
+        {...props}
+      >
         <AccessibleIcon.Root label={label}>
           <IconSlot $size={size} aria-hidden>
             {icon}

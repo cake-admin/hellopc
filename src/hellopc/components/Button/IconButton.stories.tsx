@@ -43,7 +43,7 @@ it shows only a glyph. Icons inherit the button's state color via
 
 ## Design tokens used
 
-Custom-property names mirror the Figma variables (\`&color/tonal/tonalOverlay\`
+Custom-property names mirror the Figma variables (\`color/tonal/tonalOverlay\`
 ⇄ \`--color-tonal-tonal-overlay\`).
 
 | Variant · intent | Container | Icon | Hover / Press |
@@ -57,6 +57,7 @@ Custom-property names mirror the Figma variables (\`&color/tonal/tonalOverlay\`
 | ghost · primary | transparent | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
 | ghost · secondary | transparent | \`--color-secondary-secondary\` | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
 | disabled | \`--color-disabled-disabled\` fill (ghost stays transparent), border drops | \`--color-disabled-disabled-inverse\` | — |
+| inverse · ghost · secondary (\`tone="inverse"\`) | transparent | \`--color-inverse-text-icon-primary\` (disabled \`--color-inverse-text-icon-disabled\`) | \`--color-inverse-secondary-secondary-overlay\` / \`-overlay-hover\`; ring \`--color-inverse-primary-primary\` |
 
 (\`…\` = the same family prefix as the row's container.) Shape is a
 \`--radius-1000\` circle — 24/32/40/48px across with a 16px icon at \`xs\` and
@@ -111,6 +112,11 @@ outline drawn at −2px inset (same as Button).
     variant: {
       control: 'inline-radio',
       options: ['fill', 'outline', 'tonal', 'ghost'],
+      table: { category: 'Appearance' },
+    },
+    tone: {
+      control: 'inline-radio',
+      options: ['default', 'inverse'],
       table: { category: 'Appearance' },
     },
     disabled: { control: 'boolean', table: { category: 'State' } },
@@ -221,6 +227,36 @@ export const Disabled: Story = {
       <IconButton label="Add (tonal)" icon={<Plus />} variant="tonal" disabled />
       <IconButton label="Add (ghost)" icon={<Plus />} variant="ghost" disabled />
     </Row>
+  ),
+};
+
+export const Inverse: Story = {
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          'Figma `hellopc.icon.button.inverse` — the toast and tooltip close ' +
+          'button. On inverse surfaces set `tone="inverse"` with `secondary` · ' +
+          '`ghost`: the glyph is `--color-inverse-text-icon-primary`, hover and ' +
+          'press use the inverse secondary overlays, and the focus ring is ' +
+          '`--color-inverse-primary-primary`.',
+      },
+    },
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        gap: 16,
+        padding: 16,
+        borderRadius: 24,
+        background: 'var(--color-inverse-surfaces-container-blur)',
+      }}
+    >
+      <IconButton label="Close" icon={<Plus style={{ rotate: '45deg' }} />} size="sm" intent="secondary" variant="ghost" tone="inverse" />
+      <IconButton label="Close (disabled)" icon={<Plus style={{ rotate: '45deg' }} />} size="sm" intent="secondary" variant="ghost" tone="inverse" disabled />
+    </div>
   ),
 };
 

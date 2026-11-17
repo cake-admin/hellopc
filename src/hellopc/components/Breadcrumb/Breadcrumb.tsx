@@ -4,6 +4,7 @@ import { ChevronRight, MoreHorizontal } from 'lucide-react';
 import { DropdownMenu as RadixDropdownMenu } from 'radix-ui';
 
 import { IconButton } from '../Button/IconButton';
+import { Link } from '../Link';
 import { MenuContainer } from '../Menu/MenuContainer';
 import { MenuItem } from '../Menu/MenuItem';
 
@@ -68,20 +69,12 @@ const crumbType = `
   border-radius: var(--radius-50);
 `;
 
-const CrumbLink = styled.a`
-  ${crumbType}
-  color: var(--color-text-icon-secondary);
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:focus-visible {
-    outline: var(--stroke-200) solid var(--color-primary-primary);
-    outline-offset: var(--space-025);
-  }
+/** Navigable crumbs are the hello pc `Link` at 16px (Figma 1.1
+ *  `&breadcrumb.link`: link color, always underlined); this only adds the
+ *  crumb's vertical inset so every crumb shares one 30px row. */
+const CrumbLink = styled.span`
+  display: inline-flex;
+  padding: var(--space-050) 0;
 `;
 
 /** A crumb with no destination — same type, no affordance. */
@@ -90,10 +83,10 @@ const CrumbText = styled.span`
   color: var(--color-text-icon-secondary);
 `;
 
-/** The final crumb: the current page, in the primary accent per Figma. */
+/** The final crumb: the current page, plain primary text per Figma 1.1. */
 const CurrentCrumb = styled.span`
   ${crumbType}
-  color: var(--color-primary-primary);
+  color: var(--color-text-icon-primary);
 `;
 
 export interface BreadcrumbItem {
@@ -131,8 +124,10 @@ const renderCrumb = (item: BreadcrumbItem, isCurrent: boolean) => {
   }
   if (item.href || item.onClick) {
     return (
-      <CrumbLink href={item.href} onClick={item.onClick}>
-        {item.label}
+      <CrumbLink>
+        <Link size="lg" href={item.href} onClick={item.onClick}>
+          {item.label}
+        </Link>
       </CrumbLink>
     );
   }

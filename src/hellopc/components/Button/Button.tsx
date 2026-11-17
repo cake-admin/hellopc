@@ -2,8 +2,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
-export type ButtonIntent = 'primary' | 'secondary';
+export type ButtonIntent = 'primary' | 'secondary' | 'destructive';
 export type ButtonVariant = 'fill' | 'outline' | 'tonal' | 'ghost';
+export type ButtonTone = 'default' | 'inverse';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -13,11 +14,21 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   size?: ButtonSize;
   /**
-   * Which hello pc token family drives the color: `primary` (indigo family) or
-   * `secondary` (neutral/ink family).
+   * Which hello pc token family drives the color: `primary` (indigo family),
+   * `secondary` (neutral/ink family), or `destructive` (the error family — for
+   * actions that delete or can't be undone; Figma `hellopc.button.destructive`).
    * @default 'primary'
    */
   intent?: ButtonIntent;
+  /**
+   * `inverse` is for buttons on inverse surfaces — toasts, snackbars, tooltips,
+   * coach marks (Figma `hellopc.button.inverse`): every color, including
+   * hover, press, focus and disabled, swaps to its `--color-inverse-*` twin.
+   * Figma defines it for `primary` · `fill` and `secondary` · `ghost` only;
+   * other combinations keep their default colors.
+   * @default 'default'
+   */
+  tone?: ButtonTone;
   /**
    * Emphasis treatment, highest → lowest: `fill` (the one main action in a
    * view), `outline` and `tonal` (secondary emphasis), `ghost` (lowest —
@@ -26,14 +37,16 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
    */
   variant?: ButtonVariant;
   /**
-   * Leading icon, rendered in a fixed 16px slot before the label. Icons are
-   * decorative — the text label carries the accessible name. Do not use this
-   * to build icon-only buttons; that's the (separate) IconButton component.
+   * Leading icon. The slot sets the size — 18px for `xs`/`sm`, 24px for
+   * `md`/`lg` (Figma icon-size guidance) — so pass the glyph without a size.
+   * Icons are decorative — the text label carries the accessible name. Do not
+   * use this to build icon-only buttons; that's the (separate) IconButton
+   * component.
    */
   startIcon?: React.ReactNode;
   /**
-   * Trailing icon, rendered in a fixed 16px slot after the label. Same rules
-   * as `startIcon`.
+   * Trailing icon, sized by the same slot as `startIcon` (18px `xs`/`sm`, 24px
+   * `md`/`lg`). Same rules as `startIcon`.
    */
   endIcon?: React.ReactNode;
   /**
@@ -78,29 +91,145 @@ const sizeStyles = (size: ButtonSize) => {
   return map[size];
 };
 
-/** stateLayer padding per size (tonal+md uses a tighter inset, matching Figma). */
+/** stateLayer inline padding per size (tonal+md uses a tighter inset, matching
+ *  Figma). sm is 12px per the Figma 1.1 spec. Only the inline padding is
+ *  applied: every size has a fixed height and centers its content, so Figma's
+ *  vertical padding (4/8/10/12px) would only shrink the content box below the
+ *  18/24px icon slot without moving anything. */
 const padFor = (size: ButtonSize, variant: ButtonVariant) => {
-  if (variant === 'tonal' && size === 'md') return 'var(--space-100) var(--space-200)';
+  if (variant === 'tonal' && size === 'md') return 'var(--space-200)';
   return {
-    xs: 'var(--space-050) var(--space-200)',
-    sm: 'var(--space-100) var(--space-250)',
-    md: 'var(--space-150) var(--space-300)',
-    lg: 'var(--space-200) var(--space-400)',
+    xs: 'var(--space-200)',
+    sm: 'var(--space-200)',
+    md: 'var(--space-300)',
+    lg: 'var(--space-400)',
   }[size];
+};
+
+/** Icon ↔ label gap: 4px at sm (Figma 1.1) and tonal md, 8px otherwise. */
+const gapFor = (size: ButtonSize, variant: ButtonVariant) =>
+  size === 'sm' || (variant === 'tonal' && size === 'md') ? 'var(--space-050)' : 'var(--space-100)';
+
+/** Icon slot per size — Figma "Icon Size Guidance" (node 3702:7122): 18×18
+ *  icons for XS and S buttons, 24×24 for M and L. */
+const ICON_SIZE: Record<ButtonSize, string> = {
+  xs: 'var(--space-350)',
+  sm: 'var(--space-350)',
+  md: 'var(--space-500)',
+  lg: 'var(--space-500)',
+};
+
+/** destructive × variant (Figma hellopc.button.destructive, node 14748:4249).
+ *  Figma paints fill hover/press/focus with raw values that equal the
+ *  error-hover / error-press / error tokens, so those tokens are used here. */
+const destructiveStyles = (variant: ButtonVariant) => {
+  const text = 'var(--color-text-icon-error-on-surface-text-destructive-btn)';
+  if (variant === 'fill') {
+    return css`
+      background: var(--color-error-error);
+      color: var(--color-text-icon-inverse);
+      &:hover:not(:disabled) { background: var(--color-error-error-hover); }
+      &:active:not(:disabled) { background: var(--color-error-error-press); }
+    `;
+  }
+  if (variant === 'outline') {
+    return css`
+      background: transparent;
+      color: ${text};
+      box-shadow: inset 0 0 0 var(--stroke-200) var(--color-error-error);
+      &:focus-visible { background: var(--color-error-error-overlay); }
+      &:hover:not(:disabled) { background: var(--color-error-error-overlay-hover); }
+      &:active:not(:disabled) { background: var(--color-error-error-overlay-press); }
+    `;
+  }
+  if (variant === 'tonal') {
+    return css`
+      background: var(--color-error-error-overlay);
+      color: ${text};
+      &:hover:not(:disabled) { background: var(--color-error-error-overlay-hover); }
+      &:active:not(:disabled) { background: var(--color-error-error-overlay-press); }
+    `;
+  }
+  return css`
+    background: transparent;
+    color: ${text};
+    &:focus-visible { background: var(--color-error-error-overlay); }
+    &:hover:not(:disabled) { background: var(--color-error-error-overlay-hover); }
+    &:active:not(:disabled) { background: var(--color-error-error-overlay-press); }
+  `;
+};
+
+/** tone=inverse (Figma hellopc.button.inverse, node 17793:6895): primary is
+ *  the fill button, secondary the no-container button, each with every color
+ *  swapped for its --color-inverse-* twin. Returns null for combinations Figma
+ *  doesn't define, which then keep their default colors. */
+const inverseStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
+  if (intent === 'primary' && variant === 'fill') {
+    return css`
+      background: var(--color-inverse-button-primary-fill);
+      color: var(--color-inverse-button-on-primary-fill);
+      box-shadow: inset 0 0 0 var(--stroke-100) var(--color-inverse-button-primary-border);
+      &:hover:not(:disabled),
+      &:focus-visible {
+        background: var(--color-inverse-primary-primary-hover);
+        color: var(--color-inverse-text-icon-on-primary);
+        box-shadow: none;
+      }
+      &:active:not(:disabled) {
+        background: var(--color-inverse-primary-primary-press);
+        color: var(--color-inverse-text-icon-on-primary);
+        box-shadow: none;
+      }
+      &:disabled, &[aria-disabled='true'] {
+        background: var(--color-inverse-disabled-disabled);
+        color: var(--color-inverse-disabled-disabled-inverse);
+        box-shadow: none;
+      }
+    `;
+  }
+  if (intent === 'secondary' && variant === 'ghost') {
+    /* Figma binds the label to inverse/surfaces/inverseContainer (not
+       inverse/secondary/secondary); kept as specified. */
+    return css`
+      background: transparent;
+      color: var(--color-inverse-surfaces-inverse-container);
+      &:hover:not(:disabled),
+      &:focus-visible { background: var(--color-inverse-secondary-secondary-overlay); }
+      &:active:not(:disabled) { background: var(--color-inverse-secondary-secondary-overlay-hover); }
+      &:disabled, &[aria-disabled='true'] {
+        background: transparent;
+        color: var(--color-inverse-disabled-disabled-inverse);
+      }
+    `;
+  }
+  return null;
 };
 
 /** intent × variant → background / text / border + hover/press, all from the
  *  hello pc token custom properties (see src/hellopc/tokens/hellopc-vars.css). */
 const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
+  if (intent === 'destructive') return destructiveStyles(variant);
   const p = intent === 'primary';
 
   if (variant === 'fill') {
+    /* Primary fill uses the Figma 1.1 button tokens (color/button/*). They
+       equal primary/onPrimary in light and dark; in win hct the button is the
+       system ButtonFace with a ButtonText border and label. */
     return p
       ? css`
-          background: var(--color-primary-primary);
-          color: var(--color-text-icon-on-primary);
-          &:hover:not(:disabled) { background: var(--color-primary-primary-hover); }
-          &:active:not(:disabled) { background: var(--color-primary-primary-press); }
+          background: var(--color-button-primary-fill);
+          color: var(--color-button-on-primary-fill);
+          box-shadow: inset 0 0 0 var(--stroke-100) var(--color-button-primary-border);
+          &:hover:not(:disabled) {
+            background: var(--color-primary-primary-hover);
+            color: var(--color-text-icon-on-primary);
+            box-shadow: none;
+          }
+          &:active:not(:disabled) {
+            background: var(--color-primary-primary-press);
+            color: var(--color-text-icon-on-primary);
+            box-shadow: none;
+          }
         `
       : css`
           background: var(--color-secondary-secondary);
@@ -170,11 +299,23 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
 };
 
 /** Disabled treatment differs for bordered/transparent variants. */
-const disabledStyles = (variant: ButtonVariant) => {
+const disabledStyles = (variant: ButtonVariant, intent: ButtonIntent) => {
   const base = css`
     cursor: not-allowed;
     pointer-events: none;
   `;
+  if (variant === 'outline' && intent === 'destructive') {
+    /* Figma destructive outline disabled: transparent, disabledInverse ring,
+       text+icon/disabled label. */
+    return css`
+      &:disabled, &[aria-disabled='true'] {
+        ${base}
+        background: transparent;
+        box-shadow: inset 0 0 0 var(--stroke-200) var(--color-disabled-disabled-inverse);
+        color: var(--color-text-icon-disabled);
+      }
+    `;
+  }
   if (variant === 'outline') {
     return css`
       &:disabled, &[aria-disabled='true'] {
@@ -190,7 +331,7 @@ const disabledStyles = (variant: ButtonVariant) => {
       &:disabled, &[aria-disabled='true'] {
         ${base}
         background: transparent;
-        color: var(--color-disabled-disabled-inverse);
+        color: ${intent === 'destructive' ? 'var(--color-text-icon-disabled)' : 'var(--color-disabled-disabled-inverse)'};
       }
     `;
   }
@@ -200,6 +341,7 @@ const disabledStyles = (variant: ButtonVariant) => {
       background: var(--color-disabled-disabled);
       color: var(--color-disabled-disabled-inverse);
       border-color: transparent;
+      box-shadow: none;
     }
   `;
 };
@@ -208,6 +350,7 @@ const StyledButton = styled.button<{
   $size: ButtonSize;
   $intent: ButtonIntent;
   $variant: ButtonVariant;
+  $tone: ButtonTone;
   $fullWidth: boolean;
   $underline: boolean;
 }>`
@@ -232,7 +375,9 @@ const StyledButton = styled.button<{
 
   ${(p) => sizeStyles(p.$size)}
   ${(p) => colorStyles(p.$intent, p.$variant)}
-  ${(p) => disabledStyles(p.$variant)}
+  ${(p) => disabledStyles(p.$variant, p.$intent)}
+  /* Inverse comes after the defaults so its states (incl. disabled) win. */
+  ${(p) => (p.$tone === 'inverse' ? inverseStyles(p.$intent, p.$variant) : null)}
 
   /* Opting out of the ghost/secondary underline has to undo it here too, since
      colorStyles sets it on the button as well as on the Label. */
@@ -249,7 +394,8 @@ const StyledButton = styled.button<{
     content: '';
     position: absolute;
     inset: -2px;
-    border: var(--stroke-300) solid var(--color-primary-primary);
+    border: var(--stroke-300) solid
+      ${(p) => (p.$tone === 'inverse' ? 'var(--color-inverse-primary-primary)' : 'var(--color-primary-primary)')};
     border-radius: var(--radius-1000);
     pointer-events: none;
   }
@@ -259,19 +405,26 @@ const StateLayer = styled.span<{ $size: ButtonSize; $variant: ButtonVariant }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: ${(p) => (p.$variant === 'tonal' && p.$size === 'md' ? 'var(--space-050)' : 'var(--space-100)')};
+  gap: ${(p) => gapFor(p.$size, p.$variant)};
   width: 100%;
   height: 100%;
-  padding: ${(p) => padFor(p.$size, p.$variant)};
+  box-sizing: border-box;
+  padding: 0 ${(p) => padFor(p.$size, p.$variant)};
 `;
 
-const IconSlot = styled.span`
+/** Sized by the button (see ICON_SIZE); any SVG fills it via currentColor. */
+const IconSlot = styled.span<{ $size: ButtonSize }>`
   display: inline-flex;
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: ${(p) => ICON_SIZE[p.$size]};
+  height: ${(p) => ICON_SIZE[p.$size]};
   align-items: center;
   justify-content: center;
+
+  & > svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const Label = styled.span<{ $underline: boolean }>`
@@ -307,6 +460,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = 'md',
       intent = 'primary',
       variant = 'fill',
+      tone = 'default',
       startIcon,
       endIcon,
       fullWidth = false,
@@ -328,14 +482,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         $size={size}
         $intent={intent}
         $variant={variant}
+        $tone={tone}
         $fullWidth={fullWidth}
         $underline={showUnderline}
         {...props}
       >
         <StateLayer $size={size} $variant={variant}>
-          {startIcon ? <IconSlot>{startIcon}</IconSlot> : null}
+          {startIcon ? <IconSlot $size={size}>{startIcon}</IconSlot> : null}
           <Label $underline={showUnderline}>{children}</Label>
-          {endIcon ? <IconSlot>{endIcon}</IconSlot> : null}
+          {endIcon ? <IconSlot $size={size}>{endIcon}</IconSlot> : null}
         </StateLayer>
       </StyledButton>
     );

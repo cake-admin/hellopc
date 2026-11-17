@@ -167,6 +167,88 @@ the 20% stroke and leave a rim that reads as solid. Clipping the fill to the
 padding box lets the stroke sit directly over the blurred backdrop, which is
 what makes the edge read as translucent glass.
 
+## Fallbacks
+
+When the application shell can't render **Mica**, a **16px border radius**, or
+**borders** (for example a host that composites without backdrop effects), a
+floating surface drops its blur and translucency and uses these declarations
+instead (Figma "Fallbacks", Hello PC 1.1.0):
+
+export const FallbackSurface = () => (
+  <div
+    style={{
+      width: 128,
+      height: 128,
+      borderRadius: 'var(--surface-fallback-radius)',
+      background: 'var(--surface-fallback-fill)',
+      boxShadow: 'var(--surface-fallback-shadow)',
+    }}
+  />
+);
+
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 8 }}>
+  {MODES.map(({ mode, label, wallpaper }) => (
+    <div key={mode} style={{ flex: '1 1 240px', minWidth: 220 }}>
+      <div
+        data-theme={mode}
+        style={{
+          borderRadius: 12,
+          border: `1px solid ${BORDER}`,
+          backgroundImage: `url(${wallpaper})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'grid',
+          placeItems: 'center',
+          padding: '40px 24px',
+        }}
+      >
+        <FallbackSurface />
+      </div>
+      <div style={{ marginTop: 8, fontFamily: FONT, fontSize: 12, color: MUTED, textAlign: 'center' }}>
+        {label}
+      </div>
+    </div>
+  ))}
+</div>
+
+<Table head={['Part', 'light.a', 'dark.a', 'Token']}>
+  <tr>
+    <td style={td}>fill</td>
+    <td style={td}>blue 95 (<code>#ECF1FE</code>)</td>
+    <td style={td}>black (<code>#000000</code>)</td>
+    <td style={td}><code>--surface-fallback-fill</code></td>
+  </tr>
+  <tr>
+    <td style={td}>border radius</td>
+    <td style={td} colSpan={2}>4px</td>
+    <td style={td}><code>--surface-fallback-radius</code> (= <code>--radius-50</code>)</td>
+  </tr>
+  <tr>
+    <td style={td}>stroke</td>
+    <td style={td} colSpan={2}>none</td>
+    <td style={td}>—</td>
+  </tr>
+  <tr>
+    <td style={td}>effect</td>
+    <td style={td} colSpan={2}>the <code>container blur high</code> shadow, without its blur</td>
+    <td style={td}><code>--surface-fallback-shadow</code> (= <code>--elevation-5</code>)</td>
+  </tr>
+</Table>
+
+```css
+background: var(--surface-fallback-fill);
+border-radius: var(--surface-fallback-radius);
+border: none;
+box-shadow: var(--surface-fallback-shadow);
+/* no backdrop-filter */
+```
+
+The fills are hero palette primitives (no semantic variable exists for them),
+so the generator reads them from the Figma hero export into
+`--surface-fallback-fill`, scoped per theme like every color variable. Figma
+gives no win hct value; there it resolves to the system-backed
+`--color-surfaces-container-blur-high` (`#202020`).
+
 ## Rules
 
 <Table head={['Do', "Don't"]}>
@@ -176,6 +258,7 @@ what makes the edge read as translucent glass.
     ['Reserve blur high for the OS shell', 'Reach for blur high because it looks stronger'],
     ['Clip the fill to the padding box when a translucent stroke is involved', 'Let the fill paint under the stroke — the rim stops reading as glass'],
     ['Check text contrast over a busy backdrop', 'Assume a blurred surface passes contrast — it depends on what is behind it'],
+    ['Switch to the fallback declarations when the shell has no Mica, radius, or borders', 'Keep a translucent fill without its blur — it reads as washed out'],
   ].map(([doIt, dont]) => (
     <tr key={doIt}>
       <td style={{ ...td, width: '50%' }}>{doIt}</td>
@@ -197,6 +280,10 @@ edge visible.
   elevation scale — `container blur` carries `elevation/3`, `container blur
   high` carries `elevation/5`. Use the elevation token rather than re-writing
   the two shadow layers by hand.
+- The Fallbacks frame (node 16294:80) labels light.a's fill **black** and
+  dark.a's **blue.95**, but its previews show the reverse. The previews were
+  confirmed correct: light.a uses blue 95, dark.a uses black. The frame's text
+  labels need fixing in Figma.
 
 ## Open questions
 

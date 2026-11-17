@@ -17,7 +17,10 @@ The hello pc action trigger — pill-shaped and token-driven.
 Pick emphasis by importance: **fill** is the single main action in a view;
 **outline** and **tonal** are secondary emphasis; **ghost** is the lowest —
 dense UIs, toolbars, and inline actions. Cross any of those with an **intent**
-(\`primary\` indigo / \`secondary\` ink) and a **size** (\`xs\`–\`lg\`).
+(\`primary\` indigo / \`secondary\` ink / \`destructive\` error) and a **size**
+(\`xs\`–\`lg\`). Use \`destructive\` only for actions that delete data or can't be
+undone, and keep a non-destructive way out next to it. On inverse surfaces
+(toasts, snackbars, tooltips) set \`tone="inverse"\`.
 
 Every color, radius, spacing, and type value resolves from the hello pc design
 tokens as CSS custom properties (\`--color-*\`, \`--space-*\`, \`--radius-*\`,
@@ -37,17 +40,19 @@ intentionally unsupported here — that's the separate IconButton component.
 <Button variant="tonal">Duplicate</Button>
 <Button variant="ghost">Dismiss</Button>
 <Button size="lg" fullWidth>Continue</Button>
-<Button startIcon={<Plus size={16} />}>Add item</Button>
+<Button startIcon={<Plus />}>Add item</Button>
+<Button intent="destructive">Delete profile</Button>
+<Button tone="inverse" size="sm">Undo</Button>
 \`\`\`
 
 ## Design tokens used
 
-Custom-property names mirror the Figma variables (\`&color/primary/primaryHover\`
+Custom-property names mirror the Figma variables (\`color/primary/primaryHover\`
 ⇄ \`--color-primary-primary-hover\`).
 
 | Variant · intent | Background | Text | Hover / Press |
 | --- | --- | --- | --- |
-| fill · primary | \`--color-primary-primary\` | \`--color-text-icon-on-primary\` | \`…primary-hover\` / \`…primary-press\` |
+| fill · primary | \`--color-button-primary-fill\` + \`--stroke-100\` \`--color-button-primary-border\` inset stroke | \`--color-button-on-primary-fill\` (hover/press \`--color-text-icon-on-primary\`) | \`--color-primary-primary-hover\` / \`-press\` |
 | fill · secondary | \`--color-secondary-secondary\` | \`--color-text-icon-inverse\` | \`…secondary-hover\` / \`…secondary-press\` |
 | outline · primary | \`--color-surfaces-container\` + \`--stroke-200\` \`--color-primary-primary\` inset stroke | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
 | outline · secondary | \`--color-surfaces-container\` + \`--stroke-200\` \`--color-secondary-secondary\` inset stroke | \`--color-secondary-secondary\` | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
@@ -55,12 +60,24 @@ Custom-property names mirror the Figma variables (\`&color/primary/primaryHover\
 | tonal · secondary | \`--color-tonal-tonal-secondary-overlay\` | \`--color-text-icon-on-tonal-secondary\` | \`…secondary-overlay-hover\` / \`…secondary-overlay-press\` |
 | ghost · primary | transparent | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
 | ghost · secondary | transparent | \`--color-secondary-secondary\` (label underlined) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
+| fill · destructive | \`--color-error-error\` | \`--color-text-icon-inverse\` | \`--color-error-error-hover\` / \`-press\` |
+| outline · destructive | transparent + \`--stroke-200\` \`--color-error-error\` inset stroke | \`--color-text-icon-error-on-surface-text-destructive-btn\` | \`--color-error-error-overlay-hover\` / \`-overlay-press\` (focus \`-overlay\`) |
+| tonal · destructive | \`--color-error-error-overlay\` | \`--color-text-icon-error-on-surface-text-destructive-btn\` | \`…-overlay-hover\` / \`…-overlay-press\` |
+| ghost · destructive | transparent | \`--color-text-icon-error-on-surface-text-destructive-btn\` | \`--color-error-error-overlay-hover\` / \`-overlay-press\` (focus \`-overlay\`) |
+| inverse · fill · primary | \`--color-inverse-button-primary-fill\` + \`--color-inverse-button-primary-border\` | \`--color-inverse-button-on-primary-fill\` (hover/press/focus \`--color-inverse-text-icon-on-primary\`) | \`--color-inverse-primary-primary-hover\` / \`-press\` |
+| inverse · ghost · secondary | transparent | \`--color-inverse-surfaces-inverse-container\` (underlined) | \`--color-inverse-secondary-secondary-overlay\` / \`-overlay-hover\` |
 | disabled (any) | \`--color-disabled-disabled\` | \`--color-disabled-disabled-inverse\` | — |
+| disabled · inverse | \`--color-inverse-disabled-disabled\` (fill) | \`--color-inverse-disabled-disabled-inverse\` | — |
 
 (\`…\` = the same family prefix as the row's background.) Shape is
 \`--radius-1000\`; the focus ring is a \`--stroke-300\` \`--color-primary-primary\`
-outline drawn at −2px inset; icon↔label gap is \`--space-100\` (\`--space-050\`
-for tonal·md); per-size paddings use \`--space-050\`…\`--space-400\`.
+(\`--color-inverse-primary-primary\` when inverse) outline drawn at −2px inset;
+icon↔label gap is \`--space-100\` (\`--space-050\` at sm and tonal·md); per-size
+paddings use \`--space-050\`…\`--space-400\`.
+
+**Icon sizes** (Figma "Icon Size Guidance"): the icon slot is 18px
+(\`--space-350\`) for \`xs\` and \`sm\`, 24px (\`--space-500\`) for \`md\` and \`lg\`.
+Pass glyphs without a size — the slot sizes them.
 
 ## Accessibility
 
@@ -78,6 +95,8 @@ for tonal·md); per-size paddings use \`--space-050\`…\`--space-400\`.
 | Do | Don't |
 | --- | --- |
 | Use one fill button per view — the single main action. | Stack several fill buttons; demote the rest to outline/tonal/ghost. |
+| Use \`destructive\` for deletes and irreversible actions, with a Cancel beside it. | Use red for emphasis on an ordinary action. |
+| Use \`tone="inverse"\` on inverse surfaces (toasts, tooltips). | Put a default-tone button on an inverse surface. |
 | Use ghost in dense UIs: toolbars, table rows, inline actions. | Use ghost for the primary call-to-action. |
 | Always pass a visible text label. | Build icon-only buttons with this component — that's IconButton. |
 | Disable with nearby context explaining why. | Hide the main action while it's unavailable. |
@@ -106,7 +125,12 @@ for tonal·md); per-size paddings use \`--space-050\`…\`--space-400\`.
     },
     intent: {
       control: 'inline-radio',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'destructive'],
+      table: { category: 'Appearance' },
+    },
+    tone: {
+      control: 'inline-radio',
+      options: ['default', 'inverse'],
       table: { category: 'Appearance' },
     },
     variant: {
@@ -191,23 +215,117 @@ export const WithIcons: Story = {
     docs: {
       description: {
         story:
-          'Leading (`startIcon`) and trailing (`endIcon`) icons sit in a fixed ' +
-          '16px slot beside the label. Icons are decorative — the label carries ' +
-          'the accessible name, so never omit it. Icon-only actions belong to ' +
-          'the separate IconButton component.',
+          'Leading (`startIcon`) and trailing (`endIcon`) icons. The slot sizes ' +
+          'the glyph per the Figma icon-size guidance: **18×18 for `xs` and ' +
+          '`sm`**, **24×24 for `md` and `lg`** — so pass icons without a size. ' +
+          'Icons are decorative — the label carries the accessible name, so ' +
+          'never omit it. Icon-only actions belong to the separate IconButton ' +
+          'component.',
       },
     },
   },
   render: () => (
-    <Row>
-      <Button startIcon={<Plus size={16} />}>Add item</Button>
-      <Button variant="tonal" endIcon={<ArrowRight size={16} />}>
-        Continue
-      </Button>
-      <Button variant="outline" intent="secondary" startIcon={<Plus size={16} />}>
-        New project
-      </Button>
-    </Row>
+    <Stack>
+      <Row>
+        {(['xs', 'sm', 'md', 'lg'] as const).map((size) => (
+          <Button key={size} size={size} startIcon={<Plus />}>
+            Add item
+          </Button>
+        ))}
+      </Row>
+      <Row>
+        <Button variant="tonal" endIcon={<ArrowRight />}>
+          Continue
+        </Button>
+        <Button variant="outline" intent="secondary" startIcon={<Plus />}>
+          New project
+        </Button>
+      </Row>
+    </Stack>
+  ),
+};
+
+export const Destructive: Story = {
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          'Figma `hellopc.button.destructive`: the error family across all four ' +
+          'containers. Fill is `--color-error-error` with inverse text; outline, ' +
+          'tonal and ghost use `--color-text-icon-error-on-surface-text-destructive-btn` ' +
+          'with `--color-error-error-overlay*` washes. Reserve it for deletes and ' +
+          'irreversible actions, and pair it with a way out.',
+      },
+    },
+  },
+  render: () => (
+    <Stack>
+      <Row>
+        {(['fill', 'outline', 'tonal', 'ghost'] as const).map((variant) => (
+          <Button key={variant} intent="destructive" variant={variant}>
+            Delete {variant}
+          </Button>
+        ))}
+      </Row>
+      <Row>
+        <Button intent="secondary" variant="ghost">
+          Cancel
+        </Button>
+        <Button intent="destructive">Delete profile</Button>
+      </Row>
+    </Stack>
+  ),
+};
+
+/** Chrome for the inverse examples: an inverse surface like a toast (story layout only). */
+const InverseSurface = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      display: 'flex',
+      gap: 16,
+      alignItems: 'center',
+      padding: 16,
+      borderRadius: 24,
+      background: 'var(--color-inverse-surfaces-container-blur)',
+    }}
+  >
+    {children}
+  </div>
+);
+
+export const Inverse: Story = {
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          'Figma `hellopc.button.inverse`, for inverse surfaces such as toasts, ' +
+          'snackbars and tooltips: `tone="inverse"` swaps every color — hover, ' +
+          'press, focus ring and disabled included — for its `--color-inverse-*` ' +
+          'twin. Defined for **primary · fill** and **secondary · ghost**.',
+      },
+    },
+  },
+  render: () => (
+    <Stack>
+      {(['sm', 'md'] as const).map((size) => (
+        <InverseSurface key={size}>
+          <Button tone="inverse" size={size} intent="secondary" variant="ghost">
+            Dismiss
+          </Button>
+          <Button tone="inverse" size={size}>
+            Undo
+          </Button>
+          <Button tone="inverse" size={size} intent="secondary" variant="ghost" disabled>
+            Dismiss
+          </Button>
+          <Button tone="inverse" size={size} disabled>
+            Undo
+          </Button>
+        </InverseSurface>
+      ))}
+    </Stack>
   ),
 };
 
@@ -261,9 +379,10 @@ export const AllVariants: Story = {
     docs: {
       description: {
         story:
-          'The QA matrix: every variant × intent in default and disabled states, ' +
-          'plus the size ramp. Use it with the Theme toolbar to audit both ' +
-          '`light.a` and `dark.a` at a glance.',
+          'The QA matrix: every variant × intent (primary, secondary, ' +
+          'destructive) in default and disabled states, the size ramp with icons, ' +
+          'and the inverse tone. Use it with the Theme toolbar to audit ' +
+          '`light.a`, `dark.a` and `win hct` at a glance.',
       },
     },
   },
@@ -271,10 +390,10 @@ export const AllVariants: Story = {
     <Stack>
       {(['fill', 'outline', 'tonal', 'ghost'] as const).map((variant) => (
         <Row key={variant}>
-          {(['primary', 'secondary'] as const).map((intent) => (
+          {(['primary', 'secondary', 'destructive'] as const).map((intent) => (
             <Row key={intent}>
               <Button intent={intent} variant={variant}>
-                {intent === 'primary' ? 'Primary' : 'Secondary'}
+                {intent.charAt(0).toUpperCase() + intent.slice(1)}
               </Button>
               <Button intent={intent} variant={variant} disabled>
                 Disabled
@@ -285,11 +404,22 @@ export const AllVariants: Story = {
       ))}
       <Row>
         {(['xs', 'sm', 'md', 'lg'] as const).map((size) => (
-          <Button key={size} size={size}>
+          <Button key={size} size={size} startIcon={<Plus />}>
             {size}
           </Button>
         ))}
       </Row>
+      <InverseSurface>
+        <Button tone="inverse" size="sm" intent="secondary" variant="ghost">
+          Inverse ghost
+        </Button>
+        <Button tone="inverse" size="sm">
+          Inverse fill
+        </Button>
+        <Button tone="inverse" size="sm" disabled>
+          Disabled
+        </Button>
+      </InverseSurface>
     </Stack>
   ),
 };

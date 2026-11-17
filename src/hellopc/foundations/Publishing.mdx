@@ -143,6 +143,62 @@ One thing does need a human: a new component **folder** fails the generator unti
 it is added to the `CATEGORIES` map in that script. That is deliberate — a
 component missing from the index is one that agents will never use.
 
+## Syncing tokens from Figma
+
+Colors, spacing, radius and stroke come from the Figma library's variables. They
+reach the repo as JSON in the root `& color hero`, `& theme.a`, `& win hct` and
+`& spacing` folders, and every token build reads from there.
+
+**From a manual export (works today):**
+
+1. In Figma, open the library → **Local variables** → export each collection:
+   `hellopc hero`, `hellopc` (light.a + dark.a), the Windows High Contrast
+   collection (light.a), `win hct system` (all four themes) and the spacing
+   collection.
+2. Put every downloaded `.json` file in one folder. Leave the names as Figma
+   gave them, including duplicates like `light.a (1).tokens.json`.
+3. Run:
+
+```bash
+npm run import:figma-tokens -- "C:\path\to\that\folder"
+```
+
+The script identifies each file by its contents, copies it into the right
+`& …` folder, rebuilds the tokens, and lists any CSS variables that were added
+or removed. It refuses to change anything if a file is unrecognized or two files
+claim the same slot. Add `--dry-run` to only preview where each file would go.
+Collections missing from the folder keep their current repo copy.
+
+**Automatically (needs Figma Enterprise API access):** the **Sync tokens from
+Figma** workflow runs on demand from the Actions tab. Its weekly Monday schedule
+is commented out in `.github/workflows/figma-tokens.yml` until the setup below
+is done; turn it on after the first manual run succeeds. It pulls the variables through Figma's
+Variables API, rebuilds the tokens, and opens or updates a pull request on
+`figma-tokens/sync` listing the added and removed CSS variables. Review it in
+local Storybook in all three themes, then merge it like any other change.
+
+**From your machine:**
+
+```bash
+FIGMA_TOKEN=<your token> FIGMA_FILE_KEY=<file key> npm run sync:figma-tokens
+```
+
+`npm run check:figma-tokens` (same variables) only reports whether the repo is
+out of date. `node scripts/sync-figma-tokens.mjs --list` prints every collection
+in the file. Use it when a sync fails because a collection was renamed, then
+update the `OUTPUTS` map at the top of the script.
+
+**One-time setup:**
+
+1. The Variables API needs a **Figma Enterprise** seat. Create a personal access
+   token (Figma → Settings → Security) with the `file_variables:read` scope.
+2. In the GitHub repo, add the secret `FIGMA_TOKEN` and the variable
+   `FIGMA_FILE_KEY` (the key in `figma.com/design/<KEY>/…`).
+3. Either add a fine-grained GitHub token as the secret `FIGMA_SYNC_PR_TOKEN`
+   (contents and pull requests: write), or turn on *Settings → Actions →
+   Allow GitHub Actions to create and approve pull requests*. Without the
+   token, GitHub won't run the **Verify Storybook** check on the sync PR.
+
 ## What "done" looks like
 
 - [ ] Component, stories, and `index.ts` added, and exported from `src/hellopc/index.ts`

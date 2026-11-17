@@ -31,7 +31,7 @@ compact toolbar-width trail. For a single determinate percentage of work, use
 ProgressBar instead; for mutually exclusive view switching, use ContentSwitcher.
 
 Every color, spacing, radius, and type value resolves from hello pc CSS custom
-properties that mirror Figma variables (\`&color/success/success\` ⇄
+properties that mirror Figma variables (\`color/success/success\` ⇄
 \`--color-success-success\`). The **Theme** toolbar toggle re-themes every
 example on this page live via \`[data-theme]\`; nothing is hardcoded.
 

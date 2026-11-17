@@ -41,7 +41,7 @@ on) and springs back on release — try holding a click on any example.
 ## Design tokens used
 
 Custom-property names mirror the Figma variables
-(\`&color/secondary/secondaryHover\` ⇄ \`--color-secondary-secondary-hover\`).
+(\`color/secondary/secondaryHover\` ⇄ \`--color-secondary-secondary-hover\`).
 
 | Part | Tokens |
 | --- | --- |

@@ -1,0 +1,110 @@
+# Pull the hello pc color + value variables from the Figma library and open
+# (or update) a PR when they differ from what's in the repo.
+#
+# Setup (once) — see "Syncing tokens from Figma" in src/hellopc/foundations/Publishing.mdx:
+#   Secret   FIGMA_TOKEN           Figma personal access token, scope file_variables:read
+#                                  (Variables REST API → Figma Enterprise seat required)
+#   Variable FIGMA_FILE_KEY        the library's file key (figma.com/design/<KEY>/…)
+#   Secret   FIGMA_SYNC_PR_TOKEN   optional — a fine-grained GitHub token (contents +
+#                                  pull requests: write). Without it the PR is opened with
+#                                  GITHUB_TOKEN, and GitHub does not run other workflows
+#                                  (e.g. "Verify Storybook") on PRs opened that way.
+#   Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests"
+#   must be on when relying on GITHUB_TOKEN.
+
+name: Sync tokens from Figma
+
+on:
+  workflow_dispatch:
+  # Weekly run, off until FIGMA_TOKEN / FIGMA_FILE_KEY are configured (it would
+  # fail every Monday without them). Uncomment once a manual run succeeds.
+  # schedule:
+  #   - cron: '0 6 * * 1' # Mondays 06:00 UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: figma-tokens-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      BRANCH: figma-tokens/sync
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.FIGMA_SYNC_PR_TOKEN || github.token }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # The token scripts only use Node built-ins, so no npm install is needed.
+      - name: Pull variables from Figma and rebuild tokens
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE_KEY: ${{ vars.FIGMA_FILE_KEY }}
+        run: |
+          node scripts/sync-figma-tokens.mjs
+          node scripts/build-hellopc-tokens.mjs
+          node scripts/build-hellopc-css-vars.mjs
+          node chart-tool-echarts/scripts/build-tokens.mjs
+          node scripts/validate-tokens.js
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Figma variables match the repo — nothing to do." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summarize the token diff
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          css=src/hellopc/tokens/hellopc-vars.css
+          vars() { grep -oE '^\s*--[a-z0-9-]+' | tr -d ' ' | sort -u; }
+          added=$(comm -13 <(git show HEAD:$css | vars) <(vars < $css) | sed 's/^/- `/; s/$/`/')
+          removed=$(comm -23 <(git show HEAD:$css | vars) <(vars < $css) | sed 's/^/- `/; s/$/`/')
+          changed=$(git diff -U0 -- $css | grep -cE '^\+\s+--' || true)
+          {
+            echo "Automated sync of the hello pc variables from the Figma library."
+            echo
+            echo "**Changed CSS custom-property lines:** $changed"
+            echo
+            echo "**Added variables:**"; echo "${added:-_none_}"; echo
+            echo "**Removed variables:** (any component still using one will lose its color)"
+            echo "${removed:-_none_}"; echo
+            echo "**Files:**"; echo '```'; git diff --stat; echo '```'
+            echo
+            echo "Review in local Storybook (\`npm run storybook\`) in light, dark and win hct before merging."
+            echo "Merging updates cake.lenovo.com/storybook; the npm package still needs a **Publish design system package** run."
+          } > "$RUNNER_TEMP/pr-body.md"
+          cat "$RUNNER_TEMP/pr-body.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update the pull request
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.FIGMA_SYNC_PR_TOKEN || github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add -A
+          git commit -m "Sync hello pc tokens from Figma"
+          git push --force origin "$BRANCH"
+          if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$BRANCH" --body-file "$RUNNER_TEMP/pr-body.md"
+          else
+            gh pr create --head "$BRANCH" --base "${{ github.event.repository.default_branch }}" \
+              --title "Sync hello pc tokens from Figma" --body-file "$RUNNER_TEMP/pr-body.md"
+          fi

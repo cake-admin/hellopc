@@ -71,13 +71,13 @@ import { Breadcrumb } from '@/hellopc/components/Breadcrumb';
 
 | Part | Tokens |
 | --- | --- |
-| crumb type | \`--type-size-subject\` (16px), \`--font-weight-medium\` |
-| crumb color | \`--color-text-icon-secondary\` |
-| current page | \`--color-primary-primary\`, \`aria-current="page"\` |
+| crumb links | **Link** \`size="lg"\`: \`--color-text-icon-link\` (hover \`-link-hover\`, press \`-link-press\`), always underlined, \`--type-size-subject\` (16px), \`--font-weight-medium\` |
+| crumb without a destination | \`--color-text-icon-secondary\` |
+| current page | \`--color-text-icon-primary\`, \`aria-current="page"\` |
 | crumb padding | \`--space-050\` (4px) block |
 | trail gap | \`--space-075\` (6px) |
 | separator | 24px chevron, \`--color-text-icon-primary\` |
-| focus ring | \`--stroke-200\` \`--color-primary-primary\`, \`--space-025\` (2px) offset |
+| focus ring | Link's: \`--stroke-300\` in the link color, \`--radius-50\` |
 | overflow control | **IconButton** \`size="xs"\` \`intent="secondary"\` \`variant="ghost"\` |
 | overflow menu | **Menu Container** surface + **Menu Item** rows |
 
@@ -91,8 +91,8 @@ import { Breadcrumb } from '@/hellopc/components/Breadcrumb';
   where you already are.
 - Separators are \`aria-hidden\` decoration, so the trail isn't read out as a
   string of chevrons.
-- Links keep a visible \`:focus-visible\` ring and underline on hover — the
-  accent color is never the only cue.
+- Crumb links are the hello pc \`Link\`: always underlined, so color is never
+  the only cue, with a visible \`:focus-visible\` ring.
 - The overflow menu is a Radix \`DropdownMenu\`, so it's fully keyboard
   operable (Enter/Space to open, arrows to move, Escape to close) and its
   trigger has an accessible name via \`IconButton\`.
@@ -142,8 +142,8 @@ export const Simple: Story = {
       description: {
         story:
           'Figma `style=simple` — the whole trail inline. Every crumb links up ' +
-          'the hierarchy except the last, which is the current page in the ' +
-          'primary accent.',
+          'the hierarchy except the last, which is the current page in plain ' +
+          'primary text.',
       },
     },
   },
@@ -215,17 +215,22 @@ export const AllVariants: Story = {
       description: {
         story:
           'QA matrix: simple, collapsed, a two-crumb minimum, and a non-navigable ' +
-          'level. Audit under both themes — the secondary crumbs, the accent ' +
-          'current page, and the separator should all read cleanly.',
+          'level. Audit under both themes — the underlined link crumbs, the ' +
+          'plain current page, and the separator should all read cleanly.',
       },
     },
   },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
-      <Breadcrumb items={trail} />
-      <Breadcrumb items={longTrail} maxItems={4} />
-      <Breadcrumb items={[{ label: 'Home', href: '#home' }, { label: 'Settings' }]} />
-      <Breadcrumb items={[{ label: 'Products', href: '#p' }, { label: 'Archived' }, { label: 'X1' }]} />
+      {/* Each nav needs its own name — several same-named landmarks on one
+          page fail axe "landmark-unique". */}
+      <Breadcrumb label="Breadcrumb · simple" items={trail} />
+      <Breadcrumb label="Breadcrumb · collapsed" items={longTrail} maxItems={4} />
+      <Breadcrumb label="Breadcrumb · two crumbs" items={[{ label: 'Home', href: '#home' }, { label: 'Settings' }]} />
+      <Breadcrumb
+        label="Breadcrumb · non-navigable"
+        items={[{ label: 'Products', href: '#p' }, { label: 'Archived' }, { label: 'X1' }]}
+      />
     </div>
   ),
 };

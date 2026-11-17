@@ -29,6 +29,7 @@ export * from './components/Elements';
 
 /* ── Components ────────────────────────────────────────────────────────── */
 export * from './components/Accordion';
+export * from './components/AI';
 export * from './components/Avatar';
 export * from './components/Badge';
 export * from './components/Breadcrumb';
@@ -42,6 +43,7 @@ export * from './components/DateInput';
 export * from './components/Dropdown';
 export * from './components/FileUpload';
 export * from './components/HorizontalTabs';
+export * from './components/Link';
 export * from './components/Menu';
 export * from './components/Modal';
 export * from './components/Notification';
@@ -53,6 +55,7 @@ export * from './components/PasswordInput';
 export * from './components/PinInput';
 export * from './components/Progress Indicators';
 export * from './components/Radio';
+export * from './components/Rating';
 export * from './components/Sidebar';
 export * from './components/Slider';
 export * from './components/Stepper';

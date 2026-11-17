@@ -76,15 +76,16 @@ const CATEGORIES = {
   'Progress Indicators': 'Feedback',
   Table: 'Data', Pagination: 'Data', Badge: 'Data', Counter: 'Data', Avatar: 'Data',
   Sidebar: 'Navigation', HorizontalTabs: 'Navigation', VerticalTabs: 'Navigation',
-  Breadcrumb: 'Navigation', ContentSwitcher: 'Navigation', Accordion: 'Navigation',
+  Breadcrumb: 'Navigation', Link: 'Navigation', ContentSwitcher: 'Navigation', Accordion: 'Navigation',
   Menu: 'Navigation', Stepper: 'Navigation',
   TextInput: 'Forms', PasswordInput: 'Forms', NumberInput: 'Forms', PinInput: 'Forms',
   DateInput: 'Forms', TimeInput: 'Forms', Checkbox: 'Forms', Radio: 'Forms',
   Switch: 'Forms', Slider: 'Forms', Dropdown: 'Forms', NumberDropdown: 'Forms',
-  FileUpload: 'Forms',
+  FileUpload: 'Forms', Rating: 'Forms',
+  AI: 'AI',
   Elements: 'Elements',
 };
-const CATEGORY_ORDER = ['Actions', 'Forms', 'Surfaces', 'Navigation', 'Data', 'Feedback', 'Elements'];
+const CATEGORY_ORDER = ['Actions', 'Forms', 'AI', 'Surfaces', 'Navigation', 'Data', 'Feedback', 'Elements'];
 
 /** Components that render through a Radix portal into document.body. */
 const PORTALLED = new Set([
@@ -475,7 +476,7 @@ const tokensDoc = (version) => {
   out.push('color tokens resolve differently under `dark.a` and `win hct`, which is');
   out.push('exactly why you use the token instead of the value.');
   out.push('');
-  out.push('Names map 1:1 from Figma variables: `&color/primary/primaryHover` becomes');
+  out.push('Names map 1:1 from Figma variables: `color/primary/primaryHover` becomes');
   out.push('`--color-primary-primary-hover`. Names are EXACT — do not guess by analogy.');
   out.push('');
   for (const family of [...groups.keys()].sort()) {

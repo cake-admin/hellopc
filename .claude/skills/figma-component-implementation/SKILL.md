@@ -128,7 +128,7 @@ update. Conventions:
    generated from `tokens.json` by `npm run build:hellopc-vars` →
    `src/hellopc/tokens/hellopc-vars.css` (imported by `CakeThemeProvider`; modes
    scoped by `[data-theme]`). Var names mirror Figma 1:1:
-   `&color/primary/primaryHover` ⇄ `--color-primary-primary-hover`,
+   `color/primary/primaryHover` ⇄ `--color-primary-primary-hover`,
    `Spacing/Small/space-100` ⇄ `--space-100`, `Border/Radius/radius-1000` ⇄
    `--radius-1000` (999px pill), `Border/Stroke/stroke-300` ⇄ `--stroke-300`.
    Sources: colors from `& theme.a/*.tokens.json`, spacing/radius/stroke from

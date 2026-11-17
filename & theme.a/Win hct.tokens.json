@@ -1,5 +1,5 @@
 {
-  "&color": {
+  "color": {
     "primary": {
       "primary": {
         "$type": "color",
@@ -22,8 +22,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "primaryHover": {
@@ -47,8 +48,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "primaryPress": {
@@ -72,8 +74,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "primaryOverlay": {
@@ -81,12 +84,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2357:22806",
@@ -94,11 +97,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "primaryOverlayHover": {
@@ -122,8 +126,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "primaryOverlayPress": {
@@ -147,8 +152,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -158,12 +164,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2438:26718",
@@ -171,11 +177,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "secondaryHover": {
@@ -183,12 +190,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2438:26719",
@@ -196,11 +203,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "secondaryPress": {
@@ -208,12 +216,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2438:26720",
@@ -221,11 +229,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "secondaryOverlay": {
@@ -233,12 +242,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2438:26721",
@@ -246,11 +255,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "secondaryOverlayHover": {
@@ -258,12 +268,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2480:16970",
@@ -271,11 +281,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -301,8 +312,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalHover": {
@@ -326,8 +338,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalPress": {
@@ -351,8 +364,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalLightest": {
@@ -376,8 +390,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalOverlay": {
@@ -401,8 +416,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalOverlayHover": {
@@ -426,8 +442,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalOverlayPress": {
@@ -451,8 +468,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalSecondaryOverlay": {
@@ -476,8 +494,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalSecondaryOverlayHover": {
@@ -501,8 +520,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tonalSecondaryOverlayPress": {
@@ -526,8 +546,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -537,12 +558,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.4588235318660736,
-            0.9137254953384399,
-            0.9882352948188782
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#75E9FC"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2908:9405",
@@ -550,11 +571,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
-            "targetVariableName": "SystemColorHotlightColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "infoOverlay": {
@@ -562,12 +584,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.4588235318660736,
-            0.9137254953384399,
-            0.9882352948188782
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#75E9FC"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2908:9406",
@@ -575,11 +597,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
-            "targetVariableName": "SystemColorHotlightColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "infoOverlayHover": {
@@ -587,12 +610,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.4588235318660736,
-            0.9137254953384399,
-            0.9882352948188782
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#75E9FC"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2913:9192",
@@ -600,11 +623,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
-            "targetVariableName": "SystemColorHotlightColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -614,12 +638,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2475:7979",
@@ -627,11 +651,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "successOverlay": {
@@ -639,12 +664,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2475:7980",
@@ -652,11 +677,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "successOverlayHover": {
@@ -664,12 +690,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2913:9175",
@@ -677,11 +703,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -691,12 +718,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2475:7981",
@@ -704,11 +731,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "warnOverlay": {
@@ -716,12 +744,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2475:7982",
@@ -729,11 +757,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "warnOverlayHover": {
@@ -741,12 +770,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2913:9176",
@@ -754,11 +783,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -768,12 +798,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2460:15827",
@@ -781,11 +811,64 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "errorHover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:14767:4261",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "errorPress": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:14767:4262",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "errorOverlay": {
@@ -793,12 +876,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2460:15828",
@@ -806,11 +889,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "errorOverlayHover": {
@@ -818,12 +902,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2913:9344",
@@ -831,11 +915,38 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
-            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "errorOverlayPress": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:14767:4273",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -861,8 +972,9 @@
             "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
             "targetVariableName": "SystemColorGrayTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "disabledInverse": {
@@ -870,12 +982,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.6509804129600525,
-            0.6509804129600525,
-            0.6509804129600525
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
           ],
           "alpha": 1,
-          "hex": "#A6A6A6"
+          "hex": "#202020"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2438:9719",
@@ -883,11 +995,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
-            "targetVariableName": "SystemColorGrayTextColor",
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -913,8 +1026,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "container": {
@@ -938,8 +1052,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "containerPop-windows": {
@@ -963,8 +1078,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "containerPop-web": {
@@ -988,8 +1104,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "container blur": {
@@ -1013,8 +1130,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "container blur high": {
@@ -1038,8 +1156,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onContainer": {
@@ -1063,8 +1182,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onContainer low": {
@@ -1088,8 +1208,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onContainer high": {
@@ -1113,8 +1234,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "inverseContainer": {
@@ -1138,8 +1260,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "primary": {
@@ -1163,8 +1286,165 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "off": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9306:1560",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
+            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "off hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9306:1562",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
+            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "off press": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9306:1563",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
+            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "on": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9306:1561",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "on hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9306:1564",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "on press": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9306:1565",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -1190,8 +1470,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "borderPop": {
@@ -1215,8 +1496,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "border low": {
@@ -1240,8 +1522,9 @@
             "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
             "targetVariableName": "SystemColorGrayTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "border high": {
@@ -1265,8 +1548,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "border container OS": {
@@ -1290,8 +1574,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "border container": {
@@ -1315,8 +1600,9 @@
             "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
             "targetVariableName": "SystemColorGrayTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "borderTonalPrimary": {
@@ -1340,8 +1626,35 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "border zero (win hct)": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9167:69152",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
+            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -1367,8 +1680,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "secondary": {
@@ -1392,8 +1706,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "placeholder": {
@@ -1417,8 +1732,9 @@
             "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
             "targetVariableName": "SystemColorGrayTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "inverse": {
@@ -1442,8 +1758,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onPrimary": {
@@ -1451,12 +1768,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.14901961386203766,
-            0.23137255012989044,
-            0.3137255012989044
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
           ],
           "alpha": 1,
-          "hex": "#263B50"
+          "hex": "#202020"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2391:32205",
@@ -1464,11 +1781,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:a9c8514989e92aaa546c7ca94f059a135d941471/-1:-1",
-            "targetVariableName": "SystemColorHighlightTextColor",
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onSecondary": {
@@ -1492,8 +1810,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onPrimary disabled": {
@@ -1517,8 +1836,9 @@
             "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
             "targetVariableName": "SystemColorGrayTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onTonal": {
@@ -1542,8 +1862,9 @@
             "targetVariableId": "VariableID:a9c8514989e92aaa546c7ca94f059a135d941471/-1:-1",
             "targetVariableName": "SystemColorHighlightTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onTonalInverse": {
@@ -1567,8 +1888,9 @@
             "targetVariableId": "VariableID:a9c8514989e92aaa546c7ca94f059a135d941471/-1:-1",
             "targetVariableName": "SystemColorHighlightTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "onTonalSecondary": {
@@ -1592,8 +1914,330 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "infoOn surface": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9200:88082",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "successOn surface": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9200:88083",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "warnOn surface": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9200:88081",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "errorOn surface text (Destructive Btn)": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9200:88080",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "errorOn surface icon": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:14756:52831",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "primaryOn surface": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9209:88092",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "secondaryOn surface": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9209:88093",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "On surface": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:9216:2826",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
+            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "link": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4588235318660736,
+            0.9137254953384399,
+            0.9882352948188782
+          ],
+          "alpha": 1,
+          "hex": "#75E9FC"
+        },
+        "$description": "Link text — default, focus. Maps to Windows Hotlight in win hct.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17613:24",
+          "com.figma.scopes": [
+            "TEXT_FILL",
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
+            "targetVariableName": "SystemColorHotlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "linkHover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4588235318660736,
+            0.9137254953384399,
+            0.9882352948188782
+          ],
+          "alpha": 1,
+          "hex": "#75E9FC"
+        },
+        "$description": "Link text — hover. Maps to Windows Hotlight in win hct.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17613:26",
+          "com.figma.scopes": [
+            "TEXT_FILL",
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
+            "targetVariableName": "SystemColorHotlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "linkPress": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4588235318660736,
+            0.9137254953384399,
+            0.9882352948188782
+          ],
+          "alpha": 1,
+          "hex": "#75E9FC"
+        },
+        "$description": "Link text — press. Maps to Windows Hotlight in win hct.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17613:28",
+          "com.figma.scopes": [
+            "TEXT_FILL",
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
+            "targetVariableName": "SystemColorHotlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6509804129600525,
+            0.6509804129600525,
+            0.6509804129600525
+          ],
+          "alpha": 1,
+          "hex": "#A6A6A6"
+        },
+        "$description": "Disabled text/icon on a surface (text-only & outline controls, links). Same as disabledInverse in hellopc; GrayText in win hct.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17626:248",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL",
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
+            "targetVariableName": "SystemColorGrayTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -1619,8 +2263,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "drop-shadow-heavy": {
@@ -1644,8 +2289,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -1671,8 +2317,9 @@
             "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
             "targetVariableName": "SystemColorWindowTextColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -1682,12 +2329,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4303:1124",
@@ -1695,11 +2342,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "redLight": {
@@ -1707,12 +2355,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1178",
@@ -1720,11 +2368,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onRedLight": {
@@ -1748,8 +2397,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "orange": {
@@ -1757,12 +2407,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1154",
@@ -1770,11 +2420,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "orangeLight": {
@@ -1782,12 +2433,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1179",
@@ -1795,11 +2446,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onOrangeLight": {
@@ -1823,8 +2475,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "amber": {
@@ -1832,12 +2485,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1155",
@@ -1845,11 +2498,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "amberLight": {
@@ -1857,12 +2511,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1182",
@@ -1870,11 +2524,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onAmberLight": {
@@ -1898,8 +2553,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "gold": {
@@ -1907,12 +2563,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1156",
@@ -1920,11 +2576,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "goldLight": {
@@ -1932,12 +2589,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1449",
@@ -1945,11 +2602,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onGoldLight": {
@@ -1973,8 +2631,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "yellow": {
@@ -1982,12 +2641,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1157",
@@ -1995,11 +2654,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "yellowLight": {
@@ -2007,12 +2667,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1453",
@@ -2020,11 +2680,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onYellowLight": {
@@ -2048,8 +2709,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "lime": {
@@ -2057,12 +2719,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1165",
@@ -2070,11 +2732,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "limeLight": {
@@ -2082,12 +2745,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1363",
@@ -2095,11 +2758,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onLimeLight": {
@@ -2123,8 +2787,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "green": {
@@ -2132,12 +2797,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1166",
@@ -2145,11 +2810,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "greenLight": {
@@ -2157,12 +2823,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1365",
@@ -2170,11 +2836,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onGreenLight": {
@@ -2198,8 +2865,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "jade": {
@@ -2207,12 +2875,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1167",
@@ -2220,11 +2888,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "jadeLight": {
@@ -2232,12 +2901,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1367",
@@ -2245,11 +2914,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onJadeLight": {
@@ -2273,8 +2943,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "teal": {
@@ -2282,12 +2953,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1168",
@@ -2295,11 +2966,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "tealLight": {
@@ -2307,12 +2979,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1369",
@@ -2320,11 +2992,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onTealLight": {
@@ -2348,8 +3021,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "aqua": {
@@ -2357,12 +3031,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1169",
@@ -2370,11 +3044,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "aquaLight": {
@@ -2382,12 +3057,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1372",
@@ -2395,11 +3070,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onAquaLight": {
@@ -2423,8 +3099,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "cyan": {
@@ -2432,12 +3109,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1170",
@@ -2445,11 +3122,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "cyanLight": {
@@ -2457,12 +3135,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1376",
@@ -2470,11 +3148,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onCyanLight": {
@@ -2498,8 +3177,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "azure": {
@@ -2507,12 +3187,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1171",
@@ -2520,11 +3200,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "azureLight": {
@@ -2532,12 +3213,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1378",
@@ -2545,11 +3226,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onAzureLight": {
@@ -2573,8 +3255,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "blue": {
@@ -2582,12 +3265,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1172",
@@ -2595,11 +3278,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "blueLight": {
@@ -2607,12 +3291,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1380",
@@ -2620,11 +3304,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onBlueLight": {
@@ -2648,8 +3333,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "indigo": {
@@ -2657,12 +3343,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1173",
@@ -2670,11 +3356,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "indigoLight": {
@@ -2682,12 +3369,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1382",
@@ -2695,11 +3382,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onIndigoLight": {
@@ -2723,8 +3411,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "violet": {
@@ -2732,12 +3421,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1174",
@@ -2745,11 +3434,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "violetLight": {
@@ -2757,12 +3447,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1384",
@@ -2770,11 +3460,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onVioletLight": {
@@ -2798,8 +3489,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "purple": {
@@ -2807,12 +3499,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1175",
@@ -2820,11 +3512,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "purpleLight": {
@@ -2832,12 +3525,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1386",
@@ -2845,11 +3538,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onPurpleLight": {
@@ -2873,8 +3567,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "magenta": {
@@ -2882,12 +3577,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1176",
@@ -2895,11 +3590,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "magentaLight": {
@@ -2907,12 +3603,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1388",
@@ -2920,11 +3616,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onMagentaLight": {
@@ -2948,8 +3645,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "pink": {
@@ -2957,12 +3655,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            1,
-            1,
-            1
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#FFFFFF"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4304:1177",
@@ -2970,11 +3668,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
-            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "pinkLight": {
@@ -2982,12 +3681,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.125490203499794,
-            0.125490203499794,
-            0.125490203499794
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
           ],
           "alpha": 1,
-          "hex": "#202020"
+          "hex": "#8EE3F0"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:4306:1390",
@@ -2995,11 +3694,12 @@
             "ALL_SCOPES"
           ],
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
-            "targetVariableName": "SystemColorWindowColor",
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "text + icon onPinkLight": {
@@ -3023,8 +3723,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       }
     },
@@ -3050,8 +3751,9 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "1_Container": {
@@ -3075,8 +3777,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "1_Overlay": {
@@ -3100,8 +3803,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "2_Data": {
@@ -3125,8 +3829,9 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "2_Container": {
@@ -3150,8 +3855,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "2_Overlay": {
@@ -3175,8 +3881,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "3_Data": {
@@ -3200,8 +3907,9 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "3_Container": {
@@ -3225,8 +3933,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "3_Overlay": {
@@ -3250,8 +3959,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "4_Data": {
@@ -3275,8 +3985,9 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "4_Container": {
@@ -3300,8 +4011,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "4_Overlay": {
@@ -3325,8 +4037,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "5_Data": {
@@ -3350,8 +4063,9 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "5_Container": {
@@ -3375,8 +4089,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "5_Overlay": {
@@ -3400,8 +4115,9 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "6_Data": {
@@ -3425,8 +4141,9 @@
             "targetVariableId": "VariableID:136c262ada358cfb7e7118b9da87ad7c8a9d78fb/-1:-1",
             "targetVariableName": "SystemColorHotlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "6_Container": {
@@ -3450,8 +4167,9 @@
             "targetVariableId": "VariableID:ab799634427716b7973586099024bff52380fb85/-1:-1",
             "targetVariableName": "SystemColorWindowColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
-          }
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
         }
       },
       "6_Overlay": {
@@ -3475,13 +4193,1783 @@
             "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
             "targetVariableName": "SystemColorHighlightColor",
             "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
-            "targetVariableSetName": "& win hct"
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      }
+    },
+    "button": {
+      "primaryFill": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$description": "Primary button token; aliases color/primary/primary in light/dark, SystemColorButtonFaceColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17542:3367",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:fc296eec3c04a199e92e624821afe576d4b2967f/-1:-1",
+            "targetVariableName": "SystemColorButtonFaceColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "onPrimaryFill": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Primary button token; aliases color/text+icon/onPrimary in light/dark, SystemColorButtonTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17542:3369",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
+            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "primaryBorder": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Primary button token; aliases color/primary/primary in light/dark, SystemColorButtonTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17542:3371",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
+            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      }
+    },
+    "inverse": {
+      "surfaces": {
+        "onContainer high": {
+          "$type": "color",
+          "$value": "{color.surfaces.onContainer high}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/surfaces/onContainer high: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3367",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "inverseContainer": {
+          "$type": "color",
+          "$value": "{color.surfaces.inverseContainer}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/surfaces/inverseContainer: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3380",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "container blur": {
+          "$type": "color",
+          "$value": "{color.surfaces.container blur}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/surfaces/container blur: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token. Pop-out glass is made opaque for the inverse treatment so it reads on either page background (matches inverse container high).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3388",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "container high": {
+          "$type": "color",
+          "$value": "{color.surfaces.container blur}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of &amp;amp;color/surfaces/container high: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3402",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "stroke": {
+        "border zero (win hct)": {
+          "$type": "color",
+          "$value": "{color.stroke.border zero (win hct)}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/stroke/border zero (win hct): light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3369",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "border container": {
+          "$type": "color",
+          "$value": "{color.stroke.border container}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/stroke/border container: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3464",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "border low": {
+          "$type": "color",
+          "$value": "{color.stroke.border low}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/stroke/border low: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3647",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "info": {
+        "info": {
+          "$type": "color",
+          "$value": "{color.info.info}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/info/info: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3371",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "text+icon": {
+        "primary": {
+          "$type": "color",
+          "$value": "{color.text+icon.primary}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/text+icon/primary: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3373",
+            "com.figma.scopes": [
+              "SHAPE_FILL",
+              "TEXT_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "{color.text+icon.secondary}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/text+icon/secondary: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3375",
+            "com.figma.scopes": [
+              "SHAPE_FILL",
+              "TEXT_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "onPrimary": {
+          "$type": "color",
+          "$value": "{color.text+icon.onPrimary}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/text+icon/onPrimary: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/text+icon/onPrimary.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2498",
+            "com.figma.scopes": [
+              "SHAPE_FILL",
+              "TEXT_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.text+icon.disabled}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/text+icon/disabled: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/text+icon/disabled.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2508",
+            "com.figma.scopes": [
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "primary": {
+        "primary": {
+          "$type": "color",
+          "$value": "{color.primary.primary}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/primary/primary: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3377",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "primaryHover": {
+          "$type": "color",
+          "$value": "{color.primary.primaryHover}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/primary/primaryHover: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/primary/primaryHover.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2494",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "primaryPress": {
+          "$type": "color",
+          "$value": "{color.primary.primaryPress}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/primary/primaryPress: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/primary/primaryPress.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2496",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "button": {
+        "primaryFill": {
+          "$type": "color",
+          "$value": "{color.button.primaryFill}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/button/primaryFill: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3382",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "primaryBorder": {
+          "$type": "color",
+          "$value": "{color.button.primaryBorder}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/button/primaryBorder: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3384",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "onPrimaryFill": {
+          "$type": "color",
+          "$value": "{color.button.onPrimaryFill}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/button/onPrimaryFill: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3386",
+            "com.figma.scopes": [
+              "SHAPE_FILL",
+              "TEXT_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "success": {
+        "success": {
+          "$type": "color",
+          "$value": "{color.success.success}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/success/success: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3394",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "warning": {
+        "warn": {
+          "$type": "color",
+          "$value": "{color.warning.warn}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/warning/warn: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3396",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "error": {
+        "error": {
+          "$type": "color",
+          "$value": "{color.error.error}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/error/error: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3398",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "secondary": {
+        "secondary": {
+          "$type": "color",
+          "$value": "{color.secondary.secondary}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/secondary/secondary: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) aliases the original token.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17548:3400",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "secondaryOverlay": {
+          "$type": "color",
+          "$value": "{color.secondary.secondaryOverlay}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/secondary/secondaryOverlay: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/secondary/secondaryOverlay.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2504",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "secondaryOverlayHover": {
+          "$type": "color",
+          "$value": "{color.secondary.secondaryOverlayHover}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/secondary/secondaryOverlayHover: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/secondary/secondaryOverlayHover.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2506",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      },
+      "disabled": {
+        "disabled": {
+          "$type": "color",
+          "$value": "{color.disabled.disabled}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/disabled/disabled: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/disabled/disabled.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2500",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        },
+        "disabledInverse": {
+          "$type": "color",
+          "$value": "{color.disabled.disabledInverse}",
+          "$description": "Inverse-surface token (toasts, snackbars, tooltips, coach marks) — inverse of color/disabled/disabledInverse: light.a uses its dark.a value, dark.a uses its light.a value. Windows contrast (win hct) follows color/disabled/disabledInverse.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17793:2502",
+            "com.figma.scopes": [
+              "SHAPE_FILL",
+              "TEXT_FILL"
+            ],
+            "com.figma.isOverride": true
+          }
+        }
+      }
+    },
+    "control": {
+      "fill": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$description": "Selectable control token (Unselected control fill): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primaryOverlay in light/dark, SystemColorButtonFaceColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1204",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:fc296eec3c04a199e92e624821afe576d4b2967f/-1:-1",
+            "targetVariableName": "SystemColorButtonFaceColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "fillHover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$description": "Selectable control token (Unselected control fill on hover): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primaryOverlayHover in light/dark, SystemColorButtonFaceColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1206",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:fc296eec3c04a199e92e624821afe576d4b2967f/-1:-1",
+            "targetVariableName": "SystemColorButtonFaceColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "fillPress": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$description": "Selectable control token (Unselected control fill while pressed): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primaryOverlayPress in light/dark, SystemColorButtonFaceColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1208",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:fc296eec3c04a199e92e624821afe576d4b2967f/-1:-1",
+            "targetVariableName": "SystemColorButtonFaceColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "onFill": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Selectable control token (Text/icon on an unselected control): rating options, toggle buttons, chips, segmented controls. Aliases color/text+icon/On surface in light/dark, SystemColorButtonTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1210",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
+            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "border": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Selectable control token (Unselected control outline, invisible in light/dark): rating options, toggle buttons, chips, segmented controls. Aliases color/stroke/border zero (win hct) in light/dark, SystemColorButtonTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1212",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:db3c35ac3edbd4803d8d6f355c0b8a3f4b67d1ba/-1:-1",
+            "targetVariableName": "SystemColorButtonTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "borderHover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$description": "Selectable control token (Unselected control outline on hover, invisible in light/dark): rating options, toggle buttons, chips, segmented controls. Aliases color/stroke/border zero (win hct) in light/dark, SystemColorHighlightColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1214",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "selectedFill": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$description": "Selectable control token (Selected control fill): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primary in light/dark, SystemColorHighlightColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1216",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "selectedFillHover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$description": "Selectable control token (Selected control fill on hover): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primaryHover in light/dark, SystemColorHighlightColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1218",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "selectedFillPress": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5568627715110779,
+            0.8901960849761963,
+            0.9411764740943909
+          ],
+          "alpha": 1,
+          "hex": "#8EE3F0"
+        },
+        "$description": "Selectable control token (Selected control fill while pressed): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primaryPress in light/dark, SystemColorHighlightColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1220",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:82012ba17bd45c7aa35236b66cf785d48ca1e20b/-1:-1",
+            "targetVariableName": "SystemColorHighlightColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "onSelected": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.14901961386203766,
+            0.23137255012989044,
+            0.3137255012989044
+          ],
+          "alpha": 1,
+          "hex": "#263B50"
+        },
+        "$description": "Selectable control token (Text/icon on a selected control): rating options, toggle buttons, chips, segmented controls. Aliases color/text+icon/onPrimary in light/dark, SystemColorHighlightTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1222",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:a9c8514989e92aaa546c7ca94f059a135d941471/-1:-1",
+            "targetVariableName": "SystemColorHighlightTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "disabledFill": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.125490203499794,
+            0.125490203499794,
+            0.125490203499794
+          ],
+          "alpha": 1,
+          "hex": "#202020"
+        },
+        "$description": "Selectable control token (Disabled control fill): rating options, toggle buttons, chips, segmented controls. Aliases color/disabled/disabled in light/dark, SystemColorButtonFaceColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1224",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:fc296eec3c04a199e92e624821afe576d4b2967f/-1:-1",
+            "targetVariableName": "SystemColorButtonFaceColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "focusRing": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Selectable control token (Keyboard focus ring): rating options, toggle buttons, chips, segmented controls. Aliases color/primary/primary in light/dark, SystemColorWindowTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17769:1226",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8375b87e2ef7854b46c102b23822592a9a7ce8e8/-1:-1",
+            "targetVariableName": "SystemColorWindowTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      },
+      "disabledBorder": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6509804129600525,
+            0.6509804129600525,
+            0.6509804129600525
+          ],
+          "alpha": 1,
+          "hex": "#A6A6A6"
+        },
+        "$description": "Selectable control token (Disabled control outline, invisible in light/dark): rating options, toggle buttons, chips, segmented controls. Aliases color/stroke/border zero (win hct) in light/dark, SystemColorGrayTextColor in Windows contrast themes (win hct).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17782:24",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:14b96c5c0213dfa56b82692a864b051928e3c7af/-1:-1",
+            "targetVariableName": "SystemColorGrayTextColor",
+            "targetVariableSetId": "VariableCollectionId:114bb501d20afab9d9b8b330be5132d9a300bdc7/-1:-1",
+            "targetVariableSetName": "win hct system"
+          },
+          "com.figma.isOverride": true
+        }
+      }
+    },
+    "ai": {
+      "canvas base": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Base under the AI canvas wash. light.a white, dark.a cool neutral/6.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17900:24",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-ai-canvas-base)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:f481f844daaac7fae12dab4d7a30ddaff3838e80/-1:-1",
+            "targetVariableName": "white/white",
+            "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+            "targetVariableSetName": "hellopc hero"
+          }
+        }
+      },
+      "chip thread": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.550000011920929,
+          "hex": "#FFFFFF"
+        },
+        "$description": "AI chip background inside the thread tray.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17900:25",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-ai-chip-thread)"
+          }
+        }
+      },
+      "chip thread border": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0,
+          "hex": "#FFFFFF"
+        },
+        "$description": "AI chip border inside the thread tray (dark.a only).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17900:26",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-ai-chip-thread-border)"
+          }
+        }
+      },
+      "consumer": {
+        "primary start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.08235294371843338,
+              0.18431372940540314,
+              0.772549033164978
+            ],
+            "alpha": 1,
+            "hex": "#152FC5"
+          },
+          "$description": "AI primary gradient start: logo, input ring, gradient text.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:27",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-primary-start)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:672ad93ad6b8151bc636db17e01fad7e58734be3/-1:-1",
+              "targetVariableName": "indigo/30",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "primary end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6274510025978088,
+              0.47058823704719543,
+              1
+            ],
+            "alpha": 1,
+            "hex": "#A078FF"
+          },
+          "$description": "AI primary gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:28",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-primary-end)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:546ad8932f5698be783f1e850163cdcd3fa57c88/-1:-1",
+              "targetVariableName": "violet/60",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "fill start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.08235294371843338,
+              0.18431372940540314,
+              0.772549033164978
+            ],
+            "alpha": 1,
+            "hex": "#152FC5"
+          },
+          "$description": "AI action fill gradient start.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:29",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-fill-start)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:672ad93ad6b8151bc636db17e01fad7e58734be3/-1:-1",
+              "targetVariableName": "indigo/30",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "fill end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6274510025978088,
+              0.47058823704719543,
+              1
+            ],
+            "alpha": 1,
+            "hex": "#A078FF"
+          },
+          "$description": "AI action fill gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:30",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-fill-end)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:546ad8932f5698be783f1e850163cdcd3fa57c88/-1:-1",
+              "targetVariableName": "violet/60",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "on fill": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1,
+            "hex": "#FFFFFF"
+          },
+          "$description": "Label / icon on the AI action fill.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:31",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-on-fill)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:f481f844daaac7fae12dab4d7a30ddaff3838e80/-1:-1",
+              "targetVariableName": "white/white",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "surface start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.08235294371843338,
+              0.18431372940540314,
+              0.772549033164978
+            ],
+            "alpha": 0.15000000596046448,
+            "hex": "#152FC5"
+          },
+          "$description": "AI surface (chips, tray) gradient start. 15% light.a / 22% dark.a.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:32",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-surface-start)"
+            }
+          }
+        },
+        "surface end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6274510025978088,
+              0.47058823704719543,
+              1
+            ],
+            "alpha": 0.15000000596046448,
+            "hex": "#A078FF"
+          },
+          "$description": "AI surface gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:33",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-surface-end)"
+            }
+          }
+        },
+        "canvas start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.08235294371843338,
+              0.18431372940540314,
+              0.772549033164978
+            ],
+            "alpha": 0.05000000074505806,
+            "hex": "#152FC5"
+          },
+          "$description": "AI canvas wash start over color/ai/canvas base. 5% light.a / 10% dark.a.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:34",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-canvas-start)"
+            }
+          }
+        },
+        "canvas end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6274510025978088,
+              0.47058823704719543,
+              1
+            ],
+            "alpha": 0.05000000074505806,
+            "hex": "#A078FF"
+          },
+          "$description": "AI canvas wash end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:35",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-canvas-end)"
+            }
+          }
+        },
+        "flat": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.08235294371843338,
+              0.18431372940540314,
+              0.772549033164978
+            ],
+            "alpha": 1,
+            "hex": "#152FC5"
+          },
+          "$description": "AI flat color: icons and accent text.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:36",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-consumer-flat)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:672ad93ad6b8151bc636db17e01fad7e58734be3/-1:-1",
+              "targetVariableName": "indigo/30",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        }
+      },
+      "commercial": {
+        "primary start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.30588236451148987,
+              0.3686274588108063
+            ],
+            "alpha": 1,
+            "hex": "#004E5E"
+          },
+          "$description": "AI primary gradient start: logo, input ring, gradient text.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:37",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-primary-start)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a6e52373dda6e9cf2bed60c1bf6978f8e8409bd1/-1:-1",
+              "targetVariableName": "cyan/30",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "primary end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.23137255012989044,
+              0.572549045085907,
+              0.9764705896377563
+            ],
+            "alpha": 1,
+            "hex": "#3B92F9"
+          },
+          "$description": "AI primary gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:38",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-primary-end)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:58260f59e7b35efad48c8cfd8a9b930de404a11d/-1:-1",
+              "targetVariableName": "blue/60",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "fill start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.30588236451148987,
+              0.3686274588108063
+            ],
+            "alpha": 1,
+            "hex": "#004E5E"
+          },
+          "$description": "AI action fill gradient start.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:39",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-fill-start)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a6e52373dda6e9cf2bed60c1bf6978f8e8409bd1/-1:-1",
+              "targetVariableName": "cyan/30",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "fill end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.23137255012989044,
+              0.572549045085907,
+              0.9764705896377563
+            ],
+            "alpha": 1,
+            "hex": "#3B92F9"
+          },
+          "$description": "AI action fill gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:40",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-fill-end)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:58260f59e7b35efad48c8cfd8a9b930de404a11d/-1:-1",
+              "targetVariableName": "blue/60",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "on fill": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1,
+            "hex": "#FFFFFF"
+          },
+          "$description": "Label / icon on the AI action fill.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:41",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-on-fill)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:f481f844daaac7fae12dab4d7a30ddaff3838e80/-1:-1",
+              "targetVariableName": "white/white",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "surface start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.30588236451148987,
+              0.3686274588108063
+            ],
+            "alpha": 0.15000000596046448,
+            "hex": "#004E5E"
+          },
+          "$description": "AI surface (chips, tray) gradient start. 15% light.a / 22% dark.a.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:42",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-surface-start)"
+            }
+          }
+        },
+        "surface end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.23137255012989044,
+              0.572549045085907,
+              0.9764705896377563
+            ],
+            "alpha": 0.15000000596046448,
+            "hex": "#3B92F9"
+          },
+          "$description": "AI surface gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:43",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-surface-end)"
+            }
+          }
+        },
+        "canvas start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.30588236451148987,
+              0.3686274588108063
+            ],
+            "alpha": 0.05000000074505806,
+            "hex": "#004E5E"
+          },
+          "$description": "AI canvas wash start over color/ai/canvas base. 5% light.a / 10% dark.a.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:44",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-canvas-start)"
+            }
+          }
+        },
+        "canvas end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.23137255012989044,
+              0.572549045085907,
+              0.9764705896377563
+            ],
+            "alpha": 0.05000000074505806,
+            "hex": "#3B92F9"
+          },
+          "$description": "AI canvas wash end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:45",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-canvas-end)"
+            }
+          }
+        },
+        "flat": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0.30588236451148987,
+              0.3686274588108063
+            ],
+            "alpha": 1,
+            "hex": "#004E5E"
+          },
+          "$description": "AI flat color: icons and accent text.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:46",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-commercial-flat)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a6e52373dda6e9cf2bed60c1bf6978f8e8409bd1/-1:-1",
+              "targetVariableName": "cyan/30",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        }
+      },
+      "internal": {
+        "primary start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7490196228027344,
+              0,
+              0.14901961386203766
+            ],
+            "alpha": 1,
+            "hex": "#BF0026"
+          },
+          "$description": "AI primary gradient start: logo, input ring, gradient text.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:47",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-primary-start)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:75688b4b8762b8a1c9bfce88b6e564e812ffdb62/-1:-1",
+              "targetVariableName": "red/40",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "primary end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8352941274642944,
+              0.47843137383461,
+              0.08235294371843338
+            ],
+            "alpha": 1,
+            "hex": "#D57A15"
+          },
+          "$description": "AI primary gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:48",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-primary-end)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:b0282d5f3c222929c1bbb472b0843af58371143e/-1:-1",
+              "targetVariableName": "amber/60",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "fill start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7490196228027344,
+              0,
+              0.14901961386203766
+            ],
+            "alpha": 1,
+            "hex": "#BF0026"
+          },
+          "$description": "AI action fill gradient start.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:49",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-fill-start)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:75688b4b8762b8a1c9bfce88b6e564e812ffdb62/-1:-1",
+              "targetVariableName": "red/40",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "fill end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8352941274642944,
+              0.47843137383461,
+              0.08235294371843338
+            ],
+            "alpha": 1,
+            "hex": "#D57A15"
+          },
+          "$description": "AI action fill gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:50",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-fill-end)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:b0282d5f3c222929c1bbb472b0843af58371143e/-1:-1",
+              "targetVariableName": "amber/60",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "on fill": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1,
+            "hex": "#FFFFFF"
+          },
+          "$description": "Label / icon on the AI action fill.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:51",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-on-fill)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:f481f844daaac7fae12dab4d7a30ddaff3838e80/-1:-1",
+              "targetVariableName": "white/white",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
+          }
+        },
+        "surface start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7490196228027344,
+              0,
+              0.14901961386203766
+            ],
+            "alpha": 0.15000000596046448,
+            "hex": "#BF0026"
+          },
+          "$description": "AI surface (chips, tray) gradient start. 15% light.a / 22% dark.a.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:52",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-surface-start)"
+            }
+          }
+        },
+        "surface end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8352941274642944,
+              0.47843137383461,
+              0.08235294371843338
+            ],
+            "alpha": 0.15000000596046448,
+            "hex": "#D57A15"
+          },
+          "$description": "AI surface gradient end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:53",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-surface-end)"
+            }
+          }
+        },
+        "canvas start": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7490196228027344,
+              0,
+              0.14901961386203766
+            ],
+            "alpha": 0.05000000074505806,
+            "hex": "#BF0026"
+          },
+          "$description": "AI canvas wash start over color/ai/canvas base. 5% light.a / 10% dark.a.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:54",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-canvas-start)"
+            }
+          }
+        },
+        "canvas end": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8352941274642944,
+              0.47843137383461,
+              0.08235294371843338
+            ],
+            "alpha": 0.05000000074505806,
+            "hex": "#D57A15"
+          },
+          "$description": "AI canvas wash end.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:55",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-canvas-end)"
+            }
+          }
+        },
+        "flat": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7490196228027344,
+              0,
+              0.14901961386203766
+            ],
+            "alpha": 1,
+            "hex": "#BF0026"
+          },
+          "$description": "AI flat color: icons and accent text.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:17900:56",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL",
+              "TEXT_FILL",
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-ai-internal-flat)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:75688b4b8762b8a1c9bfce88b6e564e812ffdb62/-1:-1",
+              "targetVariableName": "red/40",
+              "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+              "targetVariableSetName": "hellopc hero"
+            }
           }
         }
       }
     }
   },
   "$extensions": {
-    "com.figma.modeName": "win hct"
+    "com.figma.modeName": "light.a",
+    "com.figma.parentVariableSetId": "VariableCollectionId:2339:23908",
+    "com.figma.parentVariableSetName": "hellopc"
   }
 }

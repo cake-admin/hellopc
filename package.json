@@ -22,7 +22,10 @@
     "build:package": "node scripts/build-package.mjs",
     "build:knowledge": "node scripts/build-knowledge.mjs",
     "build:agent-context": "node scripts/build-agent-context.mjs",
-    "sync:sounds": "node scripts/sync-sound-library.mjs"
+    "sync:sounds": "node scripts/sync-sound-library.mjs",
+    "sync:figma-tokens": "node scripts/sync-figma-tokens.mjs && npm run build:hellopc-tokens && npm run build:hellopc-vars && node chart-tool-echarts/scripts/build-tokens.mjs",
+    "check:figma-tokens": "node scripts/sync-figma-tokens.mjs --check",
+    "import:figma-tokens": "node scripts/import-figma-tokens.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
