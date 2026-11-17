@@ -45,7 +45,7 @@ import { Breadcrumb } from '@/hellopc/components/Breadcrumb';
 
 ## Design tokens used
 
-`--type-size-subject`, `--font-weight-medium`, `--color-text-icon-secondary`, `--color-primary-primary`, `--space-050`, `--space-075`, `--color-text-icon-primary`, `--stroke-200`, `--space-025`
+`--color-text-icon-link`, `--type-size-subject`, `--font-weight-medium`, `--color-text-icon-secondary`, `--color-text-icon-primary`, `--space-050`, `--space-075`, `--stroke-300`, `--radius-50`
 
 ## Accessibility
 
@@ -53,7 +53,7 @@ import { Breadcrumb } from '@/hellopc/components/Breadcrumb';
 - It's an ordered list (<ol>/<li>), which conveys both the sequence and the number of levels.
 - The last crumb carries aria-current="page" and is not a link — it's where you already are.
 - Separators are aria-hidden decoration, so the trail isn't read out as a string of chevrons.
-- Links keep a visible :focus-visible ring and underline on hover — the accent color is never the only cue.
+- Crumb links are the hello pc Link: always underlined, so color is never the only cue, with a visible :focus-visible ring.
 - The overflow menu is a Radix DropdownMenu, so it's fully keyboard operable (Enter/Space to open, arrows to move, Escape to close) and its trigger has an accessible name via IconButton.
 
 ## Do / Don't
@@ -69,6 +69,6 @@ import { Breadcrumb } from '@/hellopc/components/Breadcrumb';
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Presentational; wraps no Radix primitive.
-- Related: IconButton.
+- Related: IconButton, Link.
 - Source: `src/hellopc/components/Breadcrumb/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-breadcrumb--docs>

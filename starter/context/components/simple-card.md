@@ -13,9 +13,9 @@ The vertical media card template (Figma _elements / simple card, node 183:11859)
 | --- | --- | --- | --- |
 | `media` | `React.ReactNode` | — | Full-bleed media on top — an image or any node; clipped to the Card's corners. |
 | `title` | `React.ReactNode` | **required** | The card title (Figma 18px bold.18). |
-| `menu` | `React.ReactNode` | — | Trailing overflow control beside the title — a cake& IconButton (e.g. a "⋮" menu). |
+| `menu` | `React.ReactNode` | — | Trailing overflow control beside the title — a hello pc IconButton (e.g. a "⋮" menu). |
 | `body` | `React.ReactNode` | — | Body paragraph (Figma 14px regular.14.body, secondary color). |
-| `actions` | `React.ReactNode` | — | Actions row — a cake& Button or button group. |
+| `actions` | `React.ReactNode` | — | Actions row — a hello pc Button or button group. |
 
 Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>` props.
 

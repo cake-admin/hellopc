@@ -18,7 +18,7 @@ Toast is a transient notification surface, covering both Figma layouts: &Toast S
 | `description` | `React.ReactNode` | — | Optional supporting copy, rendered through Radix Toast.Description. |
 | `timestamp` | `React.ReactNode` | — | Caption rendered in the footer row (e.g. a relative or absolute timestamp). layout="complex" only — ignored in simple. |
 | `icon` | `React.ReactNode \| null` | — | Leading visual. Defaults to the status glyph; pass null to hide the icon entirely, or a custom node to override it. |
-| `actions` | `React.ReactNode` | — | Replacement for the default action-button group. When supplied, the default action label/handler props below are ignored. |
+| `actions` | `React.ReactNode` | — | Replacement for the default action-button group. When supplied, the default action label/handler props below are ignored. The toast is an inverse surface, so give your buttons tone="inverse". |
 | `secondaryActionLabel` | `string` | — | Visible label for the default low-emphasis secondary action. |
 | `onSecondaryAction` | `React.MouseEventHandler<HTMLButtonElement>` | — | Fired when the default secondary action is activated. |
 | `secondaryActionDisabled` | `boolean` | `false` | Disables the default secondary action. |
@@ -39,7 +39,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLLIElement>, 'title' | 'onPause' 
 
 ```tsx
 import { Toast as RadixToast } from 'radix-ui';
-import { Toast } from '<cakeand>/components/Toast';
+import { Toast } from '@cake-admin/cakeand';
 
 // once, near the app root — position/stack the Viewport however your product needs
 <RadixToast.Provider>
@@ -73,7 +73,7 @@ import { Toast } from '<cakeand>/components/Toast';
 
 ## Design tokens used
 
-`--radius-400`, `--color-surfaces-container-blur`, `--elevation-3`, `--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border-container`, `--color-info-info`, `--color-success-success`, `--color-warning-warn`, `--color-error-error`, `--color-text-icon-primary`, `--type-size-subject`, `--font-weight-medium`, `--type-size-body`, `--type-size-caption`, `--font-weight-regular`, `--color-text-icon-secondary`, `--space-500`, `--space-300`, `--space-100`, `--space-600`, `--space-075`, `--space-700`
+`--radius-400`, `--color-inverse-surfaces-container-blur`, `--elevation-3`, `--stroke-100`, `--color-inverse-stroke-border-zero-win-hct`, `--color-inverse-info-info`, `--color-inverse-success-success`, `--color-inverse-warning-warn`, `--color-inverse-error-error`, `--color-inverse-text-icon-primary`, `--type-size-subject`, `--font-weight-medium`, `--type-size-body`, `--font-weight-regular`, `--color-inverse-text-icon-secondary`, `--type-size-caption`, `--space-500`, `--space-300`, `--space-100`, `--space-600`, `--space-075`, `--space-700`
 
 ## Accessibility
 
@@ -95,7 +95,7 @@ import { Toast } from '<cakeand>/components/Toast';
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, IconButton, Modal, ModalIcon.
 - Source: `src/hellopc/components/Toast/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-toast--docs>

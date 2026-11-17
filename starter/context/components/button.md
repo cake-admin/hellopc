@@ -5,17 +5,18 @@
 import { Button } from '@cake-admin/cakeand';
 ```
 
-The cake& action trigger — pill-shaped and token-driven.
+The hello pc action trigger — pill-shaped and token-driven.
 
 ## Props
 
 | Prop | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `size` | `'xs' \| 'sm' \| 'md' \| 'lg'` | `'md'` | Height + type scale, always bold: xs 24px tall / 12px text, sm 32px / 12px, md 40px / 14px, lg 48px / 16px. |
-| `intent` | `'primary' \| 'secondary'` | `'primary'` | Which cake& token family drives the color: primary (indigo family) or secondary (neutral/ink family). |
+| `intent` | `'primary' \| 'secondary' \| 'destructive'` | `'primary'` | Which hello pc token family drives the color: primary (indigo family), secondary (neutral/ink family), or destructive (the error family — for actions that delete or can't be undone; Figma hellopc.button.destructive). |
+| `tone` | `'default' \| 'inverse'` | `'default'` | inverse is for buttons on inverse surfaces — toasts, snackbars, tooltips, coach marks (Figma hellopc.button.inverse): every color, including hover, press, focus and disabled, swaps to its --color-inverse-* twin. Figma defines it for primary · fill and secondary · ghost only; other combinations keep their default colors. |
 | `variant` | `'fill' \| 'outline' \| 'tonal' \| 'ghost'` | `'fill'` | Emphasis treatment, highest → lowest: fill (the one main action in a view), outline and tonal (secondary emphasis), ghost (lowest — dense UIs, toolbars, inline actions). |
-| `startIcon` | `React.ReactNode` | — | Leading icon, rendered in a fixed 16px slot before the label. Icons are decorative — the text label carries the accessible name. Do not use this to build icon-only buttons; that's the (separate) IconButton component. |
-| `endIcon` | `React.ReactNode` | — | Trailing icon, rendered in a fixed 16px slot after the label. Same rules as startIcon. |
+| `startIcon` | `React.ReactNode` | — | Leading icon. The slot sets the size — 18px for xs/sm, 24px for md/lg (Figma icon-size guidance) — so pass the glyph without a size. Icons are decorative — the text label carries the accessible name. Do not use this to build icon-only buttons; that's the (separate) IconButton component. |
+| `endIcon` | `React.ReactNode` | — | Trailing icon, sized by the same slot as startIcon (18px xs/sm, 24px md/lg). Same rules as startIcon. |
 | `fullWidth` | `boolean` | `false` | Stretch to the container's width (not the viewport). For stacked layouts like dialog footers and mobile forms. |
 | `underline` | `boolean` | — | Whether the label is underlined. Defaults to true for ghost + secondary only: with no fill or border those buttons would otherwise be distinguishable from plain text by color alone (WCAG 1.4.1). Set false when the button already sits in something that makes it obviously a control — a segmented control, a pager — where the underline reads as a stray link instead. |
 
@@ -30,12 +31,14 @@ Also accepts all `React.ButtonHTMLAttributes<HTMLButtonElement>` props.
 <Button variant="tonal">Duplicate</Button>
 <Button variant="ghost">Dismiss</Button>
 <Button size="lg" fullWidth>Continue</Button>
-<Button startIcon={<Plus size={16} />}>Add item</Button>
+<Button startIcon={<Plus />}>Add item</Button>
+<Button intent="destructive">Delete profile</Button>
+<Button tone="inverse" size="sm">Undo</Button>
 ```
 
 ## Design tokens used
 
-`--color-primary-primary-hover`, `--color-primary-primary`, `--color-text-icon-on-primary`, `--color-secondary-secondary`, `--color-text-icon-inverse`, `--color-surfaces-container`, `--stroke-200`, `--color-tonal-tonal`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-1000`, `--stroke-300`, `--space-100`, `--space-050`, `--space-400`
+`--color-primary-primary-hover`, `--color-button-primary-fill`, `--stroke-100`, `--color-button-primary-border`, `--color-button-on-primary-fill`, `--color-text-icon-on-primary`, `--color-secondary-secondary`, `--color-text-icon-inverse`, `--color-surfaces-container`, `--stroke-200`, `--color-primary-primary`, `--color-tonal-tonal`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-error-error`, `--color-error-error-hover`, `--color-text-icon-error-on-surface-text-destructive-btn`, `--color-error-error-overlay-hover`, `--color-error-error-overlay`, `--color-inverse-button-primary-fill`, `--color-inverse-button-primary-border`, `--color-inverse-button-on-primary-fill`, `--color-inverse-text-icon-on-primary`, `--color-inverse-primary-primary-hover`, `--color-inverse-surfaces-inverse-container`, `--color-inverse-secondary-secondary-overlay`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-inverse-disabled-disabled`, `--color-inverse-disabled-disabled-inverse`, `--radius-1000`, `--stroke-300`, `--color-inverse-primary-primary`, `--space-100`, `--space-050`, `--space-400`, `--space-350`, `--space-500`
 
 ## Accessibility
 
@@ -49,13 +52,15 @@ Also accepts all `React.ButtonHTMLAttributes<HTMLButtonElement>` props.
 | Do | Don't |
 | --- | --- |
 | Use one fill button per view — the single main action. | Stack several fill buttons; demote the rest to outline/tonal/ghost. |
+| Use destructive for deletes and irreversible actions, with a Cancel beside it. | Use red for emphasis on an ordinary action. |
+| Use tone="inverse" on inverse surfaces (toasts, tooltips). | Put a default-tone button on an inverse surface. |
 | Use ghost in dense UIs: toolbars, table rows, inline actions. | Use ghost for the primary call-to-action. |
 | Always pass a visible text label. | Build icon-only buttons with this component — that's IconButton. |
 | Disable with nearby context explaining why. | Hide the main action while it's unavailable. |
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: IconButton.
 - Source: `src/hellopc/components/Button/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-button-button--docs>

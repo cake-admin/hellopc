@@ -15,7 +15,7 @@ Modal is the elevated dialog surface that combines the Modal elements into a com
 | `defaultOpen` | `boolean` | `false` | Initial open state for uncontrolled usage. |
 | `onOpenChange` | `(open: boolean) => void` | — | Fired whenever the dialog requests an open-state change. |
 | `showClose` | `boolean` | `true` | Whether the header shows the reusable close IconButton. |
-| `children` | `React.ReactNode` | — | The modal body. This is a slot: compose ModalContent, images, or any custom cake& content. A Radix Dialog exposes a single accessible description, so if the header subtitle is set, any Dialog.Description inside here must be opted out (e.g. ModalContent with descriptionAsDialogDescription={false}). |
+| `children` | `React.ReactNode` | — | The modal body. This is a slot: compose ModalContent, images, or any custom hello pc content. A Radix Dialog exposes a single accessible description, so if the header subtitle is set, any Dialog.Description inside here must be opted out (e.g. ModalContent with descriptionAsDialogDescription={false}). |
 | `footer` | `React.ReactNode` | — | Optional footer slot, typically a ModalFooter. When omitted, no footer region renders. |
 
 Also accepts all `Pick<
@@ -63,14 +63,14 @@ const [open, setOpen] = useState(false);
 | Do | Don't |
 | --- | --- |
 | Use a modal for a focused, interrupting task. | Use a modal for non-blocking, ambient content. |
-| Compose the body from existing cake& components. | Rebuild inputs, buttons, or checkboxes inside it. |
+| Compose the body from existing hello pc components. | Rebuild inputs, buttons, or checkboxes inside it. |
 | Keep a single accessible description per dialog. | Register two Dialog.Description elements. |
 | Wire the footer actions to the modal open state. | Leave a modal with no way to dismiss it. |
 
 ---
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, IconButton, ModalContent, ModalFooter, ModalTitle.
 - Source: `src/hellopc/components/Modal/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-modal-modal--docs>

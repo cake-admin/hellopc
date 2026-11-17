@@ -5,7 +5,7 @@
 import { Scrollbar } from '@cake-admin/cakeand';
 ```
 
-The cake& scroll surface (Figma "Scrollbar", node 123:6261). Wrap any overflowing content and it gets the design-system scrollbar: a grey thumb that rests thin (4px) and widens (8px) while you interact with it. Use it wherever a bounded region needs to scroll — menus, panels, long lists, wide tables.
+The hello pc scroll surface (Figma "Scrollbar", node 123:6261). Wrap any overflowing content and it gets the design-system scrollbar: a grey thumb that rests thin (4px) and widens (8px) while you interact with it. Use it wherever a bounded region needs to scroll — menus, panels, long lists, wide tables.
 
 ## Props
 
@@ -63,7 +63,7 @@ const Viewport = styled(Select.Viewport)`
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Dropdown, Modal.
 - Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-scrollbar--docs>

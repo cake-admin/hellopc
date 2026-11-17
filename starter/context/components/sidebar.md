@@ -62,7 +62,7 @@ import {
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Breadcrumb, Scrollbar, Pagination, SidebarBlock, SidebarItem, SidebarNav, SidebarSubItem, VerticalTabs.
 - Source: `src/hellopc/components/Sidebar/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-sidebar-sidebar--docs>

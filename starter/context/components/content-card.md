@@ -15,7 +15,7 @@ The horizontal content card template (Figma _elements / content card, node 183:1
 | `leadingIcon` | `React.ReactNode` | — | Optional 24px icon before the leading text; inherits the text color. |
 | `title` | `React.ReactNode` | **required** | The card title (Figma 18px bold.18). |
 | `body` | `React.ReactNode` | — | Body paragraph (Figma 14px regular.14.body, secondary color). |
-| `actions` | `React.ReactNode` | — | Actions row — a cake& Button group (secondary before primary). |
+| `actions` | `React.ReactNode` | — | Actions row — a hello pc Button group (secondary before primary). |
 | `media` | `React.ReactNode` | — | Square media on the trailing side — an image or any node; clipped to a 16px radius. |
 
 Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>` props.

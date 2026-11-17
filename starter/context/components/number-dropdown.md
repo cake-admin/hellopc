@@ -59,7 +59,7 @@ A compact, numeric-only select for small closed ranges — page size, quantity c
 ---
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Dropdown, NumberInput.
 - Source: `src/hellopc/components/NumberDropdown/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-number-dropdown--docs>

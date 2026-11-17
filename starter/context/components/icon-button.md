@@ -14,8 +14,9 @@ A circular, icon-only action for toolbars, table rows, and other dense UIs where
 | `label` | `string` | **required** | Accessible name for the action (required — the button has no visible text). Rendered as visually-hidden text via Radix AccessibleIcon, so screen readers announce it while sighted users see only the icon. |
 | `icon` | `React.ReactNode` | **required** | The icon glyph. Rendered at 16px inside the xs button and 24px inside sm/md/lg; any SVG icon scales to fill the slot and inherits the button's state color via currentColor. |
 | `size` | `'xs' \| 'sm' \| 'md' \| 'lg'` | `'md'` | Container diameter: xs 24px (16px icon), sm 32px, md 40px, lg 48px (24px icon). |
-| `intent` | `'primary' \| 'secondary'` | `'primary'` | Which cake& token family drives the color: primary (indigo family) or secondary (neutral/ink family). |
+| `intent` | `'primary' \| 'secondary'` | `'primary'` | Which hello pc token family drives the color: primary (indigo family) or secondary (neutral/ink family). |
 | `variant` | `'fill' \| 'outline' \| 'tonal' \| 'ghost'` | `'fill'` | Emphasis treatment (Figma "container"): fill (solid), outline (1px border), tonal (translucent overlay wash), ghost (bare icon, Figma "none"). |
+| `tone` | `'default' \| 'inverse'` | `'default'` | inverse is for icon buttons on inverse surfaces — toast and tooltip close (Figma hellopc.icon.button.inverse): glyph, hover, press, focus ring and disabled all swap to their --color-inverse-* twins. Figma defines it for secondary · ghost only; other combinations keep their default colors. |
 
 Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'>` props.
 
@@ -33,7 +34,7 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 
 ## Design tokens used
 
-`--color-tonal-tonal-overlay`, `--color-primary-primary`, `--color-text-icon-inverse`, `--color-secondary-secondary`, `--color-text-icon-on-secondary`, `--stroke-100`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-1000`, `--stroke-300`
+`--color-tonal-tonal-overlay`, `--color-primary-primary`, `--color-text-icon-inverse`, `--color-secondary-secondary`, `--color-text-icon-on-secondary`, `--stroke-100`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-inverse-text-icon-primary`, `--color-inverse-text-icon-disabled`, `--color-inverse-secondary-secondary-overlay`, `--color-inverse-primary-primary`, `--radius-1000`, `--stroke-300`
 
 ## Accessibility
 
@@ -53,7 +54,7 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button.
 - Source: `src/hellopc/components/Button/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-button-icon-button--docs>

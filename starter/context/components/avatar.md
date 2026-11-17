@@ -67,6 +67,6 @@ import { Avatar } from '@/hellopc/components/Avatar';
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Source: `src/hellopc/components/Avatar/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-avatar--docs>

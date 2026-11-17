@@ -16,7 +16,7 @@ The marketing hero card template (Figma hero card, node 183:11829, and its cente
 | `title` | `React.ReactNode` | **required** | The display title (Figma 42px bold.42). |
 | `body` | `React.ReactNode` | — | Primary body paragraph (Figma 20px regular.20.title). |
 | `secondaryBody` | `React.ReactNode` | — | Secondary body paragraph (Figma 16px regular.16). |
-| `actions` | `React.ReactNode` | — | Actions row — compose a cake& Button (fill for hero, tonal for banner). |
+| `actions` | `React.ReactNode` | — | Actions row — compose a hello pc Button (fill for hero, tonal for banner). |
 | `align` | `'start' \| 'center'` | `'start'` | start is the left-aligned hero (Figma hero card); center is the centered banner (Figma banner card). |
 
 Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'title'>` props.
@@ -71,7 +71,7 @@ import { Button } from '@/hellopc/components/Button';
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, Card.
 - Source: `src/hellopc/components/Card/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-card-hero-card--docs>

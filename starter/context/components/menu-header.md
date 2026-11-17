@@ -46,7 +46,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'children'>` props.
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, Divider.
 - Source: `src/hellopc/components/Menu/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-menu-menu-header--docs>

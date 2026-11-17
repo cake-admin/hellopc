@@ -60,7 +60,7 @@ import { RowsPerPage, Pagination } from '@/hellopc/components/Pagination';
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Scrollbar, NumberDropdown, Pagination.
 - Source: `src/hellopc/components/Pagination/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-pagination-rows-per-page--docs>

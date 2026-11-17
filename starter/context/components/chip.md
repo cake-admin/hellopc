@@ -55,7 +55,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLSpanElement>, 'onClick'>` props.
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Badge, Button.
 - Source: `src/hellopc/components/Chip/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-chip--docs>

@@ -38,7 +38,7 @@ A single-select field, composed from the reusable form elements: Input Label abo
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-placeholder`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-300`, `--elevation-3`, `--radius-200`, `--color-secondary-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-secondary-overlay-press`, `--space-200`, `--space-100`, `--type-size-body`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-placeholder`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-300`, `--elevation-3`, `--radius-200`, `--color-secondary-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-secondary-overlay-press`, `--color-surfaces-inverse-container`, `--space-200`, `--space-100`, `--type-size-body`
 
 ## Accessibility
 
@@ -59,6 +59,6 @@ A single-select field, composed from the reusable form elements: Input Label abo
 ---
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Source: `src/hellopc/components/Dropdown/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-dropdown--docs>
