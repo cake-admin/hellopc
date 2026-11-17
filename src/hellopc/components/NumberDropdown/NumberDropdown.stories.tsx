@@ -54,7 +54,7 @@ visuals.
 | menu item · resting | transparent | \`--radius-50\` | \`--color-text-icon-secondary\` |
 | menu item · highlighted | \`--color-tonal-tonal-secondary-overlay-hover\` | – | \`--color-text-icon-on-tonal-secondary\` |
 | menu item · selected | \`--color-tonal-tonal-overlay\` | – | \`--color-text-icon-on-tonal\` |
-| menu item · disabled | transparent | – | \`--color-disabled-disabled-inverse\` |
+| menu item · disabled | transparent | – | \`--color-text-icon-disabled\` |
 
 Trigger shape is \`--radius-200\` (12px); fixed widths are 80px (\`md\`) /
 64px (\`sm\`); heights are 40px (\`md\`, 24px arrow) / 32px (\`sm\`, 18px
