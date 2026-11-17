@@ -10,6 +10,12 @@ import {
   ShoppingBag,
 } from 'lucide-react';
 import { Accordion, AccordionItem } from '../../hellopc/components/Accordion';
+import {
+  AI_CONTEXT_OPTIONS,
+  AiFileAttachment,
+  AiModeToggle,
+  AiQueryInput,
+} from '../../hellopc/components/AI';
 import { Avatar } from '../../hellopc/components/Avatar';
 import { Badge } from '../../hellopc/components/Badge';
 import { Breadcrumb } from '../../hellopc/components/Breadcrumb';
@@ -29,6 +35,7 @@ import {
   HorizontalTabsList,
 } from '../../hellopc/components/HorizontalTabs';
 import { HorizontalTabItem } from '../../hellopc/components/HorizontalTabs/HorizontalTabItem';
+import { Link } from '../../hellopc/components/Link';
 import { MenuContainer, MenuItem } from '../../hellopc/components/Menu';
 import { Modal, ModalContent, ModalFooter } from '../../hellopc/components/Modal';
 import { Notification } from '../../hellopc/components/Notification';
@@ -38,6 +45,7 @@ import { Pagination } from '../../hellopc/components/Pagination';
 import { PasswordInput } from '../../hellopc/components/PasswordInput';
 import { ProgressBar, Spinner } from '../../hellopc/components/Progress Indicators';
 import { Radio, RadioGroup } from '../../hellopc/components/Radio';
+import { Rating } from '../../hellopc/components/Rating';
 import {
   Sidebar,
   SidebarContent,
@@ -157,6 +165,40 @@ const ToastPreviewShell = ({ children }) => (
   </RadixToast.Provider>
 );
 
+/** Preview chrome: an inverse surface (like a toast) to host inverse controls. */
+const InverseSurface = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-300);
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--space-300);
+  border-radius: var(--radius-400);
+  background: var(--color-inverse-surfaces-container-blur);
+`;
+
+/** Preview chrome: a primary-fill banner to host inverse links. */
+const PrimaryBanner = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-500);
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--space-300) var(--space-500);
+  border-radius: var(--radius-400);
+  background: var(--color-primary-primary);
+`;
+
+const SATISFACTION = [
+  'Completely dissatisfied',
+  'Dissatisfied',
+  'Indifferent',
+  'Generally satisfied',
+  'Completely satisfied',
+];
+
 const DROPDOWN_OPTIONS = [
   { label: 'United States', value: 'us' },
   { label: 'United Kingdom', value: 'uk' },
@@ -194,30 +236,64 @@ export const ButtonPreview = () => (
     </GroupBlock>
 
     <GroupBlock>
-      <GroupLabel>Sizes</GroupLabel>
+      <GroupLabel>Variants · destructive</GroupLabel>
       <PreviewRow>
-        <Button size="xs">XS</Button>
-        <Button size="sm">SM</Button>
-        <Button size="md">MD</Button>
-        <Button size="lg">LG</Button>
+        <Button intent="destructive" variant="fill">
+          Delete
+        </Button>
+        <Button intent="destructive" variant="outline">
+          Delete
+        </Button>
+        <Button intent="destructive" variant="tonal">
+          Delete
+        </Button>
+        <Button intent="destructive" variant="ghost">
+          Delete
+        </Button>
+      </PreviewRow>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>Sizes · icons 18px at XS/SM, 24px at MD/LG</GroupLabel>
+      <PreviewRow>
+        <Button size="xs" startIcon={<Plus aria-hidden />}>
+          XS
+        </Button>
+        <Button size="sm" startIcon={<Plus aria-hidden />}>
+          SM
+        </Button>
+        <Button size="md" startIcon={<Plus aria-hidden />}>
+          MD
+        </Button>
+        <Button size="lg" startIcon={<Plus aria-hidden />}>
+          LG
+        </Button>
       </PreviewRow>
     </GroupBlock>
 
     <GroupBlock>
       <GroupLabel>With icons</GroupLabel>
       <PreviewRow>
-        <Button startIcon={<Plus size={16} aria-hidden />}>Add item</Button>
-        <Button variant="tonal" endIcon={<ArrowRight size={16} aria-hidden />}>
+        <Button startIcon={<Plus aria-hidden />}>Add item</Button>
+        <Button variant="tonal" endIcon={<ArrowRight aria-hidden />}>
           Continue
         </Button>
-        <Button
-          variant="outline"
-          intent="secondary"
-          startIcon={<Plus size={16} aria-hidden />}
-        >
+        <Button variant="outline" intent="secondary" startIcon={<Plus aria-hidden />}>
           New
         </Button>
       </PreviewRow>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>Inverse · for toasts, tooltips, coach marks</GroupLabel>
+      <InverseSurface>
+        <Button tone="inverse" size="sm" intent="secondary" variant="ghost">
+          Dismiss
+        </Button>
+        <Button tone="inverse" size="sm">
+          Undo
+        </Button>
+      </InverseSurface>
     </GroupBlock>
   </PreviewPanel>
 );
@@ -995,6 +1071,111 @@ export const BreadcrumbsPaginationPreview = () => (
     <GroupBlock>
       <GroupLabel>Pagination</GroupLabel>
       <Pagination count={5} defaultPage={1} />
+    </GroupBlock>
+  </PreviewPanel>
+);
+
+export const LinksPreview = () => (
+  <PreviewPanel>
+    <GroupBlock>
+      <GroupLabel>Sizes</GroupLabel>
+      <PreviewRow>
+        <Link href="#links" size="sm">
+          Small link
+        </Link>
+        <Link href="#links" size="md">
+          Medium link
+        </Link>
+        <Link href="#links" size="lg">
+          Large link
+        </Link>
+      </PreviewRow>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>External and disabled</GroupLabel>
+      <PreviewRow>
+        <Link href="https://www.lenovo.com/" external>
+          Lenovo support site
+        </Link>
+        <Link disabled>Report unavailable</Link>
+      </PreviewRow>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>Inverse · on colored fills</GroupLabel>
+      <PrimaryBanner>
+        <Link href="#links" inverse>
+          See offers
+        </Link>
+        <Link href="https://www.lenovo.com/" inverse external>
+          Open the store
+        </Link>
+      </PrimaryBanner>
+    </GroupBlock>
+  </PreviewPanel>
+);
+
+export const RatingPreview = () => (
+  <PreviewPanel>
+    <GroupBlock>
+      <GroupLabel>N/A + five-point scale</GroupLabel>
+      <Rating aria-label="How satisfied are you?" showNa captions={SATISFACTION} defaultValue="4" />
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>Three-point scale</GroupLabel>
+      <Rating aria-label="Would you use this again?" count={3} captions={['No', 'Maybe', 'Yes']} />
+    </GroupBlock>
+  </PreviewPanel>
+);
+
+export const AiPreview = () => (
+  <PreviewPanel>
+    <GroupBlock>
+      <GroupLabel>Query input · with context and a file</GroupLabel>
+      <PreviewStack $maxWidth="41.5rem">
+        <AiQueryInput
+          contextOptions={AI_CONTEXT_OPTIONS}
+          defaultContexts={['power']}
+          attachments={[{ id: 'preview-file', name: 'Battery-health-report.pdf', details: 'PDF · 2.4 MB' }]}
+          defaultValue="Why is my battery draining faster than usual?"
+          onSubmit={() => {}}
+          onFilesSelected={() => {}}
+          onRemoveAttachment={() => {}}
+        />
+      </PreviewStack>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>Other segments · commercial, internal</GroupLabel>
+      <PreviewStack $maxWidth="41.5rem">
+        <AiQueryInput segment="commercial" onSubmit={() => {}} />
+        <AiQueryInput segment="internal" onSubmit={() => {}} />
+      </PreviewStack>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>Mode toggle · on</GroupLabel>
+      <PreviewRow>
+        <AiModeToggle segment="consumer" defaultPressed />
+        <AiModeToggle segment="commercial" defaultPressed />
+        <AiModeToggle segment="internal" defaultPressed />
+      </PreviewRow>
+    </GroupBlock>
+
+    <GroupBlock>
+      <GroupLabel>File attachment · uploading, ready, error</GroupLabel>
+      <PreviewRow>
+        <AiFileAttachment name="Screenshot.png" details="Image · 282.6 KB" status="uploading" onRemove={() => {}} />
+        <AiFileAttachment name="Battery-health-report.pdf" details="PDF · 2.4 MB" onRemove={() => {}} />
+        <AiFileAttachment
+          name="Diagnostics.zip"
+          status="error"
+          onRetry={() => {}}
+          onRemove={() => {}}
+        />
+      </PreviewRow>
     </GroupBlock>
   </PreviewPanel>
 );

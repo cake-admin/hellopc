@@ -68,7 +68,7 @@ const colorString = (value) => {
 
 const isMeta = (k) => k.startsWith('$');
 
-// Groups can nest more than one level (Figma 1.1: color/inverse/surfaces/…,
+// Groups can nest more than one level (Figma 1.2: color/inverse/surfaces/…,
 // color/ai/consumer/…). A token's "leaf" is its path below the top-level group,
 // joined with "/" — e.g. group "ai", leaf "consumer/primary start". camel()
 // folds the "/" away, so the CSS var stays 1:1 with the Figma path:

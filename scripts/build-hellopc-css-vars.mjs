@@ -21,7 +21,7 @@ if (!value) {
 
 const kebab = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 
-/** Surface fallbacks (Figma "Fallbacks", Hello PC 1.1.0 node 16294:80): when
+/** Surface fallbacks (Figma "Fallbacks", Hello PC 1.2.0 node 16294:80): when
  *  the app shell can't render Mica, a 16px radius, or borders, a floating
  *  surface becomes a solid fill, 4px radius, no stroke, with the
  *  `container blur high` shadow (= elevation/5). The fills are hero palette
