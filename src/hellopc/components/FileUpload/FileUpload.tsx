@@ -117,7 +117,7 @@ const MediaPanel = styled.div<{ $disabled: boolean }>`
   overflow: hidden;
   border-radius: var(--radius-200);
   background: ${(p) => (p.$disabled ? 'var(--color-surfaces-on-container-low)' : 'var(--color-tonal-tonal)')};
-  color: ${(p) => (p.$disabled ? 'var(--color-disabled-disabled-inverse)' : 'var(--color-text-icon-on-tonal)')};
+  color: ${(p) => (p.$disabled ? 'var(--color-text-icon-disabled)' : 'var(--color-text-icon-on-tonal)')};
 
   & > svg {
     width: ${ICON_SIZE}px;
@@ -176,6 +176,9 @@ const RemoveButton = styled.button`
 
   &:hover:not(:disabled) {
     background: var(--color-primary-primary-overlay);
+    /* Equal to primary in light and dark; dark on the solid highlight win hct
+       paints for the overlay. */
+    color: var(--color-text-icon-primary-on-surface);
   }
 
   &:focus {
@@ -210,7 +213,9 @@ const ErrorChip = styled.div`
   padding: 0 var(--space-200);
   border-radius: var(--radius-1000);
   background: var(--color-warning-warn-overlay);
-  color: var(--color-text-icon-primary);
+  /* On an overlay: equal to text-icon-primary in light and dark, dark on the
+     solid highlight win hct paints for it. */
+  color: var(--color-text-icon-on-surface);
   font-family: var(--font-family);
   font-size: var(--type-size-caption);
   font-weight: var(--font-weight-medium);
