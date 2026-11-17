@@ -51,7 +51,7 @@ controlled through \`rangeValue\` / \`onRangeValueChange\`.
 | active period | \`--color-primary-primary\`, \`--color-text-icon-on-primary\` |
 | inactive period | \`--color-tonal-tonal-secondary-overlay\`, \`--color-text-icon-on-tonal-secondary\` |
 | inactive-period hover | \`--color-tonal-tonal-secondary-overlay-hover\` |
-| validation | \`--color-success-success-overlay\` / \`--color-success-success\`; \`--color-error-error-overlay\` / \`--color-error-error\` |
+| validation | \`--color-success-success-overlay\` / \`--color-success-success\`; \`--color-error-error-overlay\` / \`--color-error-error\`; segment text \`--color-text-icon-on-surface\` |
 | disabled | \`--color-disabled-disabled\`, \`--color-disabled-disabled-inverse\` |
 | labels / helper | reused InputLabel and HelperString token recipes |
 | layout / focus | \`--space-050\`, \`--space-100\`, \`--space-200\`, \`--space-800\`, \`--radius-200\`, \`--radius-100\`, \`--stroke-200\` |
