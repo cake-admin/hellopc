@@ -52,7 +52,7 @@ explains the full reasoning.
 ## Adding hello pc to an app you already have
 
 ```bash
-npm install https://github.com/cake-admin/cakev2/releases/download/v4.2.4/cake-admin-cakeand-4.2.4.tgz
+npm install https://github.com/cake-admin/cakev2/releases/download/v4.3.0/cake-admin-cakeand-4.3.0.tgz
 npm install react react-dom styled-components radix-ui lucide-react
 ```
 

@@ -53,7 +53,7 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Divider, Scrollbar, MenuHeader, MenuItem, Switch, TextInput.
 - Source: `src/hellopc/components/Menu/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-menu-menu-container--docs>

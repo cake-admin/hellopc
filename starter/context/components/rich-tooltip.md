@@ -49,7 +49,7 @@ Rich Tooltip provides structured, contextual guidance with an optional title, st
 
 ## Design tokens used
 
-`--color-surfaces-container-blur-high`, `--font-family`, `--type-size-subtitle`, `--font-weight-medium`, `--color-text-icon-primary`, `--type-size-subject`, `--font-weight-regular`, `--type-size-body`, `--space-500`, `--space-300`, `--space-200`, `--space-100`, `--radius-400`, `--elevation-5`, `--stroke-200`, `--color-primary-primary`, `--space-025`
+`--color-surfaces-container-blur-high`, `--font-family`, `--type-size-subtitle`, `--font-weight-medium`, `--color-text-icon-primary`, `--type-size-body`, `--font-weight-regular`, `--space-500`, `--space-300`, `--space-200`, `--space-100`, `--radius-400`, `--elevation-5`, `--stroke-200`, `--color-primary-primary`, `--space-025`
 
 ## Accessibility
 
@@ -64,13 +64,13 @@ Rich Tooltip provides structured, contextual guidance with an optional title, st
 | --- | --- |
 | Use for optional, contextual guidance anchored to one control. | Use for required consent or destructive confirmation — use Modal. |
 | Keep the title, body, and actions concise. | Turn it into a multi-page form. |
-| Replace actions with existing cake& Buttons when needed. | Rebuild private button styles inside the tooltip. |
+| Replace actions with existing hello pc Buttons when needed. | Rebuild private button styles inside the tooltip. |
 | Provide clear step text for guided sequences. | Show “Step 1 of 4” when no sequence exists. |
 
 ---
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, IconButton, Modal.
 - Source: `src/hellopc/components/Tooltip/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-tooltip-rich--docs>

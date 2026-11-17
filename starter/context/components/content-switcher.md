@@ -57,7 +57,7 @@ const [view, setView] = useState('grid');
 
 ## Design tokens used
 
-`--color-primary-primary-overlay`, `--radius-1000`, `--color-secondary-secondary-overlay`, `--space-025`, `--color-primary-primary`, `--color-text-icon-on-primary`, `--color-secondary-secondary`, `--color-text-icon-inverse`, `--elevation-0`, `--color-surfaces-inverse-container`
+`--color-primary-primary-overlay`, `--radius-1000`, `--color-secondary-secondary-overlay`, `--space-025`, `--color-primary-primary`, `--color-text-icon-on-primary`, `--color-secondary-secondary`, `--color-text-icon-inverse`, `--elevation-0`, `--color-stroke-border`, `--color-surfaces-container`, `--color-surfaces-inverse-container`
 
 ## Accessibility
 
@@ -79,7 +79,7 @@ const [view, setView] = useState('grid');
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, IconButton, Dropdown, Pagination.
 - Source: `src/hellopc/components/ContentSwitcher/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-content-switcher--docs>

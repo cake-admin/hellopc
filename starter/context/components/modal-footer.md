@@ -11,7 +11,7 @@ Modal Footer is the bottom action region of a modal dialog. It pairs an optional
 
 | Prop | Type | Default | Notes |
 | --- | --- | --- | --- |
-| `checkbox` | `React.ReactNode` | — | Replacement for the leading checkbox slot. When supplied, all checkbox label and state props are ignored so consumers can compose another existing cake& control. |
+| `checkbox` | `React.ReactNode` | — | Replacement for the leading checkbox slot. When supplied, all checkbox label and state props are ignored so consumers can compose another existing hello pc control. |
 | `actions` | `React.ReactNode` | — | Replacement for the trailing action group. When supplied, all default action label, event, and disabled props are ignored. |
 | `checkboxLabel` | `string` | `'Don’t remind me again'` | Visible label for the default Radix-wrapped Checkbox. |
 | `checkboxChecked` | `boolean \| 'indeterminate'` | — | Controlled state for the default checkbox. Pair with onCheckboxCheckedChange; ignored when checkbox is supplied. |
@@ -54,12 +54,12 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 | --- | --- |
 | Place the secondary action before the primary action. | Reverse the action hierarchy. |
 | Use the checkbox for a small acknowledgement or preference. | Put required form validation in the footer checkbox. |
-| Compose existing cake& controls in replacement slots. | Rebuild local buttons or checkbox UI. |
+| Compose existing hello pc controls in replacement slots. | Rebuild local buttons or checkbox UI. |
 | Let the parent dialog control width. | Add a fixed width to the footer itself. |
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, Checkbox, Modal.
 - Source: `src/hellopc/components/Modal/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-modal-modal-footer--docs>

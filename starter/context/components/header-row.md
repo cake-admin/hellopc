@@ -66,7 +66,7 @@ import { IconButton } from '@/hellopc/components/Button';
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, IconButton, Table.
 - Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-header-row--docs>

@@ -15,7 +15,7 @@ The assembled data table (Figma table templates, node 178:10143). It stacks the 
 | `actionBar` | `React.ReactNode` | — | Top toolbar — an Action Bar. Rendered above the grid. |
 | `header` | `React.ReactNode` | — | Column header — a Header Row. Rendered in its own header rowgroup above the scrollable body, so it stays fixed while the body scrolls. |
 | `footer` | `React.ReactNode` | — | Bottom footer — a Table Footer (range + Pagination), or any node. |
-| `maxBodyHeight` | `number \| string` | — | Caps the body height and turns it into a vertical scroll region with the cake& scrollbar. Omit for a table that grows to its content. |
+| `maxBodyHeight` | `number \| string` | — | Caps the body height and turns it into a vertical scroll region with the hello pc scrollbar. Omit for a table that grows to its content. |
 
 Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
@@ -44,7 +44,7 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
   ))}
 </Table>
 
-// tall body → scrolls with the cake& scrollbar; the header stays fixed above it
+// tall body → scrolls with the hello pc scrollbar; the header stays fixed above it
 <Table maxBodyHeight={320} header={…}>{manyRows}</Table>
 ```
 
@@ -70,7 +70,7 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Badge, Button, IconButton, Checkbox, Pagination, ActionBar, DataRow, HeaderRow.
 - Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-table--docs>

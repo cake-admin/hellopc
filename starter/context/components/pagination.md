@@ -61,7 +61,7 @@ import { Pagination } from '@/hellopc/components/Pagination';
 ---
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, IconButton, Scrollbar, NumberDropdown.
 - Source: `src/hellopc/components/Pagination/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-pagination-pagination--docs>

@@ -13,7 +13,7 @@ Modal Content is the body region of a modal dialog. Use it beneath Modal Title t
 | --- | --- | --- | --- |
 | `subtitle` | `React.ReactNode` | — | Optional section heading displayed above the description. It is visually styled as Figma's medium type/medium.18 content subtitle. |
 | `description` | `React.ReactNode` | — | Dialog summary rendered through Radix Dialog.Description. Keep this to phrasing content; place interactive or structured dialog UI in children. |
-| `children` | `React.ReactNode` | — | Optional structured modal body rendered below the description. Use this slot for existing cake& controls rather than recreating them inside a dialog. |
+| `children` | `React.ReactNode` | — | Optional structured modal body rendered below the description. Use this slot for existing hello pc controls rather than recreating them inside a dialog. |
 | `descriptionAsDialogDescription` | `boolean` | `true` | Renders description through Radix Dialog.Description so it becomes the dialog's accessible description. A Radix Dialog exposes exactly one description, so set this to false when another element in the same dialog (e.g. Modal's header subtitle) already owns it; the text then renders as a plain paragraph with identical styling. |
 
 Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
@@ -38,20 +38,20 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 - Radix Dialog.Description exposes the supplied description to the owning dialog when it is associated through aria-describedby.
 - Modal Content must be rendered inside a Radix Dialog context.
 - Use Modal Title for the dialog's primary accessible name; do not use the body subtitle as a substitute for a dialog title.
-- Interactive controls in children retain their own keyboard and focus behavior from the cake& components they compose.
+- Interactive controls in children retain their own keyboard and focus behavior from the hello pc components they compose.
 
 ## Do / Don't
 
 | Do | Don't |
 | --- | --- |
 | Use the description to concisely explain the dialog task. | Repeat the Modal Title verbatim. |
-| Compose existing cake& controls in the body slot. | Rebuild buttons or form elements inside the modal. |
+| Compose existing hello pc controls in the body slot. | Rebuild buttons or form elements inside the modal. |
 | Keep the subtitle optional and task-focused. | Treat it as the dialog's accessible title. |
 | Let the parent dialog set the modal width. | Add fixed width styling to Modal Content. |
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Button, Modal.
 - Source: `src/hellopc/components/Modal/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-modal-modal-content--docs>

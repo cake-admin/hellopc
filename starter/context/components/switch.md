@@ -5,7 +5,7 @@
 import { Switch } from '@cake-admin/cakeand';
 ```
 
-A binary on/off control built on the Radix Switch primitive and styled with cake& tokens. Use it for instant-effect settings — flipping it applies the change immediately. For choices that are submitted later with a form, use a Checkbox instead.
+A binary on/off control built on the Radix Switch primitive and styled with hello pc tokens. Use it for instant-effect settings — flipping it applies the change immediately. For choices that are submitted later with a form, use a Checkbox instead.
 
 ## Props
 
@@ -52,7 +52,7 @@ A binary on/off control built on the Radix Switch primitive and styled with cake
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Checkbox.
 - Source: `src/hellopc/components/Switch/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-switch--docs>

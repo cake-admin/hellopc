@@ -55,14 +55,14 @@ Time Input collects a 12-hour time through separate hours and minutes segments p
 
 | Do | Don't |
 | --- | --- |
-| Use a 12-hour value with its AM/PM period. | Store 24-hour notation in the displayed segments. |
+| Let 24-hour typing (1924) convert to 12-hour + PM. | Keep 24-hour numbers in the displayed hour segment. |
 | Use range mode for one start/end interval. | Place two separate Time Inputs when their validation is shared. |
 | Add helper guidance for timezone or duration context. | Assume a time alone communicates its timezone. |
 | Validate chronological ranges in the parent form. | Treat the component’s segment bounds as range-order validation. |
 
 ---
 
-- Behaviour comes from a Radix primitive; cake& owns the visuals.
+- Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: HelperString, InputLabel.
 - Source: `src/hellopc/components/TimeInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-time-input--docs>
