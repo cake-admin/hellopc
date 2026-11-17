@@ -65,6 +65,13 @@ const Trigger = styled(RadixTabs.Trigger)`
   &:active:not(:disabled) {
     background: var(--color-tonal-tonal-secondary-overlay-press);
   }
+  /* win hct paints the hover/press overlay solid white, so the unselected
+     label switches to its on-overlay pair (same value as text-icon-primary
+     in light and dark). */
+  &[data-state='inactive']:hover:not(:disabled),
+  &[data-state='inactive']:active:not(:disabled) {
+    color: var(--color-text-icon-on-tonal-secondary);
+  }
 
   /* Selected — note the resting fill is tonal/lightest, not the overlay the
      vertical tab row uses. */
@@ -99,7 +106,7 @@ const Trigger = styled(RadixTabs.Trigger)`
   &:disabled {
     cursor: not-allowed;
     background: transparent;
-    color: var(--color-disabled-disabled-inverse);
+    color: var(--color-text-icon-disabled);
     font-weight: var(--font-weight-medium);
   }
 
