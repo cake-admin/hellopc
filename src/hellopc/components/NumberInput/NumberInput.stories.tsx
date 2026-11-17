@@ -52,8 +52,8 @@ in favor of the hello pc stepper buttons; arrow-key stepping still works for fre
 | resting / hover | \`--color-surfaces-on-container-high\` fill, \`--stroke-100\` \`--color-stroke-border\` (hover: \`-high\`) | \`--color-text-icon-secondary\` |
 | typing (focus) | \`--color-surfaces-container\` fill, \`--stroke-150\` \`--color-primary-primary\` | \`--color-text-icon-primary\` |
 | finished (has value) | \`--color-surfaces-container\` fill, \`--stroke-100\` \`--color-stroke-border-high\` | \`--color-text-icon-primary\` |
-| success | \`--color-success-success-overlay\` fill, \`--stroke-150\` \`--color-success-success\` | \`--color-text-icon-primary\` |
-| error | \`--color-error-error-overlay\` fill, \`--stroke-150\` \`--color-error-error\` | \`--color-text-icon-primary\` |
+| success | \`--color-success-success-overlay\` fill, \`--stroke-150\` \`--color-success-success\` | \`--color-text-icon-on-surface\` (steppers \`--color-text-icon-secondary-on-surface\`) |
+| error | \`--color-error-error-overlay\` fill, \`--stroke-150\` \`--color-error-error\` | \`--color-text-icon-on-surface\` (steppers \`--color-text-icon-secondary-on-surface\`) |
 | disabled | \`--color-disabled-disabled\` fill, \`--stroke-100\` \`--color-disabled-disabled-inverse\` border | \`--color-disabled-disabled-inverse\` |
 
 Shape is \`--radius-200\` (12px); heights are 40px (\`md\`) / 32px (\`sm\`), matching
