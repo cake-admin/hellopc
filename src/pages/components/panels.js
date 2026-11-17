@@ -1,6 +1,7 @@
 import { storybookDocs } from './chrome';
 import {
   AccordionsPreview,
+  AiPreview,
   AvatarsPreview,
   BreadcrumbsPaginationPreview,
   ButtonPreview,
@@ -10,9 +11,11 @@ import {
   DateTimeInputsPreview,
   FileUploaderPreview,
   FormsControlsPreview,
+  LinksPreview,
   MenusListsPreview,
   ModalsSkrimPreview,
   ProgressSteppersPreview,
+  RatingPreview,
   ScrollbarPreview,
   SidebarPreview,
   SlidersPreview,
@@ -35,6 +38,7 @@ export const CATEGORIES = [
       { id: 'buttons', label: 'Buttons' },
       { id: 'chips-labels-badges', label: 'Chips, labels, badges' },
       { id: 'radio-checkbox-toggle-forms', label: 'Radio, checkbox, toggle, forms' },
+      { id: 'rating', label: 'Rating' },
       { id: 'sliders', label: 'Sliders' },
     ],
   },
@@ -48,12 +52,18 @@ export const CATEGORIES = [
     ],
   },
   {
+    id: 'ai',
+    label: 'AI',
+    items: [{ id: 'ai-input', label: 'AI query input' }],
+  },
+  {
     id: 'navigation',
     label: 'Navigation',
     items: [
       { id: 'sidebar', label: 'Sidebar' },
       { id: 'tabs', label: 'Tabs' },
       { id: 'menus-lists', label: 'Menus & lists' },
+      { id: 'links', label: 'Links' },
     ],
   },
   {
@@ -94,7 +104,8 @@ export const PANELS = [
     storybook: storybookDocs('components-button-button--docs'),
     paragraphs: [
       'Buttons are how people take action in hello pc — pill-shaped, clear, and ranked by how much attention the action deserves. Use one strong fill button for the main thing to do; outline, tonal, and ghost step down for supporting or quieter actions.',
-      'Pair primary (indigo) or secondary (ink) intent with a size that fits the density of the screen. Browse the live examples below, then open Storybook for the full props, states, and accessibility notes.',
+      'Pair primary (indigo) or secondary (ink) intent with a size that fits the density of the screen. Use the destructive intent only for deletes and other actions that can’t be undone, with a way out beside it. On inverse surfaces such as toasts and tooltips, switch to the inverse tone. Icons size themselves: 18px on XS and S buttons, 24px on M and L.',
+      'Browse the live examples below, then open Storybook for the full props, states, and accessibility notes.',
     ],
     Preview: ButtonPreview,
   },
@@ -117,6 +128,16 @@ export const PANELS = [
       'Prefer radios when options are mutually exclusive and visible at once; use a dropdown when the list is long. Keep labels short and specific so the choice is obvious without extra helper text.',
     ],
     Preview: FormsControlsPreview,
+  },
+  {
+    id: 'rating',
+    title: 'Rating',
+    storybook: storybookDocs('components-rating--docs'),
+    paragraphs: [
+      'Rating asks people to pick one point on a scale — how satisfied they are, how likely, how much effort something took. Each option is a numbered tile with an optional caption, and an optional N/A lets people skip a question that doesn’t apply.',
+      'Caption every point, or at least both ends, so the scale has meaning, and keep low-to-high running left to right. It behaves like a radio group: arrow keys move and select, and it submits with a form.',
+    ],
+    Preview: RatingPreview,
   },
   {
     id: 'sliders',
@@ -213,7 +234,7 @@ export const PANELS = [
     title: 'Toasts & notifications',
     storybook: storybookDocs('components-toast--docs'),
     paragraphs: [
-      'Toasts are transient feedback that appear without blocking the page. Notifications and Notification Panel cover persistent inbox-style messages with status, timestamp, and dismiss.',
+      'Toasts are transient feedback that appear without blocking the page. They sit on the inverse surface — dark in light mode, light in dark mode — so they stand apart from the page, with inverse buttons for their actions. Notifications and Notification Panel cover persistent inbox-style messages with status, timestamp, and dismiss.',
       'Use Toast for short confirmations, Notification for richer message rows, and Notification Panel when people need a scrollable list of recent alerts.',
     ],
     Preview: ToastsNotificationsPreview,
@@ -281,7 +302,7 @@ export const PANELS = [
     storybook: storybookDocs('components-breadcrumb--docs'),
     paragraphs: [
       'Breadcrumbs show where the current page sits in a hierarchy. Pagination moves through multi-page tables and lists with numbered pages or a compact dropdown style.',
-      'Use breadcrumbs for deep IA and pagination whenever a dataset is split across pages. Both use proper nav landmarks and current-page semantics.',
+      'Use breadcrumbs for deep IA and pagination whenever a dataset is split across pages. Breadcrumb crumbs are underlined links, with the current page in plain text. Both use proper nav landmarks and current-page semantics.',
     ],
     Preview: BreadcrumbsPaginationPreview,
   },
@@ -304,5 +325,25 @@ export const PANELS = [
       'Wrap overflowing regions with Scrollbar. Surfaces that cannot host ScrollArea should use nativeScrollbarStyles so native overflow still matches.',
     ],
     Preview: ScrollbarPreview,
+  },
+  {
+    id: 'ai-input',
+    title: 'AI query input',
+    storybook: storybookDocs('components-ai-query-input--docs'),
+    paragraphs: [
+      'The AI query input is where people write a prompt to an assistant. A multiline field sits above a toolbar: + adds context types and files, the mode toggle switches voice input on and off, and send becomes Stop while a response streams and Retry if it fails.',
+      'Set the segment — consumer, commercial, or internal — to match the product audience; it tints the ring, caret, and send button with that segment’s AI gradient. Attached files show as tiles above the text, and Send waits while any of them is still uploading.',
+    ],
+    Preview: AiPreview,
+  },
+  {
+    id: 'links',
+    title: 'Links',
+    storybook: storybookDocs('components-link--docs'),
+    paragraphs: [
+      'Links navigate — to another page, a section, or an outside resource. They’re always underlined, so they never rely on color alone. Buttons perform actions; if clicking runs a command, use a Button instead.',
+      'Mark links that leave the app as external so people know a new window is coming, and use the inverse style on colored fills such as banners. Write link text that names the destination, not “click here”.',
+    ],
+    Preview: LinksPreview,
   },
 ];

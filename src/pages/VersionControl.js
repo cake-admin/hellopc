@@ -280,27 +280,43 @@ const StrategyGrid = styled.div`
   gap: var(--space-400);
 `;
 
-/** Matches WhatsNew hello pc 1.0.0 / major Aug 13 entry. */
+/** Matches the WhatsNew hello pc 1.1.0 entry (Nov 17, 2026). */
 const CURRENT_RELEASE = {
-  version: '1.0.0',
-  date: 'August 13, 2026',
-  title: 'hello pc 1.0.0',
+  version: '1.1.0',
+  date: 'November 17, 2026',
+  title: 'hello pc 1.1.0',
+  release: 'minor',
+  summary:
+    'Code library aligned with the Figma 1.1.0 library; React package @cake-admin/cakeand 4.3.0.',
   body: [
-    "We're excited to introduce hello pc 1.0.0.",
-    "This release marks the beginning of a new chapter for Lenovo design. Built together by Lenovo and Motorola, hello pc unifies our design languages into a single PC software system that's modern, accessible, and ready for the future.",
-    'Our goal is simple: help teams design, build, and ship with greater consistency and confidence. This release includes our new Figma library, React component library, Storybook documentation, design foundations, and developer resources—all working from the same source of truth.',
-    "This is just the beginning. We'll continue evolving hello pc alongside our products and the teams who build them.",
+    'hello pc 1.1.0 brings the code library in line with the Figma 1.1.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
+    'It adds AI, Link, and Rating components, a destructive option and an inverse style for buttons, refreshed toasts and breadcrumbs, and the new Figma 1.1.0 color tokens. Nothing was removed, so existing projects can update in place.',
   ],
   changes: [
-    { type: 'Added', text: 'Public hello pc Figma community library' },
-    { type: 'Added', text: 'React component library on Radix with Storybook docs' },
-    { type: 'Added', text: 'Design foundations — color, type, spacing, elevation, surfaces' },
-    { type: 'Added', text: 'AI styling guidance for overview, gradient, and logo & icon' },
-    { type: 'Added', text: 'Developer resources, data visualization playground, and AI Labs starter' },
+    { type: 'Added', text: 'AI query input, mode toggle, context menu, and file attachment components' },
+    { type: 'Added', text: 'Link and Rating components' },
+    { type: 'Added', text: 'Destructive intent and inverse tone for Button and IconButton' },
+    { type: 'Added', text: 'Control, inverse, AI, and link color tokens from Figma 1.1.0' },
+    { type: 'Added', text: 'Surface fallbacks for shells without Mica, rounded corners, or borders' },
+    { type: 'Changed', text: 'Toasts sit on the inverse surface with inverse buttons' },
+    { type: 'Changed', text: 'Breadcrumb crumbs are underlined links; the current page is plain text' },
+    { type: 'Changed', text: 'Button icons size to the button: 18px on XS/S, 24px on M/L' },
   ],
 };
 
 const PRIOR_RELEASES = [
+  {
+    version: '1.0.0',
+    date: 'August 13, 2026',
+    description: 'Unified Lenovo + Motorola design system for PC software.',
+    changes: [
+      { type: 'Added', text: 'Public hello pc Figma community library' },
+      { type: 'Added', text: 'React component library on Radix with Storybook docs' },
+      { type: 'Added', text: 'Design foundations — color, type, spacing, elevation, surfaces' },
+      { type: 'Added', text: 'AI styling guidance for overview, gradient, and logo & icon' },
+      { type: 'Added', text: 'Developer resources, data visualization playground, and AI Labs starter' },
+    ],
+  },
   {
     version: 'hello pc Web V2',
     date: 'October 8, 2025',
@@ -352,7 +368,7 @@ const VersionControl = () => (
           <SectionTitle>Current version</SectionTitle>
           <SectionCopy>
             {withBrand(
-              `We're currently on hello pc ${CURRENT_RELEASE.version}, our first major unified release across Figma, React, Storybook, and foundations.`,
+              `We're currently on hello pc ${CURRENT_RELEASE.version}, a ${CURRENT_RELEASE.release} release that builds on the 1.0.0 unified system across Figma, React, Storybook, and foundations.`,
             )}
           </SectionCopy>
 
@@ -364,8 +380,12 @@ const VersionControl = () => (
                   <Badge color="secondary" tone="subtle" dot={false}>
                     {CURRENT_RELEASE.date}
                   </Badge>
-                  <Badge color="primary" tone="solid" dot={false}>
-                    Major release
+                  <Badge
+                    color="primary"
+                    tone={CURRENT_RELEASE.release === 'major' ? 'solid' : 'subtle'}
+                    dot={false}
+                  >
+                    {CURRENT_RELEASE.release === 'major' ? 'Major release' : 'Minor release'}
                   </Badge>
                   <Badge color="primary" tone="subtle" dot={false}>
                     Latest
@@ -398,13 +418,11 @@ const VersionControl = () => (
                     Latest
                   </Badge>
                   <Badge color="primary" tone="subtle" dot={false}>
-                    Major
+                    {CURRENT_RELEASE.release === 'major' ? 'Major' : 'Minor'}
                   </Badge>
                 </VersionNumber>
                 <VersionDate>{CURRENT_RELEASE.date}</VersionDate>
-                <IntroText>
-                  Unified Lenovo + Motorola design system for PC software.
-                </IntroText>
+                <IntroText>{withBrand(CURRENT_RELEASE.summary)}</IntroText>
               </VersionHeader>
               <ChangeList>
                 {CURRENT_RELEASE.changes.map((change) => (
