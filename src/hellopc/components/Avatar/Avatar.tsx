@@ -86,7 +86,9 @@ const Fallback = styled(RadixAvatar.Fallback)<{ $size: AvatarSize }>`
   justify-content: center;
   width: 100%;
   height: 100%;
-  color: var(--color-primary-primary);
+  /* Sits on the primary overlay: equal to primary in light and dark, and dark
+     on the solid highlight win hct paints for the overlay. */
+  color: var(--color-text-icon-primary-on-surface);
   font-family: var(--font-family);
   font-size: var(--type-size-subject);
   font-weight: var(--font-weight-medium);
