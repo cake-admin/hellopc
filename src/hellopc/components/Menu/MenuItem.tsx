@@ -68,6 +68,20 @@ const Row = styled.div<{ $variant: MenuItemVariant; $selected: boolean; $disable
           : 'var(--color-tonal-tonal-secondary-overlay-press)'};
       }
     `}
+
+  ${(p) =>
+    !p.$disabled &&
+    !p.$selected &&
+    css`
+      /* The unselected hover/press overlay is solid white in win hct, so the
+         label moves to its on-overlay pair (equal to secondary in light and
+         dark). */
+      &:hover > button,
+      &:has(> button[data-highlighted]) > button,
+      &:active > button {
+        color: var(--color-text-icon-on-tonal-secondary);
+      }
+    `}
 `;
 
 const Action = styled.button<{ $selected: boolean; $disabled: boolean }>`
