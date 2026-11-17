@@ -43,7 +43,7 @@ double-click. The row lays out as: text ·4px· optional info icon, with the
 | Text | \`--font-weight-medium\`, \`--color-text-icon-primary\`; \`md\` \`--type-size-subject\` (16px) / \`sm\` \`--type-size-body\` (14px) |
 | Info icon (16px) | inherits the text color via \`currentColor\` |
 | "(required)" suffix | \`--font-weight-regular\` \`--type-size-helper\`, \`--color-text-icon-placeholder\` |
-| Disabled | text + icon \`--color-disabled-disabled-inverse\` (the suffix keeps its color) |
+| Disabled | text + icon \`--color-text-icon-disabled\` (the suffix keeps its color) |
 | Gaps | \`--space-050\` text↔icon, \`--space-100\` before the suffix |
 
 ## Accessibility
@@ -146,7 +146,7 @@ export const Disabled: Story = {
     docs: {
       description: {
         story:
-          'Disabled dims the text + icon to `--color-disabled-disabled-inverse`; ' +
+          'Disabled dims the text + icon to `--color-text-icon-disabled`; ' +
           'the "(required)" suffix keeps `--color-text-icon-placeholder` per spec.',
       },
     },

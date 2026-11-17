@@ -47,7 +47,7 @@ wires this automatically.
 | success | \`--color-success-success\` |
 | warning | \`--color-warning-warn\` |
 | error | \`--color-error-error\` |
-| disabled | \`--color-disabled-disabled-inverse\` |
+| disabled | \`--color-text-icon-disabled\` |
 
 Text is \`--type-size-helper\` regular; icon is 16px and inherits the tone via
 \`currentColor\`; icon↔text and text↔counter gaps are \`--space-100\`. The
