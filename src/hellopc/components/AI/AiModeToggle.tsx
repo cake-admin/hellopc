@@ -16,10 +16,17 @@ export interface AiModeToggleProps
   /**
    * The mode glyph. Defaults to a microphone (voice input); swap it for
    * another mode. Rendered in a 24px slot and colored via `currentColor`.
-   * When pressed the glyph is filled (`fill="currentColor"`) to mirror the
-   * Figma filled-icon On state.
+   * The default microphone fills its capsule when pressed (the Figma
+   * filled-icon On state); a custom icon is shown as-is unless you pass
+   * `pressedIcon`.
    */
   icon?: React.ReactElement;
+  /**
+   * Glyph shown while pressed — the filled version of `icon` (Figma On
+   * state). Use it with a custom `icon`; the default microphone already has
+   * its own filled state.
+   */
+  pressedIcon?: React.ReactElement;
   /**
    * AI segment (Figma "Segment") — sets the pressed surface fill and accent.
    * @default 'consumer'
@@ -89,7 +96,10 @@ const Root = styled(RadixToggle.Root)<{ $segment: AiSegment }>`
   }
 `;
 
-const IconSlot = styled.span`
+/** `$fillCapsule`: the default mic's On state fills only its capsule (the
+ *  lucide Mic `<rect>`) — the arc and stem stay strokes, as in Figma. Filling
+ *  the whole SVG would flood the open arc into a solid bowl. */
+const IconSlot = styled.span<{ $fillCapsule: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +109,7 @@ const IconSlot = styled.span`
     width: 100%;
     height: 100%;
   }
+  ${(p) => (p.$fillCapsule ? '& > svg rect { fill: currentColor; }' : '')}
 `;
 
 /**
@@ -113,6 +124,7 @@ export const AiModeToggle = React.forwardRef<HTMLButtonElement, AiModeToggleProp
     {
       label = 'Voice input',
       icon,
+      pressedIcon,
       segment = 'consumer',
       pressed: pressedProp,
       defaultPressed = false,
@@ -126,10 +138,8 @@ export const AiModeToggle = React.forwardRef<HTMLButtonElement, AiModeToggleProp
     const isControlled = pressedProp !== undefined;
     const pressed = isControlled ? pressedProp : uncontrolled;
 
-    const glyph = icon ?? <Mic />;
-    const rendered = React.isValidElement<React.SVGProps<SVGSVGElement>>(glyph)
-      ? React.cloneElement(glyph, { fill: pressed ? 'currentColor' : 'none' })
-      : glyph;
+    const rendered = (pressed ? pressedIcon : undefined) ?? icon ?? <Mic />;
+    const fillCapsule = pressed && !icon && !pressedIcon;
 
     return (
       <Root
@@ -143,7 +153,9 @@ export const AiModeToggle = React.forwardRef<HTMLButtonElement, AiModeToggleProp
         {...props}
       >
         <AccessibleIcon.Root label={label}>
-          <IconSlot aria-hidden>{rendered}</IconSlot>
+          <IconSlot aria-hidden $fillCapsule={fillCapsule}>
+            {rendered}
+          </IconSlot>
         </AccessibleIcon.Root>
       </Root>
     );

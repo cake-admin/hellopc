@@ -24,8 +24,11 @@ toolbar toggle re-themes every example on this page live via \`[data-theme]\`.
 
 Built on the Radix \`Toggle\` primitive: it renders a real \`<button>\` with
 \`aria-pressed\`. Works controlled (\`pressed\` + \`onPressedChange\`) or
-uncontrolled (\`defaultPressed\`). The glyph is swappable; when pressed it
-renders filled (\`fill="currentColor"\`) to mirror the Figma filled-icon On state.
+uncontrolled (\`defaultPressed\`). When pressed, the default microphone fills its
+capsule (the arc and stem stay outlined), matching the Figma filled-icon On
+state. The glyph is swappable: pass \`icon\`, plus \`pressedIcon\` for its filled
+On version — a custom icon isn't filled automatically, since filling an
+arbitrary outline icon breaks its shape.
 
 ## Usage
 
@@ -53,7 +56,9 @@ renders filled (\`fill="currentColor"\`) to mirror the Figma filled-icon On stat
 - The control is icon-only, so \`label\` (default "Voice input") is required
   context — it renders as visually hidden text via Radix \`AccessibleIcon\`.
   Name the **mode**, not the state ("Voice input", not "Turn on voice").
-- Pressed state isn't conveyed by color alone: the glyph also fills.
+- Pressed state isn't conveyed by color alone: the surface changes and the
+  default glyph fills. For a custom \`icon\`, pass a filled \`pressedIcon\` to keep
+  that second cue.
 - Focus is restyled (3px primary ring), never removed.
 
 ## Do / Don't
@@ -73,6 +78,7 @@ renders filled (\`fill="currentColor"\`) to mirror the Figma filled-icon On stat
   argTypes: {
     label: { control: 'text', table: { category: 'Content' } },
     icon: { control: false, table: { category: 'Content' } },
+    pressedIcon: { control: false, table: { category: 'Content' } },
     segment: {
       control: 'inline-radio',
       options: ['consumer', 'commercial', 'internal'],
