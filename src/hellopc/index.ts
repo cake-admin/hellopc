@@ -55,6 +55,7 @@ export * from './components/PasswordInput';
 export * from './components/PinInput';
 export * from './components/Progress Indicators';
 export * from './components/Radio';
+export * from './components/Rating';
 export * from './components/Sidebar';
 export * from './components/Slider';
 export * from './components/Stepper';

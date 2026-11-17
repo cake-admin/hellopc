@@ -81,7 +81,7 @@ const CATEGORIES = {
   TextInput: 'Forms', PasswordInput: 'Forms', NumberInput: 'Forms', PinInput: 'Forms',
   DateInput: 'Forms', TimeInput: 'Forms', Checkbox: 'Forms', Radio: 'Forms',
   Switch: 'Forms', Slider: 'Forms', Dropdown: 'Forms', NumberDropdown: 'Forms',
-  FileUpload: 'Forms',
+  FileUpload: 'Forms', Rating: 'Forms',
   AI: 'AI',
   Elements: 'Elements',
 };
