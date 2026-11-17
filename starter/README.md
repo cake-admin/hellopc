@@ -57,7 +57,7 @@ npm install react react-dom styled-components radix-ui lucide-react
 ```
 
 The current kit is
-[v4.2.4](https://github.com/cake-admin/cakev2/releases#release-v4.2.4).
+[v4.3.0](https://github.com/cake-admin/cakev2/releases#release-v4.3.0).
 
 Then copy three things from this starter, all of which matter:
 
