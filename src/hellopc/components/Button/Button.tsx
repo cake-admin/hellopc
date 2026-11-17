@@ -91,16 +91,18 @@ const sizeStyles = (size: ButtonSize) => {
   return map[size];
 };
 
-/** stateLayer padding per size (tonal+md uses a tighter inset, matching Figma).
- *  sm is 8 × 12 per the Figma 1.1 spec; xs keeps its own geometry because the
- *  Figma xs frame is drawn with a 32px state layer inside a 24px button. */
+/** stateLayer inline padding per size (tonal+md uses a tighter inset, matching
+ *  Figma). sm is 12px per the Figma 1.1 spec. Only the inline padding is
+ *  applied: every size has a fixed height and centers its content, so Figma's
+ *  vertical padding (4/8/10/12px) would only shrink the content box below the
+ *  18/24px icon slot without moving anything. */
 const padFor = (size: ButtonSize, variant: ButtonVariant) => {
-  if (variant === 'tonal' && size === 'md') return 'var(--space-100) var(--space-200)';
+  if (variant === 'tonal' && size === 'md') return 'var(--space-200)';
   return {
-    xs: 'var(--space-050) var(--space-200)',
-    sm: 'var(--space-100) var(--space-200)',
-    md: 'var(--space-150) var(--space-300)',
-    lg: 'var(--space-200) var(--space-400)',
+    xs: 'var(--space-200)',
+    sm: 'var(--space-200)',
+    md: 'var(--space-300)',
+    lg: 'var(--space-400)',
   }[size];
 };
 
@@ -406,7 +408,8 @@ const StateLayer = styled.span<{ $size: ButtonSize; $variant: ButtonVariant }>`
   gap: ${(p) => gapFor(p.$size, p.$variant)};
   width: 100%;
   height: 100%;
-  padding: ${(p) => padFor(p.$size, p.$variant)};
+  box-sizing: border-box;
+  padding: 0 ${(p) => padFor(p.$size, p.$variant)};
 `;
 
 /** Sized by the button (see ICON_SIZE); any SVG fills it via currentColor. */

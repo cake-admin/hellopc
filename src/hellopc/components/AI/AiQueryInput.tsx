@@ -388,7 +388,8 @@ export const AiQueryInput = React.forwardRef<HTMLTextAreaElement, AiQueryInputPr
     if (isSending) {
       action = { label: 'Stop response', icon: <StopGlyph />, enabled: true, onClick: () => onStop?.() };
     } else if (isError) {
-      action = { label: 'Retry', icon: <RotateCw />, enabled: hasText, onClick: () => onRetry?.(value) };
+      // Like Send, Retry waits for in-progress uploads.
+      action = { label: 'Retry', icon: <RotateCw />, enabled: hasText && !isUploading, onClick: submit };
     } else {
       action = { label: 'Send message', icon: <ArrowRight />, enabled: hasText && !isUploading, onClick: submit };
     }
