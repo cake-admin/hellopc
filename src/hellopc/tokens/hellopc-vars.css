@@ -240,6 +240,9 @@
   --color-warning-warn-overlay: rgba(190, 135, 4, 0.1);
   --color-warning-warn: #e66e00;
 
+  /* Surface fallback fill — see Foundations/Special Surfaces */
+  --surface-fallback-fill: #ecf1fe;
+
   /* Spacing — Figma Spacing/<bucket>/space-* */
   --space-025: 2px;
   --space-050: 4px;
@@ -320,6 +323,11 @@
   /* Legacy, pre-scale aliases. */
   --elevation-low: 0 1px 2px 0 var(--color-elevation-drop-shadow-light);
   --elevation-high: 0 12px 32px -4px var(--color-elevation-drop-shadow-heavy);
+
+  /* Surface fallback (no Mica / 16px radius / borders in the app shell) —
+     Figma "Fallbacks": 4px radius, no stroke, container-blur-high shadow. */
+  --surface-fallback-radius: var(--radius-50);
+  --surface-fallback-shadow: var(--elevation-5);
 }
 
 [data-theme='dark.a'] {
@@ -558,6 +566,9 @@
   --color-warning-warn-overlay-hover: rgba(190, 135, 4, 0.1);
   --color-warning-warn-overlay: rgba(190, 135, 4, 0.2);
   --color-warning-warn: #ff8d3f;
+
+  /* Surface fallback fill — see Foundations/Special Surfaces */
+  --surface-fallback-fill: #000000;
 }
 
 [data-theme='win hct'] {
@@ -796,4 +807,7 @@
   --color-warning-warn-overlay-hover: #8ee3f0;
   --color-warning-warn-overlay: #8ee3f0;
   --color-warning-warn: #8ee3f0;
+
+  /* Surface fallback fill — see Foundations/Special Surfaces */
+  --surface-fallback-fill: var(--color-surfaces-container-blur-high);
 }
