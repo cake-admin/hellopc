@@ -71,7 +71,10 @@ const PageButton = styled.button<{ $current: boolean }>`
   border: none;
   border-radius: var(--radius-1000);
   background: ${(p) => (p.$current ? 'var(--color-secondary-secondary-overlay)' : 'transparent')};
-  color: var(--color-surfaces-inverse-container);
+  /* The current page sits on the secondary overlay, which win hct paints solid
+     highlight; its label takes the on-overlay text token. */
+  color: ${(p) =>
+    p.$current ? 'var(--color-text-icon-on-surface)' : 'var(--color-surfaces-inverse-container)'};
   font-family: var(--font-family);
   font-size: var(--type-size-caption);
   font-weight: var(--font-weight-bold);
@@ -82,13 +85,15 @@ const PageButton = styled.button<{ $current: boolean }>`
 
   &:hover:not(:disabled) {
     background: var(--color-secondary-secondary-overlay-hover);
+    color: var(--color-text-icon-on-surface);
   }
   &:active:not(:disabled) {
     background: var(--color-tonal-tonal-secondary-overlay-press);
+    color: var(--color-text-icon-on-tonal-secondary);
   }
   &:disabled {
     cursor: not-allowed;
-    color: var(--color-disabled-disabled-inverse);
+    color: var(--color-text-icon-disabled);
   }
 
   &:focus {
