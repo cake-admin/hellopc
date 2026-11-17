@@ -313,7 +313,7 @@ export const SubmitsOnEnter: Story = {
     await userEvent.type(field, '  Check my battery health  ');
     await expect(send).toBeEnabled();
     await userEvent.keyboard('{Enter}');
-    await expect(args.onSubmit).toHaveBeenCalledWith('Check my battery health');
+    await expect(args.onSubmit).toHaveBeenCalledWith('Check my battery health', { contexts: [] });
     await expect(field).toHaveValue('');
   },
 };

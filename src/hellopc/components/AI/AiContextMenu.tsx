@@ -62,8 +62,22 @@ const Content = styled(DropdownMenu.Content)`
   outline: none;
 `;
 
+/** Visually hidden, not `display: none`: some browsers (notably older Safari)
+ *  ignore a programmatic click() on an undisplayed file input, so the picker
+ *  would never open. Clipped to 1px, it stays clickable but invisible. */
 const HiddenInput = styled.input`
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
 `;
 
 /**

@@ -16,7 +16,7 @@
 // DTCG output — the parts scripts/build-hellopc-tokens.mjs and
 // chart-tool-echarts/scripts/build-tokens.mjs read — with every alias already
 // resolved to a color, so those scripts work unchanged.
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -267,7 +267,17 @@ function listCollections(response) {
 }
 
 // ---- Main -----------------------------------------------------------------
-const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
+// Compare real paths: Node resolves symlinks for import.meta.url but not for
+// argv[1], so a symlinked checkout would otherwise skip main and exit 0.
+const realOrNull = (p) => {
+  try {
+    return realpathSync(p);
+  } catch {
+    return null;
+  }
+};
+const isMain =
+  Boolean(process.argv[1]) && realOrNull(fileURLToPath(import.meta.url)) === realOrNull(process.argv[1]);
 if (isMain) {
   const response = await loadResponse();
   if (flag('--list')) {
