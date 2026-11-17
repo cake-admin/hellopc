@@ -218,12 +218,12 @@ const LegacyHeading = styled.h2`
 /** Posts at or after the AI guidelines announcement (and the 1.0.0 release). */
 const CURRENT_POSTS = [
   {
-    id: 'hellopc-1-1-0',
-    title: 'hello pc 1.1.0',
+    id: 'hellopc-1-2-0',
+    title: 'hello pc 1.2.0',
     date: 'November 17, 2026',
     release: 'minor',
     body: [
-      'hello pc 1.1.0 brings the code library in line with the Figma 1.1.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
+      'hello pc 1.2.0 brings the code library in line with the Figma 1.2.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
       'This release adds new components for AI experiences, links, and ratings, gives buttons a destructive option and an inverse style for toasts and tooltips, and refreshes toasts and breadcrumbs to match the latest designs. Storybook is already updated; install 4.3.0 to get everything in your project.',
     ],
     changes: [
@@ -232,7 +232,7 @@ const CURRENT_POSTS = [
       'New Rating component: a numbered scale with captions and an optional N/A',
       'Buttons: a destructive intent, an inverse tone for toasts and tooltips, and icons that size to the button (18px on XS/S, 24px on M/L)',
       'Toasts now sit on the inverse surface, and breadcrumbs use underlined links',
-      'Color tokens updated to Figma 1.1.0, with new control, inverse, AI, and link colors',
+      'Color tokens updated to Figma 1.2.0, with new control, inverse, AI, and link colors',
       'Surface fallbacks for app shells that can’t render Mica, rounded corners, or borders',
     ],
     links: [

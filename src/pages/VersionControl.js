@@ -280,23 +280,23 @@ const StrategyGrid = styled.div`
   gap: var(--space-400);
 `;
 
-/** Matches the WhatsNew hello pc 1.1.0 entry (Nov 17, 2026). */
+/** Matches the WhatsNew hello pc 1.2.0 entry (Nov 17, 2026). */
 const CURRENT_RELEASE = {
-  version: '1.1.0',
+  version: '1.2.0',
   date: 'November 17, 2026',
-  title: 'hello pc 1.1.0',
+  title: 'hello pc 1.2.0',
   release: 'minor',
   summary:
-    'Code library aligned with the Figma 1.1.0 library; React package @cake-admin/cakeand 4.3.0.',
+    'Code library aligned with the Figma 1.2.0 library; React package @cake-admin/cakeand 4.3.0.',
   body: [
-    'hello pc 1.1.0 brings the code library in line with the Figma 1.1.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
-    'It adds AI, Link, and Rating components, a destructive option and an inverse style for buttons, refreshed toasts and breadcrumbs, and the new Figma 1.1.0 color tokens. Nothing was removed, so existing projects can update in place.',
+    'hello pc 1.2.0 brings the code library in line with the Figma 1.2.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
+    'It adds AI, Link, and Rating components, a destructive option and an inverse style for buttons, refreshed toasts and breadcrumbs, and the new Figma 1.2.0 color tokens. Nothing was removed, so existing projects can update in place.',
   ],
   changes: [
     { type: 'Added', text: 'AI query input, mode toggle, context menu, and file attachment components' },
     { type: 'Added', text: 'Link and Rating components' },
     { type: 'Added', text: 'Destructive intent and inverse tone for Button and IconButton' },
-    { type: 'Added', text: 'Control, inverse, AI, and link color tokens from Figma 1.1.0' },
+    { type: 'Added', text: 'Control, inverse, AI, and link color tokens from Figma 1.2.0' },
     { type: 'Added', text: 'Surface fallbacks for shells without Mica, rounded corners, or borders' },
     { type: 'Changed', text: 'Toasts sit on the inverse surface with inverse buttons' },
     { type: 'Changed', text: 'Breadcrumb crumbs are underlined links; the current page is plain text' },
