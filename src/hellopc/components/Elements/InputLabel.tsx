@@ -24,7 +24,7 @@ const Root = styled(RadixLabel.Root)<{ $size: 'sm' | 'md'; $disabled: boolean }>
   font-size: ${(p) => (p.$size === 'md' ? 'var(--type-size-subject)' : 'var(--type-size-body)')};
   line-height: 1.35;
   color: ${(p) =>
-    p.$disabled ? 'var(--color-disabled-disabled-inverse)' : 'var(--color-text-icon-primary)'};
+    p.$disabled ? 'var(--color-text-icon-disabled)' : 'var(--color-text-icon-primary)'};
 `;
 
 const TextGroup = styled.span`

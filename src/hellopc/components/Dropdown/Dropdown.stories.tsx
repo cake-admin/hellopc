@@ -65,7 +65,7 @@ close, \`data-state\`); hello pc owns the visuals. The label is wired via
 | menu item · resting | transparent | \`--radius-200\` | \`--color-secondary-secondary\` |
 | menu item · highlighted | \`--color-tonal-tonal-secondary-overlay-hover\` | – | \`--color-text-icon-on-tonal-secondary\` |
 | menu item · press | \`--color-tonal-tonal-secondary-overlay-press\` | – | – |
-| menu item · disabled | transparent | – | \`--color-disabled-disabled-inverse\` |
+| menu item · disabled | transparent | – | \`--color-text-icon-disabled\` |
 
 On Windows HCT (\`data-theme="win hct"\`), stroke/surface tokens collapse, so the
 trigger hover/open states use \`--color-surfaces-inverse-container\` +

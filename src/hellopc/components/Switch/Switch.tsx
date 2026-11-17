@@ -98,7 +98,7 @@ const Label = styled.label`
   cursor: pointer;
 
   &:has([data-disabled]) {
-    color: var(--color-disabled-disabled-inverse);
+    color: var(--color-text-icon-disabled);
     cursor: not-allowed;
   }
 `;

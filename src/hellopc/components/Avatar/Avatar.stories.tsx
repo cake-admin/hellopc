@@ -71,7 +71,7 @@ import { Avatar } from '@/hellopc/components/Avatar';
 | Part | Tokens |
 | --- | --- |
 | circle | \`--radius-1000\` (full), \`--color-primary-primary-overlay\` surface |
-| initials / glyph | \`--color-primary-primary\`, \`--type-size-subject\` (16px), \`--font-weight-medium\` |
+| initials / glyph | \`--color-text-icon-primary-on-surface\`, \`--type-size-subject\` (16px), \`--font-weight-medium\` |
 | selected | \`--color-primary-primary\` fill, \`--color-text-icon-on-primary\` check |
 | presence dot | 8px, \`--color-success-success\`, \`--stroke-100\` ring in \`--color-surfaces-container\` |
 | focus ring | \`--stroke-300\` (3px) \`--color-primary-primary\`, \`--space-025\` offset |

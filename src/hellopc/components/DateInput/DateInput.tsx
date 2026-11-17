@@ -71,6 +71,7 @@ const Box = styled.div<{ $status: DateStatus }>`
   border: var(--stroke-100) solid var(--color-stroke-border);
   border-radius: var(--radius-200);
   background: var(--color-surfaces-on-container-high);
+  color: var(--color-text-icon-primary);
   transition: background 120ms ease, border-color 120ms ease;
 
   &:hover:not(:focus-within) {
@@ -89,6 +90,12 @@ const Box = styled.div<{ $status: DateStatus }>`
         background: var(--color-success-success-overlay);
         border: var(--stroke-150) solid var(--color-success-success);
       }
+      /* The validation overlay is solid highlight in win hct: content on it
+         takes the on-overlay text tokens (same values as before in light/dark). */
+      color: var(--color-text-icon-on-surface);
+      & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
+      & button:not(:disabled) { color: var(--color-text-icon-secondary-on-surface); }
+      & button:disabled { color: var(--color-disabled-disabled-inverse); }
     `}
 
   ${(p) =>
@@ -98,10 +105,21 @@ const Box = styled.div<{ $status: DateStatus }>`
         background: var(--color-error-error-overlay);
         border: var(--stroke-150) solid var(--color-error-error);
       }
+      /* The validation overlay is solid highlight in win hct: content on it
+         takes the on-overlay text tokens (same values as before in light/dark). */
+      color: var(--color-text-icon-on-surface);
+      & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
+      & button:not(:disabled) { color: var(--color-text-icon-secondary-on-surface); }
+      & button:disabled { color: var(--color-disabled-disabled-inverse); }
     `}
 
   &:has(input:disabled) {
     background: var(--color-disabled-disabled);
+    /* Ghost IconButton defaults to text-icon-disabled (for a plain surface); on
+       the disabled fill it takes the on-fill disabled ink. */
+    & button:disabled {
+      color: var(--color-disabled-disabled-inverse);
+    }
     border-color: transparent;
     color: var(--color-disabled-disabled-inverse);
     cursor: not-allowed;
@@ -144,7 +162,7 @@ const TextInput = styled.input<{ $bold?: boolean }>`
 const RangeDash = styled.span`
   flex-shrink: 0;
   padding: 0 var(--space-050);
-  color: var(--color-text-icon-primary);
+  color: inherit;
   font-size: var(--type-size-body);
   font-weight: var(--font-weight-bold);
   line-height: 1.35;

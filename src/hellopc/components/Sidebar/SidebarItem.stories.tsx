@@ -98,7 +98,7 @@ import {
 | row | 48px (40px content + \`--space-050\` block padding), \`--radius-200\` (12px), \`--space-300\` inline |
 | content gap | \`--space-300\` (16px) |
 | label | \`--type-size-body\` (14px), 0.1px tracking; \`--font-weight-medium\`, \`--font-weight-bold\` when selected |
-| label / icon color | \`--color-text-icon-primary\`; selected \`--color-text-icon-on-tonal\`; disabled \`--color-disabled-disabled-inverse\` |
+| label / icon color | \`--color-text-icon-primary\`; selected \`--color-text-icon-on-tonal\`; disabled \`--color-text-icon-disabled\`; unselected hover/press \`--color-text-icon-on-tonal-secondary\` |
 | selected fill | \`--color-tonal-tonal-lightest\` → hover \`--color-tonal-tonal-overlay-hover\` → press \`--color-tonal-tonal-overlay-press\` |
 | unselected fill | transparent → hover \`--color-tonal-tonal-secondary-overlay-hover\` → press \`--color-tonal-tonal-secondary-overlay-press\` |
 | indicator | 4×32px, \`--color-text-icon-on-tonal\`, \`--radius-1000\` |

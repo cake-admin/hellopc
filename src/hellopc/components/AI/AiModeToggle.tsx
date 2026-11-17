@@ -65,9 +65,11 @@ const Root = styled(RadixToggle.Root)<{ $segment: AiSegment }>`
   /* Off — matches IconButton ghost · secondary */
   &[data-state='off']:hover:not(:disabled) {
     background: var(--color-secondary-secondary-overlay);
+    color: var(--color-text-icon-secondary-on-surface);
   }
   &[data-state='off']:active:not(:disabled) {
     background: var(--color-secondary-secondary-overlay-hover);
+    color: var(--color-text-icon-secondary-on-surface);
   }
 
   /* On — segment surface gradient + filled glyph in the segment accent */
@@ -80,7 +82,7 @@ const Root = styled(RadixToggle.Root)<{ $segment: AiSegment }>`
     cursor: not-allowed;
     pointer-events: none;
     background: transparent;
-    color: var(--color-disabled-disabled-inverse);
+    color: var(--color-text-icon-disabled);
   }
 
   &:focus {

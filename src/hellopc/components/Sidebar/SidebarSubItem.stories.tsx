@@ -82,7 +82,7 @@ import {
 | row | \`--radius-150\` (8px); \`--space-200\` (12px) block, \`--space-300\` (16px) trailing |
 | leading inset | \`calc(--space-300 * 2 + 24px)\` = 56px — the parent's padding + icon + gap |
 | label | \`--type-size-body\` (14px), 0.1px tracking; \`--font-weight-medium\`, \`--font-weight-bold\` when selected |
-| label color | \`--color-text-icon-primary\`; selected \`--color-text-icon-on-tonal\`; disabled \`--color-disabled-disabled-inverse\` |
+| label color | \`--color-text-icon-primary\`; selected \`--color-text-icon-on-tonal\`; disabled \`--color-disabled-disabled-inverse\`; unselected hover/press \`--color-text-icon-on-tonal-secondary\` |
 | selected fill | none at rest → hover \`--color-tonal-tonal-overlay-hover\` → press \`--color-tonal-tonal-overlay-press\` |
 | unselected fill | transparent → hover \`--color-tonal-tonal-secondary-overlay-hover\` → press \`--color-tonal-tonal-secondary-overlay-press\` |
 | disabled fill | \`--color-disabled-disabled\` |

@@ -54,7 +54,7 @@ target with a 16px ring, an 8px selected dot, a hover wash, and a focus ring.
 | Hover wash (24px) | \`--color-surfaces-primary\` |
 | Focus ring (20px) | \`--stroke-200\` \`--color-primary-primary\` |
 | Disabled | ring \`--color-disabled-disabled\`, disc \`--color-disabled-disabled-inverse\`, dot \`--color-disabled-disabled\` |
-| Label | \`--font-family\` + \`--type-size-body\`, \`--color-text-icon-primary\`; disabled \`--color-disabled-disabled-inverse\` |
+| Label | \`--font-family\` + \`--type-size-body\`, \`--color-text-icon-primary\`; disabled \`--color-text-icon-disabled\` |
 | Shape / gap | \`--radius-1000\` ring, dot, wash; \`--space-100\` (vertical / label) · \`--space-300\` (horizontal) |
 
 ## Accessibility

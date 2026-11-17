@@ -53,8 +53,8 @@ persists it.
 | media panel | \`--color-tonal-tonal\`, \`--radius-200\`, \`--color-text-icon-on-tonal\` |
 | disabled | \`--color-disabled-disabled\`, \`--color-disabled-disabled-inverse\` |
 | primary action | reused Button fill · primary token recipe |
-| delete action | \`--color-primary-primary\`, \`--color-primary-primary-overlay\`, \`--radius-1000\` |
-| error chip | \`--color-warning-warn-overlay\`, \`--color-warning-warn\`, \`--radius-1000\` |
+| delete action | \`--color-primary-primary\`, \`--color-primary-primary-overlay\` (hover glyph \`--color-text-icon-primary-on-surface\`), \`--radius-1000\` |
+| error chip | \`--color-warning-warn-overlay\`, \`--color-warning-warn\`, text \`--color-text-icon-on-surface\`, \`--radius-1000\` |
 | restrictions | reused HelperString greyscale/warning/disabled token recipe |
 | layout | \`--space-100\`, \`--space-300\`, \`--space-800\`, \`--radius-300\` |
 

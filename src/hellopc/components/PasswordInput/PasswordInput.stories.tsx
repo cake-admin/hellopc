@@ -48,8 +48,8 @@ input/eye group. \`status\` overlays validation chrome and suppresses the menu.
 | default field | \`--color-surfaces-on-container-high\`, \`--stroke-100\`, \`--color-stroke-border\` |
 | hover | \`--color-stroke-border-high\` |
 | typing / focus | \`--color-surfaces-container\`, \`--stroke-150\`, \`--color-primary-primary\` |
-| success | \`--color-success-success-overlay\`, \`--color-success-success\` |
-| error | \`--color-error-error-overlay\`, \`--color-error-error\` |
+| success | \`--color-success-success-overlay\`, \`--color-success-success\`; input text \`--color-text-icon-on-surface\` |
+| error | \`--color-error-error-overlay\`, \`--color-error-error\`; input text \`--color-text-icon-on-surface\` |
 | disabled | \`--color-disabled-disabled\`, \`--color-disabled-disabled-inverse\` |
 | text / placeholder / eye | \`--color-text-icon-primary\`, \`--color-text-icon-placeholder\`, \`--color-text-icon-secondary\`, \`--type-size-body\` |
 | layout / shape | \`--space-050\`, \`--space-100\`, \`--space-200\`, \`--radius-200\`, \`--radius-1000\` |

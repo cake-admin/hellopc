@@ -49,6 +49,7 @@ const Root = styled.div<{
   grid-template-columns: ${RAIL_WIDTH}px minmax(0, 1fr) ${RAIL_WIDTH}px;
   width: 100%;
   background: ${(p) => STRIPE_BACKGROUND[p.$stripe]};
+  color: var(--color-text-icon-primary);
   transition: background-color 120ms ease, box-shadow 120ms ease;
 
   ${(p) =>
@@ -72,6 +73,9 @@ const Root = styled.div<{
     p.$selected && !p.$disabled
       ? css`
           background: var(--color-tonal-tonal-lightest);
+          /* Text on the tonal highlight: equal to text-icon-primary in light and
+             dark, and dark on the solid highlight win hct paints here. */
+          color: var(--color-text-icon-on-surface);
         `
       : ''}
 
@@ -131,7 +135,8 @@ const CellText = styled.span`
   /* Figma regular.14.body letter-spacing; no token carries tracking. */
   letter-spacing: 0.2px;
   line-height: 1.35;
-  color: var(--color-text-icon-primary);
+  /* Inherits the row color so the selected and disabled states reach it. */
+  color: inherit;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

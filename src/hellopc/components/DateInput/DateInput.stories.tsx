@@ -52,7 +52,7 @@ room). Cancel discards the draft; OK writes the field.
 | resting field | \`--color-surfaces-on-container-high\`, \`--stroke-100\`, \`--color-stroke-border\` |
 | hover | \`--color-stroke-border-high\` |
 | typing / focus | \`--color-surfaces-container\`, \`--stroke-150\`, \`--color-primary-primary\` |
-| validation | \`--color-success-success-overlay\` / \`--color-success-success\`; \`--color-error-error-overlay\` / \`--color-error-error\` |
+| validation | \`--color-success-success-overlay\` / \`--color-success-success\`; \`--color-error-error-overlay\` / \`--color-error-error\`; input text \`--color-text-icon-on-surface\`, calendar button \`--color-text-icon-secondary-on-surface\` |
 | calendar action | **IconButton** \`xs\` \`ghost\` \`secondary\` |
 | range dash | \`--font-weight-bold\`, \`--color-text-icon-primary\`, \`--space-050\` (4px) on both sides |
 | disabled | \`--color-disabled-disabled\`, \`--color-disabled-disabled-inverse\` |

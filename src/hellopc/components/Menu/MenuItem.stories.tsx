@@ -46,7 +46,7 @@ avoid nesting interactive elements.
 | row layout | \`--space-100\`, \`--radius-200\`, \`--type-size-body\` |
 | sub-item indent | \`--space-500\` |
 | idle text | \`--color-secondary-secondary\` |
-| idle hover / press | \`--color-tonal-tonal-secondary-overlay-hover\` / \`--color-tonal-tonal-secondary-overlay-press\` |
+| idle hover / press | \`--color-tonal-tonal-secondary-overlay-hover\` / \`--color-tonal-tonal-secondary-overlay-press\`, text \`--color-text-icon-on-tonal-secondary\` |
 | selected | \`--color-tonal-tonal-overlay\`, \`--color-text-icon-on-tonal\` |
 | selected hover / press | \`--color-tonal-tonal-overlay-hover\` / \`--color-tonal-tonal-overlay-press\` |
 | disabled | \`--color-disabled-disabled\`, \`--color-disabled-disabled-inverse\` |

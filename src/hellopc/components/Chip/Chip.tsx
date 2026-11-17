@@ -48,7 +48,9 @@ const Root = styled.span<{ $type: ChipType; $size: ChipSize; $disabled: boolean;
   gap: var(--space-050);
   border-radius: var(--radius-1000);
   background: ${(p) => TYPE_BACKGROUND[p.$type].base};
-  color: var(--color-text-icon-primary);
+  /* Content on an overlay: equal to text-icon-primary in light and dark, and
+     dark on the solid highlight win hct paints for every overlay. */
+  color: var(--color-text-icon-on-surface);
   font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
   white-space: nowrap;

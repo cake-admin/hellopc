@@ -50,7 +50,7 @@ Custom-property names mirror the Figma variables
 | Track (disabled) | \`--color-disabled-disabled-inverse\` |
 | Thumb | \`--color-surfaces-container\`; disabled \`--color-disabled-disabled\`; stretches 18→27px while pressed |
 | Focus ring | \`--stroke-200\` \`--color-primary-primary\` stroke, 2px outside the track |
-| Label | \`--font-family\` + \`--type-size-body\`, \`--color-text-icon-primary\`; disabled \`--color-disabled-disabled-inverse\` |
+| Label | \`--font-family\` + \`--type-size-body\`, \`--color-text-icon-primary\`; disabled \`--color-text-icon-disabled\` |
 | Shape / gap | \`--radius-1000\` track + thumb, \`--space-100\` label gap |
 
 ## Accessibility
@@ -119,7 +119,7 @@ export const Disabled: Story = {
         story:
           'Both disabled states: the track flattens to ' +
           '`--color-disabled-disabled-inverse` with a `--color-disabled-disabled` ' +
-          'thumb, the label dims to `--color-disabled-disabled-inverse`, and the ' +
+          'thumb, the label dims to `--color-text-icon-disabled`, and the ' +
           'cursor signals not-allowed.',
       },
     },
