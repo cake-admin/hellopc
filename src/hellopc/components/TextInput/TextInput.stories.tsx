@@ -51,8 +51,8 @@ helper via \`aria-describedby\`.
 | hover | border \`--color-stroke-border-high\` | greyscale |
 | typing (focus) | \`--color-surfaces-container\` fill, \`--stroke-150\` \`--color-primary-primary\` | info |
 | finished (has value) | \`--color-surfaces-container\` fill, \`--stroke-100\` \`--color-stroke-border\` | greyscale |
-| success | \`--color-success-success-overlay\` fill, \`--stroke-150\` \`--color-success-success\` | success |
-| error | \`--color-error-error-overlay\` fill, \`--stroke-150\` \`--color-error-error\` | error |
+| success | \`--color-success-success-overlay\` fill, \`--stroke-150\` \`--color-success-success\`; input text \`--color-text-icon-on-surface\` | success |
+| error | \`--color-error-error-overlay\` fill, \`--stroke-150\` \`--color-error-error\`; input text \`--color-text-icon-on-surface\` | error |
 | disabled | \`--color-disabled-disabled\` fill, no border; text/icons \`--color-disabled-disabled-inverse\` | disabled |
 
 Shape is \`--radius-200\` (12px); heights are 40px (\`md\`, 24px slot icons) /
