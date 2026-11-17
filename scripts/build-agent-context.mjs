@@ -82,9 +82,10 @@ const CATEGORIES = {
   DateInput: 'Forms', TimeInput: 'Forms', Checkbox: 'Forms', Radio: 'Forms',
   Switch: 'Forms', Slider: 'Forms', Dropdown: 'Forms', NumberDropdown: 'Forms',
   FileUpload: 'Forms',
+  AI: 'AI',
   Elements: 'Elements',
 };
-const CATEGORY_ORDER = ['Actions', 'Forms', 'Surfaces', 'Navigation', 'Data', 'Feedback', 'Elements'];
+const CATEGORY_ORDER = ['Actions', 'Forms', 'AI', 'Surfaces', 'Navigation', 'Data', 'Feedback', 'Elements'];
 
 /** Components that render through a Radix portal into document.body. */
 const PORTALLED = new Set([

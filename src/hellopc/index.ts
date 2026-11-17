@@ -29,6 +29,7 @@ export * from './components/Elements';
 
 /* ── Components ────────────────────────────────────────────────────────── */
 export * from './components/Accordion';
+export * from './components/AI';
 export * from './components/Avatar';
 export * from './components/Badge';
 export * from './components/Breadcrumb';
