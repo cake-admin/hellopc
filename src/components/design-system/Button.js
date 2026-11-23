@@ -474,6 +474,9 @@ const StyledButton = styled.button`
   }
 `;
 
+// Untyped JS component: without this, TypeScript infers every destructured prop
+// that has no default (className, onClick, customIcon) as required for .tsx callers.
+/** @type {import("react").FC<Record<string, any>>} */
 const Button = ({
   variant = BUTTON_VARIANTS.PRIMARY,
   textVariant = TEXT_VARIANTS.PRIMARY,

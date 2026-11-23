@@ -126,6 +126,9 @@ Row-level tokens live on **Sidebar Item** and **Sidebar Sub-item**.
   },
   tags: ['autodocs'],
   args: {
+    // Required by the component type. Every story supplies its own
+    // `item`, so this placeholder only stops StoryObj<typeof meta> demanding it.
+    item: null,
     surface: 'translucent',
   },
   argTypes: {

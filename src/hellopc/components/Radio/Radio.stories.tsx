@@ -83,6 +83,9 @@ target with a 16px ring, an 8px selected dot, a hover wash, and a focus ring.
   },
   tags: ['autodocs'],
   args: {
+    // Required by the component type. Every story supplies its own
+    // `children`, so this placeholder only stops StoryObj<typeof meta> demanding it.
+    children: null,
     defaultValue: 'standard',
     orientation: 'vertical',
     disabled: false,
