@@ -104,6 +104,7 @@ function DemoTable({
             checked={headerChecked}
             onCheckedChange={toggleAll}
             selected={someSelected}
+            selectionLabel={`${selected.size} selected`}
             actions={<IconButton size="sm" variant="ghost" intent="secondary" label="Refresh" icon={<RotateCw />} />}
             selectedActions={BulkActions}
             end={<IconButton size="sm" variant="ghost" intent="secondary" label="Search" icon={<Search />} />}
