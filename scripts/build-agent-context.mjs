@@ -71,10 +71,10 @@ const STATE_ENUM = new Set([
  */
 const CATEGORIES = {
   Button: 'Actions', Chip: 'Actions',
-  Card: 'Surfaces', Modal: 'Surfaces', Tooltip: 'Surfaces',
+  Card: 'Surfaces', SectionHeader: 'Surfaces', EmptyState: 'Feedback', Modal: 'Surfaces', Tooltip: 'Surfaces',
   Notification: 'Feedback', NotificationPanel: 'Feedback', Toast: 'Feedback',
   'Progress Indicators': 'Feedback',
-  Table: 'Data', Pagination: 'Data', Badge: 'Data', Counter: 'Data', Avatar: 'Data',
+  Table: 'Data', Pagination: 'Data', Badge: 'Data', Counter: 'Data', Field: 'Data', Avatar: 'Data',
   Sidebar: 'Navigation', HorizontalTabs: 'Navigation', VerticalTabs: 'Navigation',
   Breadcrumb: 'Navigation', Link: 'Navigation', ContentSwitcher: 'Navigation', Accordion: 'Navigation',
   Menu: 'Navigation', Stepper: 'Navigation',
