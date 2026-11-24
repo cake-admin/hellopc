@@ -15,7 +15,7 @@ const Row = ({ children }: { children: ReactNode }) => (
 );
 
 const meta = {
-  title: 'Components/Avatar',
+  title: 'Components/Avatar/Avatar',
   component: Avatar,
   parameters: {
     layout: 'centered',
@@ -123,6 +123,11 @@ omitted rather than hardcoded — worth adding as a token if the ring matters.
       control: 'inline-radio',
       options: SIZES,
       table: { category: 'Appearance', defaultValue: { summary: 'md' } },
+    },
+    color: {
+      control: 'inline-radio',
+      options: ['primary', 'teal', 'amber', 'violet'],
+      table: { category: 'Appearance' },
     },
     selected: { control: 'boolean', table: { category: 'State' } },
     badge: { control: 'boolean', table: { category: 'State' } },

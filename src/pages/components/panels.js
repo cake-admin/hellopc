@@ -279,7 +279,7 @@ export const PANELS = [
   {
     id: 'avatars',
     title: 'Avatars',
-    storybook: storybookDocs('components-avatar--docs'),
+    storybook: storybookDocs('components-avatar-avatar--docs'),
     paragraphs: [
       'Avatars represent a person with a photo when available, then initials, then a person glyph. Optional selection and presence treatments cover common people UIs.',
       'Use them in lists, headers, comments, and assignment pickers. Keep sizes consistent within a region so faces align cleanly.',
