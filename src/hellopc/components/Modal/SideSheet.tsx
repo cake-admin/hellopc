@@ -194,15 +194,19 @@ export interface SideSheetProps {
   children?: React.ReactNode;
 }
 
+/** The first tab's `value`, looking through Fragments — `React.Children`
+ *  treats `<>…</>` as one child, which is how the docs pass `tabs`. */
 const firstTabValue = (tabs: React.ReactNode): string | undefined => {
-  let found: string | undefined;
-  React.Children.forEach(tabs, (child) => {
-    if (found === undefined && React.isValidElement<{ value?: unknown }>(child)) {
-      const { value } = child.props;
-      if (typeof value === 'string') found = value;
+  for (const child of React.Children.toArray(tabs)) {
+    if (!React.isValidElement<{ value?: unknown; children?: React.ReactNode }>(child)) continue;
+    if (child.type === React.Fragment) {
+      const nested = firstTabValue(child.props.children);
+      if (nested !== undefined) return nested;
+      continue;
     }
-  });
-  return found;
+    if (typeof child.props.value === 'string') return child.props.value;
+  }
+  return undefined;
 };
 
 /**
@@ -264,7 +268,24 @@ export const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
       returnFocusRef.current = null;
     };
 
-    const body = <Body $density={density}>{children}</Body>;
+    /* Every tab panel shares the one scrolling Body, so a new tab would open
+       at the previous tab's scroll position. Start each tab at the top. */
+    const bodyRef = React.useRef<HTMLDivElement>(null);
+    const resetScroll = () => {
+      if (bodyRef.current) bodyRef.current.scrollTop = 0;
+    };
+    const handleTabChange = (value: string) => {
+      resetScroll();
+      onTabChange?.(value);
+    };
+    // Controlled selection can change without a user click.
+    React.useLayoutEffect(resetScroll, [tabValue]);
+
+    const body = (
+      <Body ref={bodyRef} $density={density}>
+        {children}
+      </Body>
+    );
 
     return (
       <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -300,7 +321,7 @@ export const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
                 size={density}
                 value={tabValue}
                 defaultValue={defaultTabValue ?? firstTabValue(tabs)}
-                onValueChange={onTabChange}
+                onValueChange={handleTabChange}
               >
                 <TabBar $density={density}>
                   <HorizontalTabsList aria-label={tabsLabel}>{tabs}</HorizontalTabsList>

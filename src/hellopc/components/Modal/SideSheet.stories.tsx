@@ -385,6 +385,63 @@ export const OpensAndEscCloses: Story = {
   },
 };
 
+/** Pure interaction test (hidden from docs): `tabs` passed as a Fragment still
+ *  selects the first tab, and switching tabs starts the new panel at the top. */
+export const FragmentTabsAndScrollReset: Story = {
+  tags: ['!autodocs'],
+  render: (args) => {
+    const [open, setOpen] = useState(false);
+    return (
+      <>
+        <Button size="sm" onClick={() => setOpen(true)}>
+          Open sheet
+        </Button>
+        <SideSheet
+          {...args}
+          open={open}
+          onOpenChange={setOpen}
+          tabs={
+            <>
+              <HorizontalTabItem value="overview">Overview</HorizontalTabItem>
+              <HorizontalTabItem value="notes">Notes</HorizontalTabItem>
+            </>
+          }
+        >
+          <HorizontalTabsContent value="overview">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {Array.from({ length: 14 }, (_, i) => (
+                <TextInput key={i} label={`Field ${i + 1}`} />
+              ))}
+            </div>
+          </HorizontalTabsContent>
+          <HorizontalTabsContent value="notes">
+            <div style={{ height: 2000 }}>Notes for this contact.</div>
+          </HorizontalTabsContent>
+        </SideSheet>
+      </>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByRole('button', { name: 'Open sheet' }));
+    const sheet = await within(document.body).findByRole('dialog');
+
+    // Fragment children are unwrapped, so the first tab is selected.
+    await expect(within(sheet).getByRole('tab', { name: 'Overview' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+
+    const scroller = within(sheet).getByRole('tabpanel').parentElement as HTMLElement;
+    scroller.scrollTop = 400;
+    await waitFor(() => expect(scroller.scrollTop).toBeGreaterThan(0));
+
+    await userEvent.click(within(sheet).getByRole('tab', { name: 'Notes' }));
+    await expect(within(sheet).getByRole('tabpanel')).toHaveTextContent('Notes for this contact.');
+    await expect(scroller.scrollTop).toBe(0);
+  },
+};
+
 /** Pure interaction test (hidden from docs): the close control and a footer action both dismiss. */
 export const CloseControlsDismiss: Story = {
   tags: ['!autodocs'],
