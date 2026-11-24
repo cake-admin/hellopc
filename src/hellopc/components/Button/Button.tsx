@@ -264,10 +264,10 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
   if (variant === 'tonal') {
     return p
       ? css`
-          background: var(--color-tonal-tonal);
-          color: var(--color-text-icon-on-tonal-inverse);
-          &:hover:not(:disabled) { background: var(--color-tonal-tonal-hover); }
-          &:active:not(:disabled) { background: var(--color-tonal-tonal-press); }
+          background: var(--color-tonal-tonal-overlay);
+          color: var(--color-text-icon-on-tonal);
+          &:hover:not(:disabled) { background: var(--color-tonal-tonal-overlay-hover); }
+          &:active:not(:disabled) { background: var(--color-tonal-tonal-overlay-press); }
         `
       : css`
           background: var(--color-tonal-tonal-secondary-overlay);

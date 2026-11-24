@@ -97,7 +97,7 @@ const colorStyles = (intent: IconButtonIntent, variant: IconButtonVariant) => {
     return p
       ? css`
           background: var(--color-tonal-tonal-overlay);
-          color: var(--color-text-icon-on-tonal-inverse);
+          color: var(--color-text-icon-on-tonal);
           &:hover:not(:disabled) { background: var(--color-tonal-tonal-overlay-hover); }
           &:active:not(:disabled) { background: var(--color-tonal-tonal-overlay-press); }
         `
