@@ -50,9 +50,14 @@ close, \`data-state\`); hello pc owns the visuals. The label is wired via
 <Dropdown label="Country" placeholder="Choose a region" options={options} />
 <Dropdown label="Country" disabled options={options} />
 <Dropdown label="Country" options={[{ label: 'Blocked', value: 'x', disabled: true }]} />
+<Dropdown size="sm" aria-label="Operator" options={operators} />
 \`\`\`
 
 ## Design tokens used
+
+\`size\` sets the trigger height: \`md\` 40px (form field, default) or \`sm\` 32px — the
+compact labelless select used in dense UI such as the Table **Filter Rule
+Builder**. A labelless Dropdown needs \`aria-label\`.
 
 | Part · state | Background | Border | Text |
 | --- | --- | --- | --- |
@@ -123,6 +128,8 @@ items are 36px tall with \`--space-100\` padding; text is \`--type-size-body\`.
     defaultValue: { control: 'text', table: { category: 'State' } },
     required: { control: 'boolean', table: { category: 'State' } },
     disabled: { control: 'boolean', table: { category: 'State' } },
+    size: { control: 'inline-radio', options: ['md', 'sm'], table: { category: 'Appearance' } },
+    'aria-label': { control: 'text', table: { category: 'Content' } },
     name: { control: false, table: { category: 'Behavior' } },
     onValueChange: { action: 'valueChange', table: { category: 'Events' } },
   },
@@ -137,6 +144,22 @@ const Frame = ({ children }: { children: React.ReactNode }) => (
 const Stack = ({ children }: { children: React.ReactNode }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: 24, width: 320 }}>{children}</div>
 );
+
+/**
+ * Trigger sizes: `md` 40px (default, the labelled form field) and `sm` 32px,
+ * the compact labelless select (with `aria-label`) used in dense rows.
+ */
+export const Sizes: Story = {
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 16, width: 420 }}>
+      <Dropdown label="Medium (40px)" options={[{ label: 'Is', value: 'is' }, { label: 'Is not', value: 'not' }]} defaultValue="is" />
+      <div style={{ width: 140, flexShrink: 0 }}>
+        <Dropdown size="sm" aria-label="Operator" options={[{ label: 'Is', value: 'is' }, { label: 'Is not', value: 'not' }]} defaultValue="is" />
+      </div>
+    </div>
+  ),
+};
 
 /** Interactive playground — drive every prop from the Controls panel below. */
 export const Playground: Story = {

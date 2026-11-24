@@ -12,3 +12,11 @@ export { FilterMenu } from './FilterMenu';
 export type { FilterMenuProps, FilterMenuOption } from './FilterMenu';
 export { FilterTrigger } from './FilterPopover';
 export type { FilterTriggerProps, FilterTriggerAppearance } from './FilterPopover';
+export { FilterRuleBuilder } from './FilterRuleBuilder';
+export type {
+  FilterRuleBuilderProps,
+  FilterRuleBuilderScope,
+  FilterRule,
+  FilterRuleSet,
+  FilterMatch,
+} from './FilterRuleBuilder';
