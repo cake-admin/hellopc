@@ -132,7 +132,7 @@ export const PANELS = [
   {
     id: 'rating',
     title: 'Rating',
-    storybook: storybookDocs('components-rating--docs'),
+    storybook: storybookDocs('components-rating-rating--docs'),
     paragraphs: [
       'Rating asks people to pick one point on a scale — how satisfied they are, how likely, how much effort something took. Each option is a numbered tile with an optional caption, and an optional N/A lets people skip a question that doesn’t apply.',
       'Caption every point, or at least both ends, so the scale has meaning, and keep low-to-high running left to right. It behaves like a radio group: arrow keys move and select, and it submits with a form.',

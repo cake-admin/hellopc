@@ -13,7 +13,7 @@ const SATISFACTION = [
 ];
 
 const meta = {
-  title: 'Components/Rating',
+  title: 'Components/Rating/Rating',
   component: Rating,
   parameters: {
     layout: 'centered',
