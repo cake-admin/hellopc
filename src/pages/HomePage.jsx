@@ -530,6 +530,11 @@ const goWhatsNew = () => {
   window.location.assign(`${process.env.PUBLIC_URL || ''}/resources/whats-new`);
 };
 
+/** "View changelog" opens the release history (Version control), not the feed. */
+const goChangelog = () => {
+  window.location.assign(`${process.env.PUBLIC_URL || ''}/version-control`);
+};
+
 const HomePage = () => (
   <Page>
     <StickyWallpaper aria-hidden>
@@ -577,14 +582,14 @@ const HomePage = () => (
               <p className="meta">
                 See what&apos;s new with <BrandName />
               </p>
-              <p className="title">New AI guidelines added</p>
+              <p className="title">{withBrand('hello pc 1.2.0 adds AI, Link, and Rating components')}</p>
             </ToastCopy>
             <ToastActions>
-              <Button size="sm" intent="secondary" variant="ghost" onClick={goWhatsNew}>
+              <Button size="sm" intent="secondary" variant="ghost" onClick={goChangelog}>
                 View changelog
               </Button>
               <Button size="sm" onClick={goWhatsNew}>
-                Read more
+                Read the update
               </Button>
             </ToastActions>
           </ToastBar>

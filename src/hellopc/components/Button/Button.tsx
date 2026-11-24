@@ -92,7 +92,7 @@ const sizeStyles = (size: ButtonSize) => {
 };
 
 /** stateLayer inline padding per size (tonal+md uses a tighter inset, matching
- *  Figma). sm is 12px per the Figma 1.1 spec. Only the inline padding is
+ *  Figma). sm is 12px per the Figma 1.2 spec. Only the inline padding is
  *  applied: every size has a fixed height and centers its content, so Figma's
  *  vertical padding (4/8/10/12px) would only shrink the content box below the
  *  18/24px icon slot without moving anything. */
@@ -106,7 +106,7 @@ const padFor = (size: ButtonSize, variant: ButtonVariant) => {
   }[size];
 };
 
-/** Icon ↔ label gap: 4px at sm (Figma 1.1) and tonal md, 8px otherwise. */
+/** Icon ↔ label gap: 4px at sm (Figma 1.2) and tonal md, 8px otherwise. */
 const gapFor = (size: ButtonSize, variant: ButtonVariant) =>
   size === 'sm' || (variant === 'tonal' && size === 'md') ? 'var(--space-050)' : 'var(--space-100)';
 
@@ -220,7 +220,7 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
   const p = intent === 'primary';
 
   if (variant === 'fill') {
-    /* Primary fill uses the Figma 1.1 button tokens (color/button/*). They
+    /* Primary fill uses the Figma 1.2 button tokens (color/button/*). They
        equal primary/onPrimary in light and dark; in win hct the button is the
        system ButtonFace with a ButtonText border and label. */
     return p
@@ -272,10 +272,10 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
   if (variant === 'tonal') {
     return p
       ? css`
-          background: var(--color-tonal-tonal);
-          color: var(--color-text-icon-on-tonal-inverse);
-          &:hover:not(:disabled) { background: var(--color-tonal-tonal-hover); }
-          &:active:not(:disabled) { background: var(--color-tonal-tonal-press); }
+          background: var(--color-tonal-tonal-overlay);
+          color: var(--color-text-icon-on-tonal);
+          &:hover:not(:disabled) { background: var(--color-tonal-tonal-overlay-hover); }
+          &:active:not(:disabled) { background: var(--color-tonal-tonal-overlay-press); }
         `
       : css`
           background: var(--color-tonal-tonal-secondary-overlay);

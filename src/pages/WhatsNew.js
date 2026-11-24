@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Card } from '../hellopc/components/Card';
 import { Badge } from '../hellopc/components/Badge';
 import { Button } from '../hellopc/components/Button';
 import { pageGutterX } from '../styles/pageChrome';
 import { StickyWallpaper } from './HomePage';
 import { BrandName, withBrand } from '../components/BrandName';
+import { STORYBOOK_PATH } from '../data/nav';
 import heroBg from '../assets/home/hero-bg.png';
 
 const ROOKERY = "'Rookery New', Rookery, var(--font-family)";
@@ -217,6 +218,33 @@ const LegacyHeading = styled.h2`
 /** Posts at or after the AI guidelines announcement (and the 1.0.0 release). */
 const CURRENT_POSTS = [
   {
+    id: 'hellopc-1-2-0',
+    title: 'hello pc 1.2.0',
+    date: 'November 17, 2026',
+    release: 'major',
+    body: [
+      'hello pc 1.2.0 brings the code library in line with the Figma 1.2.0 library, and the React package @cake-admin/cakeand 4.3.0 is now available.',
+      'This release adds new components for AI experiences, links, and ratings, gives buttons a destructive option and an inverse style for toasts and tooltips, and refreshes toasts and breadcrumbs to match the latest designs. Storybook is already updated; install 4.3.0 to get everything in your project.',
+    ],
+    changes: [
+      'New AI components: query input, mode toggle, context menu, and file attachment, with consumer, commercial, and internal segments',
+      'New Link component: three sizes, external links, and an inverse style for colored fills',
+      'New Rating component: a numbered scale with captions and an optional N/A',
+      'Buttons: a destructive intent, an inverse tone for toasts and tooltips, and icons that size to the button (18px on XS/S, 24px on M/L)',
+      'Toasts now sit on the inverse surface, and breadcrumbs use underlined links',
+      'Color tokens updated to Figma 1.2.0, with new control, inverse, AI, and link colors',
+      'Surface fallbacks for app shells that can’t render Mica, rounded corners, or borders',
+    ],
+    links: [
+      { label: 'Browse components', to: '/components' },
+      { label: 'Open Storybook', href: STORYBOOK_PATH },
+      {
+        label: 'Get package 4.3.0',
+        href: 'https://github.com/cake-admin/cakev2/releases/tag/v4.3.0',
+      },
+    ],
+  },
+  {
     id: 'cakeand-1-0-0',
     title: 'hello pc 1.0.0',
     date: 'August 13, 2026',
@@ -362,14 +390,20 @@ const PostCard = ({ post, onNavigate }) => (
 
       {post.links?.length ? (
         <LinkRow>
+          {/* `to` navigates inside the site; `href` opens an outside page
+              (Storybook, a GitHub release) in a new tab. */}
           {post.links.map((link) => (
             <Button
-              key={link.to}
+              key={link.to ?? link.href}
               intent="secondary"
               variant="outline"
               size="sm"
-              endIcon={<ArrowRight size={16} aria-hidden />}
-              onClick={() => onNavigate(link.to)}
+              endIcon={link.href ? <ExternalLink aria-hidden /> : <ArrowRight aria-hidden />}
+              onClick={() =>
+                link.href
+                  ? window.open(link.href, '_blank', 'noopener,noreferrer')
+                  : onNavigate(link.to)
+              }
             >
               {link.label}
             </Button>

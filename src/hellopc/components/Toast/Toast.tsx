@@ -49,7 +49,7 @@ const Root = styled(RadixToast.Root)<{ $variant: ToastVariant; $layout: ToastLay
   overflow: hidden;
   list-style: none;
 
-  /* Figma 1.1 toasts sit on the INVERSE surface (dark in light.a, light in
+  /* Figma 1.2 toasts sit on the INVERSE surface (dark in light.a, light in
      dark.a), and every part uses its color/inverse/* twin.
 
      Figma "win.htc.border": a REAL border in

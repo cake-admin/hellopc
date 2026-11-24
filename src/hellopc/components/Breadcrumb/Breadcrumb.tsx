@@ -69,7 +69,7 @@ const crumbType = `
   border-radius: var(--radius-50);
 `;
 
-/** Navigable crumbs are the hello pc `Link` at 16px (Figma 1.1
+/** Navigable crumbs are the hello pc `Link` at 16px (Figma 1.2
  *  `&breadcrumb.link`: link color, always underlined); this only adds the
  *  crumb's vertical inset so every crumb shares one 30px row. */
 const CrumbLink = styled.span`
@@ -83,7 +83,7 @@ const CrumbText = styled.span`
   color: var(--color-text-icon-secondary);
 `;
 
-/** The final crumb: the current page, plain primary text per Figma 1.1. */
+/** The final crumb: the current page, plain primary text per Figma 1.2. */
 const CurrentCrumb = styled.span`
   ${crumbType}
   color: var(--color-text-icon-primary);

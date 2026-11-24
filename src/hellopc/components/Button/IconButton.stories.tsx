@@ -52,7 +52,7 @@ Custom-property names mirror the Figma variables (\`color/tonal/tonalOverlay\`
 | fill · secondary | \`--color-secondary-secondary\` | \`--color-text-icon-on-secondary\` | \`…secondary-hover\` / \`…secondary-press\` |
 | outline · primary | transparent + \`--stroke-100\` \`--color-primary-primary\` border | \`--color-primary-primary\` (hover/press \`--color-text-icon-primary-on-surface\`) | \`…primary-overlay\` / \`…primary-overlay-hover\` |
 | outline · secondary | transparent + \`--stroke-100\` \`--color-secondary-secondary\` border | \`--color-secondary-secondary\` (hover/press \`--color-text-icon-secondary-on-surface\`) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
-| tonal · primary | \`--color-tonal-tonal-overlay\` | \`--color-text-icon-on-tonal-inverse\` | \`…tonal-overlay-hover\` / \`…tonal-overlay-press\` |
+| tonal · primary | \`--color-tonal-tonal-overlay\` | \`--color-text-icon-on-tonal\` | \`…tonal-overlay-hover\` / \`…tonal-overlay-press\` |
 | tonal · secondary | \`--color-tonal-tonal-secondary-overlay\` | \`--color-text-icon-on-tonal-secondary\` | \`…secondary-overlay-hover\` / \`…secondary-overlay-press\` |
 | ghost · primary | transparent | \`--color-primary-primary\` (hover/press \`--color-text-icon-primary-on-surface\`) | \`…primary-overlay\` / \`…primary-overlay-hover\` |
 | ghost · secondary | transparent | \`--color-secondary-secondary\` (hover/press \`--color-text-icon-secondary-on-surface\`) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
