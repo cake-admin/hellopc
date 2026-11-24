@@ -65,6 +65,7 @@ export * from './components/Stepper';
 export * from './components/Switch';
 export * from './components/Table';
 export * from './components/TextInput';
+export * from './components/Textarea';
 export * from './components/TimeInput';
 export * from './components/Toast';
 export * from './components/Tooltip';
