@@ -10,8 +10,8 @@ import { nativeScrollbarStyles } from '../Elements/Scrollbar';
  * top, a **Header Row** over a scrollable body of **Data Row**s, and a
  * **Table Footer** (a results range + **Pagination**) at the bottom.
  *
- * Table is a composition shell, not a data grid: it owns the frame, the ARIA
- * `role="table"` grouping, and body scrolling — the rows, cells, selection, and
+ * Table is a composition shell, not a data grid: it owns the frame, the native
+ * `<table>` / `<thead>` / `<tbody>` structure, and body scrolling — the rows, cells, selection, and
  * paging are the parts you pass in, each already token-styled and accessible.
  * Every value resolves from hello pc token custom properties, so the **Theme**
  * toolbar re-themes the whole table live.
@@ -34,26 +34,34 @@ const Root = styled.div`
   font-family: var(--font-family);
 `;
 
-/** The ARIA table itself — only rowgroups/rows live here (bar + footer are outside). */
-const Grid = styled.div`
+/**
+ * The native `<table>` — only `<thead>` / `<tbody>` live here (bar + footer
+ * are outside). Flex layout replaces table layout so rows keep their Figma
+ * geometry; the elements keep their table semantics.
+ */
+const Grid = styled.table`
   display: flex;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
   flex-direction: column;
   min-height: 0;
 `;
 
-/** Header rowgroup — sits above the scroll region, so it stays put as rows scroll. */
-const HeaderGroup = styled.div`
+/** `<thead>` — sits above the scroll region, so it stays put as rows scroll. */
+const HeaderGroup = styled.thead`
+  display: block;
   position: relative;
   z-index: 1;
 `;
 
 /**
- * Body rowgroup. When `maxHeight` is set it becomes a vertical scroll container,
- * carrying the hello pc native scrollbar look (`nativeScrollbarStyles`) — the rows
- * stay direct children so the `role="rowgroup"` → `role="row"` ownership the
- * table semantics need is never broken by an intervening ScrollArea wrapper.
+ * `<tbody>`. When `maxHeight` is set it becomes a vertical scroll container,
+ * carrying the hello pc native scrollbar look (`nativeScrollbarStyles`) — rows
+ * stay direct children so the `<tbody>` → `<tr>` ownership the table
+ * semantics need is never broken by an intervening ScrollArea wrapper.
  */
-const Body = styled.div<{ $scroll: boolean }>`
+const Body = styled.tbody<{ $scroll: boolean }>`
   display: flex;
   flex-direction: column;
   ${(p) =>
@@ -83,8 +91,7 @@ export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
    */
   maxBodyHeight?: number | string;
   /**
-   * Accessible name for the table grid (`role="table"`). Provide this or
-   * `aria-labelledby`.
+   * Accessible name for the `<table>`. Provide this or `aria-labelledby`.
    */
   'aria-label'?: string;
   /** ID of an element labelling the table grid. */
@@ -114,10 +121,9 @@ export const Table = React.forwardRef<HTMLDivElement, TableProps>(
     return (
       <Root ref={ref} {...props}>
         {actionBar}
-        <Grid role="table" aria-label={ariaLabel} aria-labelledby={ariaLabelledBy}>
-          {header ? <HeaderGroup role="rowgroup">{header}</HeaderGroup> : null}
+        <Grid aria-label={ariaLabel} aria-labelledby={ariaLabelledBy}>
+          {header ? <HeaderGroup>{header}</HeaderGroup> : null}
           <Body
-            role="rowgroup"
             $scroll={scroll}
             style={scroll ? { maxHeight: maxBodyHeight } : undefined}
           >
