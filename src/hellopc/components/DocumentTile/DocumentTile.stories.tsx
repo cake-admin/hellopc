@@ -468,3 +468,34 @@ export const KeyboardAndSelect: Story = {
     await expect(args.onSelectedChange).toHaveBeenCalledWith(true);
   },
 };
+
+/** Pure interaction test (hidden from docs): uploading without `timeLeft` shows no placeholder helper copy. */
+export const UploadWithoutTimeLeft: Story = {
+  tags: ['!autodocs'],
+  decorators: framed,
+  args: { layout: 'compact', status: 'uploading', progress: 42, timeLeft: undefined },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText('42% uploaded')).toBeVisible();
+    await expect(canvas.queryByText('Example helper string')).toBeNull();
+  },
+};
+
+/** Pure interaction test (hidden from docs): a truncated name keeps the same focused link while the tooltip wiring settles. */
+export const TruncatedNameKeepsFocus: Story = {
+  tags: ['!autodocs'],
+  decorators: framed,
+  args: {
+    layout: 'compact',
+    fileName: '2026 Q3 regional sales performance review — final board version with appendices.pdf',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const link = canvas.getByRole('link', { name: /2026 Q3 regional sales/ });
+    link.focus();
+    await canvasElement.ownerDocument.fonts?.ready;
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    await expect(canvas.getByRole('link', { name: /2026 Q3 regional sales/ })).toBe(link);
+    await expect(link).toHaveFocus();
+  },
+};

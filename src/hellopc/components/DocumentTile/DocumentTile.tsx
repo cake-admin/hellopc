@@ -472,6 +472,7 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
 
     const [nameEl, setNameEl] = React.useState<HTMLSpanElement | null>(null);
     const truncated = useIsTruncated(nameEl, [fileName, layout]);
+    const [tipOpen, setTipOpen] = React.useState(false);
 
     const icon = fileTypeIcon ?? <FileText />;
 
@@ -530,14 +531,20 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
             {nameText}
           </PrimaryButton>
         );
-      nameNode = truncated ? (
-        <SimpleTooltip triggerElement={target} delayDuration={400}>
+      // Always wrap the target so it never remounts (and never drops focus)
+      // when truncation changes; the tooltip just stays closed until needed.
+      nameNode = (
+        <SimpleTooltip
+          triggerElement={target}
+          delayDuration={400}
+          open={truncated && tipOpen}
+          onOpenChange={setTipOpen}
+        >
           {fileName}
         </SimpleTooltip>
-      ) : (
-        target
       );
     } else if (truncated) {
+      // Non-interactive names only become a (tooltip) focus stop when cut off.
       nameNode = (
         <SimpleTooltip trigger={nameText} delayDuration={400}>
           {fileName}
@@ -650,8 +657,10 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
           value={status === 'uploading' ? progress : 100}
           color={status === 'uploading' ? 'primary' : status === 'uploaded' ? 'success' : 'error'}
           helperTone={status === 'uploading' ? 'info' : status === 'uploaded' ? 'success' : 'error'}
+          // Explicit null: ProgressBar's own default is placeholder copy, which
+          // must never reach a live row when `timeLeft` is omitted.
           helperText={
-            status === 'uploading' ? timeLeft : status === 'uploaded' ? successMessage : errorMessage
+            (status === 'uploading' ? timeLeft : status === 'uploaded' ? successMessage : errorMessage) ?? null
           }
           showHelperIcon
           showValue={status === 'uploading'}
