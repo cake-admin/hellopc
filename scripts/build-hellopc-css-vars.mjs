@@ -61,13 +61,32 @@ const winHctAi = (name) => {
   return rule[1];
 };
 
+/** win hct override for the rating group (Figma 1.3.0 color/rating/*). Figma's
+ *  win hct mode keeps brand gold for stars; high contrast needs system colors.
+ *  Filled stars and their outline take Highlight, empty stars GrayText — the
+ *  filled vs outline shape still separates them without relying on color. */
+const WIN_HCT_RATING = {
+  filled: 'var(--color-primary-primary)',
+  outline: 'var(--color-primary-primary)',
+  empty: 'var(--color-text-icon-disabled)',
+};
+const winHctRating = (name) => {
+  const out = WIN_HCT_RATING[name];
+  if (!out) throw new Error(`[cake-vars] win hct: no system-color rule for --color-rating-${name} (add one to WIN_HCT_RATING).`);
+  return out;
+};
+
+/** Groups whose win hct values are replaced by system-color rules. */
+const WIN_HCT_OVERRIDES = { ai: winHctAi, rating: winHctRating };
+
 /** One mode's color groups → sorted `--color-<group>-<token>: value;` lines. */
 function colorLines(mode) {
   const lines = [];
   for (const [group, tokens] of Object.entries(theme[mode])) {
     for (const [name, value] of Object.entries(tokens)) {
       if (typeof value !== 'string') continue;
-      const out = mode === 'win hct' && group === 'ai' ? winHctAi(kebab(name)) : value;
+      const override = mode === 'win hct' ? WIN_HCT_OVERRIDES[group] : undefined;
+      const out = override ? override(kebab(name)) : value;
       lines.push(`  --color-${kebab(group)}-${kebab(name)}: ${out};`);
     }
   }
