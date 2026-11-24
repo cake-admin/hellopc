@@ -210,6 +210,9 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 // tall body → scrolls with the hello pc scrollbar; the header stays fixed above it
 <Table maxBodyHeight={320} header={…}>{manyRows}</Table>
+
+// filters below the action bar (see Filter Bar)
+<Table actionBar={…} filterBar={<FilterBar filters={…} onResetAll={resetAll} />} header={…}>{rows}</Table>
 \`\`\`
 
 ## Design tokens used
@@ -256,6 +259,7 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
   argTypes: {
     children: { control: false, table: { category: 'Content' } },
     actionBar: { control: false, table: { category: 'Content' } },
+    filterBar: { control: false, table: { category: 'Content' } },
     header: { control: false, table: { category: 'Content' } },
     footer: { control: false, table: { category: 'Content' } },
     maxBodyHeight: { control: 'number', table: { category: 'Appearance' } },

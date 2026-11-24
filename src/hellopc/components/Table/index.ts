@@ -20,3 +20,5 @@ export type {
   FilterRuleSet,
   FilterMatch,
 } from './FilterRuleBuilder';
+export { FilterBar } from './FilterBar';
+export type { FilterBarProps, FilterBarLayout } from './FilterBar';

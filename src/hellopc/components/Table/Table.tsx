@@ -7,8 +7,9 @@ import { nativeScrollbarStyles } from '../Elements/Scrollbar';
 /**
  * hello pc Table — the assembled data table (Figma `table templates`, node
  * 178:10143). It stacks the table parts into one surface: an **Action Bar** on
- * top, a **Header Row** over a scrollable body of **Data Row**s, and a
- * **Table Footer** (a results range + **Pagination**) at the bottom.
+ * top, an optional **Filter Bar** below it, a **Header Row** over a scrollable
+ * body of **Data Row**s, and a **Table Footer** (a results range +
+ * **Pagination**) at the bottom.
  *
  * Table is a composition shell, not a data grid: it owns the frame, the native
  * `<table>` / `<thead>` / `<tbody>` structure, and body scrolling — the rows, cells, selection, and
@@ -79,6 +80,11 @@ export interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Top toolbar — an **Action Bar**. Rendered above the grid. */
   actionBar?: React.ReactNode;
   /**
+   * Filter row — a **Filter Bar**. Rendered between the Action Bar and the
+   * header (Figma: the filter bar sits below the action bar).
+   */
+  filterBar?: React.ReactNode;
+  /**
    * Column header — a **Header Row**. Rendered in its own header rowgroup above
    * the scrollable body, so it stays fixed while the body scrolls.
    */
@@ -108,6 +114,7 @@ export const Table = React.forwardRef<HTMLDivElement, TableProps>(
     {
       children,
       actionBar,
+      filterBar,
       header,
       footer,
       maxBodyHeight,
@@ -121,6 +128,7 @@ export const Table = React.forwardRef<HTMLDivElement, TableProps>(
     return (
       <Root ref={ref} {...props}>
         {actionBar}
+        {filterBar}
         <Grid aria-label={ariaLabel} aria-labelledby={ariaLabelledBy}>
           {header ? <HeaderGroup>{header}</HeaderGroup> : null}
           <Body
