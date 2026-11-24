@@ -40,6 +40,7 @@ export * from './components/Chip';
 export * from './components/ContentSwitcher';
 export * from './components/Counter';
 export * from './components/DateInput';
+export * from './components/DocumentTile';
 export * from './components/Dropdown';
 export * from './components/FileUpload';
 export * from './components/HorizontalTabs';

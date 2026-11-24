@@ -46,6 +46,7 @@ while Radix communicates the resulting range to assistive technology.
 <ProgressBar color="success" value={75} label="Upload" labelValue="75MB" />
 <ProgressBar color="error" value={20} helperText="Upload failed" />
 <ProgressBar width="thin" value={50} />
+<ProgressBar width="hairline" label={null} aria-label="Uploading report.pdf" color="primary" value={42} helperText="2 mins left" helperTone="info" valueText="42% uploaded" />
 <ProgressBar value={12} max={24} showLabelIcon={false} />
 <ProgressBar label={null} aria-label="Installation progress" showHelper={false} value={90} />
 \`\`\`
@@ -61,11 +62,14 @@ while Radix communicates the resulting range to assistive technology.
 | success indicator | \`--color-success-success\` |
 | warn indicator | \`--color-warning-warn\` |
 | error indicator | \`--color-error-error\` |
-| layout gap | \`--space-050\`, \`--space-100\` |
+| layout gap | \`--space-050\` (\`--space-075\` for hairline), \`--space-100\` |
 | label and value | \`--color-text-icon-primary\`, \`--font-weight-medium\`, \`--type-size-subject\` |
-| helper and percentage | HelperString tokens plus \`--color-text-icon-secondary\` |
+| helper and percentage | HelperString tokens plus \`--color-text-icon-secondary\`; custom \`valueText\` takes the helper tone color |
 
 Figma intrinsic track geometry is 12px for \`thin\` and 18px for \`thick\`.
+\`hairline\` is the 4px inline upload bar from the Document Tile (Figma
+18911:2667) for dense rows; pair it with \`valueText\` (e.g. \`42% uploaded\`)
+to replace the bare percentage.
 
 ## Accessibility
 
@@ -113,7 +117,7 @@ Figma intrinsic track geometry is 12px for \`thin\` and 18px for \`thick\`.
     },
     width: {
       control: 'inline-radio',
-      options: ['thin', 'thick'],
+      options: ['hairline', 'thin', 'thick'],
       table: { category: 'Appearance' },
     },
     label: { control: 'text', table: { category: 'Content' } },
@@ -123,6 +127,7 @@ Figma intrinsic track geometry is 12px for \`thin\` and 18px for \`thick\`.
     showHelper: { control: 'boolean', table: { category: 'Content' } },
     showHelperIcon: { control: 'boolean', table: { category: 'Content' } },
     showValue: { control: 'boolean', table: { category: 'Content' } },
+    valueText: { control: 'text', table: { category: 'Content' } },
     helperTone: {
       control: 'inline-radio',
       options: ['greyscale', 'info', 'success', 'warning', 'error', 'disabled'],
@@ -163,7 +168,7 @@ export const Widths: Story = {
     controls: { disable: true },
     docs: {
       description: {
-        story: 'Figma thick is an 18px track; thin is 12px. Both preserve the same semantic value and color behavior.',
+        story: 'Figma thick is an 18px track; thin is 12px; hairline is the 4px inline bar used by Document Tile uploads. All preserve the same semantic value and color behavior.',
       },
     },
   },
@@ -172,6 +177,7 @@ export const Widths: Story = {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
         <ProgressBar width="thick" label="Thick" labelValue="30%" value={30} />
         <ProgressBar width="thin" label="Thin" labelValue="30%" value={30} />
+        <ProgressBar width="hairline" label="Hairline" labelValue="30%" value={30} />
       </div>
     </Frame>
   ),
@@ -234,6 +240,7 @@ export const AllVariants: Story = {
         {(['info', 'primary', 'secondary', 'success', 'warn', 'error'] as const).flatMap((color) => [
           <ProgressBar key={`${color}-thick`} color={color} width="thick" label={`${color} · thick`} labelValue="30%" value={30} />,
           <ProgressBar key={`${color}-thin`} color={color} width="thin" label={`${color} · thin`} labelValue="30%" value={30} />,
+          <ProgressBar key={`${color}-hairline`} color={color} width="hairline" label={`${color} · hairline`} labelValue="30%" value={30} />,
         ])}
       </div>
     </Frame>
