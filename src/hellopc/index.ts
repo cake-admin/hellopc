@@ -70,3 +70,4 @@ export * from './components/TimeInput';
 export * from './components/Toast';
 export * from './components/Tooltip';
 export * from './components/VerticalTabs';
+export * from './components/WindowTitleBar';
