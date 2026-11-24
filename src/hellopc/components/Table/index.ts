@@ -8,3 +8,7 @@ export { Table, TableFooter } from './Table';
 export type { TableProps, TableFooterProps } from './Table';
 export { GroupRow } from './GroupRow';
 export type { GroupRowProps } from './GroupRow';
+export { FilterMenu } from './FilterMenu';
+export type { FilterMenuProps, FilterMenuOption } from './FilterMenu';
+export { FilterTrigger } from './FilterPopover';
+export type { FilterTriggerProps, FilterTriggerAppearance } from './FilterPopover';

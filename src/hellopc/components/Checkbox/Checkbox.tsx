@@ -148,6 +148,14 @@ export interface CheckboxProps {
   value?: string;
   /** Explicit id (auto-generated when omitted). */
   id?: string;
+  /**
+   * Tab order override. Pass `-1` only when another control already owns this
+   * state (e.g. a **MenuItem** `toggleRow` row) and the checkbox is a visual
+   * mirror.
+   */
+  tabIndex?: number;
+  /** Hides a mirror checkbox from assistive tech (pair with `tabIndex={-1}`). */
+  'aria-hidden'?: boolean;
 }
 
 export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(

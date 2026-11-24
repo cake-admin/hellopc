@@ -35,6 +35,7 @@ avoid nesting interactive elements.
 <MenuItem selected>Current workspace</MenuItem>
 <MenuItem variant="sub-item">Nested folder</MenuItem>
 <MenuItem showCheckbox defaultChecked>Select filters</MenuItem>
+<MenuItem showCheckbox toggleRow checked="indeterminate" showLeftSlot={false} showRightSlot={false}>Select all</MenuItem>
 <MenuItem leftSlot={<Folder />} rightSlot={<ChevronRight />}>Projects</MenuItem>
 <MenuItem disabled>Unavailable action</MenuItem>
 \`\`\`
@@ -67,6 +68,12 @@ have a 12px radius; sub-items add a 24px left inset.
   native \`disabled\` attribute and cannot be activated.
 - When \`showCheckbox\` is enabled, Checkbox remains an independent labelled
   control beside the menu action; it is not nested inside the row button.
+- With \`toggleRow\`, the whole row is one checkbox instead: the action is
+  \`role="checkbox"\` with \`aria-checked\` (\`mixed\` for \`checked="indeterminate"\`)
+  and the drawn Checkbox is a mirror outside the tab order. Use it for
+  multi-select lists such as the Table **Filter Menu**; give a count in the
+  right slot an \`aria-label\` on the row ("Windows 11, 812") since slots are
+  decorative.
 
 ## Do / Don't
 
@@ -106,7 +113,12 @@ have a 12px radius; sub-items add a 24px left inset.
     selected: { control: 'boolean', table: { category: 'State' } },
     disabled: { control: 'boolean', table: { category: 'State' } },
     showCheckbox: { control: 'boolean', table: { category: 'Behavior' } },
-    checked: { control: 'boolean', table: { category: 'Behavior' } },
+    checked: {
+      control: 'inline-radio',
+      options: [false, true, 'indeterminate'],
+      table: { category: 'Behavior' },
+    },
+    toggleRow: { control: 'boolean', table: { category: 'Behavior' } },
     defaultChecked: { control: 'boolean', table: { category: 'Behavior' } },
     onClick: { action: 'click', table: { category: 'Events' } },
     onCheckedChange: { action: 'checkedChange', table: { category: 'Events' } },
@@ -233,5 +245,46 @@ export const ActivatesAndChecks: Story = {
 
     await userEvent.click(canvas.getByRole('checkbox', { name: 'Select Refresh data' }));
     await expect(args.onCheckedChange).toHaveBeenCalledWith(true);
+  },
+};
+
+/**
+ * Checkbox rows (`showCheckbox toggleRow`): the whole row toggles, and
+ * `checked="indeterminate"` draws the partial dash for a "Select all" row
+ * when only some options are picked — the Table **Filter Menu** pattern.
+ */
+export const CheckboxRows: Story = {
+  parameters: { controls: { disable: true } },
+  render: () => (
+    <div role="group" aria-label="OS type" style={{ display: 'flex', flexDirection: 'column', width: 280 }}>
+      <MenuItem showCheckbox toggleRow checked="indeterminate" showLeftSlot={false} showRightSlot={false}>
+        Select all
+      </MenuItem>
+      <MenuItem showCheckbox toggleRow checked showLeftSlot={false} showRightSlot={false}>
+        Windows 11
+      </MenuItem>
+      <MenuItem showCheckbox toggleRow checked={false} showLeftSlot={false} showRightSlot={false}>
+        macOS
+      </MenuItem>
+    </div>
+  ),
+};
+
+/** Pure interaction test: a toggleRow row is one checkbox — clicking the label toggles it. */
+export const ToggleRowChecks: Story = {
+  tags: ['!autodocs'],
+  args: { children: 'Windows 11', showCheckbox: true, toggleRow: true, showLeftSlot: false, showRightSlot: false, onCheckedChange: fn() },
+  render: (args) => (
+    <div role="group" aria-label="OS type" style={{ width: 280 }}>
+      <MenuItem {...args} />
+    </div>
+  ),
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    const row = canvas.getByRole('checkbox', { name: 'Windows 11' });
+    await expect(row).toHaveAttribute('aria-checked', 'false');
+    await userEvent.click(row);
+    await expect(args.onCheckedChange).toHaveBeenCalledWith(true);
+    await expect(row).toHaveAttribute('aria-checked', 'true');
   },
 };

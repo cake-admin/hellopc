@@ -133,12 +133,13 @@ const Slot = styled.span`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: ${SLOT_SIZE}px;
+  /* At least the 16px icon slot; grows for text content such as a count. */
+  min-width: ${SLOT_SIZE}px;
   height: ${SLOT_SIZE}px;
 
   & > svg {
-    width: 100%;
-    height: 100%;
+    width: ${SLOT_SIZE}px;
+    height: ${SLOT_SIZE}px;
   }
 `;
 
@@ -174,12 +175,25 @@ export interface MenuItemProps
    * @default false
    */
   showCheckbox?: boolean;
-  /** Controlled state for the optional Checkbox. */
-  checked?: boolean;
+  /**
+   * Controlled state for the optional Checkbox. `'indeterminate'` draws the
+   * partial dash — for a "Select all" row when only some options are checked.
+   * Toggling an indeterminate row reports `true`.
+   */
+  checked?: boolean | 'indeterminate';
   /** Uncontrolled initial state for the optional Checkbox. @default false */
   defaultChecked?: boolean;
   /** Fires with the next optional Checkbox value. */
   onCheckedChange?: (checked: boolean) => void;
+  /**
+   * Makes a `showCheckbox` row a single checkbox control: clicking anywhere on
+   * the row toggles it, the row action is announced as `role="checkbox"` with
+   * `aria-checked` (`mixed` when indeterminate), and the visual Checkbox becomes
+   * a mirror outside the tab order. Use it for multi-select lists (filter
+   * menus) where the row *is* the choice. Requires `showCheckbox`.
+   * @default false
+   */
+  toggleRow?: boolean;
 }
 
 export const MenuItem = React.forwardRef<HTMLButtonElement, MenuItemProps>(
@@ -197,6 +211,7 @@ export const MenuItem = React.forwardRef<HTMLButtonElement, MenuItemProps>(
       checked,
       defaultChecked = false,
       onCheckedChange,
+      toggleRow = false,
       onClick,
       ...props
     },
@@ -204,16 +219,26 @@ export const MenuItem = React.forwardRef<HTMLButtonElement, MenuItemProps>(
   ) => {
     const checkboxVisible = variant === 'item' && showCheckbox;
     const checkboxName = typeof children === 'string' ? children : 'Menu item';
+    const rowToggles = checkboxVisible && toggleRow;
+
+    // Track uncontrolled state so a toggleRow action knows what to flip.
+    const [innerChecked, setInnerChecked] = React.useState<boolean>(defaultChecked);
+    const currentChecked = checked ?? innerChecked;
+    const setChecked = (next: boolean) => {
+      if (checked === undefined) setInnerChecked(next);
+      onCheckedChange?.(next);
+    };
 
     return (
       <Row $variant={variant} $selected={selected} $disabled={disabled}>
         {checkboxVisible ? (
           <Checkbox
-            checked={checked}
-            defaultChecked={defaultChecked}
+            checked={currentChecked}
             disabled={disabled}
-            aria-label={`Select ${checkboxName}`}
-            onCheckedChange={(next) => onCheckedChange?.(next === true)}
+            aria-label={rowToggles ? undefined : `Select ${checkboxName}`}
+            aria-hidden={rowToggles || undefined}
+            tabIndex={rowToggles ? -1 : undefined}
+            onCheckedChange={(next) => setChecked(next === true)}
           />
         ) : null}
         <Action
@@ -222,9 +247,19 @@ export const MenuItem = React.forwardRef<HTMLButtonElement, MenuItemProps>(
           $selected={selected}
           $disabled={disabled}
           disabled={disabled}
-          role="menuitem"
+          role={rowToggles ? 'checkbox' : 'menuitem'}
+          aria-checked={
+            rowToggles
+              ? currentChecked === 'indeterminate'
+                ? 'mixed'
+                : currentChecked
+              : undefined
+          }
           aria-current={selected ? 'true' : undefined}
-          onClick={onClick}
+          onClick={(event) => {
+            if (rowToggles) setChecked(currentChecked !== true);
+            onClick?.(event);
+          }}
           {...props}
         >
           {showLeftSlot ? <Slot aria-hidden>{leftSlot ?? <RefreshCw />}</Slot> : null}
