@@ -101,6 +101,11 @@ const Box = styled.div<{ $size: 'sm' | 'md'; $status: 'default' | 'success' | 'e
       background: var(--color-success-success-overlay);
       border: var(--stroke-150) solid var(--color-success-success);
     }
+    /* The validation overlay is solid highlight in win hct: content on it
+       takes the on-overlay text tokens (same values as before in light/dark). */
+    & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
+    & button:not(:disabled) { color: var(--color-text-icon-secondary-on-surface); }
+    & button:disabled { color: var(--color-disabled-disabled-inverse); }
   `}
   ${(p) =>
     p.$status === 'error' &&
@@ -109,6 +114,11 @@ const Box = styled.div<{ $size: 'sm' | 'md'; $status: 'default' | 'success' | 'e
       background: var(--color-error-error-overlay);
       border: var(--stroke-150) solid var(--color-error-error);
     }
+    /* The validation overlay is solid highlight in win hct: content on it
+       takes the on-overlay text tokens (same values as before in light/dark). */
+    & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
+    & button:not(:disabled) { color: var(--color-text-icon-secondary-on-surface); }
+    & button:disabled { color: var(--color-disabled-disabled-inverse); }
   `}
 
   /* Disabled: flat fill, but (unlike TextInput) NumberInput keeps a visible
@@ -116,6 +126,11 @@ const Box = styled.div<{ $size: 'sm' | 'md'; $status: 'default' | 'success' | 'e
   &:has(input:disabled) {
     background: var(--color-disabled-disabled);
     border-color: var(--color-disabled-disabled-inverse);
+    /* Ghost IconButton steppers default to text-icon-disabled (for a plain
+       surface); on the disabled fill they take the on-fill disabled ink. */
+    & button:disabled {
+      color: var(--color-disabled-disabled-inverse);
+    }
   }
 `;
 

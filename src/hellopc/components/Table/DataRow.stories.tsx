@@ -122,11 +122,11 @@ import { DataRow, DataCell } from '@/hellopc/components/Table';
 | row · default stripe | \`--color-surfaces-container\` |
 | row · inverse stripe | \`--color-surfaces-on-container-high\` |
 | row · hover | \`--color-surfaces-on-container\` + \`--elevation-0\` |
-| row · selected | \`--color-tonal-tonal-lightest\` |
+| row · selected | \`--color-tonal-tonal-lightest\`, text \`--color-text-icon-on-surface\` |
 | row · disabled | \`--color-disabled-disabled\` bg, \`--color-disabled-disabled-inverse\` text |
 | cell rule | \`--stroke-100\` top/bottom, \`--color-stroke-border-low\` |
 | cell padding | \`--space-150\` (10px) × \`--space-100\` (8px) |
-| cell text | \`--type-size-body\` (14px), \`--font-weight-regular\`, \`--color-text-icon-primary\` |
+| cell text | \`--type-size-body\` (14px), \`--font-weight-regular\`, \`--color-text-icon-primary\` (inherited from the row) |
 | selection control | **Checkbox** (Radix, own tokens) |
 | rail width / row height | 48px (intrinsic geometry, Figma 171:9843) |
 

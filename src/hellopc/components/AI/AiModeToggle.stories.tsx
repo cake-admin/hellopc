@@ -46,7 +46,7 @@ arbitrary outline icon breaks its shape.
 | --- | --- |
 | Off | glyph \`--color-secondary-secondary\`; hover \`--color-secondary-secondary-overlay\`, press \`--color-secondary-secondary-overlay-hover\` |
 | On | fill \`--color-ai-<segment>-surface-start\` → \`-surface-end\` (39.06°); glyph \`--color-ai-<segment>-flat\` |
-| Disabled | glyph \`--color-disabled-disabled-inverse\`, no fill |
+| Disabled | glyph \`--color-text-icon-disabled\`, no fill |
 | Focus ring | \`--stroke-300\` \`--color-primary-primary\`, 2px outside |
 | Shape | \`--radius-1000\`, 32px circle, 24px glyph slot |
 
@@ -119,7 +119,7 @@ export const Segments: Story = {
 /** Swap the glyph for another mode — keep a matching `label`. */
 export const CustomIcon: Story = { args: { label: 'Web search', icon: <Globe /> } };
 
-/** Unavailable: glyph dims to `--color-disabled-disabled-inverse`, no hover. */
+/** Unavailable: glyph dims to `--color-text-icon-disabled`, no hover. */
 export const Disabled: Story = { args: { disabled: true } };
 
 /** QA matrix — segment × Off / On / Disabled. Audit under both themes via the toolbar. */

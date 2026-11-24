@@ -224,11 +224,18 @@ const DayButton = styled.button<{ $tone: DayTone }>`
 
   &:hover:not(:disabled) {
     ${(p) =>
-      p.$tone === 'empty' || p.$tone === 'outside'
+      p.$tone === 'empty'
         ? css`
             background: var(--color-secondary-secondary-overlay);
+            /* Equal to text-icon-primary in light and dark; dark on the solid
+               highlight win hct paints for the overlay. */
+            color: var(--color-text-icon-on-surface);
           `
-        : ''}
+        : p.$tone === 'outside'
+          ? css`
+              background: var(--color-secondary-secondary-overlay);
+            `
+          : ''}
   }
 
   &:focus {

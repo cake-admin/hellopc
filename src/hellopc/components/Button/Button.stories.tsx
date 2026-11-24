@@ -54,19 +54,20 @@ Custom-property names mirror the Figma variables (\`color/primary/primaryHover\`
 | --- | --- | --- | --- |
 | fill · primary | \`--color-button-primary-fill\` + \`--stroke-100\` \`--color-button-primary-border\` inset stroke | \`--color-button-on-primary-fill\` (hover/press \`--color-text-icon-on-primary\`) | \`--color-primary-primary-hover\` / \`-press\` |
 | fill · secondary | \`--color-secondary-secondary\` | \`--color-text-icon-inverse\` | \`…secondary-hover\` / \`…secondary-press\` |
-| outline · primary | \`--color-surfaces-container\` + \`--stroke-200\` \`--color-primary-primary\` inset stroke | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
-| outline · secondary | \`--color-surfaces-container\` + \`--stroke-200\` \`--color-secondary-secondary\` inset stroke | \`--color-secondary-secondary\` | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
+| outline · primary | \`--color-surfaces-container\` + \`--stroke-200\` \`--color-primary-primary\` inset stroke | \`--color-primary-primary\` (hover/press \`--color-text-icon-primary-on-surface\`) | \`…primary-overlay\` / \`…primary-overlay-hover\` |
+| outline · secondary | \`--color-surfaces-container\` + \`--stroke-200\` \`--color-secondary-secondary\` inset stroke | \`--color-secondary-secondary\` (hover/press \`--color-text-icon-secondary-on-surface\`) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
 | tonal · primary | \`--color-tonal-tonal-overlay\` | \`--color-text-icon-on-tonal\` | \`…tonal-overlay-hover\` / \`…tonal-overlay-press\` |
 | tonal · secondary | \`--color-tonal-tonal-secondary-overlay\` | \`--color-text-icon-on-tonal-secondary\` | \`…secondary-overlay-hover\` / \`…secondary-overlay-press\` |
-| ghost · primary | transparent | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
-| ghost · secondary | transparent | \`--color-secondary-secondary\` (label underlined) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
+| ghost · primary | transparent | \`--color-primary-primary\` (hover/press \`--color-text-icon-primary-on-surface\`) | \`…primary-overlay\` / \`…primary-overlay-hover\` |
+| ghost · secondary | transparent | \`--color-secondary-secondary\` (label underlined; hover/press \`--color-text-icon-secondary-on-surface\`) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
 | fill · destructive | \`--color-error-error\` | \`--color-text-icon-inverse\` | \`--color-error-error-hover\` / \`-press\` |
 | outline · destructive | transparent + \`--stroke-200\` \`--color-error-error\` inset stroke | \`--color-text-icon-error-on-surface-text-destructive-btn\` | \`--color-error-error-overlay-hover\` / \`-overlay-press\` (focus \`-overlay\`) |
 | tonal · destructive | \`--color-error-error-overlay\` | \`--color-text-icon-error-on-surface-text-destructive-btn\` | \`…-overlay-hover\` / \`…-overlay-press\` |
 | ghost · destructive | transparent | \`--color-text-icon-error-on-surface-text-destructive-btn\` | \`--color-error-error-overlay-hover\` / \`-overlay-press\` (focus \`-overlay\`) |
 | inverse · fill · primary | \`--color-inverse-button-primary-fill\` + \`--color-inverse-button-primary-border\` | \`--color-inverse-button-on-primary-fill\` (hover/press/focus \`--color-inverse-text-icon-on-primary\`) | \`--color-inverse-primary-primary-hover\` / \`-press\` |
 | inverse · ghost · secondary | transparent | \`--color-inverse-surfaces-inverse-container\` (underlined) | \`--color-inverse-secondary-secondary-overlay\` / \`-overlay-hover\` |
-| disabled (any) | \`--color-disabled-disabled\` | \`--color-disabled-disabled-inverse\` | — |
+| disabled · fill / tonal | \`--color-disabled-disabled\` | \`--color-disabled-disabled-inverse\` | — |
+| disabled · outline / ghost | surface / transparent (outline ring \`--color-disabled-disabled\`, destructive \`--color-text-icon-disabled\`) | \`--color-text-icon-disabled\` | — |
 | disabled · inverse | \`--color-inverse-disabled-disabled\` (fill) | \`--color-inverse-disabled-disabled-inverse\` | — |
 
 (\`…\` = the same family prefix as the row's background.) Shape is
@@ -352,7 +353,8 @@ export const Disabled: Story = {
           'Disabled treatment per variant: fill/tonal flatten to ' +
           '`--color-disabled-disabled` with `--color-disabled-disabled-inverse` ' +
           'text; outline keeps its surface with a disabled border; ghost just ' +
-          'dims its text. Disabled buttons set `pointer-events: none`. Prefer ' +
+          'dims its text. Outline and ghost labels sit on the page, so they use ' +
+          '`--color-text-icon-disabled`. Disabled buttons set `pointer-events: none`. Prefer ' +
           'disabling with nearby context that explains why.',
       },
     },

@@ -56,7 +56,7 @@ rather than discrete variants.
 | warn background | \`--color-warning-warn-overlay\` / \`--color-warning-warn-overlay-hover\` |
 | error background | \`--color-error-error-overlay\` / \`--color-error-error-overlay-hover\` |
 | info background | \`--color-info-info-overlay\` / \`--color-info-info-overlay-hover\` |
-| label | \`--color-text-icon-primary\`, \`--font-weight-bold\`, \`--type-size-body\` (lg) / \`--type-size-caption\` (sm) |
+| label | \`--color-text-icon-on-surface\`, \`--font-weight-bold\`, \`--type-size-body\` (lg) / \`--type-size-caption\` (sm) |
 | remove hover | \`--color-secondary-secondary-overlay\` |
 | shape · padding · gap | \`--radius-1000\`, \`--space-100\` (8px padding), \`--space-050\` (4px gap) |
 | focus ring | \`--stroke-300\`, \`--color-primary-primary\` |

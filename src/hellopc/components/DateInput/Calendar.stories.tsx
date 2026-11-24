@@ -52,7 +52,7 @@ OK; Cancel discards it.
 | weekday labels | \`--type-size-body\`, \`--font-weight-bold\`, \`--color-text-icon-primary\` |
 | day (resting) | transparent, \`--type-size-caption\`, \`--color-text-icon-primary\` |
 | day (outside month) | \`--color-text-icon-placeholder\` |
-| day (hover) | \`--color-secondary-secondary-overlay\` |
+| day (hover) | \`--color-secondary-secondary-overlay\`, label \`--color-text-icon-on-surface\` |
 | day (selected / range ends) | \`--color-tonal-tonal\`, \`--color-text-icon-on-tonal-inverse\`, \`--radius-1000\` |
 | day (in range ribbon) | \`--color-tonal-tonal-lightest\`; row-wrap rounding via \`--radius-1000\` |
 | Today | **Button** \`sm\` \`tonal\` \`secondary\` |

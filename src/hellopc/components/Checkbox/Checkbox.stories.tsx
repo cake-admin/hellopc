@@ -53,7 +53,7 @@ controlled-only.
 | Mark (check / dash) | \`--color-text-icon-inverse\` |
 | Focus ring (22px) | \`--stroke-150\` \`--color-primary-primary\` |
 | Disabled | box \`--color-disabled-disabled-inverse\`, border + mark \`--color-disabled-disabled\` |
-| Label | \`--font-family\` + \`--type-size-body\`, \`--color-text-icon-primary\`; disabled \`--color-disabled-disabled-inverse\` |
+| Label | \`--font-family\` + \`--type-size-body\`, \`--color-text-icon-primary\`; disabled \`--color-text-icon-disabled\` |
 | Shape / gap | \`--radius-50\` box, \`--radius-100\` target + ring, \`--space-100\` label gap |
 
 ## Accessibility

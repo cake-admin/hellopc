@@ -268,7 +268,7 @@ const Item = styled(RadixSelect.Item)`
   }
 
   &[data-disabled] {
-    color: var(--color-disabled-disabled-inverse);
+    color: var(--color-text-icon-disabled);
     cursor: not-allowed;
     pointer-events: none;
   }

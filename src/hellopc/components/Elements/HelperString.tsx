@@ -22,7 +22,7 @@ const TONE_COLOR: Record<HelperTone, string> = {
   success: 'var(--color-success-success)',
   warning: 'var(--color-warning-warn)',
   error: 'var(--color-error-error)',
-  disabled: 'var(--color-disabled-disabled-inverse)',
+  disabled: 'var(--color-text-icon-disabled)',
 };
 
 /** tone → 16px lucide glyph (Figma: info / check_circle / warning / ErrorFilled). */

@@ -81,15 +81,15 @@ const colorStyles = (intent: IconButtonIntent, variant: IconButtonVariant) => {
           background: transparent;
           color: var(--color-primary-primary);
           border: var(--stroke-100) solid var(--color-primary-primary);
-          &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); }
-          &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); }
+          &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); color: var(--color-text-icon-primary-on-surface); }
+          &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); color: var(--color-text-icon-primary-on-surface); }
         `
       : css`
           background: transparent;
           color: var(--color-secondary-secondary);
           border: var(--stroke-100) solid var(--color-secondary-secondary);
-          &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); }
-          &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); }
+          &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); color: var(--color-text-icon-secondary-on-surface); }
+          &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); color: var(--color-text-icon-secondary-on-surface); }
         `;
   }
 
@@ -114,14 +114,14 @@ const colorStyles = (intent: IconButtonIntent, variant: IconButtonVariant) => {
     ? css`
         background: transparent;
         color: var(--color-primary-primary);
-        &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); }
-        &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); }
+        &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); color: var(--color-text-icon-primary-on-surface); }
+        &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); color: var(--color-text-icon-primary-on-surface); }
       `
     : css`
         background: transparent;
         color: var(--color-secondary-secondary);
-        &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); }
-        &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); }
+        &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); color: var(--color-text-icon-secondary-on-surface); }
+        &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); color: var(--color-text-icon-secondary-on-surface); }
       `;
 };
 
@@ -133,7 +133,7 @@ const disabledStyles = (variant: IconButtonVariant) => css`
     pointer-events: none;
     background: ${variant === 'ghost' ? 'transparent' : 'var(--color-disabled-disabled)'};
     border-color: transparent;
-    color: var(--color-disabled-disabled-inverse);
+    color: ${variant === 'ghost' ? 'var(--color-text-icon-disabled)' : 'var(--color-disabled-disabled-inverse)'};
   }
 `;
 
@@ -145,8 +145,16 @@ const inverseStyles = (intent: IconButtonIntent, variant: IconButtonVariant) =>
         background: transparent;
         color: var(--color-inverse-text-icon-primary);
         &:hover:not(:disabled),
-        &:focus-visible { background: var(--color-inverse-secondary-secondary-overlay); }
-        &:active:not(:disabled) { background: var(--color-inverse-secondary-secondary-overlay-hover); }
+        &:focus-visible {
+          background: var(--color-inverse-secondary-secondary-overlay);
+          /* Restate the glyph so the default secondary-ghost hover color does
+             not reach the inverse tone. */
+          color: var(--color-inverse-text-icon-primary);
+        }
+        &:active:not(:disabled) {
+          background: var(--color-inverse-secondary-secondary-overlay-hover);
+          color: var(--color-inverse-text-icon-primary);
+        }
         &:disabled {
           background: transparent;
           color: var(--color-inverse-text-icon-disabled);

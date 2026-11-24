@@ -81,6 +81,9 @@ const Box = styled.div<{ $size: 'sm' | 'md'; $status: 'default' | 'success' | 'e
       background: var(--color-success-success-overlay);
       border: var(--stroke-150) solid var(--color-success-success);
     }
+    /* The validation overlay is solid highlight in win hct: content on it
+       takes the on-overlay text tokens (same values as before in light/dark). */
+    & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
   `}
   ${(p) =>
     p.$status === 'error' &&
@@ -89,6 +92,9 @@ const Box = styled.div<{ $size: 'sm' | 'md'; $status: 'default' | 'success' | 'e
       background: var(--color-error-error-overlay);
       border: var(--stroke-150) solid var(--color-error-error);
     }
+    /* The validation overlay is solid highlight in win hct: content on it
+       takes the on-overlay text tokens (same values as before in light/dark). */
+    & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
   `}
 
   /* Disabled: flat fill, no border, everything dims. */

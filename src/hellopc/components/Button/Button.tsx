@@ -194,8 +194,16 @@ const inverseStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
       background: transparent;
       color: var(--color-inverse-surfaces-inverse-container);
       &:hover:not(:disabled),
-      &:focus-visible { background: var(--color-inverse-secondary-secondary-overlay); }
-      &:active:not(:disabled) { background: var(--color-inverse-secondary-secondary-overlay-hover); }
+      &:focus-visible {
+        background: var(--color-inverse-secondary-secondary-overlay);
+        /* Restate the label so the default secondary-ghost hover color does not
+           reach the inverse tone. */
+        color: var(--color-inverse-surfaces-inverse-container);
+      }
+      &:active:not(:disabled) {
+        background: var(--color-inverse-secondary-secondary-overlay-hover);
+        color: var(--color-inverse-surfaces-inverse-container);
+      }
       &:disabled, &[aria-disabled='true'] {
         background: transparent;
         color: var(--color-inverse-disabled-disabled-inverse);
@@ -249,15 +257,15 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
           background: var(--color-surfaces-container);
           color: var(--color-primary-primary);
           box-shadow: inset 0 0 0 var(--stroke-200) var(--color-primary-primary);
-          &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); }
-          &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); }
+          &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); color: var(--color-text-icon-primary-on-surface); }
+          &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); color: var(--color-text-icon-primary-on-surface); }
         `
       : css`
           background: var(--color-surfaces-container);
           color: var(--color-secondary-secondary);
           box-shadow: inset 0 0 0 var(--stroke-200) var(--color-secondary-secondary);
-          &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); }
-          &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); }
+          &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); color: var(--color-text-icon-secondary-on-surface); }
+          &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); color: var(--color-text-icon-secondary-on-surface); }
         `;
   }
 
@@ -282,8 +290,8 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
     ? css`
         background: transparent;
         color: var(--color-primary-primary);
-        &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); }
-        &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); }
+        &:hover:not(:disabled) { background: var(--color-primary-primary-overlay); color: var(--color-text-icon-primary-on-surface); }
+        &:active:not(:disabled) { background: var(--color-primary-primary-overlay-hover); color: var(--color-text-icon-primary-on-surface); }
       `
     : css`
         background: transparent;
@@ -293,8 +301,8 @@ const colorStyles = (intent: ButtonIntent, variant: ButtonVariant) => {
            apart from plain text — the underline is the non-color affordance
            (WCAG 1.4.1). */
         text-decoration: underline;
-        &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); }
-        &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); }
+        &:hover:not(:disabled) { background: var(--color-secondary-secondary-overlay); color: var(--color-text-icon-secondary-on-surface); }
+        &:active:not(:disabled) { background: var(--color-secondary-secondary-overlay-hover); color: var(--color-text-icon-secondary-on-surface); }
       `;
 };
 
@@ -311,7 +319,7 @@ const disabledStyles = (variant: ButtonVariant, intent: ButtonIntent) => {
       &:disabled, &[aria-disabled='true'] {
         ${base}
         background: transparent;
-        box-shadow: inset 0 0 0 var(--stroke-200) var(--color-disabled-disabled-inverse);
+        box-shadow: inset 0 0 0 var(--stroke-200) var(--color-text-icon-disabled);
         color: var(--color-text-icon-disabled);
       }
     `;
@@ -322,7 +330,7 @@ const disabledStyles = (variant: ButtonVariant, intent: ButtonIntent) => {
         ${base}
         background: var(--color-surfaces-container);
         box-shadow: inset 0 0 0 var(--stroke-200) var(--color-disabled-disabled);
-        color: var(--color-disabled-disabled-inverse);
+        color: var(--color-text-icon-disabled);
       }
     `;
   }
@@ -331,7 +339,7 @@ const disabledStyles = (variant: ButtonVariant, intent: ButtonIntent) => {
       &:disabled, &[aria-disabled='true'] {
         ${base}
         background: transparent;
-        color: ${intent === 'destructive' ? 'var(--color-text-icon-disabled)' : 'var(--color-disabled-disabled-inverse)'};
+        color: var(--color-text-icon-disabled);
       }
     `;
   }

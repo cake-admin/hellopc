@@ -93,6 +93,9 @@ const TimeBox = styled.div<{ $status: TimeStatus }>`
         background: var(--color-success-success-overlay);
         border: var(--stroke-150) solid var(--color-success-success);
       }
+      /* The validation overlay is solid highlight in win hct: content on it
+         takes the on-overlay text tokens (same values as before in light/dark). */
+      & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
     `}
 
   ${(p) =>
@@ -102,6 +105,9 @@ const TimeBox = styled.div<{ $status: TimeStatus }>`
         background: var(--color-error-error-overlay);
         border: var(--stroke-150) solid var(--color-error-error);
       }
+      /* The validation overlay is solid highlight in win hct: content on it
+         takes the on-overlay text tokens (same values as before in light/dark). */
+      & input:not(:disabled) { color: var(--color-text-icon-on-surface); }
     `}
 
   &:has(input:disabled) {
@@ -146,6 +152,10 @@ const Separator = styled.span`
   color: var(--color-text-icon-placeholder);
   font-family: var(--font-family);
   font-size: var(--type-size-subject);
+
+  ${TimeBox}:has(input:disabled) & {
+    color: var(--color-disabled-disabled-inverse);
+  }
   font-weight: var(--font-weight-medium);
   line-height: 1.35;
 `;

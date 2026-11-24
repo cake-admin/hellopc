@@ -73,7 +73,7 @@ import {
 | tab | 48px tall, \`--radius-300\` (16px); outer inset \`--space-100\` |
 | label row | \`--space-150\` (10px) top / \`--space-100\` (8px) bottom / \`--space-200\` (12px) sides |
 | label | \`--type-size-body\` (14px), 0.1px tracking; \`--font-weight-medium\`, \`--font-weight-bold\` when selected |
-| label color | \`--color-text-icon-primary\`; selected \`--color-text-icon-on-tonal\`; disabled \`--color-disabled-disabled-inverse\` |
+| label color | \`--color-text-icon-primary\`; selected \`--color-text-icon-on-tonal\`; disabled \`--color-text-icon-disabled\`; unselected hover/press \`--color-text-icon-on-tonal-secondary\` |
 | selected fill | \`--color-tonal-tonal-overlay\` → hover \`--color-tonal-tonal-overlay-hover\` → press \`--color-tonal-tonal-overlay-press\` |
 | unselected fill | transparent → hover \`--color-tonal-tonal-secondary-overlay-hover\` → press \`--color-tonal-tonal-secondary-overlay-press\` |
 | underline | 4px, \`--color-primary-primary\`, \`--radius-1000\`, inset \`--space-300\` |

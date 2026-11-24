@@ -50,13 +50,13 @@ Custom-property names mirror the Figma variables (\`color/tonal/tonalOverlay\`
 | --- | --- | --- | --- |
 | fill · primary | \`--color-primary-primary\` | \`--color-text-icon-inverse\` | \`…primary-hover\` / \`…primary-press\` |
 | fill · secondary | \`--color-secondary-secondary\` | \`--color-text-icon-on-secondary\` | \`…secondary-hover\` / \`…secondary-press\` |
-| outline · primary | transparent + \`--stroke-100\` \`--color-primary-primary\` border | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
-| outline · secondary | transparent + \`--stroke-100\` \`--color-secondary-secondary\` border | \`--color-secondary-secondary\` | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
+| outline · primary | transparent + \`--stroke-100\` \`--color-primary-primary\` border | \`--color-primary-primary\` (hover/press \`--color-text-icon-primary-on-surface\`) | \`…primary-overlay\` / \`…primary-overlay-hover\` |
+| outline · secondary | transparent + \`--stroke-100\` \`--color-secondary-secondary\` border | \`--color-secondary-secondary\` (hover/press \`--color-text-icon-secondary-on-surface\`) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
 | tonal · primary | \`--color-tonal-tonal-overlay\` | \`--color-text-icon-on-tonal\` | \`…tonal-overlay-hover\` / \`…tonal-overlay-press\` |
 | tonal · secondary | \`--color-tonal-tonal-secondary-overlay\` | \`--color-text-icon-on-tonal-secondary\` | \`…secondary-overlay-hover\` / \`…secondary-overlay-press\` |
-| ghost · primary | transparent | \`--color-primary-primary\` | \`…primary-overlay\` / \`…primary-overlay-hover\` |
-| ghost · secondary | transparent | \`--color-secondary-secondary\` | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
-| disabled | \`--color-disabled-disabled\` fill (ghost stays transparent), border drops | \`--color-disabled-disabled-inverse\` | — |
+| ghost · primary | transparent | \`--color-primary-primary\` (hover/press \`--color-text-icon-primary-on-surface\`) | \`…primary-overlay\` / \`…primary-overlay-hover\` |
+| ghost · secondary | transparent | \`--color-secondary-secondary\` (hover/press \`--color-text-icon-secondary-on-surface\`) | \`…secondary-overlay\` / \`…secondary-overlay-hover\` |
+| disabled | \`--color-disabled-disabled\` fill (ghost stays transparent), border drops | \`--color-disabled-disabled-inverse\` (ghost \`--color-text-icon-disabled\`) | — |
 | inverse · ghost · secondary (\`tone="inverse"\`) | transparent | \`--color-inverse-text-icon-primary\` (disabled \`--color-inverse-text-icon-disabled\`) | \`--color-inverse-secondary-secondary-overlay\` / \`-overlay-hover\`; ring \`--color-inverse-primary-primary\` |
 
 (\`…\` = the same family prefix as the row's container.) Shape is a
@@ -216,7 +216,7 @@ export const Disabled: Story = {
           'Disabled treatment: fill/outline/tonal flatten to ' +
           '`--color-disabled-disabled` (the outline border drops); ghost keeps ' +
           'its transparent container. The icon dims to ' +
-          '`--color-disabled-disabled-inverse` and `pointer-events` is off.',
+          '`--color-disabled-disabled-inverse` (ghost: `--color-text-icon-disabled`) and `pointer-events` is off.',
       },
     },
   },

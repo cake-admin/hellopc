@@ -56,8 +56,8 @@ import { Pagination } from '@/hellopc/components/Pagination';
 | Part | Tokens |
 | --- | --- |
 | page button | \`--radius-1000\` pill, \`--type-size-caption\` (12px), \`--font-weight-bold\`, \`--color-surfaces-inverse-container\` |
-| current page | \`--color-secondary-secondary-overlay\` + \`aria-current="page"\` |
-| page hover / press | \`--color-secondary-secondary-overlay-hover\` / \`--color-tonal-tonal-secondary-overlay-press\` |
+| current page | \`--color-secondary-secondary-overlay\`, label \`--color-text-icon-on-surface\` + \`aria-current="page"\` |
+| page hover / press | \`--color-secondary-secondary-overlay-hover\` / \`--color-tonal-tonal-secondary-overlay-press\`; label \`--color-text-icon-on-surface\` / \`--color-text-icon-on-tonal-secondary\` |
 | row gap | \`--space-075\` (6px) |
 | nav controls | **IconButton** \`size="sm"\` \`intent="secondary"\` \`variant="ghost"\` |
 | "…" overflow trigger | **IconButton** \`size="md"\` (40px), same intent/variant |
