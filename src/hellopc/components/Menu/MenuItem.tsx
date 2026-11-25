@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Check, RefreshCw } from 'lucide-react';
 
-import { Checkbox } from '../Checkbox/Checkbox';
+import { Checkbox, CheckboxIndicator } from '../Checkbox/Checkbox';
 
 /**
  * hello pc MenuItem — a selectable menu row (Figma "Menu Items", node 82:4577),
@@ -188,8 +188,8 @@ export interface MenuItemProps
   /**
    * Makes a `showCheckbox` row a single checkbox control: clicking anywhere on
    * the row toggles it, the row action is announced as `role="checkbox"` with
-   * `aria-checked` (`mixed` when indeterminate), and the visual Checkbox becomes
-   * a mirror outside the tab order. Use it for multi-select lists (filter
+   * `aria-checked` (`mixed` when indeterminate), and the box is drawn by a
+   * non-interactive `CheckboxIndicator` inside it. Use it for multi-select lists (filter
    * menus) where the row *is* the choice. Requires `showCheckbox`.
    * @default false
    */
@@ -231,13 +231,11 @@ export const MenuItem = React.forwardRef<HTMLButtonElement, MenuItemProps>(
 
     return (
       <Row $variant={variant} $selected={selected} $disabled={disabled}>
-        {checkboxVisible ? (
+        {checkboxVisible && !rowToggles ? (
           <Checkbox
             checked={currentChecked}
             disabled={disabled}
-            aria-label={rowToggles ? undefined : `Select ${checkboxName}`}
-            aria-hidden={rowToggles || undefined}
-            tabIndex={rowToggles ? -1 : undefined}
+            aria-label={`Select ${checkboxName}`}
             onCheckedChange={(next) => setChecked(next === true)}
           />
         ) : null}
@@ -262,6 +260,11 @@ export const MenuItem = React.forwardRef<HTMLButtonElement, MenuItemProps>(
           }}
           {...props}
         >
+          {rowToggles ? (
+            // Decorative mirror inside the row's own role="checkbox" button, so
+            // the row is the only interactive target (clicking the box toggles it).
+            <CheckboxIndicator checked={currentChecked} disabled={disabled} />
+          ) : null}
           {showLeftSlot ? <Slot aria-hidden>{leftSlot ?? <RefreshCw />}</Slot> : null}
           <Label>{children}</Label>
           {showRightSlot ? <Slot aria-hidden>{rightSlot ?? <Check />}</Slot> : null}

@@ -70,7 +70,7 @@ have a 12px radius; sub-items add a 24px left inset.
   control beside the menu action; it is not nested inside the row button.
 - With \`toggleRow\`, the whole row is one checkbox instead: the action is
   \`role="checkbox"\` with \`aria-checked\` (\`mixed\` for \`checked="indeterminate"\`)
-  and the drawn Checkbox is a mirror outside the tab order. Use it for
+  and the box is a non-interactive \`CheckboxIndicator\` inside it — one target. Use it for
   multi-select lists such as the Table **Filter Menu**; give a count in the
   right slot an \`aria-label\` on the row ("Windows 11, 812") since slots are
   decorative.
