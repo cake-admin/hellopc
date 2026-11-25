@@ -275,3 +275,38 @@ export const EscCloses: Story = {
     await expect(trigger).toHaveFocus();
   },
 };
+
+/**
+ * Picking a field and an operator with the pointer keeps the builder open (the
+ * Dropdown menus portal outside the panel), and Apply reports the picks.
+ */
+export const PicksOptionsWithPointer: Story = {
+  tags: ['!autodocs'],
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const dialog = () => within(screen.getByRole('dialog', { name: 'Advanced filters' }));
+    await userEvent.click(canvas.getByRole('button', { name: 'Advanced filters' }));
+    await screen.findByRole('dialog', { name: 'Advanced filters' });
+
+    await userEvent.click(dialog().getByRole('combobox', { name: 'Field for rule 1' }));
+    await userEvent.click(await screen.findByRole('option', { name: 'Device name' }));
+    await waitFor(() => expect(screen.queryByRole('listbox')).toBeNull());
+    await expect(screen.getByRole('dialog', { name: 'Advanced filters' })).toBeInTheDocument();
+    await expect(dialog().getByRole('combobox', { name: 'Field for rule 1' })).toHaveTextContent('Device name');
+
+    await userEvent.click(dialog().getByRole('combobox', { name: 'Operator for rule 1' }));
+    await userEvent.click(await screen.findByRole('option', { name: 'Contains' }));
+    await waitFor(() => expect(screen.queryByRole('listbox')).toBeNull());
+    await expect(screen.getByRole('dialog', { name: 'Advanced filters' })).toBeInTheDocument();
+
+    // See AppliesRules: user-event keystrokes don't reach React inside the modal popover here.
+    fireEvent.change(dialog().getByRole('textbox', { name: 'Value for rule 1' }), {
+      target: { value: 'PF4' },
+    });
+    await userEvent.click(dialog().getByRole('button', { name: 'Apply' }));
+    await expect(args.onApply).toHaveBeenCalledWith({
+      match: 'all',
+      rules: [expect.objectContaining({ field: 'device', operator: 'contains', value: 'PF4' })],
+    });
+  },
+};

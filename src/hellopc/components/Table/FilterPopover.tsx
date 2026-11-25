@@ -97,10 +97,24 @@ export function FilterPopover({
           sideOffset={4}
           collisionPadding={8}
           style={{ width }}
-          onPointerDownOutside={(event) => {
+          onInteractOutside={(event) => {
+            const target = event.detail.originalEvent.target as Element | null;
+            if (!target) return;
             // A click on the trigger toggles it itself; don't also dismiss here.
-            const target = event.detail.originalEvent.target as Node | null;
-            if (target && triggerRef.current?.contains(target)) event.preventDefault();
+            if (triggerRef.current?.contains(target)) {
+              event.preventDefault();
+              return;
+            }
+            // Controls inside the panel (the rule builder's Dropdowns = Radix
+            // Select) portal their menus to <body>, outside this content. Picking
+            // an option there is an interaction *with* the panel, so it must not
+            // dismiss it (which would discard the draft without Apply).
+            if (
+              typeof target.closest === 'function' &&
+              target.closest('[data-radix-popper-content-wrapper], [role="listbox"]')
+            ) {
+              event.preventDefault();
+            }
           }}
           onCloseAutoFocus={(event) => {
             // Anchor (not Trigger) means Radix has no trigger to refocus — do it.
