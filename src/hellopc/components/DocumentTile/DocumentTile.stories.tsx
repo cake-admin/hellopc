@@ -512,3 +512,53 @@ export const NameOnlyHasNoFooter: Story = {
     await expect(link.parentElement?.childElementCount).toBe(1);
   },
 };
+
+const LONG_NAME = '2026 Q3 regional sales performance review — final board version with appendices.pdf';
+
+/** Pure interaction test (hidden from docs): a long name on a non-interactive (uploading) row stays one mounted, truncated element. */
+export const LongUploadNameStaysTruncated: Story = {
+  tags: ['!autodocs'],
+  decorators: framed,
+  args: { layout: 'compact', status: 'uploading', progress: 42, fileName: LONG_NAME },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const name = canvas.getByText(LONG_NAME);
+    await canvasElement.ownerDocument.fonts?.ready;
+    // Let truncation measurement and any re-render settle over a few frames.
+    for (let i = 0; i < 5; i += 1) {
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    await expect(canvas.getByText(LONG_NAME)).toBe(name);
+    await expect(name.isConnected).toBe(true);
+    await expect(name.scrollWidth).toBeGreaterThan(name.clientWidth);
+    // Reachable by keyboard for the tooltip only while cut off.
+    await expect(name).toHaveAttribute('tabindex', '0');
+  },
+};
+
+/** Pure interaction test (hidden from docs): the click that dismisses the More menu does not open the file. */
+export const MenuDismissDoesNotOpen: Story = {
+  tags: ['!autodocs'],
+  decorators: framed,
+  args: { href: undefined },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const body = within(canvasElement.ownerDocument.body);
+    // Query before opening: the modal menu hides the rest of the page from AT.
+    const primary = canvas.getByRole('button', { name: 'Document_name.pdf' });
+    const more = canvas.getByRole('button', { name: 'More actions for Document_name.pdf' });
+
+    await userEvent.click(more);
+    await waitFor(() => expect(body.getByRole('menu')).toBeVisible());
+
+    // A click on the tile body lands on the stretched primary overlay.
+    const user = userEvent.setup({ pointerEventsCheck: 0 });
+    await user.click(primary);
+    await waitFor(() => expect(body.queryByRole('menu')).toBeNull());
+    await expect(args.onOpen).not.toHaveBeenCalled();
+
+    // The next, ordinary click opens the file again.
+    await user.click(primary);
+    await expect(args.onOpen).toHaveBeenCalledTimes(1);
+  },
+};

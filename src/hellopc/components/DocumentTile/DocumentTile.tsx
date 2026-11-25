@@ -475,6 +475,17 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
     const [nameEl, setNameEl] = React.useState<HTMLSpanElement | null>(null);
     const truncated = useIsTruncated(nameEl, [fileName, layout]);
     const [tipOpen, setTipOpen] = React.useState(false);
+    /** True between a pointer-down that dismisses the More menu and the click
+     *  that follows it, so that click does not reach the primary overlay. */
+    const suppressOpenRef = React.useRef(false);
+    const handleMenuPointerDownOutside = () => {
+      suppressOpenRef.current = true;
+      const release = () => window.setTimeout(() => {
+        suppressOpenRef.current = false;
+      }, 0);
+      window.addEventListener('pointerup', release, { once: true, capture: true });
+      window.addEventListener('pointercancel', release, { once: true, capture: true });
+    };
 
     const icon = fileTypeIcon ?? <FileText />;
 
@@ -511,48 +522,55 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
       </CompactThumb>
     );
 
-    /* Name (primary target when interactive) */
-    const nameText = (
-      <Name ref={setNameEl} $layout={layout}>
-        {fileName}
-      </Name>
-    );
+    /* Name (primary target when interactive).
+     * The tooltip always wraps one stable, width-constrained element — the
+     * link/button, or the name text itself — and only its open state follows
+     * truncation. Swapping elements would remount the focus target and, for an
+     * unconstrained wrapper, let the name stop overflowing (a wrap/unwrap loop). */
     const primaryProps = {
       'data-document-tile-primary': '',
       'aria-current': isSelected ? ('true' as const) : undefined,
     };
-    let nameNode: React.ReactNode = nameText;
-    if (interactive) {
-      const target =
-        href != null ? (
-          <PrimaryLink href={href} onClick={onOpen ? () => onOpen() : undefined} {...primaryProps}>
-            {nameText}
-          </PrimaryLink>
-        ) : (
-          <PrimaryButton type="button" onClick={() => onOpen?.()} {...primaryProps}>
-            {nameText}
-          </PrimaryButton>
-        );
-      // Always wrap the target so it never remounts (and never drops focus)
-      // when truncation changes; the tooltip just stays closed until needed.
-      nameNode = (
-        <SimpleTooltip
-          triggerElement={target}
-          delayDuration={400}
-          open={truncated && tipOpen}
-          onOpenChange={setTipOpen}
-        >
-          {fileName}
-        </SimpleTooltip>
-      );
-    } else if (truncated) {
-      // Non-interactive names only become a (tooltip) focus stop when cut off.
-      nameNode = (
-        <SimpleTooltip trigger={nameText} delayDuration={400}>
-          {fileName}
-        </SimpleTooltip>
-      );
-    }
+    const onPrimaryClick = (event: React.MouseEvent) => {
+      // The click that dismissed the More menu lands on the stretched overlay;
+      // it must not also open the file.
+      if (suppressOpenRef.current) {
+        event.preventDefault();
+        return;
+      }
+      onOpen?.();
+    };
+    const target = interactive ? (
+      href != null ? (
+        <PrimaryLink href={href} onClick={onPrimaryClick} {...primaryProps}>
+          <Name ref={setNameEl} $layout={layout}>
+            {fileName}
+          </Name>
+        </PrimaryLink>
+      ) : (
+        <PrimaryButton type="button" onClick={onPrimaryClick} {...primaryProps}>
+          <Name ref={setNameEl} $layout={layout}>
+            {fileName}
+          </Name>
+        </PrimaryButton>
+      )
+    ) : (
+      // Plain text: a focus stop only while cut off, so keyboard users can
+      // still reach the full name in the tooltip.
+      <Name ref={setNameEl} $layout={layout} tabIndex={truncated ? 0 : undefined}>
+        {fileName}
+      </Name>
+    );
+    const nameNode = (
+      <SimpleTooltip
+        triggerElement={target}
+        delayDuration={400}
+        open={truncated && tipOpen}
+        onOpenChange={setTipOpen}
+      >
+        {fileName}
+      </SimpleTooltip>
+    );
 
     /* Actions */
     const actionSize = 'sm' as const;
@@ -620,6 +638,7 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
                   sideOffset={4}
                   style={{ zIndex: 1000 }}
                   aria-label={`Actions for ${fileName}`}
+                  onPointerDownOutside={handleMenuPointerDownOutside}
                 >
                   <MenuContainer width="max-content" role="none">
                     {menu.map((item) => (
