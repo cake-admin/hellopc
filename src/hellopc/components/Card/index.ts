@@ -6,3 +6,5 @@ export { ContentCard } from './ContentCard';
 export type { ContentCardProps } from './ContentCard';
 export { SimpleCard } from './SimpleCard';
 export type { SimpleCardProps } from './SimpleCard';
+export { DataCard } from './DataCard';
+export type { DataCardProps, DataCardHeadingLevel } from './DataCard';

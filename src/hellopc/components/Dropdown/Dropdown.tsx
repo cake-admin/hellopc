@@ -33,8 +33,13 @@ import { nativeScrollbarStyles } from '../Elements/Scrollbar';
  *    matches the open-state trigger text).
  */
 
-/** Trigger height + arrow slot size (Figma 40pt trigger, 24px arrow). */
-const TRIGGER_HEIGHT = 40;
+/**
+ * Trigger height + arrow slot size (Figma 40pt trigger, 24px arrow). The
+ * compact `sm` trigger is 32px (Figma `hellopc.table.filter.rule.builder`
+ * 18224:820 field / operator selects).
+ */
+export type DropdownSize = 'sm' | 'md';
+const TRIGGER_HEIGHT: Record<DropdownSize, number> = { sm: 32, md: 40 };
 const ARROW_SIZE = 24;
 /** Menu item row height (Figma "&menu.items", 36pt). */
 const ITEM_HEIGHT = 36;
@@ -64,13 +69,13 @@ const FieldGroup = styled.div`
   width: 100%;
 `;
 
-const Trigger = styled(RadixSelect.Trigger)`
+const Trigger = styled(RadixSelect.Trigger)<{ $size: DropdownSize }>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: var(--space-100);
   width: 100%;
-  height: ${TRIGGER_HEIGHT}px;
+  height: ${(p) => TRIGGER_HEIGHT[p.$size]}px;
   padding: 0 var(--space-200);
   border-radius: var(--radius-200);
   background: var(--color-surfaces-on-container-high);
@@ -303,6 +308,15 @@ export interface DropdownProps {
   name?: string;
   /** Explicit id for the trigger (defaults to a generated id wired to the label). */
   id?: string;
+  /**
+   * Trigger height: `md` 40px (the form field), `sm` 32px — the compact
+   * labelless select used inside dense UI such as the Table **Filter Rule
+   * Builder**. Pair `sm` without a `label` with `aria-label`.
+   * @default 'md'
+   */
+  size?: DropdownSize;
+  /** Accessible name when there is no visible `label` (required in that case). */
+  'aria-label'?: string;
 }
 
 export const Dropdown = React.forwardRef<HTMLButtonElement, DropdownProps>(
@@ -320,6 +334,8 @@ export const Dropdown = React.forwardRef<HTMLButtonElement, DropdownProps>(
       disabled = false,
       name,
       id,
+      size = 'md',
+      'aria-label': ariaLabel,
     },
     ref,
   ) => {
@@ -363,6 +379,8 @@ export const Dropdown = React.forwardRef<HTMLButtonElement, DropdownProps>(
             <Trigger
               ref={ref}
               id={triggerId}
+              $size={size}
+              aria-label={label ? undefined : ariaLabel}
               data-has-value={hasValue}
               aria-describedby={helperText != null ? helperId : undefined}
             >

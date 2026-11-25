@@ -8,19 +8,26 @@ import { HeaderRow, HeaderCell } from './HeaderRow';
 import { Chip } from '../Chip/Chip';
 import { Badge } from '../Badge/Badge';
 
-/** A fixed-width table frame so a row renders at a realistic column width. */
+/**
+ * A fixed-width native `<table>` frame so a row renders at a realistic column
+ * width. Block display mirrors what **Table** does: the elements keep their
+ * table semantics while the rows lay themselves out.
+ */
 const Frame = ({ children, width = 640 }: { children: React.ReactNode; width?: number }) => (
-  <div
-    role="table"
+  <table
+    aria-label="Sample rows"
     style={{
+      display: 'block',
+      boxSizing: 'content-box',
       width,
+      borderCollapse: 'collapse',
       border: '1px solid var(--color-stroke-border)',
       borderRadius: 'var(--radius-150)',
       overflow: 'hidden',
     }}
   >
-    <div role="rowgroup">{children}</div>
-  </div>
+    <tbody style={{ display: 'block' }}>{children}</tbody>
+  </table>
 );
 
 /** The trailing row action used across the examples — a static info affordance. */
@@ -79,9 +86,8 @@ page live; nothing is hardcoded.
 The row composes what already exists rather than rebuilding it: the leading
 control is the hello pc **Checkbox**, and cells hold arbitrary content — a plain
 string becomes truncating body text, while richer cells take a **Chip**, a
-**Badge**, or any node. It renders ARIA grid semantics (\`role="row"\` /
-\`role="gridcell"\`), so drop it inside a container that supplies \`role="table"\`
-and row groups (the examples here use a small frame for that).
+**Badge**, or any node. It renders a native \`<tr>\` of \`<td>\`s, so drop it
+inside a **Table** body (the examples here use a small \`<table>\` frame).
 
 The Figma \`state\` axis collapses into props: \`stripe\` (default / inverse
 banding), \`selected\` (tonal highlight + checked box), hover lift on every
@@ -132,12 +138,12 @@ import { DataRow, DataCell } from '@/hellopc/components/Table';
 
 ## Accessibility
 
-- The row is \`role="row"\`; its parts are \`role="gridcell"\`. Compose inside a
-  container with \`role="table"\` / \`role="rowgroup"\` (or a native \`<table>\`
-  wrapper) — a lone row is not a complete grid.
-- Selection state is announced via \`aria-selected\`; the checkbox carries an
+- The row is a native \`<tr>\` and every part a \`<td>\`, so screen readers get
+  real table navigation (row/column position, header association). Compose it
+  inside a **Table** — a lone \`<tr>\` outside a \`<table>\` is invalid markup.
+- Selection state is the checkbox's own checked state; the checkbox carries an
   \`aria-label\` (\`checkboxLabel\`, default "Select row") since it has no visible
-  text.
+  text — make it record-specific ("Select Ada Lovelace").
 - \`disabled\` sets \`aria-disabled\` and disables the checkbox; it does not remove
   the row from the accessibility tree.
 - Focus lives on the real controls (the **Checkbox**, any action button) with

@@ -19,8 +19,10 @@ import { Checkbox } from '../Checkbox/Checkbox';
  * row, and the `disabled` prop. Every value resolves from hello pc token custom properties,
  * so the **Theme** toolbar re-themes rows live.
  *
- * Rendered as ARIA grid rows/cells (`role="row"` / `role="gridcell"`) so it can
- * compose into a table container that supplies `role="table"` + `rowgroup`.
+ * Rendered as native table markup — a `<tr>` of `<td>`s — so it composes
+ * inside a **Table** (`<table>` / `<tbody>`). Layout is flexbox on the row, so
+ * the native elements keep their table semantics while the geometry matches
+ * Figma exactly.
  */
 
 /**
@@ -38,15 +40,14 @@ const STRIPE_BACKGROUND: Record<Stripe, string> = {
   inverse: 'var(--color-surfaces-on-container-high)',
 };
 
-const Root = styled.div<{
+const Root = styled.tr<{
   $stripe: Stripe;
   $selected: boolean;
   $disabled: boolean;
   $interactive: boolean;
 }>`
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: ${RAIL_WIDTH}px minmax(0, 1fr) ${RAIL_WIDTH}px;
+  display: flex;
   width: 100%;
   background: ${(p) => STRIPE_BACKGROUND[p.$stripe]};
   color: var(--color-text-icon-primary);
@@ -92,35 +93,31 @@ const Root = styled.div<{
 /** Shared cell chrome: 48px tall, top+bottom low-emphasis rule, token padding. */
 const cellBase = css`
   box-sizing: border-box;
+  text-align: start;
   min-height: ${ROW_HEIGHT}px;
   border-top: var(--stroke-100) solid var(--color-stroke-border-low);
   border-bottom: var(--stroke-100) solid var(--color-stroke-border-low);
 `;
 
 /** Fixed leading/trailing rail cell — centers a checkbox or row action. */
-const RailCell = styled.div`
+const RailCell = styled.td`
   ${cellBase}
   display: flex;
+  flex: 0 0 ${RAIL_WIDTH}px;
+  width: ${RAIL_WIDTH}px;
   align-items: center;
   justify-content: center;
   /* py-10 px-8 from Figma 171:9845 */
   padding: var(--space-150) var(--space-100);
 `;
 
-/** Middle region: a clipped flex run that lays the DataCells out edge to edge. */
-const Slots = styled.div`
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  overflow: hidden;
-`;
-
-const CellRoot = styled.div`
+const CellRoot = styled.td`
   ${cellBase}
   display: flex;
   flex: 1 0 0;
   align-items: center;
   min-width: 0;
+  overflow: hidden;
   /* py-10 px-8 from Figma 171:9757 */
   padding: var(--space-150) var(--space-100);
 `;
@@ -142,7 +139,7 @@ const CellText = styled.span`
   white-space: nowrap;
 `;
 
-export interface DataCellProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DataCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
   /**
    * Cell content. A plain string is rendered as truncating 14px body text
    * (Figma `type=text`); pass a **Chip**, **Badge**, or any node for richer
@@ -156,9 +153,9 @@ export interface DataCellProps extends React.HTMLAttributes<HTMLDivElement> {
  * with its siblings and clips overflow. Strings become ellipsized body text;
  * any other node (a `Chip`, a `Badge`, an avatar…) is placed as-is.
  */
-export const DataCell = React.forwardRef<HTMLDivElement, DataCellProps>(
+export const DataCell = React.forwardRef<HTMLTableCellElement, DataCellProps>(
   ({ children, ...props }, ref) => (
-    <CellRoot ref={ref} role="gridcell" {...props}>
+    <CellRoot ref={ref} {...props}>
       {typeof children === 'string' ? <CellText>{children}</CellText> : children}
     </CellRoot>
   ),
@@ -167,7 +164,7 @@ export const DataCell = React.forwardRef<HTMLDivElement, DataCellProps>(
 DataCell.displayName = 'DataCell';
 
 export interface DataRowProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onSelect'> {
+  extends Omit<React.HTMLAttributes<HTMLTableRowElement>, 'onSelect'> {
   /** The row's `DataCell`s — the record's columns. */
   children?: React.ReactNode;
   /**
@@ -217,10 +214,9 @@ export interface DataRowProps
 
 /**
  * A table body row: leading selection checkbox · flexible `DataCell` run ·
- * trailing action. Compose it inside a table container that provides
- * `role="table"` and row groups.
+ * trailing action. Renders a native `<tr>`; compose it inside a **Table** body.
  */
-export const DataRow = React.forwardRef<HTMLDivElement, DataRowProps>(
+export const DataRow = React.forwardRef<HTMLTableRowElement, DataRowProps>(
   (
     {
       children,
@@ -238,8 +234,6 @@ export const DataRow = React.forwardRef<HTMLDivElement, DataRowProps>(
   ) => (
     <Root
       ref={ref}
-      role="row"
-      aria-selected={selectable ? selected : undefined}
       aria-disabled={disabled || undefined}
       $stripe={stripe}
       $selected={selected}
@@ -247,7 +241,7 @@ export const DataRow = React.forwardRef<HTMLDivElement, DataRowProps>(
       $interactive={interactive}
       {...props}
     >
-      <RailCell role="gridcell">
+      <RailCell>
         {selectable ? (
           <Checkbox
             aria-label={checkboxLabel}
@@ -258,9 +252,9 @@ export const DataRow = React.forwardRef<HTMLDivElement, DataRowProps>(
         ) : null}
       </RailCell>
 
-      <Slots>{children}</Slots>
+      {children}
 
-      <RailCell role="gridcell">{action}</RailCell>
+      <RailCell>{action}</RailCell>
     </Root>
   ),
 );

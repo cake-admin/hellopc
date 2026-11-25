@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox as RadixCheckbox } from 'radix-ui';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Check, Minus } from 'lucide-react';
 
 /**
@@ -15,7 +15,7 @@ import { Check, Minus } from 'lucide-react';
  */
 
 /** The check (✓) and dash (–) marks — lucide icons that inherit `currentColor`. */
-const Mark = styled(RadixCheckbox.Indicator)`
+const markStyles = css`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +24,13 @@ const Mark = styled(RadixCheckbox.Indicator)`
     width: 16px;
     height: 16px;
   }
+`;
+const Mark = styled(RadixCheckbox.Indicator)`
+  ${markStyles}
+`;
+/** The same mark for the non-interactive `CheckboxIndicator` (no Radix context). */
+const StaticMark = styled.span`
+  ${markStyles}
 `;
 
 /** The 18px visual box — border + fill are driven from the Root's data-state. */
@@ -40,9 +47,8 @@ const Box = styled.span`
   transition: background 120ms ease, border-color 120ms ease;
 `;
 
-/** 24px touch target: focus ring + the state-driven box/mark colors. */
-const Root = styled(RadixCheckbox.Root)`
-  all: unset;
+/** 24px target geometry shared by the control and the static indicator. */
+const targetStyles = css`
   position: relative;
   box-sizing: border-box;
   width: 24px;
@@ -52,34 +58,23 @@ const Root = styled(RadixCheckbox.Root)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+`;
 
-  /* Unchecked hover: a translucent primary fill inside the box. */
-  &[data-state='unchecked']:hover:not([data-disabled]) ${Box} {
-    background: var(--color-primary-primary-overlay);
-  }
-
-  /* Checked / indeterminate: solid primary box, deepening on hover. */
+/** data-state / data-disabled → box + mark colors (shared, single source). */
+const stateStyles = css`
+  /* Checked / indeterminate: solid primary box. */
   &[data-state='checked'] ${Box},
   &[data-state='indeterminate'] ${Box} {
     background: var(--color-primary-primary);
     border-color: var(--color-primary-primary);
   }
-  &[data-state='checked']:hover:not([data-disabled]) ${Box},
-  &[data-state='indeterminate']:hover:not([data-disabled]) ${Box} {
-    background: var(--color-primary-primary-hover);
-    border-color: var(--color-primary-primary-hover);
-  }
 
   /* Disabled: muted filled box; the mark (if any) dims too. */
-  &[data-disabled] {
-    cursor: not-allowed;
-  }
   &[data-disabled] ${Box} {
     background: var(--color-disabled-disabled-inverse);
     border-color: var(--color-disabled-disabled);
   }
-  &[data-disabled] ${Mark} {
+  &[data-disabled] .cb-mark {
     color: var(--color-disabled-disabled);
   }
 
@@ -89,6 +84,31 @@ const Root = styled(RadixCheckbox.Root)`
   }
   &[data-state='indeterminate'] .cb-check {
     display: none;
+  }
+`;
+
+/** 24px touch target: focus ring + the state-driven box/mark colors. */
+const Root = styled(RadixCheckbox.Root)`
+  all: unset;
+  ${targetStyles}
+  cursor: pointer;
+
+  ${stateStyles}
+
+  /* Unchecked hover: a translucent primary fill inside the box. */
+  &[data-state='unchecked']:hover:not([data-disabled]) ${Box} {
+    background: var(--color-primary-primary-overlay);
+  }
+
+  /* Checked / indeterminate hover: the box deepens. */
+  &[data-state='checked']:hover:not([data-disabled]) ${Box},
+  &[data-state='indeterminate']:hover:not([data-disabled]) ${Box} {
+    background: var(--color-primary-primary-hover);
+    border-color: var(--color-primary-primary-hover);
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
   }
 
   /* Focus ring: 22px (inset 1px), restyled — never removed. */
@@ -158,7 +178,7 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
     const control = (
       <Root id={checkboxId} ref={ref} {...props}>
         <Box>
-          <Mark>
+          <Mark className="cb-mark">
             <Check className="cb-check" aria-hidden strokeWidth={3} />
             <Minus className="cb-dash" aria-hidden strokeWidth={3} />
           </Mark>
@@ -178,5 +198,45 @@ export const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
 );
 
 Checkbox.displayName = 'Checkbox';
+
+const IndicatorRoot = styled.span`
+  ${targetStyles}
+  pointer-events: none;
+
+  ${stateStyles}
+`;
+
+export interface CheckboxIndicatorProps {
+  /** State to draw: `true`, `false`, or `'indeterminate'` (dash). */
+  checked: boolean | 'indeterminate';
+  /** Draw the disabled treatment. @default false */
+  disabled?: boolean;
+}
+
+/**
+ * The Checkbox's visual only — a non-interactive, `aria-hidden` `<span>` with
+ * the same box, mark and state colors as **Checkbox**. Use it where another
+ * element *is* the checkbox (e.g. a **MenuItem** `toggleRow` row with
+ * `role="checkbox"`), so there is exactly one interactive target. Never use it
+ * as a stand-alone control.
+ */
+export const CheckboxIndicator = ({ checked, disabled = false }: CheckboxIndicatorProps) => {
+  const state =
+    checked === 'indeterminate' ? 'indeterminate' : checked ? 'checked' : 'unchecked';
+  return (
+    <IndicatorRoot aria-hidden data-state={state} data-disabled={disabled ? '' : undefined}>
+      <Box>
+        {state !== 'unchecked' ? (
+          <StaticMark className="cb-mark">
+            <Check className="cb-check" aria-hidden strokeWidth={3} />
+            <Minus className="cb-dash" aria-hidden strokeWidth={3} />
+          </StaticMark>
+        ) : null}
+      </Box>
+    </IndicatorRoot>
+  );
+};
+
+CheckboxIndicator.displayName = 'CheckboxIndicator';
 
 export default Checkbox;
