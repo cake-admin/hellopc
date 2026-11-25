@@ -18,7 +18,7 @@ export interface AiFeedbackProps extends Omit<React.HTMLAttributes<HTMLDivElemen
   onCopy?: () => void;
   /** Called on Regenerate. */
   onRegenerate?: () => void;
-  /** Shows the Regenerate button (Figma `showRegenerate`). @default true */
+  /** Shows the Regenerate button (Figma `showRegenerate`) — only rendered when `onRegenerate` is set. @default true */
   showRegenerate?: boolean;
   /** Accessible name for the group. @default 'Response feedback' */
   label?: string;
@@ -145,7 +145,7 @@ export const AiFeedback = React.forwardRef<HTMLDivElement, AiFeedbackProps>(
             }}
           />
         ) : null}
-        {showRegenerate ? (
+        {showRegenerate && onRegenerate ? (
           <IconButton label="Regenerate" icon={<RotateCw />} size="xs" intent="secondary" variant="ghost" onClick={onRegenerate} />
         ) : null}
         <VisuallyHidden.Root aria-live="polite">{copied ? 'Copied' : ''}</VisuallyHidden.Root>

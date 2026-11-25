@@ -105,11 +105,11 @@ const Box = styled.div<{ $status: TextareaStatus }>`
   }
 `;
 
-const Field = styled.textarea`
+const Field = styled.textarea<{ $rows: number }>`
   flex: 1;
   min-width: 0;
-  /* 3 lines of 14px × 1.35 ≈ the Figma 60px content box. */
-  min-height: calc(var(--type-size-body) * 1.35 * 3);
+  /* "rows" lines of 14px × 1.35 (3 ≈ the Figma 60px content box). */
+  min-height: calc(var(--type-size-body) * 1.35 * ${(p) => p.$rows});
   margin: 0;
   padding: 0;
   border: none;
@@ -200,6 +200,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               ref={ref}
               id={fieldId}
               rows={rows}
+              $rows={rows}
               disabled={disabled}
               required={required}
               maxLength={maxLength}

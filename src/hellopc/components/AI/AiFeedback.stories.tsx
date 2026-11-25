@@ -88,9 +88,9 @@ export const States: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <AiFeedback onCopy={() => {}} />
-      <AiFeedback defaultValue="liked" onCopy={() => {}} />
-      <AiFeedback defaultValue="disliked" onCopy={() => {}} />
+      <AiFeedback onCopy={() => {}} onRegenerate={() => {}} />
+      <AiFeedback defaultValue="liked" onCopy={() => {}} onRegenerate={() => {}} />
+      <AiFeedback defaultValue="disliked" onCopy={() => {}} onRegenerate={() => {}} />
     </div>
   ),
 };
@@ -101,7 +101,7 @@ export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, auto)', gap: 16 }}>
       {([null, 'liked', 'disliked'] as const).flatMap((v) => [
-        <AiFeedback key={`${v}-a`} defaultValue={v} onCopy={() => {}} />,
+        <AiFeedback key={`${v}-a`} defaultValue={v} onCopy={() => {}} onRegenerate={() => {}} />,
         <AiFeedback key={`${v}-b`} defaultValue={v} onCopy={() => {}} showRegenerate={false} />,
       ])}
     </div>
