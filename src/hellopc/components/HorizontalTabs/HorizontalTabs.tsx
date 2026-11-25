@@ -19,6 +19,16 @@ import { IconButton } from '../Button/IconButton';
  * part is implemented here.
  */
 
+/**
+ * Tab height. `default` is the 48px Figma tab; `compact` (~36px) is for dense
+ * containers such as a compact Side Sheet (Figma `.hellopc.horizontal.tab.item`
+ * size = compact).
+ */
+export type HorizontalTabsSize = 'default' | 'compact';
+
+/** Lets every `HorizontalTabItem` inherit the root's `size`. */
+export const HorizontalTabsSizeContext = React.createContext<HorizontalTabsSize>('default');
+
 const Root = styled(RadixTabs.Root)`
   display: flex;
   flex-direction: column;
@@ -88,12 +98,22 @@ export interface HorizontalTabsProps
    * @default 'automatic'
    */
   activationMode?: 'automatic' | 'manual';
+  /**
+   * Tab height for every `HorizontalTabItem` inside: `default` 48px,
+   * `compact` ~36px (dense containers such as a compact Side Sheet).
+   * @default 'default'
+   */
+  size?: HorizontalTabsSize;
 }
 
 /** The tabs root. Pins `orientation="horizontal"` so Radix wires Left/Right
  *  arrow navigation. */
 export const HorizontalTabs = React.forwardRef<HTMLDivElement, HorizontalTabsProps>(
-  (props, ref) => <Root ref={ref} {...props} orientation="horizontal" />,
+  ({ size = 'default', ...props }, ref) => (
+    <HorizontalTabsSizeContext.Provider value={size}>
+      <Root ref={ref} {...props} orientation="horizontal" />
+    </HorizontalTabsSizeContext.Provider>
+  ),
 );
 HorizontalTabs.displayName = 'HorizontalTabs';
 

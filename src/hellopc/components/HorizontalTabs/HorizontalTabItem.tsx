@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Tabs as RadixTabs } from 'radix-ui';
 
+import { HorizontalTabsSizeContext, type HorizontalTabsSize } from './HorizontalTabs';
+
 /**
  * hello pc HorizontalTabItem — one tab in a horizontal tab bar (Figma
  * ".elements/tab_item", node 149:8842).
@@ -19,8 +21,10 @@ import { Tabs as RadixTabs } from 'radix-ui';
  * Must be rendered inside `HorizontalTabsList` within `HorizontalTabs`.
  */
 
-/* Figma 149:8843 intrinsic geometry: the 48px tab and its 4px underline. */
-const TAB_HEIGHT = 48;
+/* Figma 149:8843 intrinsic geometry: the 48px tab and its 4px underline.
+   Compact (Figma 6119:9633 size = compact) is ~36px: 6px label padding top and
+   bottom, 8px sides, 4px column inset. */
+const TAB_HEIGHT: Record<HorizontalTabsSize, number> = { default: 48, compact: 36 };
 const INDICATOR_HEIGHT = 4;
 
 /** The underline. Always rendered so selecting a tab never shifts its label;
@@ -45,33 +49,36 @@ const IndicatorSlot = styled.span`
   padding: 0 var(--space-300);
 `;
 
-const LabelRow = styled.span`
+const LabelRow = styled.span<{ $size: HorizontalTabsSize }>`
   display: flex;
   flex: 1 1 0%;
   align-items: center;
   justify-content: center;
   gap: var(--space-300);
   min-height: 0;
-  padding: var(--space-150) var(--space-200) var(--space-100);
+  padding: ${(p) =>
+    p.$size === 'compact'
+      ? 'var(--space-075) var(--space-100)'
+      : 'var(--space-150) var(--space-200) var(--space-100)'};
   white-space: nowrap;
 `;
 
-const Column = styled.span`
+const Column = styled.span<{ $size: HorizontalTabsSize }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 var(--space-100);
+  padding: 0 ${(p) => (p.$size === 'compact' ? 'var(--space-050)' : 'var(--space-100)')};
 `;
 
-const Trigger = styled(RadixTabs.Trigger)`
+const Trigger = styled(RadixTabs.Trigger)<{ $size: HorizontalTabsSize }>`
   box-sizing: border-box;
   display: inline-flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  height: ${TAB_HEIGHT}px;
+  height: ${(p) => TAB_HEIGHT[p.$size]}px;
   padding: 0;
   border: none;
   appearance: none;
@@ -148,19 +155,28 @@ export interface HorizontalTabItemProps
   children: React.ReactNode;
   /** Dims the tab and drops it from the tab order. @default false */
   disabled?: boolean;
+  /**
+   * Overrides the size inherited from `HorizontalTabs`. Normally set once on
+   * the root instead.
+   */
+  size?: HorizontalTabsSize;
 }
 
 export const HorizontalTabItem = React.forwardRef<HTMLButtonElement, HorizontalTabItemProps>(
-  ({ children, ...props }, ref) => (
-    <Trigger ref={ref} {...props}>
-      <Column>
-        <LabelRow>{children}</LabelRow>
-        <IndicatorSlot>
-          <Indicator />
-        </IndicatorSlot>
-      </Column>
-    </Trigger>
-  ),
+  ({ children, size: sizeProp, ...props }, ref) => {
+    const inherited = React.useContext(HorizontalTabsSizeContext);
+    const size = sizeProp ?? inherited;
+    return (
+      <Trigger ref={ref} $size={size} {...props}>
+        <Column $size={size}>
+          <LabelRow $size={size}>{children}</LabelRow>
+          <IndicatorSlot>
+            <Indicator />
+          </IndicatorSlot>
+        </Column>
+      </Trigger>
+    );
+  },
 );
 
 HorizontalTabItem.displayName = 'HorizontalTabItem';
