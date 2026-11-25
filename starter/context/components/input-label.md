@@ -32,7 +32,7 @@ Also accepts all `Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'children'>`
 
 ## Design tokens used
 
-`--font-weight-medium`, `--color-text-icon-primary`, `--type-size-subject`, `--type-size-body`, `--font-weight-regular`, `--type-size-helper`, `--color-text-icon-placeholder`, `--color-disabled-disabled-inverse`, `--space-050`, `--space-100`
+`--font-weight-medium`, `--color-text-icon-primary`, `--type-size-subject`, `--type-size-body`, `--font-weight-regular`, `--type-size-helper`, `--color-text-icon-placeholder`, `--color-text-icon-disabled`, `--space-050`, `--space-100`
 
 ## Accessibility
 
@@ -52,6 +52,6 @@ Also accepts all `Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'children'>`
 ---
 
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
-- Related: TextInput.
+- Related: TextInput, Textarea.
 - Source: `src/hellopc/components/Elements/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/elements-input-label--docs>

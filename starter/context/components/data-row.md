@@ -21,7 +21,7 @@ A single record in a table body (Figma DataRow, node 171:9843). It lays out a fi
 | `checkboxLabel` | `string` | `'Select row'` | Accessible name for the row's selection checkbox. |
 | `action` | `React.ReactNode` | — | Trailing rail content — a row action such as an info icon or an overflow menu. The rail column renders even when omitted, to keep header alignment. |
 
-Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'onSelect'>` props.
+Also accepts all `Omit<React.HTMLAttributes<HTMLTableRowElement>, 'onSelect'>` props.
 
 ## Usage
 
@@ -52,12 +52,12 @@ import { DataRow, DataCell } from '@/hellopc/components/Table';
 
 ## Design tokens used
 
-`--color-surfaces-container`, `--color-surfaces-on-container-high`, `--color-surfaces-on-container`, `--elevation-0`, `--color-tonal-tonal-lightest`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--stroke-100`, `--color-stroke-border-low`, `--space-150`, `--space-100`, `--type-size-body`, `--font-weight-regular`, `--color-text-icon-primary`
+`--color-surfaces-container`, `--color-surfaces-on-container-high`, `--color-surfaces-on-container`, `--elevation-0`, `--color-tonal-tonal-lightest`, `--color-text-icon-on-surface`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--stroke-100`, `--color-stroke-border-low`, `--space-150`, `--space-100`, `--type-size-body`, `--font-weight-regular`, `--color-text-icon-primary`
 
 ## Accessibility
 
-- The row is role="row"; its parts are role="gridcell". Compose inside a container with role="table" / role="rowgroup" (or a native <table> wrapper) — a lone row is not a complete grid.
-- Selection state is announced via aria-selected; the checkbox carries an aria-label (checkboxLabel, default "Select row") since it has no visible text.
+- The row is a native <tr> and every part a <td>, so screen readers get real table navigation (row/column position, header association). Compose it inside a Table — a lone <tr> outside a <table> is invalid markup.
+- Selection state is the checkbox's own checked state; the checkbox carries an aria-label (checkboxLabel, default "Select row") since it has no visible text — make it record-specific ("Select Ada Lovelace").
 - disabled sets aria-disabled and disables the checkbox; it does not remove the row from the accessibility tree.
 - Focus lives on the real controls (the Checkbox, any action button) with their own token focus rings — the row background is never the only signal.
 

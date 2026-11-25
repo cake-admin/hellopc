@@ -10,7 +10,7 @@
     "hellopc:update": "node scripts/update-hellopc.mjs"
   },
   "dependencies": {
-    "@cake-admin/cakeand": "https://github.com/cake-admin/cakev2/releases/download/v4.3.0/cake-admin-cakeand-4.3.0.tgz",
+    "@cake-admin/cakeand": "https://github.com/cake-admin/cakev2/releases/download/v4.4.0/cake-admin-cakeand-4.4.0.tgz",
     "lucide-react": "^0.536.0",
     "radix-ui": "^1.6.2",
     "react": "^19.2.7",

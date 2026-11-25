@@ -34,7 +34,7 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 
 ## Design tokens used
 
-`--color-tonal-tonal-overlay`, `--color-primary-primary`, `--color-text-icon-inverse`, `--color-secondary-secondary`, `--color-text-icon-on-secondary`, `--stroke-100`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-inverse-text-icon-primary`, `--color-inverse-text-icon-disabled`, `--color-inverse-secondary-secondary-overlay`, `--color-inverse-primary-primary`, `--radius-1000`, `--stroke-300`
+`--color-tonal-tonal-overlay`, `--color-primary-primary`, `--color-text-icon-inverse`, `--color-secondary-secondary`, `--color-text-icon-on-secondary`, `--stroke-100`, `--color-text-icon-primary-on-surface`, `--color-text-icon-secondary-on-surface`, `--color-text-icon-on-tonal`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-text-icon-disabled`, `--color-inverse-text-icon-primary`, `--color-inverse-text-icon-disabled`, `--color-inverse-secondary-secondary-overlay`, `--color-inverse-primary-primary`, `--radius-1000`, `--stroke-300`
 
 ## Accessibility
 

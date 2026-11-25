@@ -32,7 +32,7 @@ A binary on/off control built on the Radix Switch primitive and styled with hell
 
 ## Design tokens used
 
-`--color-secondary-secondary-hover`, `--color-secondary-secondary`, `--color-primary-primary`, `--color-primary-primary-hover`, `--color-primary-primary-press`, `--color-disabled-disabled-inverse`, `--color-surfaces-container`, `--color-disabled-disabled`, `--stroke-200`, `--font-family`, `--type-size-body`, `--color-text-icon-primary`, `--radius-1000`, `--space-100`
+`--color-secondary-secondary-hover`, `--color-secondary-secondary`, `--color-primary-primary`, `--color-primary-primary-hover`, `--color-primary-primary-press`, `--color-disabled-disabled-inverse`, `--color-surfaces-container`, `--color-disabled-disabled`, `--stroke-200`, `--font-family`, `--type-size-body`, `--color-text-icon-primary`, `--color-text-icon-disabled`, `--radius-1000`, `--space-100`
 
 ## Accessibility
 

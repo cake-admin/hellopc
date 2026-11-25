@@ -13,7 +13,7 @@ The column-label row for a table (Figma HeaderRow, node 171:9834). It mirrors Da
 | --- | --- | --- | --- |
 | `children` | `React.ReactNode` | — | The row's HeaderCells — one per body column. |
 
-Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
+Also accepts all `React.HTMLAttributes<HTMLTableRowElement>` props.
 
 ## Usage
 
@@ -51,9 +51,9 @@ import { IconButton } from '@/hellopc/components/Button';
 
 ## Accessibility
 
-- The row is role="row"; label cells are role="columnheader", so a table container (role="table" / native <table>) can associate them with the body cells below.
+- Label cells are native <th scope="col">, so the <table> associates them with the body cells below. The empty rails are <td>s — an empty <th> would announce as a nameless column.
 - Each column control is an IconButton with a required label — screen readers announce "Sort", "Add", etc. even though only the icon shows.
-- active is a visual emphasis (primary label color); pair it with the control's own aria-pressed/aria-sort on the container when you wire real sorting — color alone is not the sort signal.
+- active is a visual emphasis (primary label color) only. Set sort on every sortable column ('none' while unsorted) — it renders aria-sort on the <th>, which is the signal screen readers announce. Color alone is not.
 
 ## Do / Don't
 

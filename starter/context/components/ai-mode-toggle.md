@@ -34,7 +34,7 @@ Also accepts all `Omit<React.ComponentPropsWithoutRef<typeof RadixToggle.Root>, 
 
 ## Design tokens used
 
-`--color-secondary-secondary`, `--color-secondary-secondary-overlay`, `--color-secondary-secondary-overlay-hover`, `--color-ai-`, `--color-disabled-disabled-inverse`, `--stroke-300`, `--color-primary-primary`, `--radius-1000`
+`--color-secondary-secondary`, `--color-secondary-secondary-overlay`, `--color-secondary-secondary-overlay-hover`, `--color-ai-`, `--color-text-icon-disabled`, `--stroke-300`, `--color-primary-primary`, `--radius-1000`
 
 ## Accessibility
 

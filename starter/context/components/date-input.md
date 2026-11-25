@@ -42,7 +42,7 @@ Date Input collects a typed MM/DD/YY date and opens the hello pc Calendar from a
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--font-weight-bold`, `--color-text-icon-primary`, `--space-050`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--space-200`, `--radius-200`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-text-icon-on-surface`, `--color-text-icon-secondary-on-surface`, `--font-weight-bold`, `--color-text-icon-primary`, `--space-050`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--space-200`, `--radius-200`
 
 ## Accessibility
 

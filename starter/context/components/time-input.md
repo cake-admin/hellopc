@@ -42,7 +42,7 @@ Time Input collects a 12-hour time through separate hours and minutes segments p
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-on-primary`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--space-050`, `--space-100`, `--space-200`, `--space-800`, `--radius-200`, `--radius-100`, `--stroke-200`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-on-primary`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-text-icon-on-surface`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--space-050`, `--space-100`, `--space-200`, `--space-800`, `--radius-200`, `--radius-100`, `--stroke-200`
 
 ## Accessibility
 

@@ -61,4 +61,4 @@ Also accepts all `Omit<
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Related: Divider, NumberInput, RadioGroup, Slider.
 - Source: `src/hellopc/components/Rating/`
-- Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-rating--docs>
+- Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-rating-rating--docs>

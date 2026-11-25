@@ -37,7 +37,7 @@ Calendar is the hello pc date panel (Figma &calendar, node 4890:20174): a compac
 
 ## Design tokens used
 
-`--color-surfaces-container`, `--radius-400`, `--elevation-3`, `--stroke-100`, `--color-stroke-border`, `--space-300`, `--space-100`, `--space-200`, `--type-size-body`, `--font-weight-bold`, `--color-text-icon-primary`, `--type-size-caption`, `--color-text-icon-placeholder`, `--color-secondary-secondary-overlay`, `--color-tonal-tonal`, `--color-text-icon-on-tonal-inverse`, `--radius-1000`, `--color-tonal-tonal-lightest`, `--space-600`, `--space-025`
+`--color-surfaces-container`, `--radius-400`, `--elevation-3`, `--stroke-100`, `--color-stroke-border`, `--space-300`, `--space-100`, `--space-200`, `--type-size-body`, `--font-weight-bold`, `--color-text-icon-primary`, `--type-size-caption`, `--color-text-icon-placeholder`, `--color-secondary-secondary-overlay`, `--color-text-icon-on-surface`, `--color-tonal-tonal`, `--color-text-icon-on-tonal-inverse`, `--radius-1000`, `--color-tonal-tonal-lightest`, `--space-600`, `--space-025`
 
 ## Accessibility
 

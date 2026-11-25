@@ -14,6 +14,7 @@ One tab in a horizontal tab bar (Figma ".elements/tab_item", node 149:8842).
 | `value` | `string` | **required** | Value linking this tab to its HorizontalTabsContent panel. |
 | `children` | `React.ReactNode` | **required** | The tab label. |
 | `disabled` | `boolean` | `false` | Dims the tab and drops it from the tab order. |
+| `size` | `HorizontalTabsSize` | — | Overrides the size inherited from HorizontalTabs. Normally set once on the root instead. |
 
 Also accepts all `React.ComponentPropsWithoutRef<typeof RadixTabs.Trigger>` props.
 
@@ -38,7 +39,7 @@ import {
 
 ## Design tokens used
 
-`--radius-300`, `--space-100`, `--space-150`, `--space-200`, `--type-size-body`, `--font-weight-medium`, `--font-weight-bold`, `--color-text-icon-primary`, `--color-text-icon-on-tonal`, `--color-disabled-disabled-inverse`, `--color-tonal-tonal-overlay`, `--color-tonal-tonal-overlay-hover`, `--color-tonal-tonal-overlay-press`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-primary-primary`, `--radius-1000`, `--space-300`, `--stroke-200`
+`--radius-300`, `--space-100`, `--space-150`, `--space-200`, `--type-size-body`, `--font-weight-medium`, `--font-weight-bold`, `--color-text-icon-primary`, `--color-text-icon-on-tonal`, `--color-text-icon-disabled`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-overlay`, `--color-tonal-tonal-overlay-hover`, `--color-tonal-tonal-overlay-press`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-primary-primary`, `--radius-1000`, `--space-300`, `--stroke-200`
 
 ## Accessibility
 

@@ -38,7 +38,7 @@ A compact, numeric-only select for small closed ranges — page size, quantity c
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-placeholder`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-200`, `--elevation-3`, `--radius-50`, `--color-text-icon-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-overlay`, `--color-text-icon-on-tonal`, `--space-100`, `--space-025`, `--space-050`, `--font-family`, `--font-weight-medium`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-placeholder`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-200`, `--elevation-3`, `--radius-50`, `--color-text-icon-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-overlay`, `--color-text-icon-on-tonal`, `--color-text-icon-disabled`, `--space-100`, `--space-025`, `--space-050`, `--font-family`, `--font-weight-medium`
 
 ## Accessibility
 
