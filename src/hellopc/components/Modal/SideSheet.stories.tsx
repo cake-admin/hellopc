@@ -169,6 +169,9 @@ Where Figma and the build differ, on purpose:
   description the \`aria-describedby\` link is removed rather than left dangling.
 - The close control is an IconButton with an accessible name — set
   \`closeLabel\` when "Close" is not specific enough (e.g. "Close contact details").
+- The scrolling content area is a keyboard-focusable \`region\` named by the
+  title, so keyboard users can scroll read-only content with the arrow keys.
+  It shows the standard focus ring.
 - The tab bar is a full Radix tablist (Left/Right, Home/End). Name it with
   \`tabsLabel\`.
 - The slide-in animation is turned off under \`prefers-reduced-motion\`.
@@ -373,6 +376,11 @@ export const OpensAndEscCloses: Story = {
     await expect(sheet).toHaveAccessibleName('Contact details');
     await expect(sheet).toHaveAccessibleDescription('Short supporting description');
     await expect(within(sheet).getByRole('tablist')).toHaveAccessibleName('Sections');
+    // The scrolling body is a named, keyboard-focusable region.
+    const region = within(sheet).getByRole('region', { name: 'Contact details' });
+    await expect(region).toHaveAttribute('tabindex', '0');
+    region.focus();
+    await expect(region).toHaveFocus();
     await expect(within(sheet).getByRole('tab', { name: 'Overview' })).toHaveAttribute(
       'aria-selected',
       'true',

@@ -281,8 +281,21 @@ export const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
     // Controlled selection can change without a user click.
     React.useLayoutEffect(resetScroll, [tabValue]);
 
+    /* Body is the sheet's only scroll container, so it must be reachable by
+       keyboard to scroll read-only content. It is a named region (labelled
+       by the title) so the extra tab stop is announced, not anonymous. The
+       same id is passed to Dialog.Title and the dialog's aria-labelledby —
+       Radix spreads our props after its own, so the ids stay in sync. */
+    const titleId = React.useId();
+
     const body = (
-      <Body ref={bodyRef} $density={density}>
+      <Body
+        ref={bodyRef}
+        $density={density}
+        role="region"
+        aria-labelledby={titleId}
+        tabIndex={0}
+      >
         {children}
       </Body>
     );
@@ -296,13 +309,16 @@ export const SideSheet = React.forwardRef<HTMLDivElement, SideSheetProps>(
             $size={size}
             onOpenAutoFocus={handleOpenAutoFocus}
             onCloseAutoFocus={handleCloseAutoFocus}
+            aria-labelledby={titleId}
             /* Radix warns when no Description exists unless the link is
                explicitly cleared. */
             {...(description ? {} : { 'aria-describedby': undefined })}
           >
             <Header $density={density}>
               <TitleGroup>
-                <Title $density={density}>{title}</Title>
+                <Title id={titleId} $density={density}>
+                  {title}
+                </Title>
                 {description ? <Description>{description}</Description> : null}
               </TitleGroup>
               {headerAction ? <HeaderAction>{headerAction}</HeaderAction> : null}
