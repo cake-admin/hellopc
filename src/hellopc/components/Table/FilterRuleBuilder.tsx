@@ -155,9 +155,21 @@ export interface FilterRuleBuilderProps {
 }
 
 const EMPTY: FilterRuleSet = { match: 'all', rules: [] };
-let ruleSeq = 0;
+/**
+ * A collision-free rule id. Rules can be persisted and handed back through
+ * `value` / `defaultValue`, so a per-module counter could mint an id that a
+ * restored rule already uses after a reload; random UUIDs can't.
+ */
+const newRuleId = (): string => {
+  const c = (globalThis as { crypto?: Crypto }).crypto;
+  if (c && typeof c.randomUUID === 'function') return `rule-${c.randomUUID()}`;
+  // Fallback for non-secure contexts (randomUUID needs HTTPS / localhost).
+  return `rule-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}${Math.random()
+    .toString(36)
+    .slice(2, 10)}`;
+};
 const blankRule = (field: string, operator: string): FilterRule => ({
-  id: `rule-${(ruleSeq += 1)}`,
+  id: newRuleId(),
   field,
   operator,
   value: '',
