@@ -37,7 +37,7 @@ Also accepts all `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>` pro
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-200`, `--space-200`, `--space-100`, `--color-text-icon-secondary`, `--type-size-body`, `--color-text-icon-placeholder`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-text-icon-on-surface`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-200`, `--space-200`, `--space-100`, `--color-text-icon-secondary`, `--type-size-body`, `--color-text-icon-placeholder`
 
 ## Accessibility
 
@@ -58,5 +58,6 @@ Also accepts all `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>` pro
 ---
 
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
+- Related: Field, Textarea.
 - Source: `src/hellopc/components/TextInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-text-input--docs>

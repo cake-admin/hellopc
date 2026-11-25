@@ -37,7 +37,7 @@ import {
 
 ## Design tokens used
 
-`--radius-150`, `--space-600`, `--space-100`, `--type-size-body`, `--font-weight-medium`, `--font-weight-bold`, `--color-text-icon-primary`, `--color-primary-primary`, `--color-disabled-disabled-inverse`, `--color-tonal-tonal-overlay-hover`, `--color-tonal-tonal-overlay-press`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-disabled-disabled`, `--stroke-200`
+`--radius-150`, `--space-600`, `--space-100`, `--type-size-body`, `--font-weight-medium`, `--font-weight-bold`, `--color-text-icon-primary`, `--color-primary-primary`, `--color-disabled-disabled-inverse`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-overlay-hover`, `--color-tonal-tonal-overlay-press`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-disabled-disabled`, `--stroke-200`
 
 ## Accessibility
 

@@ -5,7 +5,7 @@
 import { ActionBar } from '@cake-admin/cakeand';
 ```
 
-The toolbar above a table body (Figma ActionBar, node 171:9796). It leads with a select-all Checkbox and adapts to selection: idle it shows the table's controls (actions such as a refresh IconButton) with a right-aligned end slot (a search IconButton that can expand into a search TextInput); in selection mode (selected) it swaps in bulk-action Buttons and hides the idle end.
+The toolbar above a table body (Figma hellopc.table.action.bar, node 5794:5776). It leads with a select-all Checkbox and adapts to selection: idle it shows the table's controls (actions such as a refresh IconButton) with a right-aligned end slot (a search IconButton that can expand into a search TextInput); in selection mode (selected) it shows the selection count (selectionLabel, "3 selected") followed by bulk-action Buttons and hides the idle end. Keep one Action Bar per table; filters belong in the Filter Bar below it. When a Filter Bar already shows a search field, leave end empty so the table has only one search.
 
 ## Props
 
@@ -17,6 +17,7 @@ The toolbar above a table body (Figma ActionBar, node 171:9796). It leads with a
 | `selected` | `boolean` | `false` | Selection mode. When true, selectedActions replace actions and the idle end slot is hidden (Figma state=selected). Drive it from "are any rows selected". |
 | `actions` | `React.ReactNode` | — | Idle table controls shown after the checkbox when nothing is selected — typically a refresh IconButton. Hidden in selection mode. |
 | `selectedActions` | `React.ReactNode` | — | Bulk actions shown in place of actions when selected — typically Buttons (Action ▾ / Label / Group / Delete). |
+| `selectionLabel` | `React.ReactNode` | — | Selection count shown between the checkbox and the bulk actions in selection mode — e.g. "3 selected" (Figma selectedCount). Rendered as a polite live region so count changes are announced. Hidden when nothing is selected. |
 | `end` | `React.ReactNode` | — | Trailing slot: a search IconButton, or an expanded search TextInput (Figma state=search expanded). Hidden in selection mode. |
 
 Also accepts all `Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'>` props.
@@ -41,10 +42,11 @@ import { TextInput } from '@/hellopc/components/TextInput';
   end={<TextInput size="md" placeholder="Search" aria-label="Search" startIcon={<Search />} />}
 />
 
-// selection mode: partial checkbox + bulk actions
+// selection mode: partial checkbox + count + bulk actions
 <ActionBar
   selected
   checked="indeterminate"
+  selectionLabel="3 selected"
   selectedActions={
     <>
       <Button size="sm" variant="tonal" intent="primary" endIcon={<ChevronDown />}>Action</Button>
@@ -56,12 +58,13 @@ import { TextInput } from '@/hellopc/components/TextInput';
 
 ## Design tokens used
 
-`--color-surfaces-container`, `--space-100`, `--space-200`, `--space-300`, `--space-500`, `--color-tonal-tonal`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--radius-200`, `--color-surfaces-on-container-high`
+`--color-surfaces-container`, `--space-100`, `--space-200`, `--space-300`, `--space-800`, `--type-size-body`, `--font-weight-medium`, `--color-text-icon-primary`, `--color-tonal-tonal`, `--color-text-icon-on-tonal-inverse`, `--color-tonal-tonal-secondary-overlay`, `--color-text-icon-on-tonal-secondary`, `--radius-200`, `--color-surfaces-on-container-high`
 
 ## Accessibility
 
 - The bar is a role="toolbar" landmark with an aria-label (aria-label prop, default "Table actions"), grouping the table's controls.
 - The select-all Checkbox carries an aria-label (checkboxLabel) and supports 'indeterminate' for a partial selection — mirror it from the row selection state.
+- selectionLabel renders as role="status", so the count ("3 selected") is announced politely as the selection changes.
 - Every composed control brings its own accessible name and focus ring: the refresh/search IconButtons require a label, the search TextInput needs an aria-label when it has no visible label.
 - Roving focus is intentionally not used (see above); controls follow normal Tab order so the search field behaves like a real text input.
 

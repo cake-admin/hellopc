@@ -39,7 +39,7 @@ A single-select control set — the user picks exactly one option from a short, 
 
 ## Design tokens used
 
-`--stroke-200`, `--color-text-icon-secondary`, `--color-primary-primary`, `--color-primary-primary-hover`, `--color-surfaces-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--font-family`, `--type-size-body`, `--color-text-icon-primary`, `--radius-1000`, `--space-100`, `--space-300`
+`--stroke-200`, `--color-text-icon-secondary`, `--color-primary-primary`, `--color-primary-primary-hover`, `--color-surfaces-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--font-family`, `--type-size-body`, `--color-text-icon-primary`, `--color-text-icon-disabled`, `--radius-1000`, `--space-100`, `--space-300`
 
 ## Accessibility
 

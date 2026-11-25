@@ -32,7 +32,7 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
 ## Design tokens used
 
-`--color-text-icon-secondary`, `--color-info-info`, `--color-success-success`, `--color-warning-warn`, `--color-error-error`, `--color-disabled-disabled-inverse`, `--type-size-helper`, `--space-100`
+`--color-text-icon-secondary`, `--color-info-info`, `--color-success-success`, `--color-warning-warn`, `--color-error-error`, `--color-text-icon-disabled`, `--type-size-helper`, `--space-100`
 
 ## Accessibility
 

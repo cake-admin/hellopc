@@ -35,7 +35,7 @@ Also accepts all `Omit<React.HTMLAttributes<HTMLSpanElement>, 'onClick'>` props.
 
 ## Design tokens used
 
-`--color-primary-primary-overlay`, `--color-primary-primary-overlay-hover`, `--color-secondary-secondary-overlay`, `--color-secondary-secondary-overlay-hover`, `--color-success-success-overlay`, `--color-success-success-overlay-hover`, `--color-warning-warn-overlay`, `--color-warning-warn-overlay-hover`, `--color-error-error-overlay`, `--color-error-error-overlay-hover`, `--color-info-info-overlay`, `--color-info-info-overlay-hover`, `--color-text-icon-primary`, `--font-weight-bold`, `--type-size-body`, `--type-size-caption`, `--radius-1000`, `--space-100`, `--space-050`, `--stroke-300`, `--color-primary-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`
+`--color-primary-primary-overlay`, `--color-primary-primary-overlay-hover`, `--color-secondary-secondary-overlay`, `--color-secondary-secondary-overlay-hover`, `--color-success-success-overlay`, `--color-success-success-overlay-hover`, `--color-warning-warn-overlay`, `--color-warning-warn-overlay-hover`, `--color-error-error-overlay`, `--color-error-error-overlay-hover`, `--color-info-info-overlay`, `--color-info-info-overlay-hover`, `--color-text-icon-on-surface`, `--font-weight-bold`, `--type-size-body`, `--type-size-caption`, `--radius-1000`, `--space-100`, `--space-050`, `--stroke-300`, `--color-primary-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`
 
 ## Accessibility
 

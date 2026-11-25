@@ -11,7 +11,7 @@ Modal Footer is the bottom action region of a modal dialog. It pairs an optional
 
 | Prop | Type | Default | Notes |
 | --- | --- | --- | --- |
-| `checkbox` | `React.ReactNode` | — | Replacement for the leading checkbox slot. When supplied, all checkbox label and state props are ignored so consumers can compose another existing hello pc control. |
+| `checkbox` | `React.ReactNode \| false` | — | Replacement for the leading checkbox slot. When supplied, all checkbox label and state props are ignored so consumers can compose another existing hello pc control. Pass false to omit the slot entirely — the actions then sit alone at the trailing edge (as in the Side Sheet footer). |
 | `actions` | `React.ReactNode` | — | Replacement for the trailing action group. When supplied, all default action label, event, and disabled props are ignored. |
 | `checkboxLabel` | `string` | `'Don’t remind me again'` | Visible label for the default Radix-wrapped Checkbox. |
 | `checkboxChecked` | `boolean \| 'indeterminate'` | — | Controlled state for the default checkbox. Pair with onCheckboxCheckedChange; ignored when checkbox is supplied. |
@@ -24,6 +24,8 @@ Modal Footer is the bottom action region of a modal dialog. It pairs an optional
 | `primaryActionLabel` | `string` | `'Primary'` | Visible label for the primary action. |
 | `onPrimaryAction` | `React.MouseEventHandler<HTMLButtonElement>` | — | Fired when the default primary action is activated. |
 | `primaryActionDisabled` | `boolean` | `false` | Disables the default primary action. |
+| `divider` | `boolean` | `false` | Draws a --color-stroke-border rule along the top edge, separating the footer from scrolling content above it (Figma hellopc.side.sheet footer). |
+| `density` | `'default' \| 'compact'` | `'default'` | default pads 16px × 24px; compact pads 12px × 16px for dense containers such as a compact Side Sheet. |
 
 Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
@@ -35,11 +37,12 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 <ModalFooter primaryActionLabel="Delete" onPrimaryAction={remove} />
 <ModalFooter checkbox={<Checkbox label="I understand" />} />
 <ModalFooter actions={<Button>Continue</Button>} />
+<ModalFooter checkbox={false} divider density="compact" actions={<Button size="sm">Save</Button>} />
 ```
 
 ## Design tokens used
 
-`--color-surfaces-container`, `--space-300`, `--space-500`, `--space-100`, `--color-text-icon-secondary`, `--font-weight-medium`, `--type-size-body`, `--color-primary-primary`
+`--color-surfaces-container`, `--space-300`, `--space-500`, `--space-200`, `--stroke-100`, `--color-stroke-border`, `--space-100`, `--color-text-icon-secondary`, `--font-weight-medium`, `--type-size-body`, `--color-primary-primary`
 
 ## Accessibility
 

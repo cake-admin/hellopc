@@ -35,7 +35,7 @@ An independent on/off control — each checkbox stands alone, so any number can 
 
 ## Design tokens used
 
-`--stroke-150`, `--color-text-icon-secondary`, `--color-primary-primary`, `--color-primary-primary-hover`, `--color-primary-primary-overlay`, `--color-text-icon-inverse`, `--color-disabled-disabled-inverse`, `--color-disabled-disabled`, `--font-family`, `--type-size-body`, `--color-text-icon-primary`, `--radius-50`, `--radius-100`, `--space-100`
+`--stroke-150`, `--color-text-icon-secondary`, `--color-primary-primary`, `--color-primary-primary-hover`, `--color-primary-primary-overlay`, `--color-text-icon-inverse`, `--color-disabled-disabled-inverse`, `--color-disabled-disabled`, `--font-family`, `--type-size-body`, `--color-text-icon-primary`, `--color-text-icon-disabled`, `--radius-50`, `--radius-100`, `--space-100`
 
 ## Accessibility
 

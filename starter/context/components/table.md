@@ -13,6 +13,7 @@ The assembled data table (Figma table templates, node 178:10143). It stacks the 
 | --- | --- | --- | --- |
 | `children` | `React.ReactNode` | — | Body rows — the Data Rows of the table. |
 | `actionBar` | `React.ReactNode` | — | Top toolbar — an Action Bar. Rendered above the grid. |
+| `filterBar` | `React.ReactNode` | — | Filter row — a Filter Bar. Rendered between the Action Bar and the header (Figma: the filter bar sits below the action bar). |
 | `header` | `React.ReactNode` | — | Column header — a Header Row. Rendered in its own header rowgroup above the scrollable body, so it stays fixed while the body scrolls. |
 | `footer` | `React.ReactNode` | — | Bottom footer — a Table Footer (range + Pagination), or any node. |
 | `maxBodyHeight` | `number \| string` | — | Caps the body height and turns it into a vertical scroll region with the hello pc scrollbar. Omit for a table that grows to its content. |
@@ -46,6 +47,9 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 // tall body → scrolls with the hello pc scrollbar; the header stays fixed above it
 <Table maxBodyHeight={320} header={…}>{manyRows}</Table>
+
+// filters below the action bar (see Filter Bar)
+<Table actionBar={…} filterBar={<FilterBar filters={…} onResetAll={resetAll} />} header={…}>{rows}</Table>
 ```
 
 ## Design tokens used
@@ -54,8 +58,9 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 ## Accessibility
 
-- The grid is role="table" with an aria-label (or aria-labelledby); the header sits in one role="rowgroup", the body in another, and each row/cell carries role="row" / gridcell / columnheader.
-- The body scroll region keeps rows as direct children (native-styled overflow, not a nested ScrollArea) so that rowgroup → row ownership is never broken.
+- It is a native <table> with an aria-label (or aria-labelledby): the header row sits in <thead>, body rows in <tbody>, labels are <th scope="col"> and cells <td>. Flexbox does the layout, so the geometry matches Figma while screen readers still get table navigation.
+- Sortable columns carry aria-sort through Header Cell's sort prop.
+- The body scroll region keeps rows as direct children (native-styled overflow, not a nested ScrollArea) so <tbody> → <tr> ownership is never broken.
 - The Action Bar (role="toolbar") and the footer's Pagination (<nav>) are siblings of the grid, each with its own label — they're table chrome, not table rows.
 - Mirror row selection into the Action Bar's select-all checkbox with 'indeterminate' for a partial selection; give each row checkbox a record-specific checkboxLabel ("Select Ada Lovelace").
 
@@ -71,6 +76,6 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 ---
 
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
-- Related: Badge, Button, IconButton, Checkbox, Pagination, ActionBar, DataRow, HeaderRow.
+- Related: Badge, Button, IconButton, Checkbox, Pagination, ActionBar, DataRow, FilterBar.
 - Source: `src/hellopc/components/Table/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-table-table--docs>

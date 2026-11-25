@@ -39,7 +39,7 @@ import { Pagination } from '@/hellopc/components/Pagination';
 
 ## Design tokens used
 
-`--radius-1000`, `--type-size-caption`, `--font-weight-bold`, `--color-surfaces-inverse-container`, `--color-secondary-secondary-overlay`, `--color-secondary-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--space-075`, `--type-size-body`, `--color-text-icon-primary`, `--stroke-200`, `--color-primary-primary`, `--space-025`
+`--radius-1000`, `--type-size-caption`, `--font-weight-bold`, `--color-surfaces-inverse-container`, `--color-secondary-secondary-overlay`, `--color-text-icon-on-surface`, `--color-secondary-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-text-icon-on-tonal-secondary`, `--space-075`, `--type-size-body`, `--color-text-icon-primary`, `--stroke-200`, `--color-primary-primary`, `--space-025`
 
 ## Accessibility
 

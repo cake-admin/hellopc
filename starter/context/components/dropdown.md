@@ -23,6 +23,7 @@ A single-select field, composed from the reusable form elements: Input Label abo
 | `disabled` | `boolean` | `false` | Dims the whole field and blocks interaction. |
 | `name` | `string` | — | Field name for form submission. |
 | `id` | `string` | — | Explicit id for the trigger (defaults to a generated id wired to the label). |
+| `size` | `'sm' \| 'md'` | `'md'` | Trigger height: md 40px (the form field), sm 32px — the compact labelless select used inside dense UI such as the Table Filter Rule Builder. Pair sm without a label with aria-label. |
 
 
 ## Usage
@@ -34,11 +35,12 @@ A single-select field, composed from the reusable form elements: Input Label abo
 <Dropdown label="Country" placeholder="Choose a region" options={options} />
 <Dropdown label="Country" disabled options={options} />
 <Dropdown label="Country" options={[{ label: 'Blocked', value: 'x', disabled: true }]} />
+<Dropdown size="sm" aria-label="Operator" options={operators} />
 ```
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-placeholder`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-300`, `--elevation-3`, `--radius-200`, `--color-secondary-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-secondary-overlay-press`, `--color-surfaces-inverse-container`, `--space-200`, `--space-100`, `--type-size-body`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-placeholder`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-300`, `--elevation-3`, `--radius-200`, `--color-secondary-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-secondary-overlay-press`, `--color-text-icon-disabled`, `--color-surfaces-inverse-container`, `--space-200`, `--space-100`, `--type-size-body`
 
 ## Accessibility
 
@@ -60,5 +62,6 @@ A single-select field, composed from the reusable form elements: Input Label abo
 
 - Renders through a Radix portal into `document.body` — themed via `<html data-theme>`.
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
+- Related: Table.
 - Source: `src/hellopc/components/Dropdown/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-dropdown--docs>

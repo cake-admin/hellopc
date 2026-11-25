@@ -20,9 +20,10 @@ Menu Item is a compact action row for application menus. Its variant="sub-item" 
 | `showRightSlot` | `boolean` | `true` | Shows the 16px trailing slot. |
 | `rightSlot` | `React.ReactNode` | — | Decorative trailing content; defaults to the Figma check glyph. |
 | `showCheckbox` | `boolean` | `false` | Shows the reusable 24px Checkbox before the row action. This is only available on the top-level item variation, matching Figma. |
-| `checked` | `boolean` | — | Controlled state for the optional Checkbox. |
+| `checked` | `boolean \| 'indeterminate'` | — | Controlled state for the optional Checkbox. 'indeterminate' draws the partial dash — for a "Select all" row when only some options are checked. Toggling an indeterminate row reports true. |
 | `defaultChecked` | `boolean` | `false` | Uncontrolled initial state for the optional Checkbox. |
 | `onCheckedChange` | `(checked: boolean) => void` | — | Fires with the next optional Checkbox value. |
+| `toggleRow` | `boolean` | `false` | Makes a showCheckbox row a single checkbox control: clicking anywhere on the row toggles it, the row action is announced as role="checkbox" with aria-checked (mixed when indeterminate), and the box is drawn by a non-interactive CheckboxIndicator inside it. Use it for multi-select lists (filter menus) where the row *is* the choice. Requires showCheckbox. |
 
 Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'type'>` props.
 
@@ -33,13 +34,14 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 <MenuItem selected>Current workspace</MenuItem>
 <MenuItem variant="sub-item">Nested folder</MenuItem>
 <MenuItem showCheckbox defaultChecked>Select filters</MenuItem>
+<MenuItem showCheckbox toggleRow checked="indeterminate" showLeftSlot={false} showRightSlot={false}>Select all</MenuItem>
 <MenuItem leftSlot={<Folder />} rightSlot={<ChevronRight />}>Projects</MenuItem>
 <MenuItem disabled>Unavailable action</MenuItem>
 ```
 
 ## Design tokens used
 
-`--space-100`, `--radius-200`, `--type-size-body`, `--space-500`, `--color-secondary-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-tonal-tonal-overlay`, `--color-text-icon-on-tonal`, `--color-tonal-tonal-overlay-hover`, `--color-tonal-tonal-overlay-press`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--stroke-200`, `--color-primary-primary`, `--radius-100`
+`--space-100`, `--radius-200`, `--type-size-body`, `--space-500`, `--color-secondary-secondary`, `--color-tonal-tonal-secondary-overlay-hover`, `--color-tonal-tonal-secondary-overlay-press`, `--color-text-icon-on-tonal-secondary`, `--color-tonal-tonal-overlay`, `--color-text-icon-on-tonal`, `--color-tonal-tonal-overlay-hover`, `--color-tonal-tonal-overlay-press`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--stroke-200`, `--color-primary-primary`, `--radius-100`
 
 ## Accessibility
 
@@ -47,6 +49,7 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 - Decorative slots are hidden from assistive technology; the visible text is the action’s accessible name.
 - Focus is visibly restyled with a primary token ring; disabled items use the native disabled attribute and cannot be activated.
 - When showCheckbox is enabled, Checkbox remains an independent labelled control beside the menu action; it is not nested inside the row button.
+- With toggleRow, the whole row is one checkbox instead: the action is role="checkbox" with aria-checked (mixed for checked="indeterminate") and the box is a non-interactive CheckboxIndicator inside it — one target. Use it for multi-select lists such as the Table Filter Menu; give a count in the right slot an aria-label on the row ("Windows 11, 812") since slots are decorative.
 
 ## Do / Don't
 
@@ -60,6 +63,6 @@ Also accepts all `Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'
 ---
 
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
-- Related: Button, Checkbox.
+- Related: Button, Checkbox, Table.
 - Source: `src/hellopc/components/Menu/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-menu-menu-item--docs>

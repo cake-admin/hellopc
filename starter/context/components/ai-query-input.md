@@ -54,7 +54,7 @@ Also accepts all `Omit<React.FormHTMLAttributes<HTMLFormElement>, 'onSubmit' | '
 
 ## Design tokens used
 
-`--color-surfaces-container`, `--radius-400`, `--space-500`, `--color-elevation-drop-shadow-light`, `--stroke-200`, `--color-ai-`, `--color-error-error`, `--space-600`, `--space-300`, `--font-family`, `--type-size-body`, `--font-weight-medium`, `--color-text-icon-primary`, `--color-text-icon-placeholder`, `--elevation-1`, `--color-disabled-disabled`, `--space-100`, `--space-200`
+`--color-surfaces-container`, `--radius-400`, `--space-500`, `--color-elevation-drop-shadow-light`, `--stroke-200`, `--color-ai-`, `--color-error-error`, `--space-600`, `--space-300`, `--font-family`, `--type-size-body`, `--font-weight-medium`, `--color-text-icon-primary`, `--color-text-icon-placeholder`, `--elevation-1`, `--color-disabled-disabled`, `--space-100`
 
 ## Accessibility
 

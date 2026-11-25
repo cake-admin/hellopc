@@ -34,7 +34,7 @@ Also accepts all `React.HTMLAttributes<HTMLDivElement>` props.
 
 ## Design tokens used
 
-`--color-surfaces-container`, `--radius-300`, `--elevation-3`, `--space-100`, `--space-050`, `--color-stroke-border-high`, `--radius-50`
+`--color-surfaces-container`, `--radius-300`, `--elevation-3`, `--stroke-100`, `--color-stroke-border-zero-win-hct`, `--space-100`, `--space-050`, `--color-stroke-border-high`, `--radius-50`
 
 ## Accessibility
 

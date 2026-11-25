@@ -14,7 +14,7 @@ Progress Bar communicates a determinate amount of completed work. Select a seman
 | `value` | `number` | `30` | Current determinate progress. Values outside 0–max are visually clamped. |
 | `max` | `number` | `100` | Maximum progress value. |
 | `color` | `'info' \| 'primary' \| 'secondary' \| 'success' \| 'warn' \| 'error'` | `'info'` | Semantic indicator color from the Figma color variants. |
-| `width` | `'thin' \| 'thick'` | `'thick'` | Figma track thickness: thin is 12px; thick is 18px. |
+| `width` | `'hairline' \| 'thin' \| 'thick'` | `'thick'` | Track thickness: thin is 12px; thick is 18px; hairline is the 4px inline bar for dense layouts such as the Document Tile upload row. |
 | `label` | `React.ReactNode` | `'Label'` | Label shown above the progress track. When provided it labels the Radix progressbar. |
 | `labelValue` | `React.ReactNode` | `'40MB'` | Value aligned at the end of the label row, e.g. 40MB. |
 | `showLabelIcon` | `boolean` | `true` | Shows the 16px informational glyph after the label. |
@@ -22,6 +22,7 @@ Progress Bar communicates a determinate amount of completed work. Select a seman
 | `showHelper` | `boolean` | `true` | Shows the helper row beneath the track. |
 | `showHelperIcon` | `boolean` | `true` | Shows the 16px HelperString icon before the helper text. |
 | `showValue` | `boolean` | `true` | Shows the calculated percentage at the right of the helper row. |
+| `valueText` | `React.ReactNode` | — | Replaces the calculated NN% at the right of the helper row (e.g. 42% uploaded). Rendered in the helper tone's color. Ignored when showValue is false. |
 | `helperTone` | `HelperTone` | `'greyscale'` | Semantic tone for the reusable HelperString. |
 
 Also accepts all `Omit<React.ComponentPropsWithoutRef<typeof RadixProgress.Root>, 'children' | 'value' | 'max'>` props.
@@ -33,13 +34,14 @@ Also accepts all `Omit<React.ComponentPropsWithoutRef<typeof RadixProgress.Root>
 <ProgressBar color="success" value={75} label="Upload" labelValue="75MB" />
 <ProgressBar color="error" value={20} helperText="Upload failed" />
 <ProgressBar width="thin" value={50} />
+<ProgressBar width="hairline" label={null} aria-label="Uploading report.pdf" color="primary" value={42} helperText="2 mins left" helperTone="info" valueText="42% uploaded" />
 <ProgressBar value={12} max={24} showLabelIcon={false} />
 <ProgressBar label={null} aria-label="Installation progress" showHelper={false} value={90} />
 ```
 
 ## Design tokens used
 
-`--color-stroke-border`, `--radius-1000`, `--color-info-info`, `--color-primary-primary`, `--color-secondary-secondary`, `--color-success-success`, `--color-warning-warn`, `--color-error-error`, `--space-050`, `--space-100`, `--color-text-icon-primary`, `--font-weight-medium`, `--type-size-subject`, `--color-text-icon-secondary`
+`--color-stroke-border`, `--radius-1000`, `--color-info-info`, `--color-primary-primary`, `--color-secondary-secondary`, `--color-success-success`, `--color-warning-warn`, `--color-error-error`, `--space-050`, `--space-075`, `--space-100`, `--color-text-icon-primary`, `--font-weight-medium`, `--type-size-subject`, `--color-text-icon-secondary`
 
 ## Accessibility
 

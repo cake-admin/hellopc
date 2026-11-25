@@ -15,13 +15,14 @@ The circular representation of a person (Figma "&avatar", node 142:8305). Shows 
 | `alt` | `string` | — | Describes the person in the photo — not the word "avatar". |
 | `initials` | `string` | — | Initials shown when there's no photo (Figma content=initials). 1–2 characters. |
 | `size` | `AvatarSize` | `'md'` | Diameter: sm 32px, md 40px, lg 48px. |
+| `color` | `'primary' \| 'teal' \| 'amber' \| 'violet'` | `'primary'` | Fill and initials color when there's no photo: primary (indigo overlay), teal, amber or violet (the badge light palette). Avatar Group cycles these so neighbours differ. |
 | `selected` | `boolean` | `false` | Selected treatment — a filled primary circle with a check, for avatars used as pickable options (Figma content=check). |
 | `badge` | `boolean` | `false` | Shows the presence dot (Figma showBadge). |
 | `badgeLabel` | `string` | `'Online'` | Accessible name for the presence dot. |
 | `onClick` | `React.MouseEventHandler<HTMLButtonElement>` | — | Makes the avatar activatable — it renders as a <button> and gains the focus ring. |
 | `delayMs` | `number` | `0` | Milliseconds to wait before showing the fallback. A small delay avoids a flash of initials when the image loads fast. |
 
-Also accepts all `Omit<React.HTMLAttributes<HTMLElement>, 'onClick'>` props.
+Also accepts all `Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 'color'>` props.
 
 ## Usage
 
@@ -46,7 +47,7 @@ import { Avatar } from '@/hellopc/components/Avatar';
 
 ## Design tokens used
 
-`--radius-1000`, `--color-primary-primary-overlay`, `--color-primary-primary`, `--type-size-subject`, `--font-weight-medium`, `--color-text-icon-on-primary`, `--color-success-success`, `--stroke-100`, `--color-surfaces-container`, `--stroke-300`, `--space-025`, `--white`
+`--radius-1000`, `--color-primary-primary-overlay`, `--color-text-icon-primary-on-surface`, `--type-size-subject`, `--font-weight-medium`, `--color-primary-primary`, `--color-text-icon-on-primary`, `--color-success-success`, `--stroke-100`, `--color-surfaces-container`, `--stroke-300`, `--space-025`, `--white`
 
 ## Accessibility
 
@@ -69,4 +70,4 @@ import { Avatar } from '@/hellopc/components/Avatar';
 
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
 - Source: `src/hellopc/components/Avatar/`
-- Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-avatar--docs>
+- Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-avatar-avatar--docs>

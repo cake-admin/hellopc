@@ -11,7 +11,8 @@ Simple Tooltip provides a short, supplemental text description (Figma node 128:8
 
 | Prop | Type | Default | Notes |
 | --- | --- | --- | --- |
-| `trigger` | `React.ReactNode` | **required** | Non-interactive trigger content rendered inside Radix Tooltip's real button. Do not pass another button here because nested controls are invalid. |
+| `trigger` | `React.ReactNode` | — | Non-interactive trigger content rendered inside Radix Tooltip's real button. Do not pass another button here because nested controls are invalid. Ignored when triggerElement is set. |
+| `triggerElement` | `React.ReactElement` | — | An existing interactive element (a link or button that forwards its ref and spreads props) to describe instead of the built-in trigger button — e.g. a Document Tile's file-name link. Radix attaches hover/focus handlers and aria-describedby to it directly, so no extra focus stop is added. |
 | `children` | `React.ReactNode` | **required** | Tooltip text or short phrasing content. |
 | `triggerAriaLabel` | `string` | — | Accessible name for a trigger whose visible content is not descriptive. |
 | `open` | `boolean` | — | Controlled open state. |

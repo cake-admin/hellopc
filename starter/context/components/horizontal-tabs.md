@@ -15,6 +15,7 @@ A horizontal tab bar and its panels (Figma "&horizontal tabs", node 149:8841).
 | `defaultValue` | `string` | — | The initially selected tab's value (uncontrolled). |
 | `onValueChange` | `(value: string) => void` | — | Fires with the newly selected tab's value. |
 | `activationMode` | `'automatic' \| 'manual'` | `'automatic'` | automatic selects a tab as soon as it receives focus; manual waits for Enter/Space. Use manual when switching tabs is expensive. |
+| `size` | `'default' \| 'compact'` | `'default'` | Tab height for every HorizontalTabItem inside: default 48px, compact ~36px (dense containers such as a compact Side Sheet). |
 
 Also accepts all `React.ComponentPropsWithoutRef<typeof RadixTabs.Root>` props.
 
@@ -38,11 +39,14 @@ import {
 // keep the chevrons on permanently, or drop them for swipe-only scrolling
 <HorizontalTabsList aria-label="Sections" scrollButtons="always">…</HorizontalTabsList>
 <HorizontalTabsList aria-label="Sections" scrollButtons="never">…</HorizontalTabsList>
+
+// ~36px tabs for dense containers (e.g. a compact Side Sheet)
+<HorizontalTabs defaultValue="home" size="compact">…</HorizontalTabs>
 ```
 
 ## Design tokens used
 
-`--space-300`, `--type-size-body`, `--color-text-icon-primary`, `--stroke-200`, `--color-primary-primary`, `--space-025`
+`--space-300`, `--space-075`, `--space-100`, `--space-050`, `--type-size-body`, `--color-text-icon-primary`, `--stroke-200`, `--color-primary-primary`, `--space-025`
 
 ## Accessibility
 

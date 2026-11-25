@@ -44,7 +44,7 @@ Also accepts all `Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'ty
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-text-icon-primary`, `--color-text-icon-placeholder`, `--color-text-icon-secondary`, `--type-size-body`, `--space-050`, `--space-100`, `--space-200`, `--radius-200`, `--radius-1000`, `--stroke-200`, `--elevation-3`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-stroke-border-high`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-success-success-overlay`, `--color-success-success`, `--color-text-icon-on-surface`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--color-text-icon-primary`, `--color-text-icon-placeholder`, `--color-text-icon-secondary`, `--type-size-body`, `--space-050`, `--space-100`, `--space-200`, `--radius-200`, `--radius-1000`, `--stroke-200`, `--elevation-3`
 
 ## Accessibility
 

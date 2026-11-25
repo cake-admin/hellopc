@@ -46,7 +46,7 @@ Also accepts all `Omit<
 
 ## Design tokens used
 
-`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-secondary`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-stroke-border-high`, `--color-success-success-overlay`, `--color-success-success`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-200`, `--space-200`, `--space-100`
+`--color-surfaces-on-container-high`, `--stroke-100`, `--color-stroke-border`, `--color-text-icon-secondary`, `--color-surfaces-container`, `--stroke-150`, `--color-primary-primary`, `--color-text-icon-primary`, `--color-stroke-border-high`, `--color-success-success-overlay`, `--color-success-success`, `--color-text-icon-on-surface`, `--color-text-icon-secondary-on-surface`, `--color-error-error-overlay`, `--color-error-error`, `--color-disabled-disabled`, `--color-disabled-disabled-inverse`, `--radius-200`, `--space-200`, `--space-100`
 
 ## Accessibility
 
@@ -67,6 +67,6 @@ Also accepts all `Omit<
 ---
 
 - Behaviour comes from a Radix primitive; hello pc owns the visuals.
-- Related: Button, IconButton, TextInput.
+- Related: Button, IconButton, Field, TextInput.
 - Source: `src/hellopc/components/NumberInput/`
 - Storybook: <https://cake.lenovo.com/storybook/?path=/docs/components-number-input--docs>
