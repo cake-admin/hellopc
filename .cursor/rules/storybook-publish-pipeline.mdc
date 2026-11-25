@@ -20,5 +20,5 @@ If the designer install path changes, update Introduction, Getting Started,
 the Resources Devkit card, and README **Use it** together — step-by-step,
 layman's terms. Getting Started is top-level Storybook docs (not under
 hello pc Maintenance). Consumer release links currently go to
-https://github.com/cake-admin/cakev2/releases#release-v4.3.0
+https://github.com/cake-admin/cakev2/releases#release-v4.4.0
 The published package ships `stories/` and `context/` via build-package.mjs.

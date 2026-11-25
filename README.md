@@ -57,11 +57,11 @@ You are not forking this whole repository.
 ### Adding hello pc to an existing app
 
 If a developer already has a React project, install the **release file**
-(`.tgz`) from [v4.3.0](https://github.com/cake-admin/cakev2/releases#release-v4.3.0)
+(`.tgz`) from [v4.4.0](https://github.com/cake-admin/cakev2/releases#release-v4.4.0)
 — still no login:
 
 ```bash
-npm install https://github.com/cake-admin/cakev2/releases/download/v4.3.0/cake-admin-cakeand-4.3.0.tgz
+npm install https://github.com/cake-admin/cakev2/releases/download/v4.4.0/cake-admin-cakeand-4.4.0.tgz
 npm install react react-dom styled-components radix-ui lucide-react
 ```
 
@@ -106,7 +106,7 @@ project pins one exact version:
 
 `npm outdated` will not notice a new hello pc — this package is not installed from
 the public npm registry. Start from the current kit,
-[v4.3.0](https://github.com/cake-admin/cakev2/releases#release-v4.3.0), or run
+[v4.4.0](https://github.com/cake-admin/cakev2/releases#release-v4.4.0), or run
 the update command now and then.
 
 Pinning an exact file is deliberate: if the file behind one URL kept changing,
