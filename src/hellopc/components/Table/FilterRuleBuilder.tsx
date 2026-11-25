@@ -230,6 +230,14 @@ export function FilterRuleBuilder({
     onOpenChange?.(next);
   };
 
+  // A controlled `open` can turn true without going through setOpen; reseed on
+  // every closed → open transition so Apply never commits a stale draft.
+  const wasOpen = React.useRef(open);
+  React.useLayoutEffect(() => {
+    if (open && !wasOpen.current) setDraft(seed(applied));
+    wasOpen.current = open;
+  });
+
   const update = (id: string, patch: Partial<FilterRule>) =>
     setDraft((d) => ({ ...d, rules: d.rules.map((r) => (r.id === id ? { ...r, ...patch } : r)) }));
   const remove = (id: string) => {

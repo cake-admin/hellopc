@@ -153,6 +153,17 @@ export function FilterMenu({
     onOpenChange?.(next);
   };
 
+  // A controlled `open` can turn true without going through setOpen; reseed on
+  // every closed → open transition so Done never applies a stale draft.
+  const wasOpen = React.useRef(open);
+  React.useLayoutEffect(() => {
+    if (open && !wasOpen.current) {
+      setDraft(applied);
+      setQuery('');
+    }
+    wasOpen.current = open;
+  });
+
   const q = query.trim().toLowerCase();
   const visible = q ? options.filter((o) => o.label.toLowerCase().includes(q)) : options;
   const visibleChecked = visible.filter((o) => draft.includes(o.value)).length;

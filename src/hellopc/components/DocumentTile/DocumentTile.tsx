@@ -253,6 +253,11 @@ const Name = styled.span<{ $layout: DocumentTileLayout }>`
           white-space: nowrap;
           text-overflow: ellipsis;
         `}
+
+  /* Focus shows as the tile's outside ring (Root :has rule). */
+  &:focus-visible {
+    outline: none;
+  }
 `;
 
 /** Primary target: the file name is the link/button, and its ::after stretches
@@ -557,7 +562,14 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
     ) : (
       // Plain text: a focus stop only while cut off, so keyboard users can
       // still reach the full name in the tooltip.
-      <Name ref={setNameEl} $layout={layout} tabIndex={truncated ? 0 : undefined}>
+      // Carries the primary marker while focusable so the tile draws its
+      // outside focus ring for it too.
+      <Name
+        ref={setNameEl}
+        $layout={layout}
+        tabIndex={truncated ? 0 : undefined}
+        data-document-tile-primary={truncated ? '' : undefined}
+      >
         {fileName}
       </Name>
     );
@@ -700,8 +712,11 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
             ? `${fileName}: ${typeof errorMessage === 'string' ? errorMessage : 'upload failed'}`
             : '';
 
+    // On a tile the checkbox floats over the thumbnail; with no thumbnail it
+    // sits in the body's flow instead of covering the tag and name.
+    const selectOverlay = isTile && showThumbnail;
     const selectNode = onSelectedChange ? (
-      <SelectSlot $layout={layout}>
+      <SelectSlot $layout={selectOverlay ? 'tile' : 'compact'}>
         <Checkbox
           checked={isSelected}
           disabled={uploading}
@@ -724,9 +739,10 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
       >
         {isTile ? (
           <>
-            {selectNode}
+            {selectOverlay ? selectNode : null}
             {previewNode}
             <Body $layout="tile">
+              {selectOverlay ? null : selectNode}
               {tag != null ? (
                 <TagRow>
                   <Badge color={tagColor} tone="subtle">

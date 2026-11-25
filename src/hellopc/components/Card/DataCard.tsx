@@ -107,6 +107,10 @@ const Sources = styled.p`
   color: var(--color-text-icon-primary);
 `;
 
+const FooterSpacer = styled.span`
+  flex: 1 0 0;
+`;
+
 export type DataCardHeadingLevel = 'h2' | 'h3' | 'h4';
 
 export interface DataCardProps extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
@@ -164,7 +168,8 @@ export const DataCard = React.forwardRef<HTMLElement, DataCardProps>(
         {children != null ? <Content>{children}</Content> : null}
         {showFooter ? (
           <Footer>
-            <Sources>{sources}</Sources>
+            {/* No empty paragraph when only the action is set; the spacer keeps it right-aligned. */}
+            {sources != null ? <Sources>{sources}</Sources> : <FooterSpacer aria-hidden />}
             {footerAction}
           </Footer>
         ) : null}
