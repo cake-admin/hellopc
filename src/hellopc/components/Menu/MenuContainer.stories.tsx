@@ -56,6 +56,7 @@ are actual menu items.
 | surface | \`--color-surfaces-container\` |
 | corner | \`--radius-300\` |
 | shadow | \`--elevation-3\` (Figma \`elevation/3\`) |
+| edge | \`--stroke-100\` \`--color-stroke-border-zero-win-hct\` — transparent in light/dark, white in win hct |
 | content slot | \`--space-100\` (padding), \`--space-050\` (row gap) |
 | scrollbar track inset | \`--space-050\` |
 | scrollbar thumb | \`--color-stroke-border-high\`, \`--radius-50\` |

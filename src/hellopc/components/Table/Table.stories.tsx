@@ -104,6 +104,7 @@ function DemoTable({
             checked={headerChecked}
             onCheckedChange={toggleAll}
             selected={someSelected}
+            selectionLabel={`${selected.size} selected`}
             actions={<IconButton size="sm" variant="ghost" intent="secondary" label="Refresh" icon={<RotateCw />} />}
             selectedActions={BulkActions}
             end={<IconButton size="sm" variant="ghost" intent="secondary" label="Search" icon={<Search />} />}
@@ -113,10 +114,10 @@ function DemoTable({
           <HeaderRow>
             <HeaderCell>Name</HeaderCell>
             <HeaderCell>Plan</HeaderCell>
-            <HeaderCell active actions={<IconButton size="xs" variant="tonal" label="Sort team" icon={<ArrowUpDown />} />}>
+            <HeaderCell active sort="ascending" actions={<IconButton size="xs" variant="tonal" label="Sort team" icon={<ArrowUpDown />} />}>
               Team
             </HeaderCell>
-            <HeaderCell active actions={<IconButton size="xs" variant="tonal" label="Sort status" icon={<ArrowUpDown />} />}>
+            <HeaderCell active sort="none" actions={<IconButton size="xs" variant="tonal" label="Sort status" icon={<ArrowUpDown />} />}>
               Status
             </HeaderCell>
           </HeaderRow>
@@ -169,8 +170,8 @@ Every color, spacing, and type value resolves from hello pc tokens via
 \`props.theme\` — the **Theme** toolbar toggle re-themes the whole table on this
 page live; nothing is hardcoded.
 
-Table is a **composition shell, not a data grid**: it owns the frame, the ARIA
-\`role="table"\` grouping, and body scrolling, while the rows, cells, selection,
+Table is a **composition shell, not a data grid**: it owns the frame, the native
+\`<table>\` / \`<thead>\` / \`<tbody>\` structure, and body scrolling, while the rows, cells, selection,
 and paging are the parts you pass as slots — each already token-styled and
 accessible. It reuses everything built for the family (**Action Bar**,
 **Header Row** / **Header Cell**, **Data Row** / **Data Cell**), plus
@@ -209,6 +210,9 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 // tall body → scrolls with the hello pc scrollbar; the header stays fixed above it
 <Table maxBodyHeight={320} header={…}>{manyRows}</Table>
+
+// filters below the action bar (see Filter Bar)
+<Table actionBar={…} filterBar={<FilterBar filters={…} onResetAll={resetAll} />} header={…}>{rows}</Table>
 \`\`\`
 
 ## Design tokens used
@@ -225,11 +229,13 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
 
 ## Accessibility
 
-- The grid is \`role="table"\` with an \`aria-label\` (or \`aria-labelledby\`); the
-  header sits in one \`role="rowgroup"\`, the body in another, and each row/cell
-  carries \`role="row"\` / \`gridcell\` / \`columnheader\`.
+- It is a native \`<table>\` with an \`aria-label\` (or \`aria-labelledby\`): the
+  header row sits in \`<thead>\`, body rows in \`<tbody>\`, labels are
+  \`<th scope="col">\` and cells \`<td>\`. Flexbox does the layout, so the
+  geometry matches Figma while screen readers still get table navigation.
+- Sortable columns carry \`aria-sort\` through **Header Cell**'s \`sort\` prop.
 - The body scroll region keeps rows as direct children (native-styled overflow,
-  not a nested \`ScrollArea\`) so that rowgroup → row ownership is never broken.
+  not a nested \`ScrollArea\`) so \`<tbody>\` → \`<tr>\` ownership is never broken.
 - The **Action Bar** (\`role="toolbar"\`) and the footer's **Pagination**
   (\`<nav>\`) are siblings of the grid, each with its own label — they're table
   chrome, not table rows.
@@ -253,6 +259,7 @@ import { Table, TableFooter, ActionBar, HeaderRow, HeaderCell, DataRow, DataCell
   argTypes: {
     children: { control: false, table: { category: 'Content' } },
     actionBar: { control: false, table: { category: 'Content' } },
+    filterBar: { control: false, table: { category: 'Content' } },
     header: { control: false, table: { category: 'Content' } },
     footer: { control: false, table: { category: 'Content' } },
     maxBodyHeight: { control: 'number', table: { category: 'Appearance' } },

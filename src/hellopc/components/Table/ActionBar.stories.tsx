@@ -65,12 +65,16 @@ const meta = {
     docs: {
       description: {
         component: `
-The toolbar above a table body (Figma \`ActionBar\`, node 171:9796). It leads
+The toolbar above a table body (Figma \`hellopc.table.action.bar\`, node
+5794:5776). It leads
 with a select-all **Checkbox** and adapts to selection: idle it shows the
 table's controls (\`actions\` such as a refresh **IconButton**) with a
 right-aligned \`end\` slot (a search **IconButton** that can expand into a search
-**TextInput**); in selection mode (\`selected\`) it swaps in bulk-action
-**Button**s and hides the idle \`end\`.
+**TextInput**); in selection mode (\`selected\`) it shows the selection count
+(\`selectionLabel\`, "3 selected") followed by bulk-action **Button**s and hides
+the idle \`end\`. Keep one Action Bar per table; filters belong in the
+**Filter Bar** below it. When a Filter Bar already shows a search field, leave
+\`end\` empty so the table has only one search.
 
 Every color, spacing, and type value resolves from hello pc tokens via
 \`props.theme\` — the **Theme** toolbar toggle re-themes every example on this
@@ -107,10 +111,11 @@ import { TextInput } from '@/hellopc/components/TextInput';
   end={<TextInput size="md" placeholder="Search" aria-label="Search" startIcon={<Search />} />}
 />
 
-// selection mode: partial checkbox + bulk actions
+// selection mode: partial checkbox + count + bulk actions
 <ActionBar
   selected
   checked="indeterminate"
+  selectionLabel="3 selected"
   selectedActions={
     <>
       <Button size="sm" variant="tonal" intent="primary" endIcon={<ChevronDown />}>Action</Button>
@@ -127,13 +132,14 @@ import { TextInput } from '@/hellopc/components/TextInput';
 | bar background | \`--color-surfaces-container\` |
 | bar padding | \`--space-100\` (8px) × \`--space-200\` (12px) |
 | leading gap / action gap | \`--space-300\` (16px) |
-| min cluster separation | \`--space-500\` (24px) |
+| min cluster separation | \`--space-800\` (48px) |
+| selection count | \`--type-size-body\` (14px), \`--font-weight-medium\`, \`--color-text-icon-primary\` |
 | select-all control | **Checkbox** (Radix, own tokens; \`'indeterminate'\` supported) |
 | idle controls | **IconButton** \`size="sm"\` \`variant="ghost"\` |
 | bulk · primary ("Action") | **Button** \`variant="tonal"\` \`intent="primary"\` → \`--color-tonal-tonal\` / \`--color-text-icon-on-tonal-inverse\` |
 | bulk · secondary (Label/Group/Delete) | **Button** \`variant="tonal"\` \`intent="secondary"\` → \`--color-tonal-tonal-secondary-overlay\` / \`--color-text-icon-on-tonal-secondary\` |
 | search field | **TextInput** \`size="md"\` (\`--radius-200\`, \`--color-surfaces-on-container-high\`) |
-| bar height | 48px (intrinsic geometry, Figma 171:9796) |
+| bar height | 48px (intrinsic geometry, Figma 5794:5776) |
 
 ## Accessibility
 
@@ -142,6 +148,8 @@ import { TextInput } from '@/hellopc/components/TextInput';
 - The select-all **Checkbox** carries an \`aria-label\` (\`checkboxLabel\`) and
   supports \`'indeterminate'\` for a partial selection — mirror it from the row
   selection state.
+- \`selectionLabel\` renders as \`role="status"\`, so the count ("3 selected") is
+  announced politely as the selection changes.
 - Every composed control brings its own accessible name and focus ring: the
   refresh/search **IconButton**s require a \`label\`, the search **TextInput**
   needs an \`aria-label\` when it has no visible label.
@@ -165,6 +173,7 @@ import { TextInput } from '@/hellopc/components/TextInput';
     checked: false,
     selected: false,
     checkboxLabel: 'Select all rows',
+    selectionLabel: '3 selected',
     onCheckedChange: fn(),
   },
   argTypes: {
@@ -177,6 +186,7 @@ import { TextInput } from '@/hellopc/components/TextInput';
     checkboxLabel: { control: 'text', table: { category: 'Content' } },
     actions: { control: false, table: { category: 'Content' } },
     selectedActions: { control: false, table: { category: 'Content' } },
+    selectionLabel: { control: 'text', table: { category: 'Content' } },
     end: { control: false, table: { category: 'Content' } },
     onCheckedChange: { action: 'checkedChange', table: { category: 'Events' } },
   },
@@ -227,14 +237,20 @@ export const SearchExpanded: Story = {
 
 /**
  * Selection mode (Figma `state=selected`): the checkbox goes `indeterminate`
- * for a partial selection and the bulk actions — one primary-tonal **Button**
- * plus secondary-tonal ones — take the place of the idle controls.
+ * for a partial selection, the `selectionLabel` count appears, and the bulk
+ * actions — `size="sm"` **Button**s, the first primary tonal, the rest
+ * secondary tonal — take the place of the idle controls.
  */
 export const Selected: Story = {
   parameters: { controls: { disable: true } },
   render: () => (
     <Frame>
-      <ActionBar selected checked="indeterminate" selectedActions={BulkActions} />
+      <ActionBar
+          selected
+          checked="indeterminate"
+          selectionLabel="3 selected"
+          selectedActions={BulkActions}
+        />
     </Frame>
   ),
 };
@@ -254,7 +270,12 @@ export const AllVariants: Story = {
         <ActionBar actions={RefreshAction} end={SearchField} />
       </Frame>
       <Frame>
-        <ActionBar selected checked="indeterminate" selectedActions={BulkActions} />
+        <ActionBar
+          selected
+          checked="indeterminate"
+          selectionLabel="3 selected"
+          selectedActions={BulkActions}
+        />
       </Frame>
     </div>
   ),
@@ -272,5 +293,35 @@ export const SelectAllFires: Story = {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole('checkbox', { name: 'Select all rows' }));
     await expect(args.onCheckedChange).toHaveBeenCalledWith(true);
+  },
+};
+
+/** Entering selection mode shows the count and swaps the idle controls for bulk actions. */
+export const SelectionShowsCount: Story = {
+  tags: ['!autodocs'],
+  render: () => {
+    const [checked, setChecked] = React.useState<boolean | 'indeterminate'>(false);
+    const selected = checked !== false;
+    return (
+      <Frame>
+        <ActionBar
+          checked={checked}
+          onCheckedChange={setChecked}
+          selected={selected}
+          selectionLabel="12 selected"
+          actions={RefreshAction}
+          selectedActions={BulkActions}
+          end={SearchButton}
+        />
+      </Frame>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.queryByRole('status')).toBeNull();
+    await userEvent.click(canvas.getByRole('checkbox', { name: 'Select all rows' }));
+    await expect(canvas.getByRole('status')).toHaveTextContent('12 selected');
+    await expect(canvas.getByRole('button', { name: 'Delete' })).toBeInTheDocument();
+    await expect(canvas.queryByRole('button', { name: 'Search' })).toBeNull();
   },
 };

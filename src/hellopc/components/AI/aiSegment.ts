@@ -20,9 +20,16 @@ export const aiVar = (segment: AiSegment, token: string) => `var(--color-ai-${se
  */
 export const AI_GRADIENT_ANGLE = '39.06deg';
 
-/** `aiGradient('consumer', 'fill')` → the start→end linear gradient for that style. */
-export const aiGradient = (segment: AiSegment, style: 'primary' | 'fill' | 'surface') =>
-  `linear-gradient(${AI_GRADIENT_ANGLE}, ${aiVar(segment, `${style}-start`)} 0%, ${aiVar(
+/**
+ * `aiGradient('consumer', 'fill')` → the start→end linear gradient for that
+ * style. Wide shapes pass their own angle (e.g. the AI button's 8.35°).
+ */
+export const aiGradient = (
+  segment: AiSegment,
+  style: 'primary' | 'fill' | 'surface',
+  angle: string = AI_GRADIENT_ANGLE,
+) =>
+  `linear-gradient(${angle}, ${aiVar(segment, `${style}-start`)} 0%, ${aiVar(
     segment,
     `${style}-end`,
   )} 100%)`;

@@ -46,6 +46,7 @@ secondary ghost first, primary filled second. Supply \`checkbox\` or
 <ModalFooter primaryActionLabel="Delete" onPrimaryAction={remove} />
 <ModalFooter checkbox={<Checkbox label="I understand" />} />
 <ModalFooter actions={<Button>Continue</Button>} />
+<ModalFooter checkbox={false} divider density="compact" actions={<Button size="sm">Save</Button>} />
 \`\`\`
 
 ## Design tokens used
@@ -54,6 +55,8 @@ secondary ghost first, primary filled second. Supply \`checkbox\` or
 | --- | --- |
 | footer surface | \`--color-surfaces-container\` |
 | footer inset | \`--space-300\` (16px vertical), \`--space-500\` (24px horizontal) |
+| footer inset · compact | \`--space-200\` (12px vertical), \`--space-300\` (16px horizontal) |
+| divider | \`--stroke-100\` \`--color-stroke-border\` top rule |
 | checkbox label gap | \`--space-100\` (8px) |
 | action group gap | \`--space-300\` (16px) |
 | checkbox label | \`--color-text-icon-secondary\`, \`--font-weight-medium\`, \`--type-size-body\` |
@@ -111,6 +114,12 @@ surrounding dialog surface, so Modal Footer fills its parent.
     secondaryActionDisabled: { control: 'boolean', table: { category: 'State' } },
     primaryActionLabel: { control: 'text', table: { category: 'Content' } },
     primaryActionDisabled: { control: 'boolean', table: { category: 'State' } },
+    divider: { control: 'boolean', table: { category: 'Appearance' } },
+    density: {
+      control: 'inline-radio',
+      options: ['default', 'compact'],
+      table: { category: 'Appearance' },
+    },
     onCheckboxCheckedChange: { action: 'checkbox change', table: { category: 'Events' } },
     onSecondaryAction: { action: 'secondary action', table: { category: 'Events' } },
     onPrimaryAction: { action: 'primary action', table: { category: 'Events' } },
@@ -149,6 +158,32 @@ export const ReplacementSlots: Story = {
       checkbox={<Checkbox label="I understand the consequences" />}
       actions={<Button size="sm">Continue</Button>}
     />
+  ),
+};
+
+export const DividerAndDensity: Story = {
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          '`divider` adds a top rule for a footer under scrolling content; `density="compact"` ' +
+          'tightens the inset to 12/16px; `checkbox={false}` drops the leading slot so the ' +
+          'actions sit alone at the trailing edge. Side Sheet uses all three.',
+      },
+    },
+  },
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <ModalFooter divider checkbox={false} secondaryActionLabel="Cancel" primaryActionLabel="Save" />
+      <ModalFooter
+        divider
+        density="compact"
+        checkbox={false}
+        secondaryActionLabel="Cancel"
+        primaryActionLabel="Save"
+      />
+    </div>
   ),
 };
 

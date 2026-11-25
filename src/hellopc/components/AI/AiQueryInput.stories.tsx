@@ -63,7 +63,7 @@ uploading). Toolbar slots (\`leadingActions\`, \`trailingActions\`) and a
 | Add | \`IconButton\` sm · ghost · secondary |
 | Send / Stop / Retry | \`IconButton\` sm · fill with \`--color-ai-<segment>-fill-start\` → \`-fill-end\`, glyph \`--color-ai-<segment>-on-fill\`; hover \`--elevation-1\`; disabled \`--color-disabled-disabled\` / \`-inverse\` |
 | Toolbar gap | \`--space-100\` |
-| Context menu / chips / files | \`AiContextMenu\` (MenuContainer + MenuItem + Divider), \`Chip\` secondary · lg, \`AiFileAttachment\`; attachments → text gap \`--space-200\` |
+| Context menu / chips / files | \`AiContextMenu\` (MenuContainer + MenuItem + Divider), \`Chip\` secondary · lg, \`AiFileAttachment\`; attachments → text gap \`--space-300\` |
 
 ## Accessibility
 

@@ -75,6 +75,9 @@ import {
 // keep the chevrons on permanently, or drop them for swipe-only scrolling
 <HorizontalTabsList aria-label="Sections" scrollButtons="always">…</HorizontalTabsList>
 <HorizontalTabsList aria-label="Sections" scrollButtons="never">…</HorizontalTabsList>
+
+// ~36px tabs for dense containers (e.g. a compact Side Sheet)
+<HorizontalTabs defaultValue="home" size="compact">…</HorizontalTabs>
 \`\`\`
 
 ## Design tokens used
@@ -83,6 +86,7 @@ import {
 | --- | --- |
 | root | column, \`--space-300\` (16px) bar↔panel gap |
 | scroll controls | **IconButton** \`size="md"\` (40px) \`intent="secondary"\` \`variant="ghost"\` |
+| size · compact | ~36px tabs: label padding \`--space-075\` / \`--space-100\`, column inset \`--space-050\` (default is 48px) |
 | panel | \`--type-size-body\`, \`--color-text-icon-primary\` |
 | panel focus ring | \`--stroke-200\` \`--color-primary-primary\` at \`--space-025\` offset |
 
@@ -136,6 +140,11 @@ Two deviations from the Figma node, called out rather than hidden:
       control: 'inline-radio',
       options: ['automatic', 'manual'],
       table: { category: 'Behavior', defaultValue: { summary: 'automatic' } },
+    },
+    size: {
+      control: 'inline-radio',
+      options: ['default', 'compact'],
+      table: { category: 'Appearance' },
     },
     onValueChange: { action: 'tab change', table: { category: 'Events' } },
     children: { control: false, table: { category: 'Content' } },
@@ -232,6 +241,36 @@ export const ScrollButtonModes: Story = {
             </HorizontalTabsList>
           </HorizontalTabs>
         </div>
+      ))}
+    </div>
+  ),
+};
+
+export const Sizes: Story = {
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          '`default` tabs are 48px; `compact` tabs are ~36px (6px label padding, 8px sides) ' +
+          'for dense containers such as a compact Side Sheet. Set `size` once on ' +
+          '`HorizontalTabs` — every item inherits it.',
+      },
+    },
+  },
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+      {(['default', 'compact'] as const).map((size) => (
+        <HorizontalTabs key={size} defaultValue="home" size={size}>
+          <HorizontalTabsList aria-label={`Sections (${size})`}>
+            <HorizontalTabItem value="home">Home</HorizontalTabItem>
+            <HorizontalTabItem value="about">About</HorizontalTabItem>
+            <HorizontalTabItem value="shop">Shop</HorizontalTabItem>
+            <HorizontalTabItem value="settings" disabled>
+              Settings
+            </HorizontalTabItem>
+          </HorizontalTabsList>
+        </HorizontalTabs>
       ))}
     </div>
   ),

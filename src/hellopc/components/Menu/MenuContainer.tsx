@@ -22,6 +22,9 @@ const Surface = styled.div`
   position: relative;
   overflow: hidden;
   background: var(--color-surfaces-container);
+  /* Figma win.htc.border: transparent in light/dark, white in win hct, where
+     forced colors strip the shadow — the edge keeps the menu visible. */
+  border: var(--stroke-100) solid var(--color-stroke-border-zero-win-hct);
   border-radius: var(--radius-300);
   box-shadow: var(--elevation-3);
 `;

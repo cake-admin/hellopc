@@ -193,11 +193,11 @@ const Card = styled.form<{ $segment: AiSegment; $status: AiQueryInputStatus; $di
     `}
 `;
 
-/** Attachments row + text (Figma "content": --space-200 between them). */
+/** Attachments row + text (Figma 1.3.0 "content": --space-300 between them). */
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: var(--space-200);
+  gap: var(--space-300);
   min-width: 0;
 `;
 

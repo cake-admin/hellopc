@@ -7,19 +7,26 @@ import { DataRow, DataCell } from './DataRow';
 import { IconButton } from '../Button/IconButton';
 import { Badge } from '../Badge/Badge';
 
-/** A fixed-width table frame so the header renders at a realistic column width. */
+/**
+ * A fixed-width native `<table>` frame so the header renders at a realistic column
+ * width. Block display mirrors what **Table** does: the elements keep their
+ * table semantics while the rows lay themselves out.
+ */
 const Frame = ({ children, width = 640 }: { children: React.ReactNode; width?: number }) => (
-  <div
-    role="table"
+  <table
+    aria-label="Sample columns"
     style={{
+      display: 'block',
+      boxSizing: 'content-box',
       width,
+      borderCollapse: 'collapse',
       border: '1px solid var(--color-stroke-border)',
       borderRadius: 'var(--radius-150)',
       overflow: 'hidden',
     }}
   >
-    <div role="rowgroup">{children}</div>
-  </div>
+    <tbody style={{ display: 'block' }}>{children}</tbody>
+  </table>
 );
 
 const meta = {
@@ -43,9 +50,8 @@ A cell is a medium-weight label plus an optional \`actions\` slot for column
 controls (sort, add, filter). Those controls are existing **IconButton**s
 (\`size="xs"\`), not a bespoke widget — the header composes what already exists.
 Set \`active\` to color a label with the primary token when its column is sorted
-or emphasized. It renders ARIA grid semantics (\`role="row"\` /
-\`role="columnheader"\`); compose it inside a container that supplies
-\`role="table"\` and a header row group.
+or emphasized, and \`sort\` to announce the direction. It renders a native
+\`<tr>\` of \`<th scope="col">\` cells; **Table** places it in the \`<thead>\`.
 
 ## Usage
 
@@ -91,14 +97,14 @@ import { IconButton } from '@/hellopc/components/Button';
 
 ## Accessibility
 
-- The row is \`role="row"\`; label cells are \`role="columnheader"\`, so a table
-  container (\`role="table"\` / native \`<table>\`) can associate them with the body
-  cells below.
+- Label cells are native \`<th scope="col">\`, so the \`<table>\` associates them
+  with the body cells below. The empty rails are \`<td>\`s — an empty \`<th>\`
+  would announce as a nameless column.
 - Each column control is an **IconButton** with a required \`label\` — screen
   readers announce "Sort", "Add", etc. even though only the icon shows.
-- \`active\` is a visual emphasis (primary label color); pair it with the control's
-  own \`aria-pressed\`/\`aria-sort\` on the container when you wire real sorting —
-  color alone is not the sort signal.
+- \`active\` is a visual emphasis (primary label color) only. Set \`sort\` on every
+  sortable column (\`'none'\` while unsorted) — it renders \`aria-sort\` on the
+  \`<th>\`, which is the signal screen readers announce. Color alone is not.
 
 ## Do / Don't
 

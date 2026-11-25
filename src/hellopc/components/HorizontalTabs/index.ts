@@ -3,6 +3,7 @@ export type {
   HorizontalTabsProps,
   HorizontalTabsListProps,
   HorizontalTabsContentProps,
+  HorizontalTabsSize,
 } from './HorizontalTabs';
 export { HorizontalTabItem } from './HorizontalTabItem';
 export type { HorizontalTabItemProps } from './HorizontalTabItem';

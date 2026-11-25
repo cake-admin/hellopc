@@ -28,6 +28,17 @@ const ICON_SIZE = { sm: 20, md: 24, lg: 28 } as const;
 const BADGE_SIZE = 8;
 
 export type AvatarSize = keyof typeof DIAMETER;
+export type AvatarColor = 'primary' | 'teal' | 'amber' | 'violet';
+
+/** Fill + initials color per color (Figma hellopc.avatar.group items 1–4).
+ *  primary keeps primary-on-surface for the initials so they stay dark on the
+ *  solid highlight win hct paints for the overlay. */
+const COLOR: Record<AvatarColor, { bg: string; fg: string }> = {
+  primary: { bg: 'var(--color-primary-primary-overlay)', fg: 'var(--color-text-icon-primary-on-surface)' },
+  teal: { bg: 'var(--color-badge-teal-light)', fg: 'var(--color-badge-text-icon-on-teal-light)' },
+  amber: { bg: 'var(--color-badge-amber-light)', fg: 'var(--color-badge-text-icon-on-amber-light)' },
+  violet: { bg: 'var(--color-badge-violet-light)', fg: 'var(--color-badge-text-icon-on-violet-light)' },
+};
 
 const frameCss = css<{ $size: AvatarSize }>`
   position: relative;
@@ -61,7 +72,7 @@ const TriggerFrame = styled.button<{ $size: AvatarSize }>`
   }
 `;
 
-const Root = styled(RadixAvatar.Root)<{ $size: AvatarSize; $selected: boolean }>`
+const Root = styled(RadixAvatar.Root)<{ $size: AvatarSize; $selected: boolean; $color: AvatarColor }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -69,8 +80,8 @@ const Root = styled(RadixAvatar.Root)<{ $size: AvatarSize; $selected: boolean }>
   height: 100%;
   overflow: hidden;
   border-radius: var(--radius-1000);
-  background: ${(p) =>
-    p.$selected ? 'var(--color-primary-primary)' : 'var(--color-primary-primary-overlay)'};
+  background: ${(p) => (p.$selected ? 'var(--color-primary-primary)' : COLOR[p.$color].bg)};
+  color: ${(p) => COLOR[p.$color].fg};
   user-select: none;
 `;
 
@@ -86,9 +97,8 @@ const Fallback = styled(RadixAvatar.Fallback)<{ $size: AvatarSize }>`
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* Sits on the primary overlay: equal to primary in light and dark, and dark
-     on the solid highlight win hct paints for the overlay. */
-  color: var(--color-text-icon-primary-on-surface);
+  /* Initials take the color set on Root (see COLOR). */
+  color: inherit;
   font-family: var(--font-family);
   font-size: var(--type-size-subject);
   font-weight: var(--font-weight-medium);
@@ -143,7 +153,7 @@ const SrOnly = styled.span`
   border: 0;
 `;
 
-export interface AvatarProps extends Omit<React.HTMLAttributes<HTMLElement>, 'onClick'> {
+export interface AvatarProps extends Omit<React.HTMLAttributes<HTMLElement>, 'onClick' | 'color'> {
   /** Photo URL. Until it loads (or if it fails) the fallback shows instead. */
   src?: string;
   /** Describes the person in the photo — not the word "avatar". */
@@ -152,6 +162,13 @@ export interface AvatarProps extends Omit<React.HTMLAttributes<HTMLElement>, 'on
   initials?: string;
   /** Diameter: `sm` 32px, `md` 40px, `lg` 48px. @default 'md' */
   size?: AvatarSize;
+  /**
+   * Fill and initials color when there's no photo: `primary` (indigo overlay),
+   * `teal`, `amber` or `violet` (the badge light palette). Avatar Group cycles
+   * these so neighbours differ.
+   * @default 'primary'
+   */
+  color?: AvatarColor;
   /**
    * Selected treatment — a filled primary circle with a check, for avatars used
    * as pickable options (Figma `content=check`).
@@ -179,6 +196,7 @@ export const Avatar = React.forwardRef<HTMLElement, AvatarProps>(
       alt,
       initials,
       size = 'md',
+      color = 'primary',
       selected = false,
       badge = false,
       badgeLabel = 'Online',
@@ -190,7 +208,7 @@ export const Avatar = React.forwardRef<HTMLElement, AvatarProps>(
   ) => {
     const inner = (
       <>
-        <Root $size={size} $selected={selected}>
+        <Root $size={size} $selected={selected} $color={color}>
           {selected ? (
             <SelectedMark $size={size} aria-hidden>
               <Check strokeWidth={3} />

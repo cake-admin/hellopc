@@ -6,10 +6,13 @@ import { Info } from 'lucide-react';
 import { HelperString, type HelperTone } from '../Elements/HelperString';
 
 export type ProgressBarColor = 'info' | 'primary' | 'secondary' | 'success' | 'warn' | 'error';
-export type ProgressBarWidth = 'thin' | 'thick';
+export type ProgressBarWidth = 'hairline' | 'thin' | 'thick';
 
-/** Figma 87:4707 intrinsic progress-track geometry: 12px thin / 18px thick. */
-const TRACK_HEIGHT: Record<ProgressBarWidth, number> = { thin: 12, thick: 18 };
+/**
+ * Intrinsic progress-track geometry: 12px thin / 18px thick (Figma 87:4707);
+ * 4px hairline is the inline upload bar of the Document Tile (Figma 18911:2667).
+ */
+const TRACK_HEIGHT: Record<ProgressBarWidth, number> = { hairline: 4, thin: 12, thick: 18 };
 
 const COLOR: Record<ProgressBarColor, string> = {
   info: 'var(--color-info-info)',
@@ -20,11 +23,13 @@ const COLOR: Record<ProgressBarColor, string> = {
   error: 'var(--color-error-error)',
 };
 
-const Root = styled.div`
+const Root = styled.div<{ $width: ProgressBarWidth }>`
   display: flex;
   flex-direction: column;
-  gap: var(--space-050);
+  /* hairline: 6px track-to-helper gap (Figma 18911:2666). */
+  gap: ${(p) => (p.$width === 'hairline' ? 'var(--space-075)' : 'var(--space-050)')};
   width: 100%;
+  min-width: 0;
 `;
 
 const LabelRow = styled.div`
@@ -93,6 +98,14 @@ const ProgressHelper = styled(HelperString)`
   min-width: 0;
 `;
 
+/** Custom value text (e.g. `42% uploaded`) reuses HelperString so it takes the
+ *  helper tone's color, matching the Figma progress-helper counter. */
+const ValueHelper = styled(HelperString)`
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+`;
+
 const Percentage = styled.span`
   flex-shrink: 0;
   font-family: var(--font-family);
@@ -116,7 +129,8 @@ export interface ProgressBarProps
    */
   color?: ProgressBarColor;
   /**
-   * Figma track thickness: `thin` is 12px; `thick` is 18px.
+   * Track thickness: `thin` is 12px; `thick` is 18px; `hairline` is the 4px
+   * inline bar for dense layouts such as the Document Tile upload row.
    * @default 'thick'
    */
   width?: ProgressBarWidth;
@@ -137,6 +151,12 @@ export interface ProgressBarProps
    * @default true
    */
   showValue?: boolean;
+  /**
+   * Replaces the calculated `NN%` at the right of the helper row (e.g.
+   * `42% uploaded`). Rendered in the helper tone's color. Ignored when
+   * `showValue` is false.
+   */
+  valueText?: React.ReactNode;
   /** Semantic tone for the reusable HelperString. @default 'greyscale' */
   helperTone?: HelperTone;
   /** Accessible name used when no visible `label` is supplied. @default 'Progress' */
@@ -162,6 +182,7 @@ export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
       showHelper = true,
       showHelperIcon = true,
       showValue = true,
+      valueText,
       helperTone = 'greyscale',
       'aria-label': ariaLabel,
       ...props
@@ -176,7 +197,7 @@ export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
     const hasHelper = showHelper && (helperText != null || showValue);
 
     return (
-      <Root>
+      <Root $width={width}>
         {label != null ? (
           <LabelRow>
             <LabelGroup id={labelId}>
@@ -213,7 +234,15 @@ export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
             ) : (
               <span />
             )}
-            {showValue ? <Percentage>{percentage}%</Percentage> : null}
+            {showValue ? (
+              valueText != null ? (
+                <ValueHelper tone={helperTone} showIcon={false}>
+                  {valueText}
+                </ValueHelper>
+              ) : (
+                <Percentage>{percentage}%</Percentage>
+              )
+            ) : null}
           </HelperRow>
         ) : null}
       </Root>

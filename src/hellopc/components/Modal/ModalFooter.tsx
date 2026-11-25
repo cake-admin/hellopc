@@ -1,17 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Button } from '../Button/Button';
 import { Checkbox } from '../Checkbox/Checkbox';
 
-const Root = styled.div`
+export type ModalFooterDensity = 'default' | 'compact';
+
+const Root = styled.div<{ $density: ModalFooterDensity; $divider: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-300);
   width: 100%;
-  padding: var(--space-300) var(--space-500);
+  padding: ${(p) =>
+    p.$density === 'compact'
+      ? 'var(--space-200) var(--space-300)'
+      : 'var(--space-300) var(--space-500)'};
   background: var(--color-surfaces-container);
+  ${(p) =>
+    p.$divider &&
+    css`
+      border-top: var(--stroke-100) solid var(--color-stroke-border);
+    `}
 `;
 
 const CheckboxSlot = styled.div`
@@ -43,6 +53,8 @@ const CheckboxLabel = styled.label`
 const Actions = styled.div`
   display: inline-flex;
   flex: none;
+  /* Keeps the actions trailing when the checkbox slot is omitted. */
+  margin-left: auto;
   align-items: center;
   justify-content: flex-end;
   gap: var(--space-300);
@@ -52,9 +64,10 @@ export interface ModalFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Replacement for the leading checkbox slot. When supplied, all checkbox
    * label and state props are ignored so consumers can compose another existing
-   * hello pc control.
+   * hello pc control. Pass `false` to omit the slot entirely — the actions
+   * then sit alone at the trailing edge (as in the Side Sheet footer).
    */
-  checkbox?: React.ReactNode;
+  checkbox?: React.ReactNode | false;
   /**
    * Replacement for the trailing action group. When supplied, all default
    * action label, event, and disabled props are ignored.
@@ -91,6 +104,18 @@ export interface ModalFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   onPrimaryAction?: React.MouseEventHandler<HTMLButtonElement>;
   /** Disables the default primary action. @default false */
   primaryActionDisabled?: boolean;
+  /**
+   * Draws a `--color-stroke-border` rule along the top edge, separating the
+   * footer from scrolling content above it (Figma `hellopc.side.sheet` footer).
+   * @default false
+   */
+  divider?: boolean;
+  /**
+   * `default` pads 16px × 24px; `compact` pads 12px × 16px for dense
+   * containers such as a compact Side Sheet.
+   * @default 'default'
+   */
+  density?: ModalFooterDensity;
 }
 
 /**
@@ -114,6 +139,8 @@ export const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
       primaryActionLabel = 'Primary',
       onPrimaryAction,
       primaryActionDisabled = false,
+      divider = false,
+      density = 'default',
       ...props
     },
     ref,
@@ -150,8 +177,10 @@ export const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
     );
 
     return (
-      <Root ref={ref} {...props}>
-        <CheckboxSlot>{checkbox ?? defaultCheckbox}</CheckboxSlot>
+      <Root ref={ref} $density={density} $divider={divider} {...props}>
+        {checkbox === false ? null : (
+          <CheckboxSlot>{checkbox ?? defaultCheckbox}</CheckboxSlot>
+        )}
         <Actions>{actions ?? defaultActions}</Actions>
       </Root>
     );

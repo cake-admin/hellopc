@@ -57,8 +57,17 @@ export interface SimpleTooltipProps {
   /**
    * Non-interactive trigger content rendered inside Radix Tooltip's real
    * button. Do not pass another button here because nested controls are invalid.
+   * Ignored when `triggerElement` is set.
    */
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
+  /**
+   * An existing interactive element (a link or button that forwards its ref
+   * and spreads props) to describe instead of the built-in trigger button —
+   * e.g. a Document Tile's file-name link. Radix attaches hover/focus
+   * handlers and `aria-describedby` to it directly, so no extra focus stop
+   * is added.
+   */
+  triggerElement?: React.ReactElement;
   /** Tooltip text or short phrasing content. */
   children: React.ReactNode;
   /** Accessible name for a trigger whose visible content is not descriptive. */
@@ -91,6 +100,7 @@ export const SimpleTooltip = React.forwardRef<HTMLDivElement, SimpleTooltipProps
   (
     {
       trigger,
+      triggerElement,
       children,
       triggerAriaLabel,
       open,
@@ -111,9 +121,13 @@ export const SimpleTooltip = React.forwardRef<HTMLDivElement, SimpleTooltipProps
         onOpenChange={onOpenChange}
         delayDuration={delayDuration}
       >
-        <Trigger type="button" aria-label={triggerAriaLabel}>
-          {trigger}
-        </Trigger>
+        {triggerElement ? (
+          <RadixTooltip.Trigger asChild>{triggerElement}</RadixTooltip.Trigger>
+        ) : (
+          <Trigger type="button" aria-label={triggerAriaLabel}>
+            {trigger}
+          </Trigger>
+        )}
         <RadixTooltip.Portal>
           <Content
             ref={ref}

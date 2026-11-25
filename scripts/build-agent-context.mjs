@@ -71,17 +71,18 @@ const STATE_ENUM = new Set([
  */
 const CATEGORIES = {
   Button: 'Actions', Chip: 'Actions',
-  Card: 'Surfaces', Modal: 'Surfaces', Tooltip: 'Surfaces',
+  Card: 'Surfaces', SectionHeader: 'Surfaces', EmptyState: 'Feedback', Modal: 'Surfaces', Tooltip: 'Surfaces',
   Notification: 'Feedback', NotificationPanel: 'Feedback', Toast: 'Feedback',
   'Progress Indicators': 'Feedback',
-  Table: 'Data', Pagination: 'Data', Badge: 'Data', Counter: 'Data', Avatar: 'Data',
-  Sidebar: 'Navigation', HorizontalTabs: 'Navigation', VerticalTabs: 'Navigation',
+  Table: 'Data', Pagination: 'Data', Badge: 'Data', Counter: 'Data', Field: 'Data', Avatar: 'Data',
+  DocumentTile: 'Data',
+  Sidebar: 'Navigation', WindowTitleBar: 'Navigation', HorizontalTabs: 'Navigation', VerticalTabs: 'Navigation',
   Breadcrumb: 'Navigation', Link: 'Navigation', ContentSwitcher: 'Navigation', Accordion: 'Navigation',
   Menu: 'Navigation', Stepper: 'Navigation',
   TextInput: 'Forms', PasswordInput: 'Forms', NumberInput: 'Forms', PinInput: 'Forms',
   DateInput: 'Forms', TimeInput: 'Forms', Checkbox: 'Forms', Radio: 'Forms',
   Switch: 'Forms', Slider: 'Forms', Dropdown: 'Forms', NumberDropdown: 'Forms',
-  FileUpload: 'Forms', Rating: 'Forms',
+  FileUpload: 'Forms', Rating: 'Forms', Textarea: 'Forms',
   AI: 'AI',
   Elements: 'Elements',
 };

@@ -4663,6 +4663,32 @@
             "STROKE"
           ]
         }
+      },
+      "onHover": {
+        "$type": "color",
+        "$value": "{color.text+icon.primary}",
+        "$description": "Glyph/text on a neutral hover or press background (e.g. caption buttons). Win hct: HighlightText.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17848:634",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL",
+            "STROKE"
+          ]
+        }
+      },
+      "onDestructiveHover": {
+        "$type": "color",
+        "$value": "{color.surfaces.container}",
+        "$description": "Glyph/text on a destructive (error) hover or press background (e.g. close caption button). Win hct: HighlightText.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:17848:636",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "TEXT_FILL",
+            "STROKE"
+          ]
+        }
       }
     },
     "ai": {
@@ -5617,6 +5643,77 @@
               "targetVariableSetName": "hellopc hero"
             }
           }
+        }
+      }
+    },
+    "rating": {
+      "filled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9647058844566345,
+            0.7411764860153198,
+            0.3490196168422699
+          ],
+          "alpha": 1,
+          "hex": "#F6BD59"
+        },
+        "$description": "Filled rating star. Light: gold/70 (pair with color/rating/outline for 3:1). Dark: gold/80 (8.89:1).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:18930:24",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:219d1f21bcb3e45c16cdf8c0227f90ce0edd8614/-1:-1",
+            "targetVariableName": "gold/80",
+            "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+            "targetVariableSetName": "hellopc hero"
+          }
+        }
+      },
+      "outline": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9647058844566345,
+            0.7411764860153198,
+            0.3490196168422699
+          ],
+          "alpha": 1,
+          "hex": "#F6BD59"
+        },
+        "$description": "1px outline on filled stars. Light: gold/50 (4.48:1 on container) carries the contrast. Dark: same as fill (no visible outline).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:18930:25",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:219d1f21bcb3e45c16cdf8c0227f90ce0edd8614/-1:-1",
+            "targetVariableName": "gold/80",
+            "targetVariableSetId": "VariableCollectionId:83ba552c2f0e2d8b20b04cfcef7f4a43c3163632/-1:-1",
+            "targetVariableSetName": "hellopc hero"
+          }
+        }
+      },
+      "empty": {
+        "$type": "color",
+        "$value": "{color.text+icon.placeholder}",
+        "$description": "Empty rating star / unselected thumb outline (4.47:1 light, 6.54:1 dark).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:18930:26",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL",
+            "STROKE"
+          ]
         }
       }
     }

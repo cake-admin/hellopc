@@ -102,7 +102,9 @@
   --color-control-fill-press: rgba(117, 134, 255, 0.3);
   --color-control-fill: rgba(117, 134, 255, 0.1);
   --color-control-focus-ring: #3049eb;
+  --color-control-on-destructive-hover: #ffffff;
   --color-control-on-fill: #252629;
+  --color-control-on-hover: #252629;
   --color-control-on-selected: #f0efff;
   --color-control-selected-fill-hover: #152fc5;
   --color-control-selected-fill-press: #001a98;
@@ -171,6 +173,9 @@
   --color-primary-primary-overlay: rgba(117, 134, 255, 0.1);
   --color-primary-primary-press: #001a98;
   --color-primary-primary: #3049eb;
+  --color-rating-empty: #76777c;
+  --color-rating-filled: #e19f06;
+  --color-rating-outline: #9c6f0a;
   --color-secondary-secondary-hover: #1a1c1e;
   --color-secondary-secondary-overlay-hover: rgba(142, 143, 148, 0.2);
   --color-secondary-secondary-overlay: rgba(142, 143, 148, 0.1);
@@ -429,7 +434,9 @@
   --color-control-fill-press: rgba(117, 134, 255, 0.1);
   --color-control-fill: rgba(117, 134, 255, 0.3);
   --color-control-focus-ring: #bcc3ff;
+  --color-control-on-destructive-hover: #252629;
   --color-control-on-fill: #ffffff;
+  --color-control-on-hover: #ffffff;
   --color-control-on-selected: #001a98;
   --color-control-selected-fill-hover: #98a4ff;
   --color-control-selected-fill-press: #7586ff;
@@ -498,6 +505,9 @@
   --color-primary-primary-overlay: rgba(117, 134, 255, 0.3);
   --color-primary-primary-press: #7586ff;
   --color-primary-primary: #bcc3ff;
+  --color-rating-empty: #aaaaaf;
+  --color-rating-filled: #f6bd59;
+  --color-rating-outline: #f6bd59;
   --color-secondary-secondary-hover: #e3e2e6;
   --color-secondary-secondary-overlay-hover: rgba(142, 143, 148, 0.2);
   --color-secondary-secondary-overlay: rgba(142, 143, 148, 0.1);
@@ -670,7 +680,9 @@
   --color-control-fill-press: #202020;
   --color-control-fill: #202020;
   --color-control-focus-ring: #ffffff;
+  --color-control-on-destructive-hover: #263b50;
   --color-control-on-fill: #ffffff;
+  --color-control-on-hover: #263b50;
   --color-control-on-selected: #263b50;
   --color-control-selected-fill-hover: #8ee3f0;
   --color-control-selected-fill-press: #8ee3f0;
@@ -739,6 +751,9 @@
   --color-primary-primary-overlay: #8ee3f0;
   --color-primary-primary-press: #8ee3f0;
   --color-primary-primary: #8ee3f0;
+  --color-rating-empty: var(--color-text-icon-disabled);
+  --color-rating-filled: var(--color-primary-primary);
+  --color-rating-outline: var(--color-primary-primary);
   --color-secondary-secondary-hover: #8ee3f0;
   --color-secondary-secondary-overlay-hover: #8ee3f0;
   --color-secondary-secondary-overlay: #8ee3f0;
