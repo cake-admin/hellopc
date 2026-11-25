@@ -25,10 +25,10 @@ The repository is public, so npm can fetch the tarball directly. No `.npmrc`, no
 personal access token, nothing to set up.
 
 Take the `.tgz` URL from the current release —
-<https://github.com/cake-admin/cakev2/releases#release-v4.3.0> — and install it:
+<https://github.com/cake-admin/cakev2/releases#release-v4.4.0> — and install it:
 
 ```bash
-npm install https://github.com/cake-admin/cakev2/releases/download/v4.3.0/cake-admin-cakeand-4.3.0.tgz
+npm install https://github.com/cake-admin/cakev2/releases/download/v4.4.0/cake-admin-cakeand-4.4.0.tgz
 ```
 
 Always install a **version-specific** URL, never one that resolves to "latest".
@@ -40,7 +40,7 @@ Upgrading later is the same command with the newer version's URL.
 
 Note that `npm outdated` will not report new versions of this package — it
 compares against a registry, and this installs from a URL. Start from
-<https://github.com/cake-admin/cakev2/releases#release-v4.3.0>.
+<https://github.com/cake-admin/cakev2/releases#release-v4.4.0>.
 
 ### Peer dependencies
 
