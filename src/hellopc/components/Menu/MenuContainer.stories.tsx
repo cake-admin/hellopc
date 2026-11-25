@@ -87,6 +87,9 @@ The 4px scrollbar thumb is intrinsic Figma geometry.
   },
   tags: ['autodocs'],
   args: {
+    // Required by the component type. Every story supplies its own
+    // `children`, so this placeholder only stops StoryObj<typeof meta> demanding it.
+    children: null,
     width: 320,
   },
   argTypes: {

@@ -145,6 +145,9 @@ the panel owns their rounding, clipping, and dividers.
     ),
   ],
   args: {
+    // Required by the component type. Every story supplies its own
+    // `children`, so this placeholder only stops StoryObj<typeof meta> demanding it.
+    children: null,
     title: 'Notifications',
     onSettings: fn(),
     onClose: fn(),

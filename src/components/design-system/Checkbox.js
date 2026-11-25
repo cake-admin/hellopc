@@ -266,6 +266,9 @@ const Label = styled.label`
   margin-top: 3px;
 `;
 
+// Untyped JS component: without this, TypeScript infers forwardRef props as `{}`,
+// so .tsx callers cannot pass any prop.
+/** @type {import("react").ForwardRefExoticComponent<Record<string, any> & import("react").RefAttributes<any>>} */
 const Checkbox = forwardRef(({
   checked = false,
   indeterminate = false,

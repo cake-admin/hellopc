@@ -5,7 +5,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import SearchIcon from '@mui/icons-material/Search';
 import { fontStack } from '../../styles/globalStyles';
 import { getTokenColor } from '../../tokens/colorTokens';
-import Menu from './Menu.tsx';
+import Menu from './Menu';
 
 // Animation keyframes
 const slideDown = keyframes`

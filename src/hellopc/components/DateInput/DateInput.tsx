@@ -283,7 +283,7 @@ const FieldShell = ({
               disabled={disabled}
               aria-haspopup="dialog"
               aria-expanded={open}
-              onClick={() => setOpen((value) => !value)}
+              onClick={() => setOpen(!open)}
             />
           </CalendarAnchor>
         </Box>

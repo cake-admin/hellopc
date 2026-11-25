@@ -75,6 +75,7 @@
     "gh-pages": "^6.3.0",
     "glob": "^10.3.10",
     "storybook": "^10.4.6",
+    "typescript": "~5.9.3",
     "vite": "^6.4.3"
   },
   "browserslist": {
@@ -116,6 +117,9 @@
     "@svgr/plugin-svgo": "^8.1.0",
     "css-select": "^5.1.0",
     "resolve-url-loader": "^5.0.0",
-    "refractor": "^5.0.0"
+    "refractor": "^5.0.0",
+    "react-scripts": {
+      "typescript": "$typescript"
+    }
   }
 }

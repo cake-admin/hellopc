@@ -138,6 +138,9 @@ hand-rolled scrollbars left:
   },
   tags: ['autodocs'],
   args: {
+    // Required by the component type. Every story supplies its own
+    // `children`, so this placeholder only stops StoryObj<typeof meta> demanding it.
+    children: null,
     type: 'auto',
     orientation: 'vertical',
     maxHeight: 220,

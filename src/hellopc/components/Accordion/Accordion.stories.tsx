@@ -3,7 +3,20 @@ import { expect, userEvent, within } from 'storybook/test';
 import styled from 'styled-components';
 import { Bell, CreditCard, Tag } from 'lucide-react';
 
-import { Accordion, AccordionItem } from './Accordion';
+import { Accordion, AccordionItem, type AccordionProps } from './Accordion';
+
+/** Radix types Accordion as a `type: "single" | "multiple"` discriminated
+ *  union, which Storybook's arg inference collapses to `never`. The stories
+ *  are typed against this flat shape instead; it covers the props the Controls
+ *  panel drives. */
+type AccordionStoryArgs = {
+  type: 'single' | 'multiple';
+  collapsible?: boolean;
+  disabled?: boolean;
+  value?: string | string[];
+  defaultValue?: string | string[];
+  onValueChange?: (value: string | string[]) => void;
+};
 
 /** Example content body — a "Subtitle" (16px medium primary) over supporting
  *  copy, matching the Figma content region. */
@@ -146,7 +159,7 @@ The container maxes at 640px and fills narrower parents.
     onValueChange: { control: false, table: { category: 'Events' } },
   },
   decorators: [(Story) => <div style={{ width: 640, maxWidth: '100%' }}>{Story()}</div>],
-} satisfies Meta<typeof Accordion>;
+} satisfies Meta<AccordionStoryArgs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -155,7 +168,12 @@ type Story = StoryObj<typeof meta>;
  *  and open the sections. */
 export const Playground: Story = {
   render: (args) => (
-    <Accordion {...args} defaultValue={args.type === 'multiple' ? ['a'] : 'a'}>
+    <Accordion
+      {...({
+        ...args,
+        defaultValue: args.type === 'multiple' ? ['a'] : 'a',
+      } as AccordionProps)}
+    >
       <AccordionItem value="a" title="Accordion title" icon={<Tag />}>
         {sampleBody}
       </AccordionItem>

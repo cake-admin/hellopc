@@ -200,6 +200,9 @@ plus a 4px inset each side) — so the two never overlap.
   },
   tags: ['autodocs'],
   args: {
+    // Required by the component type. Every story supplies its own
+    // `children`, so this placeholder only stops StoryObj<typeof meta> demanding it.
+    children: null,
     'aria-label': 'Main navigation',
     productName: 'Lenovo',
     appName: 'Appname',
