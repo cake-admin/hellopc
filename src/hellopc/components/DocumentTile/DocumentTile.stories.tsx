@@ -499,3 +499,16 @@ export const TruncatedNameKeepsFocus: Story = {
     await expect(link).toHaveFocus();
   },
 };
+
+/** Pure interaction test (hidden from docs): a name-only tile renders no empty footer row. */
+export const NameOnlyHasNoFooter: Story = {
+  tags: ['!autodocs'],
+  decorators: framed,
+  args: { meta: undefined, tag: undefined, menu: undefined, onDownload: undefined },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const link = canvas.getByRole('link', { name: 'Document_name.pdf' });
+    // The tile body holds only the name target: no tag, no footer.
+    await expect(link.parentElement?.childElementCount).toBe(1);
+  },
+};

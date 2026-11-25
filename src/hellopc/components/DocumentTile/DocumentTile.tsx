@@ -314,6 +314,8 @@ const Actions = styled.div`
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  /* Stay end-aligned in the tile footer even when there is no meta. */
+  margin-left: auto;
 `;
 
 const TagRow = styled.div`
@@ -714,10 +716,13 @@ export const DocumentTile = React.forwardRef<HTMLDivElement, DocumentTileProps>(
                 </TagRow>
               ) : null}
               {nameNode}
-              <Footer>
-                {uploading ? progressNode : <Meta>{meta}</Meta>}
-                {actionsNode}
-              </Footer>
+              {/* Skip the footer row (and its gap) when there is nothing to show. */}
+              {uploading || meta != null || actionsNode ? (
+                <Footer>
+                  {uploading ? progressNode : meta != null ? <Meta>{meta}</Meta> : null}
+                  {actionsNode}
+                </Footer>
+              ) : null}
             </Body>
           </>
         ) : (
